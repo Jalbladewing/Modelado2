@@ -1,0 +1,11 @@
+package com.teamBurton.operador;
+
+public class incidencia_lista_administrador {
+	//private List<Label> _incidenciasLabels;
+	public Incidencias_todas_administrador _unnamed_Incidencias_todas_administrador_;
+	public Incidencias_llamadas_administrador _unnamed_Incidencias_llamadas_administrador_;
+	public Incidencias_sin_asignar_administrador _unnamed_Incidencias_sin_asignar_administrador_;
+	public Incidencias_resueltas_administrador _unnamed_Incidencias_resueltas_administrador_;
+	public Incidencias_asignadas_administrador _unnamed_Incidencias_asignadas_administrador_;
+	public Incidencia_administrador2 _incidencia;
+}
