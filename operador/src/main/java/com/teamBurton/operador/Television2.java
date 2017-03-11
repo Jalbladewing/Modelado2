@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Television2 {
+public class Television2 extends Television2_ventana {
 	/*private Label _seccion;
 	private Button _buscarCanalB;
 	private TextField _buscarCanalT;
