@@ -12967,3 +12967,27 @@ div.v-layout.v-horizontal.v-widget {
 	width: 19px;
 	overflow: hidden;
 }
+
+.mytheme .backColorGrey {
+	background-color: #ACACAC;
+}
+
+.mytheme .black {
+	color: white;
+	background: #3A3A38;
+}
+
+.mytheme .grey {
+	color: white;
+	background: #808069;
+}
+
+.mytheme .green {
+	color: white;
+	background: #79973F;
+}
+
+.mytheme .red {
+	color: white;
+	background: #C67171;
+}
