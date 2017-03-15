@@ -22,7 +22,7 @@ public class Generico_Ventana extends VerticalLayout {
 	protected Button telefonoFijo;
 	protected Button television;
 	protected Button internet;
-	protected Button movil;
+	protected Button movill;
 	protected Button ofertas;
 	protected Image fondo;
 	protected Button acceder;
