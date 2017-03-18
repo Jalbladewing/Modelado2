@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Mis_facturas {
+public class Mis_facturas extends Mis_facturas_ventana {
 	/*private Label _seccion;
 	private List _facturasL;*/
 	public Mi_cuenta_cliente _unnamed_Mi_cuenta_cliente_;

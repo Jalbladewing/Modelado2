@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Servicio {
+public class Servicio extends Servicio_ventana {
 	/*private Label _nombre;
 	private TextArea _noServicios;
 	private List<Button> _modalidadesL;*/

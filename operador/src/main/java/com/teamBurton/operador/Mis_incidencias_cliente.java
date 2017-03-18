@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Mis_incidencias_cliente {
+public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana {
 	/*private Label _seccion;
 	private Button _crearIncidencia;
 	private List _incidenciasL;*/
