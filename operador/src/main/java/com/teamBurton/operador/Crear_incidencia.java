@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Crear_incidencia {
+public class Crear_incidencia extends Crear_incidencia_ventana {
 	/*private Label _seccion;
 	private Label _tituloIncidencia;
 	private Label _tituloTipoIncidencia;
