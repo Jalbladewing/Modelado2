@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Factura2 {
+public class Factura2 extends Factura2_ventana {
 	/*private Label _seccion;
 	private Label _tituloFactura;
 	private Label _tituloFecha;
