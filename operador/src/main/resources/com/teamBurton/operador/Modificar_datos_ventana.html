@@ -6,28 +6,24 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout size-full> 
-   <vaadin-vertical-layout width="370px" height="112px" :middle :center> 
+  <vaadin-vertical-layout size-auto> 
+   <vaadin-label size-auto plain-text>
+     Modificación 
+   </vaadin-label> 
+   <vaadin-horizontal-layout spacing height="88px" margin-bottom> 
     <vaadin-label size-auto plain-text>
-      Modificación 
+      Label 
     </vaadin-label> 
-    <vaadin-vertical-layout width="378px"> 
-     <vaadin-horizontal-layout spacing height="88px" margin-bottom> 
-      <vaadin-label size-auto plain-text>
-        Label 
-      </vaadin-label> 
-      <vaadin-text-field :right></vaadin-text-field> 
-     </vaadin-horizontal-layout> 
-     <vaadin-horizontal-layout width="353px"> 
-      <vaadin-button height="27px" plain-text :center>
-        Cancelar 
-      </vaadin-button> 
-      <vaadin-button height="27px" plain-text>
-        Guardar 
-      </vaadin-button> 
-     </vaadin-horizontal-layout> 
-    </vaadin-vertical-layout> 
-   </vaadin-vertical-layout> 
+    <vaadin-text-field :right></vaadin-text-field> 
+   </vaadin-horizontal-layout> 
+   <vaadin-horizontal-layout width="353px"> 
+    <vaadin-button height="27px" plain-text :center>
+      Cancelar 
+    </vaadin-button> 
+    <vaadin-button height="27px" plain-text>
+      Guardar 
+    </vaadin-button> 
+   </vaadin-horizontal-layout> 
   </vaadin-vertical-layout>  
  </body>
 </html>

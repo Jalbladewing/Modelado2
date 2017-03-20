@@ -6,16 +6,17 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-absolute-layout> 
+  <vaadin-vertical-layout width="1321px"> 
    <vaadin-label style-name="huge" size-auto plain-text _id="seccion">
      Perfil 
    </vaadin-label> 
-   <vaadin-label size-auto plain-text :top="100px" :left="313px">
-     Perfil 
-   </vaadin-label> 
-   <vaadin-vertical-layout width="151px" height="191px" :top="125px" :left="261px"> 
-    <vaadin-vertical-split-panel width="150px" height="191px"></vaadin-vertical-split-panel> 
+   <vaadin-vertical-layout size-auto :center> 
+    <vaadin-label size-auto plain-text :center>
+      Perfil 
+    </vaadin-label> 
+    <vaadin-vertical-split-panel width="150px" height="191px" :center></vaadin-vertical-split-panel> 
+    <vaadin-vertical-layout size-auto></vaadin-vertical-layout> 
    </vaadin-vertical-layout> 
-  </vaadin-absolute-layout>  
+  </vaadin-vertical-layout>  
  </body>
 </html>

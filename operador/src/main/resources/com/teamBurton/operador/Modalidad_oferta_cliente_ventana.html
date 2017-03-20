@@ -6,8 +6,11 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-absolute-layout> 
-   <vaadin-vertical-layout size-auto :top="181px" :left="156px"> 
+  <vaadin-vertical-layout size-auto> 
+   <vaadin-label style-name="h1" size-auto plain-text>
+     Teléfono Fijo + Internet 
+   </vaadin-label> 
+   <vaadin-vertical-layout size-auto> 
     <vaadin-label size-auto plain-text :center>
       Teléfono Fijo + Internet 
     </vaadin-label> 
@@ -18,20 +21,17 @@
         Fecha contratación 
       </vaadin-label> 
       <vaadin-label size-auto plain-text :center>
-        Label 
+        0/0/0000 
       </vaadin-label> 
      </vaadin-vertical-layout> 
      <vaadin-label size-auto plain-text :right>
        Precio 
      </vaadin-label> 
     </vaadin-horizontal-layout> 
-    <vaadin-button width="600px" height="59px" plain-text :bottom :right>
+    <vaadin-button width="120px" height="25px" plain-text :bottom :center>
       Dar de baja 
     </vaadin-button> 
    </vaadin-vertical-layout> 
-   <vaadin-label style-name="h1" size-auto plain-text :top="-29px" :left="7px">
-     Teléfono Fijo + Internet 
-   </vaadin-label> 
-  </vaadin-absolute-layout>  
+  </vaadin-vertical-layout>  
  </body>
 </html>
