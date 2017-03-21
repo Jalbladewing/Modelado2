@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Gestion_usuarios_comercial {
+public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_ventana {
 	/*private Button _buscarB;
 	private TextField _buscarT;
 	private Button _altaUsuario;

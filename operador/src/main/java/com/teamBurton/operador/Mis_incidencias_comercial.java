@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Mis_incidencias_comercial {
+public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana {
 	/*private Button _buscar_B;
 	private TextField _buscarL;
 	private Label _seccion;*/
