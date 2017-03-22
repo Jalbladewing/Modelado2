@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Alta_usuario {
+public class Alta_usuario extends Alta_usuario_ventana {
 	/*private Label _seccion;
 	private Label _tituloAltaUsuario;
 	private Label _tituloNombre;
