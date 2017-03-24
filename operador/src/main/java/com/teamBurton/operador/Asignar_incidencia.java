@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Asignar_incidencia {
+public class Asignar_incidencia extends Asignar_incidencia_ventana {
 	/*private Button _buscarB;
 	private TextField _buscarT;
 	private Label _seccion;s*/

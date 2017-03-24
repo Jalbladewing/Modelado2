@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Cambiar_modalidad_destacada {
+public class Cambiar_modalidad_destacada extends Cambiar_modalidad_destacada_ventana {
 	/*private Button _buscarB;
 	private TextField _buscarT;
 	private Label _seccion;

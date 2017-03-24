@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Modalidad_ofertas_administrador {
+public class Modalidad_ofertas_administrador extends Modalidad_ofertas_administrador_ventana {
 	/*private Label _nombre;
 	private Label _precio;
 	private CheckBox _visibilidad;
