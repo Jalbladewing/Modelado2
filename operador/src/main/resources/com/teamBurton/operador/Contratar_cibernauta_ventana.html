@@ -6,22 +6,24 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout spacing width="478px"> 
+  <vaadin-vertical-layout spacing width="38%"> 
    <vaadin-label size-auto plain-text>
      Contratar 
    </vaadin-label> 
-   <vaadin-text-area wordwrap="false" width="367px" height="67px" :center></vaadin-text-area> 
-   <vaadin-horizontal-layout spacing height="41px" :center> 
-    <vaadin-label width="72px" plain-text>
+   <vaadin-label width="70%" plain-text :center>
+     Si desea contratar xxxx por favor introduzca su número a continuación y le llamaremos para pedir sus datos. 
+   </vaadin-label> 
+   <vaadin-horizontal-layout spacing height-full :center> 
+    <vaadin-label size-auto plain-text>
       Teléfono 
     </vaadin-label> 
-    <vaadin-text-field width="273px" height="25px"></vaadin-text-field> 
+    <vaadin-text-field width-full height="25px"></vaadin-text-field> 
    </vaadin-horizontal-layout> 
-   <vaadin-horizontal-layout width="438px" :center> 
-    <vaadin-button height="27px" plain-text :center>
+   <vaadin-horizontal-layout width="90%" :center> 
+    <vaadin-button height-full plain-text :center>
       Cancelar 
     </vaadin-button> 
-    <vaadin-button height="27px" plain-text>
+    <vaadin-button height="27px" plain-text :center>
       Confirmar 
     </vaadin-button> 
    </vaadin-horizontal-layout> 

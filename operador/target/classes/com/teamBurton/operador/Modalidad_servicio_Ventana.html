@@ -1,24 +1,24 @@
+<!doctype html>
 <html>
  <head>
   <meta charset="UTF-8">
   <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
   <meta name="vaadin-version" content="7.7.0">
- </head>
- <body>
- <vaadin-absolute-layout width="250px" height="350px"> 
-        <vaadin-image width="250px" height="350px"></vaadin-image> 
-        <vaadin-label style-name="h2" size-auto plain-text :top="10px" :left="51px">
-          Modalidad 1 
-        </vaadin-label> 
-        <vaadin-label size-auto plain-text :top="112px" :left="31px">
-          Características 
-        </vaadin-label> 
-        <vaadin-label size-auto plain-text :top="264px" :left="181px">
-          Precio 
-        </vaadin-label> 
-        <vaadin-button icon="fonticon://FontAwesome/f07a" width="250px" height="55px" plain-text :top="294px" :left="0px">
-          Contratar 
-        </vaadin-button> 
-       </vaadin-absolute-layout> 
+ </head> 
+ <body> 
+  <vaadin-vertical-layout spacing width="324px" height="400px" margin> 
+   <vaadin-label style-name="h2" size-auto plain-text :center>
+     Modalidad 1 
+   </vaadin-label> 
+   <vaadin-label size-auto plain-text>
+     Características 
+   </vaadin-label> 
+   <vaadin-label size-auto plain-text :bottom :right>
+     Precio 
+   </vaadin-label> 
+   <vaadin-button icon="fonticon://FontAwesome/f07a" width="250px" height="55px" plain-text :bottom :center>
+     Contratar 
+   </vaadin-button> 
+  </vaadin-vertical-layout>  
  </body>
 </html>

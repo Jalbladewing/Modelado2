@@ -6,29 +6,57 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-absolute-layout width="250px" height="350px"> 
-   <vaadin-image width="250px" height="350px"></vaadin-image> 
-   <vaadin-label style-name="h2" size-auto plain-text :top="10px" :left="51px">
+  <vaadin-vertical-layout spacing width="324px" height="400px" margin> 
+   <vaadin-label style-name="h2" size-auto plain-text :center>
      Deportes 
    </vaadin-label> 
-   <vaadin-label size-auto plain-text :top="112px" :left="31px">
+   <vaadin-label size-auto plain-text>
      Características 
    </vaadin-label> 
-   <vaadin-label size-auto plain-text :top="264px" :left="181px">
-     Precio 
-   </vaadin-label> 
-   <vaadin-button icon="fonticon://FontAwesome/f07a" width="250px" height="55px" plain-text :top="294px" :left="0px">
-     Contratar 
-   </vaadin-button> 
-   <vaadin-label style-name="bold" size-auto plain-text :top="153px" :left="31px">
+   <vaadin-label style-name="bold" size-auto plain-text>
      Lista de canales 
    </vaadin-label> 
-   <vaadin-button style-name="link" plain-text :top="178px" :left="16px">
-     Canal 23 
+   <vaadin-grid-layout width="100px" height="30px"> 
+    <row> 
+     <column> 
+      <vaadin-button style-name="link" plain-text>
+        Canal 23 
+      </vaadin-button> 
+     </column> 
+     <column> 
+      <vaadin-button style-name="link" plain-text>
+        Canal 57 
+      </vaadin-button> 
+     </column> 
+    </row> 
+    <row> 
+     <column> 
+      <vaadin-button style-name="link" plain-text>
+        Canal 57 
+      </vaadin-button> 
+     </column> 
+     <column> 
+      <vaadin-button style-name="link" plain-text>
+        Canal 57 
+      </vaadin-button> 
+     </column> 
+    </row> 
+    <row> 
+     <column> 
+      <vaadin-button style-name="link" plain-text>
+        Canal 57 
+      </vaadin-button> 
+     </column> 
+    </row> 
+    <row></row> 
+    <row></row> 
+   </vaadin-grid-layout> 
+   <vaadin-label size-auto plain-text :bottom :right>
+     Precio 
+   </vaadin-label> 
+   <vaadin-button icon="fonticon://FontAwesome/f07a" width="250px" height="55px" plain-text :bottom :center>
+     Contratar 
    </vaadin-button> 
-   <vaadin-button style-name="link" plain-text :top="215px" :left="16px">
-     Canal 57 
-   </vaadin-button> 
-  </vaadin-absolute-layout>  
+  </vaadin-vertical-layout>  
  </body>
 </html>

@@ -10,21 +10,20 @@
    <vaadin-label style-name="huge" size-auto plain-text>
      Canal # 
    </vaadin-label> 
-   <vaadin-absolute-layout width="250px" height="350px"> 
-    <vaadin-image width="250px" height="350px"></vaadin-image> 
-    <vaadin-label style-name="h2" size-auto plain-text :top="10px" :left="51px">
+   <vaadin-vertical-layout spacing width="324px" height="400px" margin> 
+    <vaadin-label style-name="h2" size-auto plain-text :center>
       Canal # 
     </vaadin-label> 
-    <vaadin-label size-auto plain-text :top="112px" :left="31px">
+    <vaadin-label size-auto plain-text>
       Características 
     </vaadin-label> 
-    <vaadin-label size-auto plain-text :top="264px" :left="181px">
+    <vaadin-label size-auto plain-text :bottom :right>
       Precio 
     </vaadin-label> 
-    <vaadin-button icon="fonticon://FontAwesome/f07a" width="250px" height="55px" plain-text :top="294px" :left="0px">
-          Contratar 
-        </vaadin-button> 
-   </vaadin-absolute-layout> 
+    <vaadin-button icon="fonticon://FontAwesome/f07a" width="250px" height="55px" plain-text :bottom :center>
+      Contratar 
+    </vaadin-button> 
+   </vaadin-vertical-layout> 
   </vaadin-vertical-layout>  
  </body>
 </html>
