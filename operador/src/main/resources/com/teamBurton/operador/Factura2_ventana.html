@@ -2,19 +2,19 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout spacing width="1442px" margin> 
+  <vaadin-vertical-layout spacing height="30%" margin> 
    <vaadin-label style-name="huge" size-auto plain-text>
      Concepto Factura 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing size-auto margin :center> 
+   <vaadin-vertical-layout spacing width="80%" margin :center> 
     <vaadin-label style-name="bold" size-auto plain-text>
       Concepto Factura 
     </vaadin-label> 
-    <vaadin-horizontal-layout spacing> 
+    <vaadin-horizontal-layout spacing width-full> 
      <vaadin-vertical-layout size-auto> 
       <vaadin-label style-name="bold" size-auto plain-text>
         Fecha 
@@ -64,7 +64,7 @@
        Direccion Ejemplo 
      </vaadin-label> 
     </vaadin-vertical-layout> 
-    <vaadin-table selectable width="1300px" height="500px"> 
+    <vaadin-table selectable width-full> 
      <table> 
       <colgroup> 
        <col property-id="Project"> 
@@ -118,11 +118,9 @@
        0€ 
      </vaadin-label> 
     </vaadin-horizontal-layout> 
-    <vaadin-horizontal-layout spacing :center> 
-     <vaadin-button plain-text>
-       Imprimir 
-     </vaadin-button> 
-    </vaadin-horizontal-layout> 
+    <vaadin-button plain-text :center>
+      Imprimir 
+    </vaadin-button> 
    </vaadin-vertical-layout> 
   </vaadin-vertical-layout>  
  </body>
