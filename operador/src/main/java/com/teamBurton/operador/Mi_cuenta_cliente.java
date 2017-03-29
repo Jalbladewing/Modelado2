@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Mi_cuenta_cliente {
+public class Mi_cuenta_cliente extends Mi_cuenta_cliente_ventana {
 	/*private Label _perfil;
 	private Label _misServicios;
 	private Label _misFacturas;

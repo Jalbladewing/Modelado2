@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Modalidad_individual_generico {
+public class Modalidad_individual_generico extends Modalidad_individual_generico_ventana{
 	/*private Label _nombre;
 	private TextArea _caracteristicas;
 	private Label _precio;*/

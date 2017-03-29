@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Acceder {
+public class Acceder extends Acceder_ventana{
 	/*private Label _seccion;
 	private Label _acceso;
 	private Label _usuarioL;

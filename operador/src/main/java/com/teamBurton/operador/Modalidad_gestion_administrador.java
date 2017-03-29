@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Modalidad_gestion_administrador {
+public class Modalidad_gestion_administrador extends Modalidad_gestion_administrador_ventana{
 	/*private Label _seccion;
 	private Label _titulo;
 	private ComboBox _tipoServicio;

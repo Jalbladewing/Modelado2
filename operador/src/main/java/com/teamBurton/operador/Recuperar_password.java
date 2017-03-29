@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Recuperar_password {
+public class Recuperar_password extends Recuperar_password_ventana{
 	/*private Label _seccion;
 	private Label _recuperarPasswordL;
 	private TextField _recuperarPasswordT;

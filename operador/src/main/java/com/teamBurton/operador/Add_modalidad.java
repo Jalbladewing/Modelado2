@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Add_modalidad {
+public class Add_modalidad extends Add_modalidad_ventana {
 	/*private Button _buscarB;
 	private TextField _buscarT;
 	private Label _seccion;

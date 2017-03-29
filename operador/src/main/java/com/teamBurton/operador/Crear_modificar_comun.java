@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Crear_modificar_comun {
+public class Crear_modificar_comun extends Crear_modificar_comun_ventana{
 	/*private Button _eliminarModalidadLista;
 	private Button _addModalidadLista;
 	private List _modalidadesList;

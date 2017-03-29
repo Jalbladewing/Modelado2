@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Contratar_generico {
+public class Contratar_generico extends Contratar_generico_ventana {
 	public Paquete2 _unnamed_Paquete2_;
 	public Canal2 _unnamed_Canal2_;
 	public Television2 _unnamed_Television2_;

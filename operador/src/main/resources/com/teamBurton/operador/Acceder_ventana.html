@@ -2,42 +2,42 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
   <vaadin-vertical-layout height="60%" center=""> 
-   <vaadin-label style-name="huge" size-auto plain-text _id="seccion">
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionLabel">
      Acceso 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing width="40%" :middle :center> 
-    <vaadin-label style-name="h2" size-auto plain-text :center>
+   <vaadin-vertical-layout spacing width="40%" _id="vLayout" :middle :center> 
+    <vaadin-label style-name="h2" size-auto plain-text _id="accesoLabel" :center>
       Acceso 
     </vaadin-label> 
-    <vaadin-horizontal-layout spacing width="70%"> 
-     <vaadin-vertical-layout spacing width-auto height-full :middle :right> 
-      <vaadin-label size-auto plain-text :bottom :right>
+    <vaadin-horizontal-layout spacing width="70%" _id="hLayoutCampos"> 
+     <vaadin-vertical-layout spacing width-auto height-full _id="vLayoutLabels" :middle :right> 
+      <vaadin-label size-auto plain-text _id="usuarioLabel" :bottom :right>
         Usuario 
       </vaadin-label> 
-      <vaadin-label size-auto plain-text :bottom :right>
+      <vaadin-label size-auto plain-text _id="passwordLabel" :bottom :right>
         Contraseña 
       </vaadin-label> 
      </vaadin-vertical-layout> 
-     <vaadin-vertical-layout spacing size-auto :middle :center> 
-      <vaadin-text-field></vaadin-text-field> 
-      <vaadin-text-field></vaadin-text-field> 
+     <vaadin-vertical-layout spacing size-auto _id="vLayoutFields" :middle :center> 
+      <vaadin-text-field _id="usuarioField"></vaadin-text-field> 
+      <vaadin-text-field _id="passwordField"></vaadin-text-field> 
      </vaadin-vertical-layout> 
     </vaadin-horizontal-layout> 
-    <vaadin-horizontal-layout width="80%" :middle :center> 
-     <vaadin-check-box :right></vaadin-check-box> 
-     <vaadin-label size-auto plain-text>
+    <vaadin-horizontal-layout width="80%" _id="hLayoutFin" :middle :center> 
+     <vaadin-check-box _id="checkb" :right></vaadin-check-box> 
+     <vaadin-label size-auto plain-text _id="recuerdameLabel">
        Recuérdame 
      </vaadin-label> 
-     <vaadin-button height-full plain-text _id="iniciarSesion" :bottom :center>
+     <vaadin-button height-full plain-text _id="iniciarSesionButton" :bottom :center>
        Iniciar Sesión 
      </vaadin-button> 
     </vaadin-horizontal-layout> 
-    <vaadin-button style-name="link" plain-text :middle :center>
+    <vaadin-button style-name="link" plain-text _id="recuperarPassButton" :middle :center>
       Recuperar contraseña 
     </vaadin-button> 
    </vaadin-vertical-layout> 

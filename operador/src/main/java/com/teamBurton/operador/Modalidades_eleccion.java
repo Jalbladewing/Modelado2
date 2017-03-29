@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Modalidades_eleccion {
+public class Modalidades_eleccion extends Modalidades_eleccion_ventana {
 	/*private Object _buscarB_Button;
 	private TextField _buscarT;
 	private Label _seccion;

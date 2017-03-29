@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Crear_modalidad_administrador {
+public class Crear_modalidad_administrador extends Crear_modalidad_administrador_ventana {
 	/*private Label _seccion;
 	private Label _titulo;
 	private ComboBox _tipoServicio;

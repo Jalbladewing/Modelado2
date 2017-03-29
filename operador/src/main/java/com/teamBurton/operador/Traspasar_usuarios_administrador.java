@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Traspasar_usuarios_administrador {
+public class Traspasar_usuarios_administrador extends Traspasar_usuarios_administrador_ventana {
 	/*private Label _seccion;
 	private Button _cancelar;
 	private Button _elegirModalidad;

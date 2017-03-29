@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Modalidad_oferta_cliente {
+public class Modalidad_oferta_cliente extends Modalidad_oferta_cliente_ventana{
 	/*private Label _seccion;
 	private Label _nombre;
 	private Label _precio;

@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Perfil_cliente {
+public class Perfil_cliente extends Perfil_cliente_ventana{
 	/*private Label _seccion;
 	private Label _tituloPerfil;*/
 	public Mi_cuenta_cliente _unnamed_Mi_cuenta_cliente_;
