@@ -7,56 +7,56 @@
  </head> 
  <body> 
   <vaadin-vertical-layout spacing> 
-   <vaadin-label style-name="huge" size-auto plain-text _id="seccion">
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionLabel">
      Alta Usuario 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing size-auto margin :center> 
-    <vaadin-label style-name="bold" size-auto plain-text :center>
+   <vaadin-vertical-layout spacing size-auto margin _id="vLayout" :center> 
+    <vaadin-label style-name="bold" size-auto plain-text _id="altaLabel" :center>
       Alta Usuario 
     </vaadin-label> 
-    <vaadin-horizontal-layout spacing width-full> 
-     <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-horizontal-layout spacing width-full _id="hLayoutCampos1"> 
+     <vaadin-label style-name="bold" size-auto plain-text _id="nombreL">
        Nombre 
      </vaadin-label> 
-     <vaadin-text-field :right></vaadin-text-field> 
+     <vaadin-text-field _id="nombreF" :right></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-horizontal-layout spacing width-full> 
-     <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-horizontal-layout spacing width-full _id="hLayoutCampos2"> 
+     <vaadin-label style-name="bold" size-auto plain-text _id="apellidosL">
        Apellidos 
      </vaadin-label> 
-     <vaadin-text-field :right></vaadin-text-field> 
+     <vaadin-text-field _id="apellidosF" :right></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-horizontal-layout spacing width-full> 
-     <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-horizontal-layout spacing width-full _id="hLayoutCampos3"> 
+     <vaadin-label style-name="bold" size-auto plain-text _id="dniL">
        DNI/NIF/Pasaporte 
      </vaadin-label> 
-     <vaadin-text-field :right></vaadin-text-field> 
+     <vaadin-text-field _id="dniF" :right></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-image></vaadin-image> 
-    <vaadin-horizontal-layout spacing width-full> 
-     <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-image _id="separacionI1"></vaadin-image> 
+    <vaadin-horizontal-layout spacing width-full _id="hLayoutCampos4"> 
+     <vaadin-label style-name="bold" size-auto plain-text _id="direccionL">
        Dirección 
      </vaadin-label> 
-     <vaadin-text-field></vaadin-text-field> 
+     <vaadin-text-field _id="direccionF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-horizontal-layout spacing width-full> 
-     <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-horizontal-layout spacing width-full _id="hLayoutCampos5"> 
+     <vaadin-label style-name="bold" size-auto plain-text _id="telefonoL">
        Teléfono 
      </vaadin-label> 
-     <vaadin-text-field></vaadin-text-field> 
+     <vaadin-text-field _id="telefonoF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-image></vaadin-image> 
-    <vaadin-horizontal-layout spacing width-full> 
-     <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-image _id="separacionI2"></vaadin-image> 
+    <vaadin-horizontal-layout spacing width-full _id="hLayoutCampos6"> 
+     <vaadin-label style-name="bold" size-auto plain-text _id="emailL">
        E-mail 
      </vaadin-label> 
-     <vaadin-text-field></vaadin-text-field> 
+     <vaadin-text-field _id="emailF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-horizontal-layout spacing width-full margin :middle :center> 
-     <vaadin-button plain-text>
+    <vaadin-horizontal-layout spacing width-full margin _id="hLayoutCampos7" :middle :center> 
+     <vaadin-button plain-text _id="cancelarB">
        Cancelar 
      </vaadin-button> 
-     <vaadin-button plain-text>
+     <vaadin-button plain-text _id="confirmarB">
        Confirmar 
      </vaadin-button> 
     </vaadin-horizontal-layout> 
