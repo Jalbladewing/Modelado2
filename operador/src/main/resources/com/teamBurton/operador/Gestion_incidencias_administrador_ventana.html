@@ -6,20 +6,20 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout spacing width="1442px" margin> 
+   <vaadin-vertical-layout spacing margin> 
    <vaadin-label style-name="huge" size-auto plain-text>
-     Gestión de Incidencias 
+     Gestión de Incidencias
    </vaadin-label> 
-   <vaadin-vertical-layout spacing size-auto margin :center> 
+   <vaadin-vertical-layout spacing margin :center> 
     <vaadin-horizontal-layout spacing> 
      <vaadin-button plain-text>
        Buscar 
      </vaadin-button> 
      <vaadin-text-field></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-tab-sheet size-auto> 
+    <vaadin-tab-sheet> 
      <tab caption="Todas" selected> 
-      <vaadin-table selectable width="1300px" height="500px"> 
+      <vaadin-table selectable width-full> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -67,7 +67,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Tipo Llamada"> 
-      <vaadin-table selectable width="1300px" height="500px"> 
+     <vaadin-table selectable width-full> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -115,7 +115,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Asignadas"> 
-      <vaadin-table selectable width="1300px" height="500px"> 
+     <vaadin-table selectable width-full> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -163,7 +163,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Sin Asignar"> 
-      <vaadin-table selectable width="1300px" height="500px"> 
+      <vaadin-table selectable width-full> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -211,7 +211,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Resueltas"> 
-      <vaadin-table selectable width="1300px" height="500px"> 
+      <vaadin-table selectable width-full> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 

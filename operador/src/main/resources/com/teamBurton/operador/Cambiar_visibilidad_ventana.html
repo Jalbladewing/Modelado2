@@ -6,24 +6,20 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout spacing width="324px" height="400px" margin> 
-   <vaadin-label style-name="h2" size-auto plain-text :center>
-     Deportes 
-   </vaadin-label> 
+  <vaadin-vertical-layout spacing width="38%"> 
    <vaadin-label size-auto plain-text>
-     Características 
+     Visibilidad 
    </vaadin-label> 
-   <vaadin-label size-auto plain-text :bottom :right>
-     Precio 
+   <vaadin-label width="70%" plain-text :center>
+     ¿Seguro que desea mostrar/ocular la modalidad/oferta? 
    </vaadin-label> 
-   <vaadin-button icon="fonticon://FontAwesome/f07a" width="250px" height="55px" plain-text :bottom :center>
-     Contratar 
-   </vaadin-button> 
-   <vaadin-horizontal-layout spacing :center> 
-    <vaadin-button height="25px" plain-text>
-      Cambiar 
+   <vaadin-horizontal-layout width="90%" :center> 
+    <vaadin-button height-full plain-text :center>
+      Cancelar 
     </vaadin-button> 
-    <vaadin-check-box caption="Visible" :right></vaadin-check-box> 
+    <vaadin-button height="27px" plain-text :center>
+      Confirmar 
+    </vaadin-button> 
    </vaadin-horizontal-layout> 
   </vaadin-vertical-layout>  
  </body>

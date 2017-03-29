@@ -6,7 +6,7 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout width="1321px"> 
+  <vaadin-vertical-layout> 
    <vaadin-label style-name="huge" size-auto plain-text _id="seccion">
      Crear Modalidad 
    </vaadin-label> 
@@ -19,6 +19,7 @@
      <option>Option 2</option> 
      <option>Option 3</option> 
     </vaadin-combo-box> 
+    <vaadin-vertical-layout size-auto :center></vaadin-vertical-layout> 
     <vaadin-label size-auto plain-text>
       Nombre Modalidad 
     </vaadin-label> 
@@ -26,13 +27,13 @@
     <vaadin-label size-auto plain-text>
       Características 
     </vaadin-label> 
-    <vaadin-text-area wordwrap="false" width="250px" height="111px"></vaadin-text-area> 
+    <vaadin-text-area wordwrap="false" width-full></vaadin-text-area> 
     <vaadin-horizontal-layout spacing width-full> 
      <vaadin-vertical-layout size-auto> 
       <vaadin-label size-auto plain-text>
         Precio 
       </vaadin-label> 
-      <vaadin-text-field width="54px"></vaadin-text-field> 
+      <vaadin-text-field width="40%"></vaadin-text-field> 
      </vaadin-vertical-layout> 
      <vaadin-horizontal-layout :bottom> 
       <vaadin-check-box></vaadin-check-box> 
