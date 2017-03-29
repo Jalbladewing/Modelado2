@@ -7,18 +7,18 @@
  </head> 
  <body> 
   <vaadin-vertical-layout> 
-   <vaadin-label size-auto plain-text>
+   <vaadin-label size-auto plain-text _id="tituloL">
      Titulo Campo 
    </vaadin-label> 
-   <vaadin-horizontal-layout spacing width="411px"> 
-    <vaadin-label size-auto plain-text :bottom>
+   <vaadin-horizontal-layout spacing width="411px" _id="hLayout"> 
+    <vaadin-label size-auto plain-text _id="valorL" :bottom>
       Valor Campo 
     </vaadin-label> 
-    <vaadin-button plain-text :right>
+    <vaadin-button plain-text _id="modificarB" :right>
       Modificar 
     </vaadin-button> 
    </vaadin-horizontal-layout> 
-   <vaadin-image width-full height="14px"></vaadin-image> 
+   <vaadin-image width-full height="14px" _id="barraI"></vaadin-image> 
   </vaadin-vertical-layout>  
  </body>
 </html>

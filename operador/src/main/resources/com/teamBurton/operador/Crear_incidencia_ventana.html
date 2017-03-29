@@ -7,38 +7,38 @@
  </head> 
  <body> 
   <vaadin-vertical-layout spacing height="40%" margin> 
-   <vaadin-label style-name="huge" size-auto plain-text>
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Crear Incidencia 
    </vaadin-label> 
-   <vaadin-vertical-layout size-auto :middle :center> 
-    <vaadin-label style-name="bold" size-auto plain-text :center>
+   <vaadin-vertical-layout size-auto _id="vLayout" :middle :center> 
+    <vaadin-label style-name="bold" size-auto plain-text _id="incidenciaL" :center>
       Incidencia 
     </vaadin-label> 
-    <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-label style-name="bold" size-auto plain-text _id="tipoL">
       Tipo de Incidencia 
     </vaadin-label> 
-    <vaadin-combo-box width="221px"> 
+    <vaadin-combo-box width="221px" _id="tipoComboBx"> 
      <option>Option 1</option> 
      <option>Option 2</option> 
      <option>Option 3</option> 
     </vaadin-combo-box> 
-    <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-label style-name="bold" size-auto plain-text _id="correoL">
       Correo 
     </vaadin-label> 
-    <vaadin-text-field width="221px"></vaadin-text-field> 
-    <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-text-field width="221px" _id="correoF"></vaadin-text-field> 
+    <vaadin-label style-name="bold" size-auto plain-text _id="asuntoL">
       Asunto 
     </vaadin-label> 
-    <vaadin-text-field width="221px"></vaadin-text-field> 
-    <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-text-field width="221px" _id="asuntoF"></vaadin-text-field> 
+    <vaadin-label style-name="bold" size-auto plain-text _id="descripcionL">
       Descripción 
     </vaadin-label> 
-    <vaadin-text-area width="221px"></vaadin-text-area> 
-    <vaadin-horizontal-layout spacing> 
-     <vaadin-button plain-text>
+    <vaadin-text-area width="221px" _id="descripcionArea"></vaadin-text-area> 
+    <vaadin-horizontal-layout spacing _id="hLayout"> 
+     <vaadin-button plain-text _id="cancelarB">
        Cancelar 
      </vaadin-button> 
-     <vaadin-button plain-text :right>
+     <vaadin-button plain-text _id="confirmarB" :right>
        Confirmar 
      </vaadin-button> 
     </vaadin-horizontal-layout> 

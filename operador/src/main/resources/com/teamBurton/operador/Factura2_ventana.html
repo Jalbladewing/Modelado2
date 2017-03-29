@@ -7,64 +7,64 @@
  </head> 
  <body> 
   <vaadin-vertical-layout spacing height="30%" margin> 
-   <vaadin-label style-name="huge" size-auto plain-text>
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Concepto Factura 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing width="80%" margin :center> 
-    <vaadin-label style-name="bold" size-auto plain-text>
+   <vaadin-vertical-layout spacing width="80%" margin _id="vLayout" :center> 
+    <vaadin-label style-name="bold" size-auto plain-text _id="tituloL">
       Concepto Factura 
     </vaadin-label> 
-    <vaadin-horizontal-layout spacing width-full> 
-     <vaadin-vertical-layout size-auto> 
-      <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-horizontal-layout spacing width-full _id="hLayoutEncabezado"> 
+     <vaadin-vertical-layout size-auto _id="vLayoutCampos1"> 
+      <vaadin-label style-name="bold" size-auto plain-text _id="fechaTituloL">
         Fecha 
       </vaadin-label> 
-      <vaadin-label size-auto plain-text>
+      <vaadin-label size-auto plain-text _id="fechaValorL">
         Fecha Ejemplo 
       </vaadin-label> 
      </vaadin-vertical-layout> 
-     <vaadin-vertical-layout size-auto> 
-      <vaadin-label style-name="bold" size-auto plain-text>
+     <vaadin-vertical-layout size-auto _id="vLayoutCampos2"> 
+      <vaadin-label style-name="bold" size-auto plain-text _id="nombreTituloL">
         Nombre 
       </vaadin-label> 
-      <vaadin-label size-auto plain-text>
+      <vaadin-label size-auto plain-text _id="nombreValorL">
         Nombre Ejemplo 
       </vaadin-label> 
      </vaadin-vertical-layout> 
-     <vaadin-vertical-layout size-auto> 
-      <vaadin-label style-name="bold" size-auto plain-text>
+     <vaadin-vertical-layout size-auto _id="vLayoutCampos3"> 
+      <vaadin-label style-name="bold" size-auto plain-text _id="apellidosTituloL">
         Apellidos 
       </vaadin-label> 
-      <vaadin-label size-auto plain-text>
+      <vaadin-label size-auto plain-text _id="apellidosValorL">
         Apellidos Ejemplo 
       </vaadin-label> 
      </vaadin-vertical-layout> 
-     <vaadin-vertical-layout size-auto> 
-      <vaadin-label style-name="bold" size-auto plain-text>
+     <vaadin-vertical-layout size-auto _id="vLayoutCampos4"> 
+      <vaadin-label style-name="bold" size-auto plain-text _id="dniTituloL">
         DNI/NIF/Pasaporte 
       </vaadin-label> 
-      <vaadin-label size-auto plain-text>
+      <vaadin-label size-auto plain-text _id="dniValorL">
         DNI Ejemplo 
       </vaadin-label> 
      </vaadin-vertical-layout> 
-     <vaadin-vertical-layout size-auto> 
-      <vaadin-label style-name="bold" size-auto plain-text>
+     <vaadin-vertical-layout size-auto _id="vLayoutCampos5"> 
+      <vaadin-label style-name="bold" size-auto plain-text _id="telefonoTituloL">
         Teléfono 
       </vaadin-label> 
-      <vaadin-label size-auto plain-text>
+      <vaadin-label size-auto plain-text _id="telefonoValorL">
         Teléfono Ejemplo 
       </vaadin-label> 
      </vaadin-vertical-layout> 
     </vaadin-horizontal-layout> 
-    <vaadin-vertical-layout size-auto> 
-     <vaadin-label style-name="bold" size-auto plain-text>
+    <vaadin-vertical-layout size-auto _id="vLayoutCampos6"> 
+     <vaadin-label style-name="bold" size-auto plain-text _id="direccionTituloL">
        Dirección 
      </vaadin-label> 
-     <vaadin-label size-auto plain-text>
+     <vaadin-label size-auto plain-text _id="direccionValorL">
        Direccion Ejemplo 
      </vaadin-label> 
     </vaadin-vertical-layout> 
-    <vaadin-table selectable width-full> 
+    <vaadin-table selectable width-full _id="modalidadesTabla"> 
      <table> 
       <colgroup> 
        <col property-id="Project"> 
@@ -110,15 +110,15 @@
       </tbody> 
      </table> 
     </vaadin-table> 
-    <vaadin-horizontal-layout :right> 
-     <vaadin-label size-auto plain-text>
+    <vaadin-horizontal-layout _id="hLayoutTotal" :right> 
+     <vaadin-label size-auto plain-text _id="totalTituloL">
        Total: 
      </vaadin-label> 
-     <vaadin-label size-auto plain-text>
+     <vaadin-label size-auto plain-text _id="totalValorL">
        0€ 
      </vaadin-label> 
     </vaadin-horizontal-layout> 
-    <vaadin-button plain-text :center>
+    <vaadin-button plain-text _id="imprimirB" :center>
       Imprimir 
     </vaadin-button> 
    </vaadin-vertical-layout> 

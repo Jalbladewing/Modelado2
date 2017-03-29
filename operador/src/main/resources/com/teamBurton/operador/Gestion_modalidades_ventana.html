@@ -6,18 +6,18 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-<vaadin-vertical-layout spacing margin> 
-   <vaadin-label style-name="huge" size-auto plain-text>
-     Gestión de Modalidades
+  <vaadin-vertical-layout spacing margin> 
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
+     Gestión de Modalidades 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing margin :center> 
-    <vaadin-horizontal-layout spacing> 
-     <vaadin-button plain-text>
+   <vaadin-vertical-layout spacing margin _id="vLayout" :center> 
+    <vaadin-horizontal-layout spacing _id="hLayoutBuscar"> 
+     <vaadin-button plain-text _id="buscarL">
        Buscar 
      </vaadin-button> 
-     <vaadin-text-field></vaadin-text-field> 
+     <vaadin-text-field _id="buscarF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-table selectable width-full> 
+    <vaadin-table selectable width-full _id="modalidadesTabla"> 
      <table> 
       <colgroup> 
        <col property-id="Project"> 
@@ -63,11 +63,9 @@
       </tbody> 
      </table> 
     </vaadin-table> 
-    <vaadin-horizontal-layout spacing :center> 
-     <vaadin-button plain-text>
-       Crear Modalidad
-     </vaadin-button> 
-    </vaadin-horizontal-layout> 
+    <vaadin-button plain-text _id="crearB" :center>
+      Crear Modalidad 
+    </vaadin-button> 
    </vaadin-vertical-layout> 
   </vaadin-vertical-layout>  
  </body>

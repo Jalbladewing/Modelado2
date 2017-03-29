@@ -7,17 +7,17 @@
  </head> 
  <body> 
   <vaadin-vertical-layout spacing width="38%"> 
-   <vaadin-label size-auto plain-text>
+   <vaadin-label size-auto plain-text _id="seccionL">
      Asignar Incidencia 
    </vaadin-label> 
-   <vaadin-label width="70%" plain-text :center>
+   <vaadin-label width="70%" plain-text _id="mensajeL" :center>
      ¿Seguro que desea asignar la incidencia x a x? 
    </vaadin-label> 
-   <vaadin-horizontal-layout width="90%" :center> 
-    <vaadin-button height-full plain-text :center>
+   <vaadin-horizontal-layout spacing width="90%" _id="hLayout" :center> 
+    <vaadin-button height-full plain-text _id="cancelarB" :center>
       Cancelar 
     </vaadin-button> 
-    <vaadin-button height="27px" plain-text :center>
+    <vaadin-button height="27px" plain-text _id="confirmarB" :center>
       Confirmar 
     </vaadin-button> 
    </vaadin-horizontal-layout> 

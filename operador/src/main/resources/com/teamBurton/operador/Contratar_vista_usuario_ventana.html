@@ -1,22 +1,23 @@
+<!doctype html>
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
   <meta name="vaadin-version" content="7.7.0">
- </head>
- <body>
-  <vaadin-vertical-layout> 
-   <vaadin-label size-auto plain-text>
+ </head> 
+ <body> 
+  <vaadin-vertical-layout spacing> 
+   <vaadin-label size-auto plain-text _id="tituloL">
      Contratar 
    </vaadin-label> 
-   <vaadin-horizontal-layout height="88px" margin-bottom> 
-    <vaadin-text-area wordwrap="false" width="367px" height="67px" :center></vaadin-text-area> 
-   </vaadin-horizontal-layout> 
-   <vaadin-horizontal-layout width="438px"> 
-    <vaadin-button height="27px" plain-text :center>
+   <vaadin-label width="70%" plain-text _id="mensajeL">
+     ¿Seguro que desea ....? 
+   </vaadin-label> 
+   <vaadin-horizontal-layout spacing _id="hLayout"> 
+    <vaadin-button height="27px" plain-text _id="cancelarB" :center>
       Cancelar 
     </vaadin-button> 
-    <vaadin-button height="27px" plain-text>
+    <vaadin-button height="27px" plain-text _id="confirmarB">
       Confirmar 
     </vaadin-button> 
    </vaadin-horizontal-layout> 

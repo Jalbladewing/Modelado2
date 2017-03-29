@@ -2,24 +2,24 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-   <vaadin-vertical-layout spacing margin> 
-   <vaadin-label style-name="huge" size-auto plain-text>
-     Gestión de Incidencias
+  <vaadin-vertical-layout spacing margin> 
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
+     Gestión de Incidencias 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing margin :center> 
-    <vaadin-horizontal-layout spacing> 
-     <vaadin-button plain-text>
+   <vaadin-vertical-layout spacing margin _id="vLayout" :center> 
+    <vaadin-horizontal-layout spacing _id="hLayoutBuscar"> 
+     <vaadin-button plain-text _id="buscarL">
        Buscar 
      </vaadin-button> 
-     <vaadin-text-field></vaadin-text-field> 
+     <vaadin-text-field _id="buscarF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-tab-sheet> 
+    <vaadin-tab-sheet _id="tabsTabSheet"> 
      <tab caption="Todas" selected> 
-      <vaadin-table selectable width-full> 
+      <vaadin-table selectable width-full _id="todasTabla"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -67,7 +67,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Tipo Llamada"> 
-     <vaadin-table selectable width-full> 
+      <vaadin-table selectable width-full _id="llamadaTabla"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -115,7 +115,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Asignadas"> 
-     <vaadin-table selectable width-full> 
+      <vaadin-table selectable width-full _id="asignadasTabla"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -163,7 +163,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Sin Asignar"> 
-      <vaadin-table selectable width-full> 
+      <vaadin-table selectable width-full _id="sinAsignarTabla"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -211,7 +211,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Resueltas"> 
-      <vaadin-table selectable width-full> 
+      <vaadin-table selectable width-full _id="resueltasTabla"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -259,11 +259,9 @@
       </vaadin-table> 
      </tab> 
     </vaadin-tab-sheet> 
-    <vaadin-horizontal-layout spacing :center> 
-     <vaadin-button plain-text>
-       Asignar Incidencia 
-     </vaadin-button> 
-    </vaadin-horizontal-layout> 
+    <vaadin-button plain-text _id="asignarB" :center>
+      Asignar Incidencia 
+    </vaadin-button> 
    </vaadin-vertical-layout> 
   </vaadin-vertical-layout>  
  </body>

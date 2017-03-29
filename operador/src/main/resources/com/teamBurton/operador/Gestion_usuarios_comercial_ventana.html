@@ -7,17 +7,17 @@
  </head> 
  <body> 
   <vaadin-vertical-layout spacing margin> 
-   <vaadin-label style-name="huge" size-auto plain-text>
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Gestión de Usuario 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing margin :center> 
-    <vaadin-horizontal-layout spacing> 
-     <vaadin-button plain-text>
+   <vaadin-vertical-layout spacing margin _id="vLayout" :center> 
+    <vaadin-horizontal-layout spacing _id="hLayoutBuscar"> 
+     <vaadin-button plain-text _id="buscarB">
        Buscar 
      </vaadin-button> 
-     <vaadin-text-field></vaadin-text-field> 
+     <vaadin-text-field _id="buscarF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-table selectable width-full> 
+    <vaadin-table selectable width-full _id="usuariosTabla"> 
      <table> 
       <colgroup> 
        <col property-id="Project"> 
@@ -63,7 +63,7 @@
       </tbody> 
      </table> 
     </vaadin-table> 
-    <vaadin-button plain-text :center>
+    <vaadin-button plain-text _id="altaB" :center>
       Alta Usuario 
     </vaadin-button> 
    </vaadin-vertical-layout> 

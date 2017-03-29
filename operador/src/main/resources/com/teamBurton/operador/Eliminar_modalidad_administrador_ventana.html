@@ -7,21 +7,23 @@
  </head> 
  <body> 
   <vaadin-vertical-layout spacing> 
-   <vaadin-label size-auto plain-text>
+   <vaadin-label size-auto plain-text _id="tituloL">
      Eliminar 
    </vaadin-label> 
-   <vaadin-text-area wordwrap="false" width="463px" height="116px" :center></vaadin-text-area> 
-   <vaadin-horizontal-layout spacing height="41px" :center> 
-    <vaadin-label width="42px" plain-text>
+   <vaadin-label width="70%" plain-text _id="mensajeL">
+     ¿Seguro que desea desconectar? 
+   </vaadin-label> 
+   <vaadin-horizontal-layout spacing height="41px" _id="hLayoutDias" :center> 
+    <vaadin-label width="42px" plain-text _id="diasL">
       Días 
     </vaadin-label> 
-    <vaadin-text-field width="56px" height="25px"></vaadin-text-field> 
+    <vaadin-text-field width="56px" height="25px" _id="diasF"></vaadin-text-field> 
    </vaadin-horizontal-layout> 
-   <vaadin-horizontal-layout width="588px" :center> 
-    <vaadin-button height="27px" plain-text :center>
+   <vaadin-horizontal-layout width="588px" _id="hLayoutBotones" :center> 
+    <vaadin-button height="27px" plain-text _id="cancelarB" :center>
       Cancelar 
     </vaadin-button> 
-    <vaadin-button height="27px" plain-text :center>
+    <vaadin-button height="27px" plain-text _id="confirmarB" :center>
       Confirmar 
     </vaadin-button> 
    </vaadin-horizontal-layout> 

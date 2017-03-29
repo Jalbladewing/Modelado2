@@ -7,46 +7,45 @@
  </head> 
  <body> 
   <vaadin-vertical-layout> 
-   <vaadin-label style-name="huge" size-auto plain-text _id="seccion">
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Crear Modalidad 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing size-auto margin :center> 
-    <vaadin-label style-name="bold" size-auto plain-text :center>
+   <vaadin-vertical-layout spacing size-auto margin _id="vLayout" :center> 
+    <vaadin-label style-name="bold" size-auto plain-text _id="crearL" :center>
       Crear Modalidad 
     </vaadin-label> 
-    <vaadin-combo-box :center> 
+    <vaadin-combo-box _id="tipoComboBx" :center> 
      <option>Option 1</option> 
      <option>Option 2</option> 
      <option>Option 3</option> 
     </vaadin-combo-box> 
-    <vaadin-vertical-layout size-auto :center></vaadin-vertical-layout> 
-    <vaadin-label size-auto plain-text>
+    <vaadin-label size-auto plain-text _id="nombreL">
       Nombre Modalidad 
     </vaadin-label> 
-    <vaadin-text-field></vaadin-text-field> 
-    <vaadin-label size-auto plain-text>
+    <vaadin-text-field _id="nombreF"></vaadin-text-field> 
+    <vaadin-label size-auto plain-text _id="caracteristicasL">
       Características 
     </vaadin-label> 
-    <vaadin-text-area wordwrap="false" width-full></vaadin-text-area> 
-    <vaadin-horizontal-layout spacing width-full> 
-     <vaadin-vertical-layout size-auto> 
-      <vaadin-label size-auto plain-text>
+    <vaadin-text-area wordwrap="false" width-full _id="caracteristicasArea"></vaadin-text-area> 
+    <vaadin-horizontal-layout spacing width-full _id="hLayout"> 
+     <vaadin-vertical-layout size-auto _id="vLayoutPrecio"> 
+      <vaadin-label size-auto plain-text _id="precioL">
         Precio 
       </vaadin-label> 
-      <vaadin-text-field width="40%"></vaadin-text-field> 
+      <vaadin-text-field width="40%" _id="precioF"></vaadin-text-field> 
      </vaadin-vertical-layout> 
-     <vaadin-horizontal-layout :bottom> 
-      <vaadin-check-box></vaadin-check-box> 
-      <vaadin-label size-auto plain-text>
+     <vaadin-horizontal-layout _id="hLayoutVisibilidad" :bottom> 
+      <vaadin-check-box _id="checkBx"></vaadin-check-box> 
+      <vaadin-label size-auto plain-text _id="visibleL">
         Visible 
       </vaadin-label> 
      </vaadin-horizontal-layout> 
     </vaadin-horizontal-layout> 
-    <vaadin-horizontal-layout spacing width-full margin :middle :center> 
-     <vaadin-button plain-text>
+    <vaadin-horizontal-layout spacing width-full margin _id="hLayoutBotones" :middle :center> 
+     <vaadin-button plain-text _id="cancelarB">
        Cancelar 
      </vaadin-button> 
-     <vaadin-button plain-text>
+     <vaadin-button plain-text _id="confirmarB">
        Confirmar 
      </vaadin-button> 
     </vaadin-horizontal-layout> 
