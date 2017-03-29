@@ -2,7 +2,7 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Paquete2 extends Modalidad_individual_generico {
+public class Paquete2 extends Paquete2_ventana {
 	/*private Label _listaCanalLabel;
 	private Button _contratar;
 	private List<Button> _canalesL;*/
