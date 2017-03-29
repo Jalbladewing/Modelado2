@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Contratar_cibernauta extends Contratar_generico {
+public class Contratar_cibernauta extends Contratar_cibernauta_ventana {
 	/*private TextArea _mensaje;
 	private Label _teledonoL;
 	private TextField _telefonoT;

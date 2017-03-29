@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Eliminar_modalidad_administrador extends Desconectar_cliente {
+public class Eliminar_modalidad_administrador extends Eliminar_modalidad_administrador_ventana {
 	/*private Label _diasTitulo;
 	private TextArea _diasValor;*/
 	public Modalidad_individual_modificacion _unnamed_Modalidad_individual_modificacion_;

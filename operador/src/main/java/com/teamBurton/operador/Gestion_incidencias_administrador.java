@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Gestion_incidencias_administrador extends Mis_incidencias_comercial {
+public class Gestion_incidencias_administrador extends Gestion_incidencias_administrador_ventana {
 	/*private Button _buscarB;
 	private TextField _buscarT;
 	private Button _asignarIncidencia;*/

@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Canal2 extends Modalidad_individual_generico {
+public class Canal2 extends Canal2_ventana {
 	/*private Label _seccion;
 	private Button _contratar;*/
 	public Paquete2 _unnamed_Paquete2_;

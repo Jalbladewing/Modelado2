@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Modalidad_individual_administrador extends Modalidad_individual_generico {
+public class Modalidad_individual_administrador extends Modalidad_individual_administrador_ventana {
 	/*private CheckBox _visibilidad;
 	private Button _contratar;
 	private Button _cambiar;*/

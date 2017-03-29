@@ -1,6 +1,6 @@
 package com.teamBurton.operador;
 
-public class Modalidad_individual_cliente extends Modalidad_individual_generico {
+public class Modalidad_individual_cliente extends Modalidad_individual_cliente_ventana {
 	/*private Label _seccion;
 	private Label _tituloFechaContratacion;
 	private Label _valorFechaContratacion;
