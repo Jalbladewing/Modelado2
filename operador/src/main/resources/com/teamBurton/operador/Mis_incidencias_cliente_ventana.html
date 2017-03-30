@@ -7,10 +7,10 @@
  </head> 
  <body> 
   <vaadin-vertical-layout spacing margin> 
-   <vaadin-label style-name="huge" size-auto plain-text>
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Mis Incidencias 
    </vaadin-label> 
-   <vaadin-table selectable width-full> 
+   <vaadin-table selectable width-full _id="incidenciasTabla"> 
     <table> 
      <colgroup> 
       <col property-id="Project"> 
@@ -56,7 +56,7 @@
      </tbody> 
     </table> 
    </vaadin-table> 
-   <vaadin-button plain-text :center>
+   <vaadin-button plain-text _id="crearB" :center>
      Crear Incidencia 
    </vaadin-button> 
   </vaadin-vertical-layout>  

@@ -7,19 +7,19 @@
  </head> 
  <body> 
   <vaadin-vertical-layout spacing margin> 
-   <vaadin-label style-name="huge" size-auto plain-text>
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Mis Incidencias 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing margin :center> 
-    <vaadin-horizontal-layout spacing> 
-     <vaadin-button plain-text>
+   <vaadin-vertical-layout spacing margin _id="vLayout" :center> 
+    <vaadin-horizontal-layout spacing _id="hLayoutBuscar"> 
+     <vaadin-button plain-text _id="buscarL">
        Buscar 
      </vaadin-button> 
-     <vaadin-text-field></vaadin-text-field> 
+     <vaadin-text-field _id="buscarF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-tab-sheet> 
-     <tab caption="Tab" selected> 
-      <vaadin-table selectable width-full> 
+    <vaadin-tab-sheet _id="incidenciasTabla"> 
+     <tab caption="Todas" selected> 
+      <vaadin-table selectable width-full _id="todasTab"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -66,8 +66,8 @@
        </table> 
       </vaadin-table> 
      </tab> 
-     <tab caption="Tab"> 
-      <vaadin-table selectable width-full> 
+     <tab caption="Llamadas"> 
+      <vaadin-table selectable width-full _id="llamadaTab"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -114,8 +114,8 @@
        </table> 
       </vaadin-table> 
      </tab> 
-     <tab caption="Tab"> 
-      <vaadin-table selectable width-full> 
+     <tab caption="Pendientes"> 
+      <vaadin-table selectable width-full _id="pendientesTab"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -162,8 +162,8 @@
        </table> 
       </vaadin-table> 
      </tab> 
-     <tab caption="Tab"> 
-      <vaadin-table selectable width-full> 
+     <tab caption="Resueltas"> 
+      <vaadin-table selectable width-full _id="resueltasTab"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
