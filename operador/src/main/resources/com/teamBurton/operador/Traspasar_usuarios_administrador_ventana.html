@@ -7,11 +7,11 @@
  </head> 
  <body> 
   <vaadin-vertical-layout spacing width="1442px" margin> 
-   <vaadin-label style-name="huge" size-auto plain-text>
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Traspasar Usuarios 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing size-auto margin :center> 
-    <vaadin-table selectable width="1300px" height="500px"> 
+   <vaadin-vertical-layout spacing size-auto margin _id="vLayout" :center> 
+    <vaadin-table selectable width="1300px" height="500px" _id="usuariosTabla"> 
      <table> 
       <colgroup> 
        <col property-id="Project"> 
@@ -57,11 +57,11 @@
       </tbody> 
      </table> 
     </vaadin-table> 
-    <vaadin-horizontal-layout spacing width="402px" :center> 
-     <vaadin-button plain-text>
+    <vaadin-horizontal-layout spacing width="402px" _id="hLayoutBotones" :center> 
+     <vaadin-button plain-text _id="cancelarB">
        Cancelar 
      </vaadin-button> 
-     <vaadin-button plain-text>
+     <vaadin-button plain-text _id="elegirModalidadB">
        Elegir Modalidad Nueva 
      </vaadin-button> 
     </vaadin-horizontal-layout> 

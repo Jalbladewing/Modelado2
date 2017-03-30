@@ -7,16 +7,16 @@
  </head> 
  <body> 
   <vaadin-vertical-layout spacing margin> 
-   <vaadin-label style-name="huge" size-auto plain-text _id="seccion">
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Perfil 
    </vaadin-label> 
-   <vaadin-vertical-layout size-auto :center> 
-    <vaadin-label style-name="h2" size-auto plain-text :center>
+   <vaadin-vertical-layout size-auto _id="vLayout" :center> 
+    <vaadin-label style-name="h2" size-auto plain-text _id="tituloL" :center>
       Perfil 
     </vaadin-label> 
-    <vaadin-vertical-layout width="398px"></vaadin-vertical-layout> 
-    <vaadin-image width-full height="14px"></vaadin-image> 
-    <vaadin-vertical-layout spacing width="411px"></vaadin-vertical-layout> 
+    <vaadin-vertical-layout width="398px" _id="vLayoutDatosModificables"></vaadin-vertical-layout> 
+    <vaadin-image width-full height="14px" _id="separacionI"></vaadin-image> 
+    <vaadin-vertical-layout spacing width="411px" _id="vLayoutDatosNoModificables"></vaadin-vertical-layout> 
    </vaadin-vertical-layout> 
   </vaadin-vertical-layout>  
  </body>

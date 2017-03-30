@@ -2,59 +2,46 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
   <vaadin-vertical-layout spacing width="324px" height="400px" margin> 
-   <vaadin-label style-name="h2" size-auto plain-text :center>
+   <vaadin-label style-name="h2" size-auto plain-text _id="tituloL" :center>
      Deportes 
    </vaadin-label> 
-   <vaadin-label size-auto plain-text>
+   <vaadin-label size-auto plain-text _id="caracteristicasL">
      Características 
    </vaadin-label> 
-   <vaadin-label style-name="bold" size-auto plain-text>
+   <vaadin-label style-name="bold" size-auto plain-text _id="listaTituloL">
      Lista de canales 
    </vaadin-label> 
-   <vaadin-grid-layout width="100px" height="30px"> 
+   <vaadin-grid-layout width="100px" height="30px" _id="canalesGrid"> 
     <row> 
-     <column> 
-      <vaadin-button style-name="link" plain-text>
-        Canal 23 
-      </vaadin-button> 
-     </column> 
-     <column> 
-      <vaadin-button style-name="link" plain-text>
-        Canal 57 
-      </vaadin-button> 
-     </column> 
+     <column></column> 
+     <column></column> 
     </row> 
     <row> 
-     <column> 
-      <vaadin-button style-name="link" plain-text>
-        Canal 57 
-      </vaadin-button> 
-     </column> 
-     <column> 
-      <vaadin-button style-name="link" plain-text>
-        Canal 57 
-      </vaadin-button> 
-     </column> 
+     <column></column> 
+     <column></column> 
     </row> 
     <row> 
-     <column> 
-      <vaadin-button style-name="link" plain-text>
-        Canal 57 
-      </vaadin-button> 
-     </column> 
+     <column></column> 
+     <column></column> 
     </row> 
-    <row></row> 
-    <row></row> 
+    <row> 
+     <column></column> 
+     <column></column> 
+    </row> 
+    <row> 
+     <column></column> 
+     <column></column> 
+    </row> 
    </vaadin-grid-layout> 
-   <vaadin-label size-auto plain-text :bottom :right>
+   <vaadin-label size-auto plain-text _id="precioL" :bottom :right>
      Precio 
    </vaadin-label> 
-   <vaadin-button icon="fonticon://FontAwesome/f07a" width="250px" height="55px" plain-text :bottom :center>
+   <vaadin-button icon="fonticon://FontAwesome/f07a" width="250px" height="55px" plain-text _id="contratarB" :bottom :center>
      Contratar 
    </vaadin-button> 
   </vaadin-vertical-layout>  

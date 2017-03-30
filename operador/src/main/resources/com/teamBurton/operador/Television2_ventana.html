@@ -2,22 +2,25 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout> 
-   <vaadin-horizontal-layout> 
-    <vaadin-button plain-text>
+  <vaadin-vertical-layout spacing> 
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
+     Televisión 
+   </vaadin-label> 
+   <vaadin-horizontal-layout _id="hLayoutBuscarContratar"> 
+    <vaadin-button plain-text _id="buscarB">
       Buscar 
     </vaadin-button> 
-    <vaadin-text-field></vaadin-text-field> 
-    <vaadin-button plain-text>
+    <vaadin-text-field _id="buscarF"></vaadin-text-field> 
+    <vaadin-button plain-text _id="contratarB">
       Contratar 
     </vaadin-button> 
    </vaadin-horizontal-layout> 
    <vaadin-horizontal-layout> 
-    <vaadin-table selectable> 
+    <vaadin-table selectable _id="canalesTabla"> 
      <table> 
       <colgroup> 
        <col property-id="Project"> 
@@ -83,7 +86,7 @@
       </tbody> 
      </table> 
     </vaadin-table> 
-    <vaadin-grid-layout size-full></vaadin-grid-layout> 
+    <vaadin-grid-layout size-full _id="paquetesGrid"></vaadin-grid-layout> 
    </vaadin-horizontal-layout> 
   </vaadin-vertical-layout>  
  </body>

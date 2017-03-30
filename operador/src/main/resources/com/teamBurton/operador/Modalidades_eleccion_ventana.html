@@ -1,22 +1,23 @@
+<!doctype html>
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
   <meta name="vaadin-version" content="7.7.0">
- </head>
- <body>
+ </head> 
+ <body> 
   <vaadin-vertical-layout spacing width="1442px" margin> 
-   <vaadin-label style-name="huge" size-auto plain-text>
+   <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Elegir Modalidad Nueva 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing size-auto margin :center> 
-    <vaadin-horizontal-layout spacing> 
-     <vaadin-button plain-text>
+   <vaadin-vertical-layout spacing size-auto margin _id="vLayout" :center> 
+    <vaadin-horizontal-layout spacing _id="hLayoutBuscar"> 
+     <vaadin-button plain-text _id="buscarB">
        Buscar 
      </vaadin-button> 
-     <vaadin-text-field></vaadin-text-field> 
+     <vaadin-text-field _id="buscarF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-table selectable width="1300px" height="500px"> 
+    <vaadin-table selectable width="1300px" height="500px" _id="modalidadesTabla"> 
      <table> 
       <colgroup> 
        <col property-id="Project"> 
@@ -62,11 +63,9 @@
       </tbody> 
      </table> 
     </vaadin-table> 
-    <vaadin-horizontal-layout spacing :center> 
-     <vaadin-button plain-text>
-       Cancelar 
-     </vaadin-button> 
-    </vaadin-horizontal-layout> 
+    <vaadin-button plain-text _id="cancelarB" :center>
+      Cancelar 
+    </vaadin-button> 
    </vaadin-vertical-layout> 
   </vaadin-vertical-layout>  
  </body>

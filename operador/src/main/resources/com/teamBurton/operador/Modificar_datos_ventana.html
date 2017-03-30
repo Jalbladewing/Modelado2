@@ -7,20 +7,20 @@
  </head> 
  <body> 
   <vaadin-vertical-layout spacing width="40%"> 
-   <vaadin-label size-auto plain-text>
+   <vaadin-label size-auto plain-text _id="tituloL">
      Modificación 
    </vaadin-label> 
-   <vaadin-horizontal-layout spacing margin-bottom :middle> 
-    <vaadin-label size-auto plain-text :middle :center>
-      Label 
+   <vaadin-horizontal-layout spacing margin-bottom _id="hLayoutCampo" :middle> 
+    <vaadin-label size-auto plain-text _id="campoL" :middle :center>
+      tituloCampo 
     </vaadin-label> 
-    <vaadin-text-field :bottom></vaadin-text-field> 
+    <vaadin-text-field _id="campoF" :bottom></vaadin-text-field> 
    </vaadin-horizontal-layout> 
-   <vaadin-horizontal-layout spacing :center> 
-    <vaadin-button height="27px" plain-text :center>
+   <vaadin-horizontal-layout spacing _id="hLayoutBotones" :center> 
+    <vaadin-button height="27px" plain-text _id="cancelarB" :center>
       Cancelar 
     </vaadin-button> 
-    <vaadin-button height="27px" plain-text>
+    <vaadin-button height="27px" plain-text _id="guardarB">
       Guardar 
     </vaadin-button> 
    </vaadin-horizontal-layout> 
