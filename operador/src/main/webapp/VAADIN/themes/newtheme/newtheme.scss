@@ -1,0 +1,35 @@
+@import "../valo/valo.scss";
+
+@mixin newtheme {
+$v-background-color: #0099CC;
+
+@include valo;
+
+   // your styles go here
+
+
+
+.backColorGrey{
+           background-color:#ACACAC;
+      }
+      
+      .black {
+    color: red;
+    background: #3A3A38;
+}
+
+.grey {
+    color: white;
+    background: #808069;
+}
+
+.green {
+    color: white;
+    background: #79973F;
+}
+.red {
+    color: #d14;
+    background: #C67171;
+}
+
+}
