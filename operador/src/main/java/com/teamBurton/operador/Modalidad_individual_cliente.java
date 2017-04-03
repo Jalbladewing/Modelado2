@@ -1,5 +1,11 @@
 package com.teamBurton.operador;
 
+import com.vaadin.server.VaadinRequest;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Label;
+import com.vaadin.ui.TextField;
+import com.vaadin.ui.VerticalLayout;
+
 public class Modalidad_individual_cliente extends Modalidad_individual_cliente_ventana {
 	/*private Label _seccion;
 	private Label _tituloFechaContratacion;
@@ -9,7 +15,7 @@ public class Modalidad_individual_cliente extends Modalidad_individual_cliente_v
 	private Button _baja;*/
 	public Servicio _unnamed_Servicio_;
 	public Crear_incidencia _creaIncidencia;
-
+	
 	public void darBaja() {
 		throw new UnsupportedOperationException();
 	}

@@ -19,12 +19,14 @@ import com.vaadin.ui.VerticalLayout;
  * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be 
  * overridden to add component to the user interface and initialize non-component functionality.
  */
-@Theme("mytheme")
+@Theme("newtheme")
 public class MyUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        final VerticalLayout layout = new VerticalLayout();
+        VerticalLayout layout = new VerticalLayout();
+        layout.addStyleName("backColorGrey");
+        
         //added style
         layout.addStyleName("green");
         final TextField name = new TextField();

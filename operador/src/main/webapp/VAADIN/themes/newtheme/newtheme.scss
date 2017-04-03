@@ -1,35 +1,57 @@
 @import "../valo/valo.scss";
 
 @mixin newtheme {
+
 $v-background-color: #0099CC;
 
 @include valo;
 
    // your styles go here
 
-
-
 .backColorGrey{
            background-color:#ACACAC;
       }
       
       .black {
-    color: red;
+    color: white;
     background: #3A3A38;
+    opacity: 8;
 }
 
-.grey {
-    color: white;
-    background: #808069;
+.v-button.v-button-Blue .v-button-wrap{
+    background: #0099CC;
 }
 
-.green {
-    color: white;
-    background: #79973F;
+.modalidad-fondo
+{
+   background: #6699CC;
 }
-.red {
-    color: #d14;
-    background: #C67171;
+
+.cabecera-fondo
+{
+	background: rgba(51,102,255,0.6);
+}
+
+.perfiles-fondo
+{
+	background: rgba(51,153,204,0.5);
+}
+
+.white-background
+{
+    background: #FFFFFF;
+}
+
+.white-color
+{
+ 	color: #FFFFFF;
+}
+
+
+
+.layoutTransparente
+{
+   background-color: rgba(255,255,255,0.5);
 }
 
 }
