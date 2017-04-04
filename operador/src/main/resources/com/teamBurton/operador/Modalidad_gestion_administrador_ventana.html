@@ -2,15 +2,15 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;newtheme&quot;}">
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout width="1321px"> 
+  <vaadin-vertical-layout> 
    <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Modificar Modalidad 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing width="520px" margin _id="vLayout" :center> 
+   <vaadin-vertical-layout spacing size-auto margin _id="vLayout" :center> 
     <vaadin-label style-name="bold" size-auto plain-text _id="modificarL" :center>
       Modificar Modalidad 
     </vaadin-label> 
@@ -22,17 +22,17 @@
     <vaadin-label size-auto plain-text _id="nombreL">
       Nombre Modalidad 
     </vaadin-label> 
-    <vaadin-text-field width="185px" _id="nombreF"></vaadin-text-field> 
+    <vaadin-text-field _id="nombreF"></vaadin-text-field> 
     <vaadin-label size-auto plain-text _id="caracteristicasL">
       Características 
     </vaadin-label> 
-    <vaadin-text-area wordwrap="false" width="301px" height="123px" _id="caracteristicasArea"></vaadin-text-area> 
+    <vaadin-text-area wordwrap="false" width="70%" _id="caracteristicasArea"></vaadin-text-area> 
     <vaadin-horizontal-layout spacing width-full _id="hLayoutPrecioVisible"> 
      <vaadin-vertical-layout size-auto _id="vLayoutPrecio"> 
       <vaadin-label size-auto plain-text _id="precioL">
         Precio 
       </vaadin-label> 
-      <vaadin-text-field width="54px" _id="precioF"></vaadin-text-field> 
+      <vaadin-text-field width="25%" _id="precioF"></vaadin-text-field> 
      </vaadin-vertical-layout> 
      <vaadin-horizontal-layout _id="hLayoutVisible" :bottom :center> 
       <vaadin-check-box _id="visibleCheckBx"></vaadin-check-box> 
@@ -46,7 +46,7 @@
        Cancelar 
      </vaadin-button> 
      <vaadin-vertical-layout spacing size-auto _id="vLayoutBotones"> 
-      <vaadin-button width="172px" height="37px" plain-text _id="traspasarB">
+      <vaadin-button plain-text _id="traspasarB">
         Traspasar Usuarios 
       </vaadin-button> 
       <vaadin-button plain-text _id="eliminarB">

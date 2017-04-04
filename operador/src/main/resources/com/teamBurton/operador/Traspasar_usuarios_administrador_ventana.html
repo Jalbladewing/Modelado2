@@ -2,16 +2,16 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;newtheme&quot;}">
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout spacing width="1442px" margin> 
+  <vaadin-vertical-layout spacing margin> 
    <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Traspasar Usuarios 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing size-auto margin _id="vLayout" :center> 
-    <vaadin-table selectable width="1300px" height="500px" _id="usuariosTabla"> 
+   <vaadin-vertical-layout spacing margin _id="vLayout" :center> 
+    <vaadin-table selectable style-name="borderless no-horizontal-lines no-vertical-lines" width-full _id="usuariosTabla"> 
      <table> 
       <colgroup> 
        <col property-id="Project"> 
@@ -57,7 +57,7 @@
       </tbody> 
      </table> 
     </vaadin-table> 
-    <vaadin-horizontal-layout spacing width="402px" _id="hLayoutBotones" :center> 
+    <vaadin-horizontal-layout spacing width="25%" _id="hLayoutBotones" :center> 
      <vaadin-button plain-text _id="cancelarB">
        Cancelar 
      </vaadin-button> 
