@@ -12,7 +12,29 @@ public class Modalidades_destacadas_generico extends Modalidades_destacadas_gene
 	public static final String VIEW_NAME = "modalidadD";
 	
 	
-	
+	public Modalidades_destacadas_generico(){
+		//insercion de modalidades a modo de ejemplo
+		   Modalidad_servicio ms = new Modalidad_servicio();     
+	       Modalidad_oferta_generico mg = new  Modalidad_oferta_generico();
+	       
+	       mg.hLayoutModalidades.addComponent(ms);
+	       ms = new Modalidad_servicio();
+	       mg.hLayoutModalidades.addComponent(ms);
+	       addComponent(mg);
+	       mg = new  Modalidad_oferta_generico();
+	       ms = new Modalidad_servicio();
+	       mg.hLayoutModalidades.addComponent(ms);
+	       ms = new Modalidad_servicio();
+	       mg.hLayoutModalidades.addComponent(ms);
+	       addComponent(mg);
+	       
+	       ms = new Modalidad_servicio();
+		   addComponent(ms);
+	       ms = new Modalidad_servicio();
+	       addComponent(ms);
+	       
+	       
+	}
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
