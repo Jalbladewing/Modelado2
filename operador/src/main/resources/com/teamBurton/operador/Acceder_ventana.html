@@ -6,7 +6,7 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout height="60%" center=""> 
+  <vaadin-vertical-layout center=""> 
    <vaadin-label style-name="huge bold h4" size-auto plain-text _id="seccionL">
      Acceso 
    </vaadin-label> 
@@ -14,26 +14,28 @@
     <vaadin-label style-name="h2" size-auto plain-text _id="accesoL" :center>
       Acceso 
     </vaadin-label> 
-    <vaadin-horizontal-layout spacing width="70%" _id="hLayoutCampos"> 
+    <vaadin-horizontal-layout spacing _id="hLayoutCampos" :center> 
      <vaadin-vertical-layout spacing width-auto height-full _id="vLayoutLabels" :middle :right> 
-      <vaadin-label size-auto plain-text _id="usuarioL" :bottom :right>
+      <vaadin-label size-auto plain-text _id="usuarioL" :bottom>
         Usuario 
       </vaadin-label> 
-      <vaadin-label size-auto plain-text _id="passwordL" :bottom :right>
+      <vaadin-label size-auto plain-text _id="passwordL" :bottom>
         Contraseña 
       </vaadin-label> 
      </vaadin-vertical-layout> 
-     <vaadin-vertical-layout spacing size-auto _id="vLayoutFields" :middle :center> 
+     <vaadin-vertical-layout spacing size-auto _id="vLayoutFields" :middle :right> 
       <vaadin-text-field _id="usuarioF"></vaadin-text-field> 
       <vaadin-text-field _id="passwordF"></vaadin-text-field> 
      </vaadin-vertical-layout> 
     </vaadin-horizontal-layout> 
-    <vaadin-horizontal-layout width="80%" _id="hLayoutFin" :middle :center> 
-     <vaadin-check-box _id="checkBx" :right></vaadin-check-box> 
-     <vaadin-label size-auto plain-text _id="recuerdameL">
-       Recuérdame 
-     </vaadin-label> 
-     <vaadin-button height-full plain-text _id="iniciarSesionB" :bottom :center>
+    <vaadin-horizontal-layout spacing _id="hLayoutFin" :middle :center> 
+     <vaadin-horizontal-layout :center> 
+      <vaadin-check-box _id="checkBx"></vaadin-check-box> 
+      <vaadin-label size-auto plain-text _id="recuerdameL">
+        Recuérdame 
+      </vaadin-label> 
+     </vaadin-horizontal-layout> 
+     <vaadin-button height-full plain-text _id="iniciarSesionB" :right>
        Iniciar Sesión 
      </vaadin-button> 
     </vaadin-horizontal-layout> 

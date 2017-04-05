@@ -24,25 +24,18 @@ public class MyUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        VerticalLayout layout = new VerticalLayout();
-        layout.addStyleName("backColorGrey");
-        
-        //added style
-        layout.addStyleName("green");
-        final TextField name = new TextField();
-        name.setCaption("Type your name here:");
-
-        Button button = new Button("Click Me");
-        button.addClickListener( e -> {
-            layout.addComponent(new Label("Thanks " + name.getValue() 
-                    + ", it works!"));
-        });
-        
-        layout.addComponents(name, button);
-        layout.setMargin(true);
-        layout.setSpacing(true);
-        
-        setContent(layout);
+        final VerticalLayout vLayout = new VerticalLayout();          
+                   
+        vLayout.addComponent(new Cabecera_cibernauta());
+        Modalidades_destacadas_generico md = new Modalidades_destacadas_generico();
+        Modalidad_servicio ms = new Modalidad_servicio();
+      
+        md.addComponent(ms);
+        ms = new Modalidad_servicio();
+        md.addComponent(ms);
+                              
+         vLayout.addComponent(md);        
+        setContent(vLayout);
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

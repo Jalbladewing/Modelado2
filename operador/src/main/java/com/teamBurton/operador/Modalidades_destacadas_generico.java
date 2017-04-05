@@ -8,12 +8,12 @@ public class Modalidades_destacadas_generico extends Modalidades_destacadas_gene
 	public Vector<Modalidad_oferta_generico> _oferta = new Vector<Modalidad_oferta_generico>();
 
 	public Modalidades_destacadas_generico(){
-		Inicializar();
+		
 		
 	}
 	
-	void Inicializar(){
+	
 		
 		
-	}
+	
 }

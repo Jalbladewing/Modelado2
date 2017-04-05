@@ -7,4 +7,8 @@ public class Modalidad_servicio extends Modalidad_servicio_Ventana {
 	public Internet _unnamed_Internet_;
 	public Modalidades_destacadas_generico _unnamed_Modalidades_destacadas_generico_;
 	public Contratar_generico _contrata;
+	
+	public Modalidad_servicio(){
+		
+	}
 }
