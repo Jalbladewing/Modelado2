@@ -4,4 +4,9 @@ public class Cabecera_cibernauta extends Cabecera_cibernauta_ventana {
 	//private Button _acceder;
 	public Cibernauta _unnamed_Cibernauta_;
 	public Acceder _accede;
+	
+	public Cabecera_cibernauta() 
+	{
+			_accede = new Acceder();
+	}
 }
