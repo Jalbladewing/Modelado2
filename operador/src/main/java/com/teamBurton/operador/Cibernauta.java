@@ -23,7 +23,6 @@ public class Cibernauta extends Cibernauta_ventana
 {
 	public Cabecera_cibernauta _cabecera;
 	public Contratar_cibernauta _contrata;
-	public Acceder _acceder;
 	VerticalLayout prueba;
 	
 	
@@ -31,7 +30,6 @@ public class Cibernauta extends Cibernauta_ventana
 	{
 		prueba = new VerticalLayout();
 		_cabecera = new Cabecera_cibernauta();
-		_acceder = _cabecera._accede;
 		
 		this.addComponent(_cabecera);
 		this.addComponent(prueba); //Zona donde se "instanciarán" las subventanas
@@ -103,16 +101,6 @@ public class Cibernauta extends Cibernauta_ventana
 			public void buttonClick(ClickEvent event) 
 			{ 
 				doNavigate(Acceder.VIEW_NAME);
-			} 
-		}); 
-		
-
-		//No funciona :(, se ha colocado en Acceder temporalmente
-		_acceder.recuperarPassB.addClickListener(new Button.ClickListener() 
-		{ 
-			public void buttonClick(ClickEvent event) 
-			{ 
-				doNavigate(Recuperar_password.VIEW_NAME);
 			} 
 		}); 
 		

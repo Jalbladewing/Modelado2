@@ -19,10 +19,12 @@ import com.vaadin.ui.Button.ClickEvent;
 public class NavigatorUI extends UI {
     Navigator navigator;
     protected static final String MAINVIEW = "cibernauta";
+    protected static final String SECONDVIEW = "cliente";
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         setContent(new Cibernauta());
+     
     }
     
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

@@ -1,6 +1,9 @@
 package com.teamBurton.operador;
 
-public class Crear_incidencia extends Crear_incidencia_ventana {
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+
+public class Crear_incidencia extends Crear_incidencia_ventana implements View {
 	/*private Label _seccion;
 	private Label _tituloIncidencia;
 	private Label _tituloTipoIncidencia;
@@ -17,4 +20,12 @@ public class Crear_incidencia extends Crear_incidencia_ventana {
 	public Modalidad_oferta_cliente _unnamed_Modalidad_oferta_cliente_;
 	public Contratar_cliente _unnamed_Contratar_cliente_;
 	public Mis_incidencias_cliente _unnamed_Mis_incidencias_cliente_;
+	public static final String VIEW_NAME = "crear_incidencia";
+	
+	
+	@Override
+	public void enter(ViewChangeEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
 }

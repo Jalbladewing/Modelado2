@@ -7,6 +7,6 @@ public class Cabecera_cibernauta extends Cabecera_cibernauta_ventana {
 	
 	public Cabecera_cibernauta() 
 	{
-			_accede = new Acceder();
+			
 	}
 }

@@ -17,7 +17,6 @@ public class Acceder extends Acceder_ventana implements View {
 	private Label _recordarL;
 	private Button _iniciarSesion;*/
 	public Cabecera_cibernauta _unnamed_Cabecera_cibernauta_;
-	public Recuperar_password _recuperaPass;
 	public static final String VIEW_NAME = "acceder";
 	
 	public Acceder()
@@ -30,6 +29,18 @@ public class Acceder extends Acceder_ventana implements View {
 				doNavigate(Recuperar_password.VIEW_NAME);
 			} 
 		}); 
+		
+		iniciarSesionB.addClickListener(new Button.ClickListener() 
+		{
+			
+			@Override
+			public void buttonClick(ClickEvent event) 
+			{
+				UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
+				UI.getCurrent().getNavigator().destroy();
+				NavigatorUI.getCurrent().setContent(new Cliente2());	
+			}
+		});
 	}
 	
 	//Esto debería estar en Cibernauta

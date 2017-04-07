@@ -22,7 +22,7 @@ import com.vaadin.ui.VerticalLayout;
 
 public class MyUI  {
 
-   /* @Override
+    /*@Override
     protected void init(VaadinRequest vaadinRequest) {
         final VerticalLayout vLayout = new VerticalLayout();          
                    

@@ -5,6 +5,7 @@ import com.vaadin.annotations.DesignRoot;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
+import com.vaadin.ui.ListSelect;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.declarative.Design;
 
@@ -28,6 +29,7 @@ public class Cabecera_cliente_ventana extends HorizontalLayout {
 	protected VerticalLayout vLayout;
 	protected Image inicioI;
 	protected Button miCuentaB;
+	protected ListSelect miCuentaLista;
 
 	public Cabecera_cliente_ventana() {
 		Design.read(this);
