@@ -1,6 +1,9 @@
 package com.teamBurton.operador;
 
-public class Alta_usuario extends Alta_usuario_ventana {
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+
+public class Alta_usuario extends Alta_usuario_ventana implements View {
 	/*private Label _seccion;
 	private Label _tituloAltaUsuario;
 	private Label _tituloNombre;
@@ -18,4 +21,11 @@ public class Alta_usuario extends Alta_usuario_ventana {
 	private Button _confirmar;
 	private Button _cancelar;*/
 	public Gestion_usuarios_comercial _unnamed_Gestion_usuarios_comercial_;
+	public static final String VIEW_NAME = "alta_usuario";
+
+	@Override
+	public void enter(ViewChangeEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
 }

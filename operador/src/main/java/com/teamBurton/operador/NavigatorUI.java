@@ -18,8 +18,6 @@ import com.vaadin.ui.Button.ClickEvent;
 @Theme("newtheme")
 public class NavigatorUI extends UI {
     Navigator navigator;
-    protected static final String MAINVIEW = "cibernauta";
-    protected static final String SECONDVIEW = "cliente";
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {

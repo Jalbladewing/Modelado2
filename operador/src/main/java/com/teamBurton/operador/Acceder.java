@@ -36,9 +36,23 @@ public class Acceder extends Acceder_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) 
 			{
-				UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
-				UI.getCurrent().getNavigator().destroy();
-				NavigatorUI.getCurrent().setContent(new Cliente2());	
+				
+				//PARA PROBAR NAVEGABILIDAD
+				if((usuarioF.getValue().toLowerCase()).equals("cliente"))
+				{
+					UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
+					UI.getCurrent().getNavigator().destroy();
+					NavigatorUI.getCurrent().setContent(new Cliente2());	
+				}
+				
+				if((usuarioF.getValue().toLowerCase()).equals("comercial"))
+				{
+					UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
+					UI.getCurrent().getNavigator().destroy();
+					NavigatorUI.getCurrent().setContent(new Comercial2());	
+				}
+				
+				
 			}
 		});
 	}
