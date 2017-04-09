@@ -52,6 +52,12 @@ public class Acceder extends Acceder_ventana implements View {
 					NavigatorUI.getCurrent().setContent(new Comercial2());	
 				}
 				
+				if((usuarioF.getValue().toLowerCase()).equals("administrador"))
+				{
+					UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
+					UI.getCurrent().getNavigator().destroy();
+					NavigatorUI.getCurrent().setContent(new Administrador2());	
+				}
 				
 			}
 		});

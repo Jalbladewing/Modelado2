@@ -34,6 +34,7 @@ public class Gestion_incidencias_administrador_ventana extends VerticalLayout {
 	protected Table asignadasTabla;
 	protected Table sinAsignarTabla;
 	protected Table resueltasTabla;
+	protected Label errorL;
 	protected Button asignarB;
 
 	public Gestion_incidencias_administrador_ventana() {

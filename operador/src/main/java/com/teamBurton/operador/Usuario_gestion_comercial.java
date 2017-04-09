@@ -25,7 +25,7 @@ public class Usuario_gestion_comercial extends Usuario_gestion_comercial_ventana
 		Navigator navigator = new Navigator(NavigatorUI.getCurrent(), prueba);
 		
 		//Subventanas a las que se puede acceder
-		navigator.addView(Modalidades_destacadas_generico.VIEW_NAME, Modalidades_destacadas_generico.class);
+		navigator.addView(Modalidades_destacadas_vista_usuario.VIEW_NAME, Modalidades_destacadas_vista_usuario.class);
 		navigator.addView(Television2.VIEW_NAME, Television2.class);
 		navigator.addView(Telefono_fijo.VIEW_NAME, Telefono_fijo.class);
 		navigator.addView(Movil2.VIEW_NAME, Movil2.class);
@@ -38,10 +38,10 @@ public class Usuario_gestion_comercial extends Usuario_gestion_comercial_ventana
 		navigator.addView(Crear_incidencia.VIEW_NAME, Crear_incidencia.class);
 		
 		//Como la ventana estaba en Acceder la cambia a modalidades destacadas
-		navigator.navigateTo(Modalidades_destacadas_generico.VIEW_NAME);
+		navigator.navigateTo(Modalidades_destacadas_vista_usuario.VIEW_NAME);
 		
 		if (navigator.getState().isEmpty()) {
-	        navigator.navigateTo(Modalidades_destacadas_generico.VIEW_NAME);
+	        navigator.navigateTo(Modalidades_destacadas_vista_usuario.VIEW_NAME);
 		}
 	        
 		_cabecera.televisionL.addClickListener(new Button.ClickListener() 

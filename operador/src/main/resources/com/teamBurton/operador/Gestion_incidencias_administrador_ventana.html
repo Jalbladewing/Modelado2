@@ -19,7 +19,7 @@
     </vaadin-horizontal-layout> 
     <vaadin-tab-sheet _id="tabsTabSheet"> 
      <tab caption="Todas" selected> 
-      <vaadin-table selectable width-full _id="todasTabla"> 
+      <vaadin-table selectable multi-select immediate width-full _id="todasTabla"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -67,7 +67,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Tipo Llamada"> 
-      <vaadin-table selectable width-full _id="llamadaTabla"> 
+      <vaadin-table selectable multi-select immediate width-full _id="llamadaTabla"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -115,7 +115,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Asignadas"> 
-      <vaadin-table selectable width-full _id="asignadasTabla"> 
+      <vaadin-table selectable multi-select immediate width-full _id="asignadasTabla"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -163,7 +163,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Sin Asignar"> 
-      <vaadin-table selectable width-full _id="sinAsignarTabla"> 
+      <vaadin-table selectable multi-select immediate width-full _id="sinAsignarTabla"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -211,7 +211,7 @@
       </vaadin-table> 
      </tab> 
      <tab caption="Resueltas"> 
-      <vaadin-table selectable width-full _id="resueltasTabla"> 
+      <vaadin-table selectable immediate width-full _id="resueltasTabla"> 
        <table> 
         <colgroup> 
          <col property-id="Project"> 
@@ -259,6 +259,9 @@
       </vaadin-table> 
      </tab> 
     </vaadin-tab-sheet> 
+    <vaadin-label visible="false" style-name="failure" size-auto plain-text _id="errorL" :center>
+      No hay incidencias seleccionadas 
+    </vaadin-label> 
     <vaadin-button plain-text _id="asignarB" :center>
       Asignar Incidencia 
     </vaadin-button> 

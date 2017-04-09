@@ -24,9 +24,17 @@
    </vaadin-button> 
    <vaadin-vertical-layout size-auto _id="vLayout" :middle :center> 
     <vaadin-image icon="fonticon://FontAwesome/f015" _id="inicioI"></vaadin-image> 
-    <vaadin-button style-name="link white-color large" plain-text _id="miCuentaL" :middle :center>
+    <vaadin-button style-name="link white-color large" plain-text _id="miCuentaB" :middle :center>
       Mi cuenta 
     </vaadin-button> 
+    <vaadin-list-select visible="false" style-name="white-background" height="140px" _id="miCuentaLista"> 
+     <option>Perfil</option> 
+     <option>Gestión de Incidencias</option> 
+     <option>Gestión de Usuarios</option> 
+     <option>Gestión de Comerciales</option> 
+     <option>Gestión de Modalidades</option> 
+     <option>Desconectar</option> 
+    </vaadin-list-select> 
    </vaadin-vertical-layout> 
   </vaadin-horizontal-layout>  
  </body>

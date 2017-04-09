@@ -11,7 +11,7 @@ import com.vaadin.ui.Button.ClickEvent;
 public class Comercial2 extends Comercial2_ventana {
 	public Contratar_comercial _contrata;
 	public Cabecera_comercial _cabecera;
-VerticalLayout prueba;
+    VerticalLayout prueba;
 	
 	public Comercial2()
 	{
