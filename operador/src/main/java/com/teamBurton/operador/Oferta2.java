@@ -11,7 +11,24 @@ public class Oferta2 extends Oferta2_ventana implements View{
 	public Vector<Modalidad_oferta_generico> _oferta = new Vector<Modalidad_oferta_generico>();
 	public static final String VIEW_NAME = "oferta2";
 	
-	
+	public Oferta2(){
+		
+		     
+	       Modalidad_oferta_generico mg = new  Modalidad_oferta_generico();
+	       Modalidad_individual_generico mi = new Modalidad_individual_generico();
+	       
+	       mg.hLayoutModalidades.addComponent(mi);
+	       mi = new  Modalidad_individual_generico();
+	       mg.hLayoutModalidades.addComponent(mi);
+	       ofertasGrid.addComponent(mg);
+	       mg = new  Modalidad_oferta_generico();
+	       mi = new  Modalidad_individual_generico();
+	       mg.hLayoutModalidades.addComponent(mi);
+	       mi = new  Modalidad_individual_generico();
+	       mg.hLayoutModalidades.addComponent(mi);
+	       ofertasGrid.addComponent(mg);
+	      	       
+	}
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub

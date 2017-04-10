@@ -6,11 +6,16 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout> 
+  <vaadin-vertical-layout spacing> 
    <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Ofertas 
    </vaadin-label> 
-   <vaadin-grid-layout size-full _id="ofertasGrid"></vaadin-grid-layout> 
+   <vaadin-grid-layout spacing _id="ofertasGrid"> 
+    <row> 
+     <column></column> 
+     <column></column> 
+    </row> 
+   </vaadin-grid-layout> 
   </vaadin-vertical-layout>  
  </body>
 </html>

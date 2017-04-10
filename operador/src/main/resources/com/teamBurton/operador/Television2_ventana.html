@@ -19,8 +19,8 @@
       Contratar 
     </vaadin-button> 
    </vaadin-horizontal-layout> 
-   <vaadin-horizontal-layout> 
-    <vaadin-table selectable _id="canalesTabla"> 
+   <vaadin-horizontal-layout spacing height-full> 
+    <vaadin-table selectable height="90%" _id="canalesTabla"> 
      <table> 
       <colgroup> 
        <col property-id="Project"> 
@@ -86,7 +86,13 @@
       </tbody> 
      </table> 
     </vaadin-table> 
-    <vaadin-grid-layout size-full _id="paquetesGrid"></vaadin-grid-layout> 
+    <vaadin-grid-layout spacing _id="paquetesGrid"> 
+     <row> 
+      <column></column> 
+      <column></column> 
+      <column></column> 
+     </row> 
+    </vaadin-grid-layout> 
    </vaadin-horizontal-layout> 
   </vaadin-vertical-layout>  
  </body>

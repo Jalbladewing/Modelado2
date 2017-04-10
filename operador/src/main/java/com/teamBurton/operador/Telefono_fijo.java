@@ -11,6 +11,12 @@ public class Telefono_fijo extends Telefono_fijo_ventana implements View{
 	public Vector<Modalidad_servicio> _modalidad = new Vector<Modalidad_servicio>();
 	public static final String VIEW_NAME = "telefono_fijo";
 	
+	public Telefono_fijo(){
+	    Modalidad_servicio ms = new Modalidad_servicio(); 
+		modalidadesGrid.addComponent(ms);
+		ms = new Modalidad_servicio(); 
+	    modalidadesGrid.addComponent(ms);
+	}
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub

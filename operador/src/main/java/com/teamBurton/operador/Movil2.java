@@ -11,6 +11,12 @@ public class Movil2 extends Movil2_ventana implements View{
 	public Vector<Modalidad_servicio> _modalidad = new Vector<Modalidad_servicio>();
 	public static final String VIEW_NAME = "movil2";
 	
+	public Movil2(){
+	    Modalidad_servicio ms = new Modalidad_servicio(); 
+		modalidadesGrid.addComponent(ms);
+		ms = new Modalidad_servicio(); 
+	    modalidadesGrid.addComponent(ms);
+	}
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
