@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;newtheme&quot;}">
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
@@ -10,14 +10,14 @@
    <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      # Incidencia 
    </vaadin-label> 
-   <vaadin-vertical-layout size-auto _id="vLayout" :center> 
+   <vaadin-vertical-layout style-name="perfiles-fondo" spacing size-auto margin _id="vLayout" :center> 
     <vaadin-label style-name="bold" size-auto plain-text _id="incidenciaL" :center>
       Incidencia 
     </vaadin-label> 
     <vaadin-label style-name="bold" size-auto plain-text _id="tipoIncidenciaL">
       Tipo de Incidencia 
     </vaadin-label> 
-    <vaadin-combo-box _id="tipoIncidenciaComboBx"> 
+    <vaadin-combo-box readonly _id="tipoIncidenciaComboBx"> 
      <option>Option 1</option> 
      <option>Option 2</option> 
      <option>Option 3</option> 
@@ -25,15 +25,17 @@
     <vaadin-label style-name="bold" size-auto plain-text _id="correoL">
       Correo 
     </vaadin-label> 
-    <vaadin-text-field _id="correoF"></vaadin-text-field> 
+    <vaadin-text-field readonly value="Cliente@msn.net" _id="correoF"></vaadin-text-field> 
     <vaadin-label style-name="bold" size-auto plain-text _id="asuntoL">
       Asunto 
     </vaadin-label> 
-    <vaadin-text-field _id="asuntoF"></vaadin-text-field> 
+    <vaadin-text-field readonly value="ClienteProblema" _id="asuntoF"></vaadin-text-field> 
     <vaadin-label style-name="bold" size-auto plain-text _id="descripcionL">
       Descripción 
     </vaadin-label> 
-    <vaadin-text-area _id="descripcionArea"></vaadin-text-area> 
+    <vaadin-text-area readonly _id="descripcionArea">
+      Descripción de la incidencia 
+    </vaadin-text-area> 
     <vaadin-label style-name="bold" size-auto plain-text _id="observacionL">
       Observación 
     </vaadin-label> 
@@ -43,7 +45,7 @@
        Estado: 
      </vaadin-label> 
      <vaadin-label size-auto plain-text _id="estadoValorL">
-       ||||| 
+       Pendiente 
      </vaadin-label> 
     </vaadin-horizontal-layout> 
     <vaadin-horizontal-layout spacing _id="hLayoutBotones"> 

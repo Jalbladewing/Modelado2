@@ -17,6 +17,18 @@ public class Modalidad_oferta_cliente extends Modalidad_oferta_cliente_ventana i
 	public Crear_incidencia _creaIncidencia;
 	public static final String VIEW_NAME = "modalidad_oferta_cliente";
 
+	public Modalidad_oferta_cliente(){
+		
+	     
+	       Modalidad_individual_generico mi = new Modalidad_individual_generico();
+	       mi.tituloL.setValue("Llamadas baratas");
+	       hLayoutModalidades.addComponent(mi);
+	       mi = new  Modalidad_individual_generico();
+	       mi.tituloL.setValue("100MB");
+	       hLayoutModalidades.addComponent(mi);
+	      	       
+	}
+	
 	public void darBaja() {
 		throw new UnsupportedOperationException();
 	}

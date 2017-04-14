@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;newtheme&quot;}">
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
@@ -20,72 +20,39 @@
     </vaadin-button> 
    </vaadin-horizontal-layout> 
    <vaadin-horizontal-layout spacing height-full> 
-    <vaadin-table selectable height="90%" _id="canalesTabla"> 
+    <vaadin-grid primary-style-name="v-table" height="90%" selection-mode="multi" _id="canalesTabla"> 
      <table> 
       <colgroup> 
-       <col property-id="Project"> 
-       <col property-id="Status"> 
-       <col property-id="Descripción"> 
-       <col property-id="Precio"> 
+       <col property-id="Nombre" sortable> 
+       <col property-id="Descripción" sortable> 
+       <col property-id="Precio" sortable> 
       </colgroup> 
+      <thead> 
+       <tr default> 
+        <th plain-text>Nombre</th> 
+        <th plain-text>Descripción</th> 
+        <th plain-text>Precio</th> 
+       </tr> 
+      </thead> 
       <tbody> 
-       <tr item-id="1"> 
-        <td>Customer Project 1</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-        <td>OK</td> 
+       <tr> 
+        <td>Canal 02</td> 
+        <td>Aquí iría la descripción.</td> 
+        <td>04€</td> 
        </tr> 
-       <tr item-id="2"> 
-        <td>Customer Project 2</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-        <td>OK</td> 
+       <tr> 
+        <td>Canal 04</td> 
+        <td>Aquí iría la descripción.</td> 
+        <td>08€</td> 
        </tr> 
-       <tr item-id="3"> 
-        <td>Customer Project 3</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="4"> 
-        <td>Customer Project 4</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="5"> 
-        <td>Customer Project 5</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="6"> 
-        <td>Customer Project 6</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="7"> 
-        <td>Customer Project 7</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="8"> 
-        <td>Customer Project 8</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="9"> 
-        <td>Customer Project 9</td> 
-        <td>OK</td> 
-        <td>OK</td> 
-        <td>OK</td> 
+       <tr> 
+        <td>Canal 05</td> 
+        <td>Aquí iría la descripción.</td> 
+        <td>04€</td> 
        </tr> 
       </tbody> 
      </table> 
-    </vaadin-table> 
+    </vaadin-grid> 
     <vaadin-grid-layout spacing _id="paquetesGrid"> 
      <row> 
       <column></column> 

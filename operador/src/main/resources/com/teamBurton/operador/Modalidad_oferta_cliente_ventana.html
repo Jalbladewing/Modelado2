@@ -6,7 +6,7 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout spacing height="30%" margin> 
+  <vaadin-vertical-layout spacing margin> 
    <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Telefono Fijo + Internet 
    </vaadin-label> 
@@ -16,11 +16,11 @@
     </vaadin-label> 
     <vaadin-horizontal-layout _id="hLayoutModalidades"></vaadin-horizontal-layout> 
     <vaadin-horizontal-layout spacing width-full _id="hLayoutFechaPrecio"> 
-     <vaadin-vertical-layout spacing width-auto height-full _id="vLayoutFecha"> 
+     <vaadin-vertical-layout size-auto _id="vLayoutFecha"> 
       <vaadin-label size-auto plain-text _id="fechaTituloL">
         Fecha contratación 
       </vaadin-label> 
-      <vaadin-label size-auto plain-text _id="fechaValorL" :center>
+      <vaadin-label size-auto plain-text _id="fechaValorL">
         23/09/2016 
       </vaadin-label> 
      </vaadin-vertical-layout> 

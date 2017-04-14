@@ -10,7 +10,7 @@
    <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Concepto Factura 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing width="80%" margin _id="vLayout" :center> 
+   <vaadin-vertical-layout style-name="card" spacing width="80%" margin _id="vLayout" :center> 
     <vaadin-label style-name="bold" size-auto plain-text _id="tituloL">
       Concepto Factura 
     </vaadin-label> 
@@ -67,55 +67,39 @@
     <vaadin-table selectable width-full _id="modalidadesTabla"> 
      <table> 
       <colgroup> 
-       <col property-id="Project"> 
-       <col property-id="Status"> 
+       <col property-id="Tipo Servicio"> 
+       <col property-id="Nombre Modalidad"> 
+       <col property-id="Consumo"> 
+       <col property-id="Precio"> 
+       <col property-id="IVA"> 
+       <col property-id="Total"> 
       </colgroup> 
       <tbody> 
        <tr item-id="1"> 
-        <td>Customer Project 1</td> 
-        <td>OK</td> 
+        <td>Oferta</td> 
+        <td>Teléfono fijo + Internet</td> 
+        <td>-</td> 
+        <td>45€</td> 
+        <td>4€</td> 
+        <td>49€</td> 
        </tr> 
        <tr item-id="2"> 
-        <td>Customer Project 2</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="3"> 
-        <td>Customer Project 3</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="4"> 
-        <td>Customer Project 4</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="5"> 
-        <td>Customer Project 5</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="6"> 
-        <td>Customer Project 6</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="7"> 
-        <td>Customer Project 7</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="8"> 
-        <td>Customer Project 8</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="9"> 
-        <td>Customer Project 9</td> 
-        <td>OK</td> 
+        <td>Móvil</td> 
+        <td>Modalidad 04</td> 
+        <td>20/500MB</td> 
+        <td>14€</td> 
+        <td>1€</td> 
+        <td>15€</td> 
        </tr> 
       </tbody> 
      </table> 
     </vaadin-table> 
-    <vaadin-horizontal-layout _id="hLayoutTotal" :right> 
+    <vaadin-horizontal-layout spacing _id="hLayoutTotal" :right> 
      <vaadin-label size-auto plain-text _id="totalTituloL">
        Total: 
      </vaadin-label> 
      <vaadin-label size-auto plain-text _id="totalValorL">
-       0€ 
+       64€ 
      </vaadin-label> 
     </vaadin-horizontal-layout> 
     <vaadin-button plain-text _id="imprimirB" :center>
