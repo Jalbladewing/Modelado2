@@ -28,6 +28,7 @@ public class Crear_modalidad_administrador_ventana extends VerticalLayout {
 	protected VerticalLayout vLayout;
 	protected Label crearL;
 	protected ComboBox tipoComboBx;
+	protected VerticalLayout ofertasLayout;
 	protected Label nombreL;
 	protected TextField nombreF;
 	protected Label caracteristicasL;

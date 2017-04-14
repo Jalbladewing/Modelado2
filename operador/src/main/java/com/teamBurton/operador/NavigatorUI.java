@@ -2,6 +2,7 @@ package com.teamBurton.operador;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.navigator.Navigator;
@@ -15,6 +16,7 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
+@PreserveOnRefresh
 @Theme("newtheme")
 public class NavigatorUI extends UI {
     Navigator navigator;

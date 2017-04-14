@@ -39,6 +39,7 @@ public class Cibernauta extends Cibernauta_ventana
         //Subventanas a las que se puede acceder
 		navigator.addView(Modalidades_destacadas_generico.VIEW_NAME, Modalidades_destacadas_generico.class);
 		navigator.addView(Television2.VIEW_NAME, Television2.class);
+		navigator.addView(Canal2.VIEW_NAME, Canal2.class);
 		navigator.addView(Telefono_fijo.VIEW_NAME, Telefono_fijo.class);
 		navigator.addView(Movil2.VIEW_NAME, Movil2.class);
 		navigator.addView(Internet.VIEW_NAME, Internet.class);

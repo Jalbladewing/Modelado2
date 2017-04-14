@@ -1,12 +1,14 @@
 package com.teamBurton.operador;
 
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-public class Modalidad_individual_cliente extends Modalidad_individual_cliente_ventana {
+public class Modalidad_individual_cliente extends Modalidad_individual_cliente_ventana implements View {
 	/*private Label _seccion;
 	private Label _tituloFechaContratacion;
 	private Label _valorFechaContratacion;
@@ -15,8 +17,20 @@ public class Modalidad_individual_cliente extends Modalidad_individual_cliente_v
 	private Button _baja;*/
 	public Servicio _unnamed_Servicio_;
 	public Crear_incidencia _creaIncidencia;
+	public static final String VIEW_NAME = "modalidad_individual_cliente";
 	
 	public void darBaja() {
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void enter(ViewChangeEvent event) {
+		// TODO Auto-generated method stub
+		if(event.getParameters() != null)
+		{
+			seccionL.setValue(event.getParameters());
+			tituloL.setValue(event.getParameters());
+		}
+		
 	}
 }

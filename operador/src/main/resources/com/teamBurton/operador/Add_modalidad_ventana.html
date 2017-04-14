@@ -10,7 +10,7 @@
    <vaadin-label style-name="bold huge h4" size-auto plain-text _id="seccionL">
      Añadir Modalidad 
    </vaadin-label> 
-   <vaadin-vertical-layout spacing size-auto margin _id="vLayout" :center> 
+   <vaadin-vertical-layout spacing margin _id="vLayout" :center> 
     <vaadin-horizontal-layout spacing _id="hLayoutBuscar"> 
      <vaadin-button plain-text _id="buscarL">
        Buscar 
@@ -20,45 +20,26 @@
     <vaadin-table selectable style-name="borderless no-horizontal-lines no-vertical-lines" width-full _id="modalidadesTabla"> 
      <table> 
       <colgroup> 
-       <col property-id="Project"> 
-       <col property-id="Status"> 
+       <col property-id="Id"> 
+       <col property-id="Tipo Servicio"> 
+       <col property-id="Nombre"> 
+       <col property-id="Visible"> 
+       <col property-id="Precio"> 
       </colgroup> 
       <tbody> 
        <tr item-id="1"> 
-        <td>Customer Project 1</td> 
-        <td>OK</td> 
+        <td>1</td> 
+        <td>Internet</td> 
+        <td>Fibra (300MB)</td> 
+        <td>Si</td> 
+        <td>1€</td> 
        </tr> 
        <tr item-id="2"> 
-        <td>Customer Project 2</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="3"> 
-        <td>Customer Project 3</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="4"> 
-        <td>Customer Project 4</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="5"> 
-        <td>Customer Project 5</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="6"> 
-        <td>Customer Project 6</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="7"> 
-        <td>Customer Project 7</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="8"> 
-        <td>Customer Project 8</td> 
-        <td>OK</td> 
-       </tr> 
-       <tr item-id="9"> 
-        <td>Customer Project 9</td> 
-        <td>OK</td> 
+        <td>2</td> 
+        <td>Móvil</td> 
+        <td>Llamadas ilimitadas</td> 
+        <td>Si</td> 
+        <td>20€</td> 
        </tr> 
       </tbody> 
      </table> 

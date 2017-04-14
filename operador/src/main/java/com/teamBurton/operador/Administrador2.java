@@ -25,7 +25,9 @@ public class Administrador2 extends Administrador2_ventana {
 		
 		//Subventanas a las que se puede acceder
 		navigator.addView(Modalidades_destacadas_administrador.VIEW_NAME, Modalidades_destacadas_administrador.class);
+		navigator.addView(Cambiar_modalidad_destacada.VIEW_NAME, Cambiar_modalidad_destacada.class);
 		navigator.addView(Television2.VIEW_NAME, Television2.class);
+		navigator.addView(Canal2.VIEW_NAME, Canal2.class);
 		navigator.addView(Telefono_fijo.VIEW_NAME, Telefono_fijo.class);
 		navigator.addView(Movil2.VIEW_NAME, Movil2.class);
 		navigator.addView(Internet.VIEW_NAME, Internet.class);
@@ -36,9 +38,13 @@ public class Administrador2 extends Administrador2_ventana {
 		navigator.addView(Alta_usuario.VIEW_NAME, Alta_usuario.class);
 		navigator.addView(Gestion_comerciales.VIEW_NAME, Gestion_comerciales.class);
 		navigator.addView(Gestion_modalidades.VIEW_NAME, Gestion_modalidades.class);
+		navigator.addView(Modalidad_gestion_administrador.VIEW_NAME, Modalidad_gestion_administrador.class);
 		navigator.addView(Asignar_incidencia.VIEW_NAME, Asignar_incidencia.class);
 		navigator.addView(Alta_comercial.VIEW_NAME, Alta_comercial.class);
 		navigator.addView(Crear_modalidad_administrador.VIEW_NAME, Crear_modalidad_administrador.class);
+		navigator.addView(Add_modalidad.VIEW_NAME, Add_modalidad.class);
+		navigator.addView(Traspasar_usuarios_administrador.VIEW_NAME, Traspasar_usuarios_administrador.class);
+		navigator.addView(Modalidades_eleccion.VIEW_NAME, Modalidades_eleccion.class);
 		
 		//Como la ventana estaba en Acceder la cambia a modalidades destacadas
 		navigator.navigateTo(Modalidades_destacadas_administrador.VIEW_NAME);

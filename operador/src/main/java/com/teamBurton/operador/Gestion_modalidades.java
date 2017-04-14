@@ -23,6 +23,23 @@ public class Gestion_modalidades extends Gestion_modalidades_ventana implements 
 	
 	public Gestion_modalidades()
 	{
+		
+		modalidadesTabla.setImmediate(true);
+		
+		modalidadesTabla.addItemClickListener(new ItemClickListener() 
+		{
+			
+			@Override
+			public void itemClick(ItemClickEvent event) 
+			{
+				Object rowId = event.getItemId();
+				String nombre = (String) modalidadesTabla.getContainerProperty(rowId, "Nombre").getValue();
+				
+				doNavigate(Modalidad_gestion_administrador.VIEW_NAME + "/" + nombre);
+				
+			}
+		});
+		
 		crearB.addClickListener(new Button.ClickListener() 
 		{ 
 			public void buttonClick(ClickEvent event) 

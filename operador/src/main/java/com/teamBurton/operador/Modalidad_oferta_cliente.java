@@ -2,7 +2,10 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Modalidad_oferta_cliente extends Modalidad_oferta_cliente_ventana{
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+
+public class Modalidad_oferta_cliente extends Modalidad_oferta_cliente_ventana implements View {
 	/*private Label _seccion;
 	private Label _nombre;
 	private Label _precio;
@@ -12,8 +15,20 @@ public class Modalidad_oferta_cliente extends Modalidad_oferta_cliente_ventana{
 	public Servicio _unnamed_Servicio_;
 	public Vector<Modalidad_individual_generico> _modalidad = new Vector<Modalidad_individual_generico>();
 	public Crear_incidencia _creaIncidencia;
+	public static final String VIEW_NAME = "modalidad_oferta_cliente";
 
 	public void darBaja() {
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void enter(ViewChangeEvent event) 
+	{
+		// TODO Auto-generated method stub
+		if(event.getParameters() != null)
+		{
+			seccionL.setValue(event.getParameters());
+			tituloL.setValue(event.getParameters());
+		}
 	}
 }

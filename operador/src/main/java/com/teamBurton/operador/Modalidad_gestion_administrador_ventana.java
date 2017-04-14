@@ -28,6 +28,7 @@ public class Modalidad_gestion_administrador_ventana extends VerticalLayout {
 	protected VerticalLayout vLayout;
 	protected Label modificarL;
 	protected ComboBox tipoModalidadComboBx;
+	protected VerticalLayout ofertasLayout;
 	protected Label nombreL;
 	protected TextField nombreF;
 	protected Label caracteristicasL;

@@ -2,7 +2,10 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
-public class Factura2 extends Factura2_ventana {
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+
+public class Factura2 extends Factura2_ventana implements View {
 	/*private Label _seccion;
 	private Label _tituloFactura;
 	private Label _tituloFecha;
@@ -23,4 +26,16 @@ public class Factura2 extends Factura2_ventana {
 	private List _modalidadesContratadas;*/
 	public Factura_Lista _unnamed_Factura_Lista_;
 	public Vector<Modalidad_contratada> _modalidad = new Vector<Modalidad_contratada>();
+	public static final String VIEW_NAME = "factura2";
+	
+	@Override
+	public void enter(ViewChangeEvent event) {
+		// TODO Auto-generated method stub
+		if(event.getParameters() != null)
+		{
+			seccionL.setValue(event.getParameters());
+			tituloL.setValue(event.getParameters());
+		}
+		
+	}
 }

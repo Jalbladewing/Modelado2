@@ -26,12 +26,14 @@ public class Comercial2 extends Comercial2_ventana {
 		//Subventanas a las que se puede acceder
 		navigator.addView(Modalidades_destacadas_generico.VIEW_NAME, Modalidades_destacadas_generico.class);
 		navigator.addView(Television2.VIEW_NAME, Television2.class);
+		navigator.addView(Canal2.VIEW_NAME, Canal2.class);
 		navigator.addView(Telefono_fijo.VIEW_NAME, Telefono_fijo.class);
 		navigator.addView(Movil2.VIEW_NAME, Movil2.class);
 		navigator.addView(Internet.VIEW_NAME, Internet.class);
 		navigator.addView(Oferta2.VIEW_NAME, Oferta2.class);
 		navigator.addView(Perfil_comercial.VIEW_NAME, Perfil_comercial.class);
 		navigator.addView(Mis_incidencias_comercial.VIEW_NAME, Mis_incidencias_comercial.class);
+		navigator.addView(Incidencia_comercial.VIEW_NAME, Incidencia_comercial.class);
 		navigator.addView(Gestion_usuarios_comercial.VIEW_NAME, Gestion_usuarios_comercial.class);
 		navigator.addView(Alta_usuario.VIEW_NAME, Alta_usuario.class);
 		

@@ -2,6 +2,8 @@ package com.teamBurton.operador;
 
 import java.util.Vector;
 
+import com.vaadin.event.ItemClickEvent;
+import com.vaadin.event.ItemClickEvent.ItemClickListener;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
@@ -19,6 +21,23 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 	
 	public Mis_incidencias_cliente()
 	{
+		incidenciasTabla.setImmediate(true);
+		
+		incidenciasTabla.addItemClickListener(new ItemClickListener() 
+		{
+			
+			@Override
+			public void itemClick(ItemClickEvent event) 
+			{
+				Object rowId = event.getItemId();
+				String numero = (String) incidenciasTabla.getContainerProperty(rowId, "Nº Incidencia").getValue();
+				String asunto = (String) incidenciasTabla.getContainerProperty(rowId, "Asunto").getValue();
+				
+				doNavigate(Incidencia_cliente.VIEW_NAME + "/" + numero + "_" + asunto);
+				
+			}
+		});
+		
 		crearB.addClickListener(new Button.ClickListener() 
 		{ 
 			public void buttonClick(ClickEvent event) 
