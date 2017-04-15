@@ -4,6 +4,9 @@ import java.util.Vector;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.UI;
+import com.vaadin.ui.Button.ClickEvent;
 
 public class Modalidad_oferta_cliente extends Modalidad_oferta_cliente_ventana implements View {
 	/*private Label _seccion;
@@ -26,6 +29,16 @@ public class Modalidad_oferta_cliente extends Modalidad_oferta_cliente_ventana i
 	       mi = new  Modalidad_individual_generico();
 	       mi.tituloL.setValue("100MB");
 	       hLayoutModalidades.addComponent(mi);
+	       
+	       bajaB.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) 
+			{
+				// TODO Auto-generated method stub
+				doNavigate(Crear_incidencia.VIEW_NAME);
+			}
+		});
 	      	       
 	}
 	
@@ -33,6 +46,10 @@ public class Modalidad_oferta_cliente extends Modalidad_oferta_cliente_ventana i
 		throw new UnsupportedOperationException();
 	}
 
+	private void doNavigate(String viewName) {
+	    UI.getCurrent().getNavigator().navigateTo(viewName);
+	}
+	
 	@Override
 	public void enter(ViewChangeEvent event) 
 	{

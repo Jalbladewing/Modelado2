@@ -20,9 +20,11 @@ import com.vaadin.ui.Button.ClickEvent;
 @Theme("newtheme")
 public class NavigatorUI extends UI {
     Navigator navigator;
+    private String mainView;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+    	mainView = "Cibernauta";
         setContent(new Cibernauta());
      
     }
@@ -32,6 +34,14 @@ public class NavigatorUI extends UI {
     public static class MyUIServlet extends VaadinServlet {
     }
     
+    public void setMainView(String mainView)
+    {
+    	this.mainView = mainView;
+    }
     
+    public String getMainView()
+    {
+    	return mainView;
+    }
     
 }

@@ -47,6 +47,7 @@ public class Cibernauta extends Cibernauta_ventana
 		navigator.addView(Acceder.VIEW_NAME, Acceder.class);
 		navigator.addView(Recuperar_password.VIEW_NAME, Recuperar_password.class);
 		
+		navigator.navigateTo(Modalidades_destacadas_generico.VIEW_NAME);
 
 		if (navigator.getState().isEmpty()) {
 	        navigator.navigateTo(Modalidades_destacadas_generico.VIEW_NAME);

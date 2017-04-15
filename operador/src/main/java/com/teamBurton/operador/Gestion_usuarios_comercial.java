@@ -38,6 +38,7 @@ public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_venta
 			{
 				UI.getCurrent().getNavigator().removeView(Gestion_usuarios_comercial.VIEW_NAME);
 				UI.getCurrent().getNavigator().destroy();
+				((NavigatorUI) UI.getCurrent()).setMainView("Vista_Cliente");
 				NavigatorUI.getCurrent().setContent(new Usuario_gestion_comercial());
 				
 			}

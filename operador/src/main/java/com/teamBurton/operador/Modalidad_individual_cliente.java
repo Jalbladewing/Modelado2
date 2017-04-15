@@ -6,7 +6,9 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Button.ClickEvent;
 
 public class Modalidad_individual_cliente extends Modalidad_individual_cliente_ventana implements View {
 	/*private Label _seccion;
@@ -19,8 +21,25 @@ public class Modalidad_individual_cliente extends Modalidad_individual_cliente_v
 	public Crear_incidencia _creaIncidencia;
 	public static final String VIEW_NAME = "modalidad_individual_cliente";
 	
+	public Modalidad_individual_cliente()
+	{
+		  bajaB.addClickListener(new Button.ClickListener() {
+				
+				@Override
+				public void buttonClick(ClickEvent event) 
+				{
+					// TODO Auto-generated method stub
+					doNavigate(Crear_incidencia.VIEW_NAME);
+				}
+			});
+	}
+	
 	public void darBaja() {
 		throw new UnsupportedOperationException();
+	}
+	
+	private void doNavigate(String viewName) {
+	    UI.getCurrent().getNavigator().navigateTo(viewName);
 	}
 
 	@Override

@@ -8,6 +8,11 @@ public class Contratar_cibernauta extends Contratar_cibernauta_ventana {
 	private Button _cancelar;*/
 	public Cibernauta _unnamed_Cibernauta_;
 
+	public Contratar_cibernauta()
+	{
+		
+	}
+	
 	public void solicitarLLamada(String aNumero) {
 		throw new UnsupportedOperationException();
 	}
