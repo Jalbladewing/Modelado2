@@ -91,6 +91,13 @@ public class Comercial_administrador extends Comercial_administrador_ventana{
 					doNavigate(Oferta2.VIEW_NAME);
 				} 
 			}); 
+			_cabecera.inicioB.addClickListener(new Button.ClickListener() 
+			{ 
+				public void buttonClick(ClickEvent event) 
+				{ 
+					doNavigate(Modalidades_destacadas_vista_comercial.VIEW_NAME);
+				} 
+			}); 
 			/*
 			_cabecera.miCuentaB.addClickListener(new Button.ClickListener() 
 			{ 

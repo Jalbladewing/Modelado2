@@ -95,6 +95,14 @@ public class Usuario_gestion_comercial extends Usuario_gestion_comercial_ventana
 				doNavigate(Oferta2.VIEW_NAME);
 			} 
 		}); 
+		
+		_cabecera.inicioB.addClickListener(new Button.ClickListener() 
+		{ 
+			public void buttonClick(ClickEvent event) 
+			{ 
+				doNavigate(Modalidades_destacadas_vista_usuario.VIEW_NAME);
+			} 
+		}); 
 		/*
 		_cabecera.miCuentaB.addClickListener(new Button.ClickListener() 
 		{ 

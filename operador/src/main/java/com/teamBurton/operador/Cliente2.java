@@ -95,7 +95,13 @@ public class Cliente2 extends Cliente2_ventana
 				doNavigate(Oferta2.VIEW_NAME);
 			} 
 		}); 
-		
+		_cabecera.inicioB.addClickListener(new Button.ClickListener() 
+		{ 
+			public void buttonClick(ClickEvent event) 
+			{ 
+				doNavigate(Modalidades_destacadas_generico.VIEW_NAME);
+			} 
+		}); 
 		/*_cabecera.miCuentaB.addClickListener(new Button.ClickListener() 
 		{ 
 			public void buttonClick(ClickEvent event) 

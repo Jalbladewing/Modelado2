@@ -106,6 +106,14 @@ public class Cibernauta extends Cibernauta_ventana
 			} 
 		}); 
 		
+		_cabecera.inicioB.addClickListener(new Button.ClickListener() 
+		{ 
+			public void buttonClick(ClickEvent event) 
+			{ 
+				doNavigate(Modalidades_destacadas_generico.VIEW_NAME);
+			} 
+		}); 
+		
 	}
 	
 	private void doNavigate(String viewName) {

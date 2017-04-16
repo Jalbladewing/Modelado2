@@ -27,7 +27,21 @@ $v-background-color: #0099CC;
     @include valo-menubar-style($primary-stylename: v-menubar, $background-color: rgba(51,153,204,0.5) , $unit-size: $v-unit-size);  
 
  }
- 
+ .v-checkbox-green {
+        @include valo-checkbox-style($v-background-color, $v-unit-size, #00ff00 );
+    }  
+
+    
+    .i-button-nobackground {
+  background: transparent;
+  border: none;
+}
+
+ .largeicon .v-icon {
+        
+        font-size: 35px;
+    }
+    
 .modalidad-fondo
 {
    background: #6699CC;
