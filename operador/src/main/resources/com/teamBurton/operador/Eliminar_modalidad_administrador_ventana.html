@@ -6,12 +6,9 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout spacing width="38%"> 
-   <vaadin-label size-auto plain-text _id="tituloL">
-     Eliminar 
-   </vaadin-label> 
+  <vaadin-vertical-layout spacing margin> 
    <vaadin-label size-auto plain-text _id="mensajeL" :center>
-     ¿Seguro que desea desconectar? 
+     ¿Está seguro que desea eliminar la modalidad? Introduzca el plazo de tiempo para que se elimine la modalidad 
    </vaadin-label> 
    <vaadin-horizontal-layout spacing _id="hLayoutDias" :center> 
     <vaadin-label size-auto plain-text _id="diasL">
@@ -19,7 +16,7 @@
     </vaadin-label> 
     <vaadin-text-field width="56px" height="25px" _id="diasF"></vaadin-text-field> 
    </vaadin-horizontal-layout> 
-   <vaadin-horizontal-layout width="90%" _id="hLayoutBotones" :center> 
+   <vaadin-horizontal-layout spacing _id="hLayoutBotones" :center> 
     <vaadin-button height-full plain-text _id="cancelarB" :center>
       Cancelar 
     </vaadin-button> 

@@ -6,6 +6,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class Modalidad_oferta_cliente extends Modalidad_oferta_cliente_ventana implements View {
@@ -36,7 +37,19 @@ public class Modalidad_oferta_cliente extends Modalidad_oferta_cliente_ventana i
 			public void buttonClick(ClickEvent event) 
 			{
 				// TODO Auto-generated method stub
-				doNavigate(Crear_incidencia.VIEW_NAME);
+				if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+				{
+					Window subWindow = new Window("Baja Modalidad");	
+					subWindow.setModal(true);
+					subWindow.setResizable(false);
+					subWindow.setContent(new Dar_baja_modalidad());
+					UI.getCurrent().addWindow(subWindow);
+					
+				}else
+				{
+					doNavigate(Crear_incidencia.VIEW_NAME);
+				}
+				
 			}
 		});
 	      	       

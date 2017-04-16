@@ -6,6 +6,7 @@ import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class Usuario_gestion_comercial extends Usuario_gestion_comercial_ventana {
@@ -32,7 +33,7 @@ public class Usuario_gestion_comercial extends Usuario_gestion_comercial_ventana
 		navigator.addView(Movil2.VIEW_NAME, Movil2.class);
 		navigator.addView(Internet.VIEW_NAME, Internet.class);
 		navigator.addView(Oferta2.VIEW_NAME, Oferta2.class);
-		navigator.addView(Perfil_cliente.VIEW_NAME, Perfil_cliente.class);
+		navigator.addView(Perfil_vista_usuario.VIEW_NAME, Perfil_vista_usuario.class);
 		navigator.addView(Mis_servicios.VIEW_NAME, Mis_servicios.class);
 		navigator.addView(Modalidad_individual_cliente.VIEW_NAME, Modalidad_individual_cliente.class);
 		navigator.addView(Modalidad_oferta_cliente.VIEW_NAME, Modalidad_oferta_cliente.class);
@@ -119,7 +120,7 @@ public class Usuario_gestion_comercial extends Usuario_gestion_comercial_ventana
 				switch ((String)_cabecera.miCuentaLista.getValue())
 				{
 					case "Perfil":
-						doNavigate(Perfil_cliente.VIEW_NAME);
+						doNavigate(Perfil_vista_usuario.VIEW_NAME);
 						break;
 						
 					case "Mis Servicios":
@@ -132,6 +133,14 @@ public class Usuario_gestion_comercial extends Usuario_gestion_comercial_ventana
 						
 					case "Mis Incidencias":
 						doNavigate(Mis_incidencias_cliente.VIEW_NAME);
+						break;
+						
+					case "Salir Vista Usuario":
+						Window subWindow = new Window("Desconectar");	
+						subWindow.setModal(true);
+						subWindow.setResizable(false);
+						subWindow.setContent(new Salir_vista_usuario());
+						UI.getCurrent().addWindow(subWindow);
 						break;
 						
 					default:

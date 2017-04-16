@@ -40,6 +40,7 @@ public class Gestion_comerciales extends Gestion_comerciales_ventana implements 
 				UI.getCurrent().getNavigator().removeView(Gestion_comerciales.VIEW_NAME);
 				UI.getCurrent().getNavigator().destroy();
 				((NavigatorUI) UI.getCurrent()).setMainView("Vista_Comercial");
+				((NavigatorUI) UI.getCurrent()).setParentView("Vista_Comercial");
 				NavigatorUI.getCurrent().setContent(new Comercial_administrador());
 				
 			}

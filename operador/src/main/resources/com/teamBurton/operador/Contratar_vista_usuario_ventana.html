@@ -6,14 +6,11 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-vertical-layout spacing> 
-   <vaadin-label size-auto plain-text _id="tituloL">
-     Contratar 
-   </vaadin-label> 
-   <vaadin-label width="70%" plain-text _id="mensajeL">
+  <vaadin-vertical-layout spacing margin> 
+   <vaadin-label size-auto plain-text _id="mensajeL" :center>
      ¿Seguro que desea ....? 
    </vaadin-label> 
-   <vaadin-horizontal-layout spacing _id="hLayout"> 
+   <vaadin-horizontal-layout spacing _id="hLayout" :center> 
     <vaadin-button height="27px" plain-text _id="cancelarB" :center>
       Cancelar 
     </vaadin-button> 

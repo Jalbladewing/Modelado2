@@ -6,6 +6,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class Modalidad_gestion_administrador extends Modalidad_gestion_administrador_ventana implements View {
@@ -47,6 +48,20 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 				{
 					ofertasLayout.setVisible(true);
 				}
+			}
+		});
+		
+		eliminarB.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) 
+			{
+				// TODO Auto-generated method stub
+				Window subWindow = new Window("Eliminar");	
+				subWindow.setModal(true);
+				subWindow.setResizable(false);
+				subWindow.setContent(new Eliminar_modalidad_administrador());
+				UI.getCurrent().addWindow(subWindow);
 			}
 		});
 		

@@ -1,6 +1,9 @@
 package com.teamBurton.operador;
 
 import com.vaadin.ui.UI;
+import com.vaadin.ui.Window;
+import com.vaadin.data.Property;
+import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 
@@ -15,6 +18,24 @@ public class Modalidad_individual_administrador extends Modalidad_individual_adm
 	
 	public Modalidad_individual_administrador()
 	{
+		
+		visibleCheckBx.addValueChangeListener(new Property.ValueChangeListener() {
+			
+			@Override
+			public void valueChange(ValueChangeEvent event) 
+			{
+				// TODO Auto-generated method stub
+				
+				Window subWindow = new Window("Visibilidad");	
+				subWindow.setModal(true);
+				subWindow.setResizable(false);
+				subWindow.setContent(new Cambiar_visibilidad());
+				UI.getCurrent().addWindow(subWindow);
+				
+			}
+		});
+		
+		
 		cambiarB.addClickListener(new Button.ClickListener() {
 			
 			@Override

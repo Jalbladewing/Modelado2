@@ -21,10 +21,12 @@ import com.vaadin.ui.Button.ClickEvent;
 public class NavigatorUI extends UI {
     Navigator navigator;
     private String mainView;
+    private String parentView;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
     	mainView = "Cibernauta";
+    	parentView = ""; //para identificar las vistas
         setContent(new Cibernauta());
      
     }
@@ -42,6 +44,16 @@ public class NavigatorUI extends UI {
     public String getMainView()
     {
     	return mainView;
+    }
+    
+    public void setParentView(String parentView)
+    {
+    	this.parentView = parentView;
+    }
+    
+    public String getParentView()
+    {
+    	return parentView;
     }
     
 }

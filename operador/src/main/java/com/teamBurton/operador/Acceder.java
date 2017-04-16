@@ -51,6 +51,7 @@ public class Acceder extends Acceder_ventana implements View {
 					UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
 					UI.getCurrent().getNavigator().destroy();
 					((NavigatorUI) UI.getCurrent()).setMainView("Comercial");
+					((NavigatorUI) UI.getCurrent()).setParentView("Comercial");
 					NavigatorUI.getCurrent().setContent(new Comercial2());	
 				}
 				
@@ -59,6 +60,7 @@ public class Acceder extends Acceder_ventana implements View {
 					UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
 					UI.getCurrent().getNavigator().destroy();
 					((NavigatorUI) UI.getCurrent()).setMainView("Administrador");
+					((NavigatorUI) UI.getCurrent()).setParentView("Administrador");
 					NavigatorUI.getCurrent().setContent(new Administrador2());	
 				}
 				

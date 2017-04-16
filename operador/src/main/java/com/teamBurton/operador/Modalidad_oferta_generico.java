@@ -36,6 +36,12 @@ public class Modalidad_oferta_generico extends Modalidad_oferta_generico_ventana
 					subWindow.setResizable(false);
 					subWindow.setContent(new Contratar_cibernauta());
 					UI.getCurrent().addWindow(subWindow);
+				}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+				{
+					subWindow.setModal(true);
+					subWindow.setResizable(false);
+					subWindow.setContent(new Contratar_vista_usuario());
+					UI.getCurrent().addWindow(subWindow);
 				}
 				
 			}

@@ -6,6 +6,7 @@ import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class Comercial2 extends Comercial2_ventana {
@@ -123,6 +124,14 @@ public class Comercial2 extends Comercial2_ventana {
 						
 					case "Gestión de Usuario":
 						doNavigate(Gestion_usuarios_comercial.VIEW_NAME);
+						break;
+						
+					case "Desconectar":
+						Window subWindow = new Window("Desconectar");	
+						subWindow.setModal(true);
+						subWindow.setResizable(false);
+						subWindow.setContent(new Desconectar_comercial());
+						UI.getCurrent().addWindow(subWindow);
 						break;
 						
 					default:
