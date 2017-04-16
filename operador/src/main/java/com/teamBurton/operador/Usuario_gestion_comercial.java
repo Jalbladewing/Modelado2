@@ -4,10 +4,12 @@ import com.vaadin.data.Property;
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.MenuBar.MenuItem;
 
 public class Usuario_gestion_comercial extends Usuario_gestion_comercial_ventana {
 	public Usuario_lista_gestion_comercial _unnamed_Usuario_lista_gestion_comercial_;
@@ -93,7 +95,7 @@ public class Usuario_gestion_comercial extends Usuario_gestion_comercial_ventana
 				doNavigate(Oferta2.VIEW_NAME);
 			} 
 		}); 
-		
+		/*
 		_cabecera.miCuentaB.addClickListener(new Button.ClickListener() 
 		{ 
 			public void buttonClick(ClickEvent event) 
@@ -151,7 +153,45 @@ public class Usuario_gestion_comercial extends Usuario_gestion_comercial_ventana
 				
 			}
 		});
+		*/
 		
+MenuBar.Command mycommand = new MenuBar.Command() {
+			
+		    public void menuSelected(MenuItem selectedItem) {
+		    	switch ((String)selectedItem.getText())
+				{
+				case "Perfil":
+					doNavigate(Perfil_vista_usuario.VIEW_NAME);
+					break;
+					
+				case "Mis Servicios":
+					doNavigate(Mis_servicios.VIEW_NAME);
+					break;
+					
+				case "Mis Facturas":
+					doNavigate(Mis_facturas.VIEW_NAME);
+					break;
+					
+				case "Mis Incidencias":
+					doNavigate(Mis_incidencias_cliente.VIEW_NAME);
+					break;
+					
+				case "Salir Vista Usuario":
+					Window subWindow = new Window("Desconectar");	
+					subWindow.setModal(true);
+					subWindow.setResizable(false);
+					subWindow.setContent(new Salir_vista_usuario());
+					UI.getCurrent().addWindow(subWindow);
+					break;
+					
+				default:
+					break;
+			}
+		    }
+		};
+		for(MenuItem i:_cabecera.miCuentaMenu.getItems().get(0).getChildren()){
+		i.setCommand(mycommand);
+		}
 	}
 	
 	private void doNavigate(String viewName) {

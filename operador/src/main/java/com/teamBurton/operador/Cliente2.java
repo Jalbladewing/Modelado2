@@ -8,6 +8,8 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.MenuBar;
+import com.vaadin.ui.MenuBar.MenuItem;
 
 public class Cliente2 extends Cliente2_ventana 
 {
@@ -94,7 +96,7 @@ public class Cliente2 extends Cliente2_ventana
 			} 
 		}); 
 		
-		_cabecera.miCuentaB.addClickListener(new Button.ClickListener() 
+		/*_cabecera.miCuentaB.addClickListener(new Button.ClickListener() 
 		{ 
 			public void buttonClick(ClickEvent event) 
 			{ 
@@ -109,9 +111,9 @@ public class Cliente2 extends Cliente2_ventana
 				}
 				
 			} 
-		});
+		});*/
 		
-		_cabecera.miCuentaLista.addValueChangeListener(new Property.ValueChangeListener() 
+	/*	_cabecera.miCuentaLista.addValueChangeListener(new Property.ValueChangeListener() 
 		{
 			
 			@Override
@@ -151,7 +153,46 @@ public class Cliente2 extends Cliente2_ventana
 				
 			}
 		});
+		*/
 		
+	
+		MenuBar.Command mycommand = new MenuBar.Command() {
+			
+		    public void menuSelected(MenuItem selectedItem) {
+		    	switch ((String)selectedItem.getText())
+				{
+				case "Perfil":
+					doNavigate(Perfil_cliente.VIEW_NAME);
+					break;
+					
+				case "Mis Servicios":
+					doNavigate(Mis_servicios.VIEW_NAME);
+					break;
+					
+				case "Mis Facturas":
+					doNavigate(Mis_facturas.VIEW_NAME);
+					break;
+					
+				case "Mis Incidencias":
+					doNavigate(Mis_incidencias_cliente.VIEW_NAME);
+					break;				
+					
+				case "Desconectar":
+					Window subWindow = new Window("Desconectar");	
+					subWindow.setModal(true);
+					subWindow.setResizable(false);
+					subWindow.setContent(new Desconectar_cliente());
+					UI.getCurrent().addWindow(subWindow);
+					break;
+					
+				default:
+				break;
+			}
+		    }
+		};
+		for(MenuItem i:_cabecera.miCuentaMenu.getItems().get(0).getChildren()){
+		i.setCommand(mycommand);
+		}
 	}
 	
 	private void doNavigate(String viewName) {

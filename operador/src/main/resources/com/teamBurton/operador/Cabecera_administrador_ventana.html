@@ -6,7 +6,7 @@
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
-  <vaadin-horizontal-layout style-name="cabecera-fondo" width-full height="20%"> 
+  <vaadin-horizontal-layout style-name="cabecera-fondo" width-full> 
    <vaadin-button style-name="borderless white-color large" plain-text _id="telefonoL" :middle :center>
      Teléfono Fijo 
    </vaadin-button> 
@@ -24,17 +24,29 @@
    </vaadin-button> 
    <vaadin-vertical-layout size-auto _id="vLayout" :middle :center> 
     <vaadin-image icon="fonticon://FontAwesome/f015" _id="inicioI"></vaadin-image> 
-    <vaadin-button style-name="link white-color large" plain-text _id="miCuentaB" :middle :center>
-      Mi cuenta 
-    </vaadin-button> 
-    <vaadin-list-select visible="false" style-name="white-background" height="140px" _id="miCuentaLista"> 
-     <option>Perfil</option> 
-     <option>Gestión de Incidencias</option> 
-     <option>Gestión de Usuarios</option> 
-     <option>Gestión de Comerciales</option> 
-     <option>Gestión de Modalidades</option> 
-     <option>Desconectar</option> 
-    </vaadin-list-select> 
+    <vaadin-menu-bar _id="miCuentaMenu"> 
+     <menu>
+       Mi cuenta 
+      <menu>
+        Perfil 
+      </menu> 
+      <menu>
+        Gestión de Incidencias 
+      </menu> 
+      <menu>
+        Gestión de Usuarios 
+      </menu> 
+      <menu>
+        Gestión de Comerciales 
+      </menu> 
+      <menu>
+        Gestión de Modalidades 
+      </menu> 
+      <menu>
+        Desconectar 
+      </menu> 
+     </menu> 
+    </vaadin-menu-bar> 
    </vaadin-vertical-layout> 
   </vaadin-horizontal-layout>  
  </body>
