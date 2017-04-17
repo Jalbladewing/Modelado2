@@ -67,11 +67,29 @@ $v-background-color: #0099CC;
  	color: #FFFFFF;
 }
 
+.black-color
+{
+ 	color: #000000;
+ 	
+ 	&:hover{
+ 	 color: #333333;
+ 	}
+}
+
 
 
 .layoutTransparente
 {
    background-color: rgba(255,255,255,0.5);
+}
+
+ .v-menubar {
+    color: #FFFFFF;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-color:transparent;
+    box-shadow:none;  
 }
 
 }
