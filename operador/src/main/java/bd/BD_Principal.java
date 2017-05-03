@@ -9,15 +9,15 @@ import java.util.List;
 import bdgui.IAdministrador;
 
 public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdministrador {
-	public BD_Oferta _bd_ofer;
-	public BD_Movil _bd_movil;
-	public BD_Paquete _bd_paq;
-	public BD_Canal _bd_canal;
-	public BD_Cliente _bd_clien;
-	public BD_Factura _bd_fact;
-	public BD_Comercial _bd_comer;
-	public BD_Administrador _bd_admin;
-	public BD_Incidencia_administrador _bd_incid_admin;
+	public BD_Oferta _bd_ofer = new BD_Oferta();
+	public BD_Movil _bd_movil = new BD_Movil();
+	public BD_Paquete _bd_paq = new BD_Paquete();
+	public BD_Canal _bd_canal = new BD_Canal();
+	public BD_Cliente _bd_clien = new BD_Cliente();
+	public BD_Factura _bd_fact = new BD_Factura();
+	public BD_Comercial _bd_comer = new BD_Comercial();
+	public BD_Administrador _bd_admin = new BD_Administrador();
+	public BD_Incidencia_administrador _bd_incid_admin = new BD_Incidencia_administrador();
 
 	public List cargar_modalidades_destacadas() {
 		throw new UnsupportedOperationException();

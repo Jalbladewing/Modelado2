@@ -10,6 +10,24 @@ public class BD_Cliente {
 	public Vector<Cliente> _contiene_clen = new Vector<Cliente>();
 
 	public Usuario verificar_loguin(String aEmail, String aPassword) {
+		
+		
+/*
+ * Cliente cl = null;
+		PersistentTransaction t = citas.GestiondeCitasPersistentManager.instance().getSession().beginTransaction();
+		try {
+
+			citas.Cita c = citas.CitaDAO.getCitaByORMID(Cita);
+			cl = citas.ClienteDAO.getClienteByORMID(c.getCliente().getID());
+
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+
+		return cl;
+		}*/
+ 
 		throw new UnsupportedOperationException();
 	}
 
