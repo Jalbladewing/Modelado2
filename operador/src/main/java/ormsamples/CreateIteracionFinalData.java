@@ -9,48 +9,48 @@ public class CreateIteracionFinalData {
 	public void createTestData() throws PersistentException {
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		try {
-			bd.Factura bDFactura = bd.Factura.createFactura();
+			bd.Factura bDFactura = bd.FacturaDAO.createFactura();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : modalidad, precioTotal, telefonoCliente, direccionCliente, nifCliente, apellidosCliente, nombreCliente, fecha, nombre, cliente
-			bDFactura.save();
-			bd.Modalidad bDModalidad = bd.Modalidad.createModalidad();
+			bd.FacturaDAO.save(bDFactura);
+			bd.Modalidad bDModalidad = bd.ModalidadDAO.createModalidad();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : factura, contratos, oferta, tipo, visibilidad, precio, nombre, administrador
-			bDModalidad.save();
-			bd.Television bDTelevision = bd.Television.createTelevision();
+			bd.ModalidadDAO.save(bDModalidad);
+			bd.Television bDTelevision = bd.TelevisionDAO.createTelevision();
 			// Initialize the properties of the persistent object here
-			bDTelevision.save();
-			bd.Canal bDCanal = bd.Canal.createCanal();
+			bd.TelevisionDAO.save(bDTelevision);
+			bd.Canal bDCanal = bd.CanalDAO.createCanal();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : paquete
-			bDCanal.save();
-			bd.Incidencia bDIncidencia = bd.Incidencia.createIncidencia();
+			bd.CanalDAO.save(bDCanal);
+			bd.Incidencia bDIncidencia = bd.IncidenciaDAO.createIncidencia();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : asunto, correoCliente, cliente
-			bDIncidencia.save();
-			bd.Usuario bDUsuario = bd.Usuario.createUsuario();
+			bd.IncidenciaDAO.save(bDIncidencia);
+			bd.Usuario bDUsuario = bd.UsuarioDAO.createUsuario();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : password, nif, email, telefono, direccion, apellidos, nombre
-			bDUsuario.save();
-			bd.Incidencia_administrador bDIncidencia_administrador = bd.Incidencia_administrador.createIncidencia_administrador();
+			bd.UsuarioDAO.save(bDUsuario);
+			bd.Incidencia_administrador bDIncidencia_administrador = bd.Incidencia_administradorDAO.createIncidencia_administrador();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : administrador, correoComercial
-			bDIncidencia_administrador.save();
-			bd.Cliente bDCliente = bd.Cliente.createCliente();
+			bd.Incidencia_administradorDAO.save(bDIncidencia_administrador);
+			bd.Cliente bDCliente = bd.ClienteDAO.createCliente();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : comercial, incidencia, factura, contratos, administrador
-			bDCliente.save();
-			bd.Movil bDMovil = bd.Movil.createMovil();
+			bd.ClienteDAO.save(bDCliente);
+			bd.Movil bDMovil = bd.MovilDAO.createMovil();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : consumoMax, consumoActual
-			bDMovil.save();
-			bd.Oferta bDOferta = bd.Oferta.createOferta();
+			bd.MovilDAO.save(bDMovil);
+			bd.Oferta bDOferta = bd.OfertaDAO.createOferta();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : modalidad
-			bDOferta.save();
-			bd.contrato bDcontrato = bd.contrato.createContrato();
+			bd.OfertaDAO.save(bDOferta);
+			bd.contrato bDcontrato = bd.contratoDAO.createContrato();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : modalidad, cliente
-			bDcontrato.save();
-			bd.Comercial bDComercial = bd.Comercial.createComercial();
+			bd.contratoDAO.save(bDcontrato);
+			bd.Comercial bDComercial = bd.ComercialDAO.createComercial();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : cliente, administrador
-			bDComercial.save();
-			bd.Administrador bDAdministrador = bd.Administrador.createAdministrador();
+			bd.ComercialDAO.save(bDComercial);
+			bd.Administrador bDAdministrador = bd.AdministradorDAO.createAdministrador();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : incidencia, comercial, modalidadDestacada, cliente
-			bDAdministrador.save();
-			bd.Paquete bDPaquete = bd.Paquete.createPaquete();
+			bd.AdministradorDAO.save(bDAdministrador);
+			bd.Paquete bDPaquete = bd.PaqueteDAO.createPaquete();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : modalidad
-			bDPaquete.save();
+			bd.PaqueteDAO.save(bDPaquete);
 			t.commit();
 		}
 		catch (Exception e) {

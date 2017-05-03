@@ -9,48 +9,48 @@ public class RetrieveAndUpdateIteracionFinalData {
 	public void retrieveAndUpdateTestData() throws PersistentException {
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		try {
-			bd.Factura bDFactura = bd.Factura.loadFacturaByQuery(null, null);
+			bd.Factura bDFactura = bd.FacturaDAO.loadFacturaByQuery(null, null);
 			// Update the properties of the persistent object
-			bDFactura.save();
-			bd.Modalidad bDModalidad = bd.Modalidad.loadModalidadByQuery(null, null);
+			bd.FacturaDAO.save(bDFactura);
+			bd.Modalidad bDModalidad = bd.ModalidadDAO.loadModalidadByQuery(null, null);
 			// Update the properties of the persistent object
-			bDModalidad.save();
-			bd.Television bDTelevision = bd.Television.loadTelevisionByQuery(null, null);
+			bd.ModalidadDAO.save(bDModalidad);
+			bd.Television bDTelevision = bd.TelevisionDAO.loadTelevisionByQuery(null, null);
 			// Update the properties of the persistent object
-			bDTelevision.save();
-			bd.Canal bDCanal = bd.Canal.loadCanalByQuery(null, null);
+			bd.TelevisionDAO.save(bDTelevision);
+			bd.Canal bDCanal = bd.CanalDAO.loadCanalByQuery(null, null);
 			// Update the properties of the persistent object
-			bDCanal.save();
-			bd.Incidencia bDIncidencia = bd.Incidencia.loadIncidenciaByQuery(null, null);
+			bd.CanalDAO.save(bDCanal);
+			bd.Incidencia bDIncidencia = bd.IncidenciaDAO.loadIncidenciaByQuery(null, null);
 			// Update the properties of the persistent object
-			bDIncidencia.save();
-			bd.Usuario bDUsuario = bd.Usuario.loadUsuarioByQuery(null, null);
+			bd.IncidenciaDAO.save(bDIncidencia);
+			bd.Usuario bDUsuario = bd.UsuarioDAO.loadUsuarioByQuery(null, null);
 			// Update the properties of the persistent object
-			bDUsuario.save();
-			bd.Incidencia_administrador bDIncidencia_administrador = bd.Incidencia_administrador.loadIncidencia_administradorByQuery(null, null);
+			bd.UsuarioDAO.save(bDUsuario);
+			bd.Incidencia_administrador bDIncidencia_administrador = bd.Incidencia_administradorDAO.loadIncidencia_administradorByQuery(null, null);
 			// Update the properties of the persistent object
-			bDIncidencia_administrador.save();
-			bd.Cliente bDCliente = bd.Cliente.loadClienteByQuery(null, null);
+			bd.Incidencia_administradorDAO.save(bDIncidencia_administrador);
+			bd.Cliente bDCliente = bd.ClienteDAO.loadClienteByQuery(null, null);
 			// Update the properties of the persistent object
-			bDCliente.save();
-			bd.Movil bDMovil = bd.Movil.loadMovilByQuery(null, null);
+			bd.ClienteDAO.save(bDCliente);
+			bd.Movil bDMovil = bd.MovilDAO.loadMovilByQuery(null, null);
 			// Update the properties of the persistent object
-			bDMovil.save();
-			bd.Oferta bDOferta = bd.Oferta.loadOfertaByQuery(null, null);
+			bd.MovilDAO.save(bDMovil);
+			bd.Oferta bDOferta = bd.OfertaDAO.loadOfertaByQuery(null, null);
 			// Update the properties of the persistent object
-			bDOferta.save();
-			bd.contrato bDcontrato = bd.contrato.loadContratoByQuery(null, null);
+			bd.OfertaDAO.save(bDOferta);
+			bd.contrato bDcontrato = bd.contratoDAO.loadContratoByQuery(null, null);
 			// Update the properties of the persistent object
-			bDcontrato.save();
-			bd.Comercial bDComercial = bd.Comercial.loadComercialByQuery(null, null);
+			bd.contratoDAO.save(bDcontrato);
+			bd.Comercial bDComercial = bd.ComercialDAO.loadComercialByQuery(null, null);
 			// Update the properties of the persistent object
-			bDComercial.save();
-			bd.Administrador bDAdministrador = bd.Administrador.loadAdministradorByQuery(null, null);
+			bd.ComercialDAO.save(bDComercial);
+			bd.Administrador bDAdministrador = bd.AdministradorDAO.loadAdministradorByQuery(null, null);
 			// Update the properties of the persistent object
-			bDAdministrador.save();
-			bd.Paquete bDPaquete = bd.Paquete.loadPaqueteByQuery(null, null);
+			bd.AdministradorDAO.save(bDAdministrador);
+			bd.Paquete bDPaquete = bd.PaqueteDAO.loadPaqueteByQuery(null, null);
 			// Update the properties of the persistent object
-			bDPaquete.save();
+			bd.PaqueteDAO.save(bDPaquete);
 			t.commit();
 		}
 		catch (Exception e) {

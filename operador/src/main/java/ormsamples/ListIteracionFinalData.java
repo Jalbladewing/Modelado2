@@ -10,7 +10,7 @@ public class ListIteracionFinalData {
 	
 	public void listTestData() throws PersistentException {
 		System.out.println("Listing Factura...");
-		bd.Factura[] bDFacturas = bd.Factura.listFacturaByQuery(null, null);
+		bd.Factura[] bDFacturas = bd.FacturaDAO.listFacturaByQuery(null, null);
 		int length = Math.min(bDFacturas.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDFacturas[i]);
@@ -18,7 +18,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Modalidad...");
-		bd.Modalidad[] bDModalidads = bd.Modalidad.listModalidadByQuery(null, null);
+		bd.Modalidad[] bDModalidads = bd.ModalidadDAO.listModalidadByQuery(null, null);
 		length = Math.min(bDModalidads.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDModalidads[i]);
@@ -26,7 +26,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Television...");
-		bd.Television[] bDTelevisions = bd.Television.listTelevisionByQuery(null, null);
+		bd.Television[] bDTelevisions = bd.TelevisionDAO.listTelevisionByQuery(null, null);
 		length = Math.min(bDTelevisions.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDTelevisions[i]);
@@ -34,7 +34,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Canal...");
-		bd.Canal[] bDCanals = bd.Canal.listCanalByQuery(null, null);
+		bd.Canal[] bDCanals = bd.CanalDAO.listCanalByQuery(null, null);
 		length = Math.min(bDCanals.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDCanals[i]);
@@ -42,7 +42,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Incidencia...");
-		bd.Incidencia[] bDIncidencias = bd.Incidencia.listIncidenciaByQuery(null, null);
+		bd.Incidencia[] bDIncidencias = bd.IncidenciaDAO.listIncidenciaByQuery(null, null);
 		length = Math.min(bDIncidencias.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDIncidencias[i]);
@@ -50,7 +50,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Usuario...");
-		bd.Usuario[] bDUsuarios = bd.Usuario.listUsuarioByQuery(null, null);
+		bd.Usuario[] bDUsuarios = bd.UsuarioDAO.listUsuarioByQuery(null, null);
 		length = Math.min(bDUsuarios.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDUsuarios[i]);
@@ -58,7 +58,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Incidencia_administrador...");
-		bd.Incidencia_administrador[] bDIncidencia_administradors = bd.Incidencia_administrador.listIncidencia_administradorByQuery(null, null);
+		bd.Incidencia_administrador[] bDIncidencia_administradors = bd.Incidencia_administradorDAO.listIncidencia_administradorByQuery(null, null);
 		length = Math.min(bDIncidencia_administradors.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDIncidencia_administradors[i]);
@@ -66,7 +66,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Cliente...");
-		bd.Cliente[] bDClientes = bd.Cliente.listClienteByQuery(null, null);
+		bd.Cliente[] bDClientes = bd.ClienteDAO.listClienteByQuery(null, null);
 		length = Math.min(bDClientes.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDClientes[i]);
@@ -74,7 +74,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Movil...");
-		bd.Movil[] bDMovils = bd.Movil.listMovilByQuery(null, null);
+		bd.Movil[] bDMovils = bd.MovilDAO.listMovilByQuery(null, null);
 		length = Math.min(bDMovils.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDMovils[i]);
@@ -82,7 +82,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Oferta...");
-		bd.Oferta[] bDOfertas = bd.Oferta.listOfertaByQuery(null, null);
+		bd.Oferta[] bDOfertas = bd.OfertaDAO.listOfertaByQuery(null, null);
 		length = Math.min(bDOfertas.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDOfertas[i]);
@@ -90,7 +90,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing contrato...");
-		bd.contrato[] bDcontratos = bd.contrato.listContratoByQuery(null, null);
+		bd.contrato[] bDcontratos = bd.contratoDAO.listContratoByQuery(null, null);
 		length = Math.min(bDcontratos.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDcontratos[i]);
@@ -98,7 +98,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Comercial...");
-		bd.Comercial[] bDComercials = bd.Comercial.listComercialByQuery(null, null);
+		bd.Comercial[] bDComercials = bd.ComercialDAO.listComercialByQuery(null, null);
 		length = Math.min(bDComercials.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDComercials[i]);
@@ -106,7 +106,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Administrador...");
-		bd.Administrador[] bDAdministradors = bd.Administrador.listAdministradorByQuery(null, null);
+		bd.Administrador[] bDAdministradors = bd.AdministradorDAO.listAdministradorByQuery(null, null);
 		length = Math.min(bDAdministradors.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDAdministradors[i]);
@@ -114,7 +114,7 @@ public class ListIteracionFinalData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Paquete...");
-		bd.Paquete[] bDPaquetes = bd.Paquete.listPaqueteByQuery(null, null);
+		bd.Paquete[] bDPaquetes = bd.PaqueteDAO.listPaqueteByQuery(null, null);
 		length = Math.min(bDPaquetes.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(bDPaquetes[i]);

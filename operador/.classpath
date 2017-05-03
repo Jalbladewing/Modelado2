@@ -35,6 +35,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/abord/Desktop/UAL Ingenieria Informatica/TERCERO/2Cuatrimestre/MSD2/srcBD/src/lib/orm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/abord/OneDrive/Documentos/GitHub/Modelado2/operador/lib/orm.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

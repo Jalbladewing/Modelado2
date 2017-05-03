@@ -6,6 +6,8 @@ import bdgui.IComercial;
 
 import java.util.List;
 
+import org.orm.PersistentException;
+
 import bdgui.IAdministrador;
 
 public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdministrador {
@@ -20,7 +22,15 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	public BD_Incidencia_administrador _bd_incid_admin = new BD_Incidencia_administrador();
 
 	public List cargar_modalidades_destacadas() {
-		throw new UnsupportedOperationException();
+		List modalidades = null;
+		try {
+			modalidades = _bd_admin.cargar_modalidades_destacadas();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return modalidades;
+		
 	}
 
 	public List cargar_modalidades_telefono_fijo() {
