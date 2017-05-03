@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build">
+	<path id="build.classpath">
+		<pathelement location="classes"/>
+	</path>
+	<target name="init">
+		<mkdir dir="classes"/>
+	</target>
+	<target name="clean">
+		<delete dir="classes"/>
+	</target>
+	<target depends="init" name="build">
+		<javac srcdir="." destdir="classes" source="1.5" target="1.5" fork="yes">
+			<classpath refid="build.classpath"/>
+			<include name="BDGUI/ICibernauta.java"/>
+			<include name="BDGUI/ICliente.java"/>
+			<include name="BDGUI/IComercial.java"/>
+			<include name="BDGUI/IAdministrador.java"/>
+			<include name="BD/BD_Movil.java"/>
+			<include name="BD/BD_Paquete.java"/>
+			<include name="BD/BD_Canal.java"/>
+			<include name="BD/BD_Cliente.java"/>
+			<include name="BD/BD_Factura.java"/>
+			<include name="BD/BD_Comercial.java"/>
+			<include name="BD/BD_Administrador.java"/>
+			<include name="BD/BD_Incidencia_administrador.java"/>
+			<include name="BD/BD_Oferta.java"/>
+			<include name="BD/BD_Principal.java"/>
+		</javac>
+	</target>
+</project>
