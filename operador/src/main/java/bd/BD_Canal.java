@@ -17,7 +17,7 @@ public class BD_Canal {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargar_modalidades_cliente(String aEmail) {
+	public List cargar_modalidades_cliente(int idCliente) {
 		throw new UnsupportedOperationException();
 	}
 
