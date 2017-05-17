@@ -34,11 +34,25 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	}
 
 	public List cargar_modalidades_telefono_fijo() {
-		throw new UnsupportedOperationException();
+		List modalidades = null;
+		try {
+			modalidades = _bd_ofer.cargar_modalidades_telefono_fijo();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return modalidades;
 	}
 
 	public List cargar_modalidades_movil() {
-		throw new UnsupportedOperationException();
+		List modalidades = null;
+		try {
+			modalidades = _bd_movil.cargar_modalidades_movil();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return modalidades;
 	}
 
 	public List cargar_modalidades_internet() {
@@ -53,11 +67,26 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	}
 
 	public List cargar_modalidades_oferta() {
-		throw new UnsupportedOperationException();
+		List modalidades = null;
+		try {
+			modalidades = _bd_ofer.cargar_modalidades_oferta();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return modalidades;
 	}
 
 	public List cargar_paquetes() {
-		throw new UnsupportedOperationException();
+		List modalidades = null;
+		try {
+			modalidades = _bd_paq.cargar_paquetes();
+			
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return modalidades;
 	}
 
 	public List cargar_canales() {
@@ -71,8 +100,15 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return modalidades;
 	}
 
-	public boolean registrar_incidencia_llamada(String aTelefono) {
-		throw new UnsupportedOperationException();
+	public boolean registrar_incidencia_llamada(String telefono) {
+		try {
+			return _bd_incid_admin.registrar_incidencia_llamada(telefono);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	
 	}
 
 	public boolean iniciar_sesion(String aEmail, String aPassword) {
@@ -83,9 +119,16 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean modificar_cliente(Cliente aCliente) {
-		throw new UnsupportedOperationException();
+	public boolean modificar_cliente(Cliente cliente) {
+		try {
+			return _bd_clien.modificar_cliente(cliente);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
+	
 
 	public List cargar_facturas(int idCliente) {
 		List facturas = null;
@@ -145,13 +188,27 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	}
 	
 
-	public boolean registrar_incidencia(Incidencia aIncidencia) {
-		throw new UnsupportedOperationException();
+	public boolean registrar_incidencia(Incidencia incidencia) {
+		try {
+			return _bd_incid_admin.registrar_incidencia(incidencia);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
+	
 
-	public boolean modificar_comercial(Comercial aComercial) {
-		throw new UnsupportedOperationException();
+	public boolean modificar_comercial(Comercial comercial) {
+		try {
+			return _bd_comer.modificar_perfil_comercial(comercial);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
+	
 
 	public List cargar_incidencias_comercial(int idComercial) {
 		List incidencias = null;
@@ -166,9 +223,16 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	}
 	
 
-	public boolean resolver_incidencia(int aIdIncidencia) {
-		throw new UnsupportedOperationException();
+	public boolean resolver_incidencia(int idIncidencia) {
+		try {
+			return _bd_incid_admin.resolver_incidencia(idIncidencia);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
+	
 
 	public List cargar_clientes() {
 		List clientes = null;
@@ -194,8 +258,14 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return false;
 	}
 
-	public boolean contratar_modalidad(int aIdCliente, int aIdModalidad) {
-		throw new UnsupportedOperationException();
+	public boolean contratar_modalidad(int idCliente, int idModalidad) {
+		try {
+			return _bd_clien.registrar_modalidad_contratada(idCliente, idModalidad);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 	public boolean baja_cliente(int idCliente) {
@@ -241,9 +311,16 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return false;
 	}
 
-	public boolean modificar_administrador(Administrador aAdministrador) {
-		throw new UnsupportedOperationException();
+	public boolean modificar_administrador(Administrador administrador) {
+		try {
+			return _bd_admin.modificar_perfil_administrador(administrador);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
+	
 
 	public List cargar_incidencias_administrador() {
 		List incidencias = null;
@@ -262,9 +339,16 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean registrar_incidencia_asignada(int aIdComercial, int aIdIncidencia) {
-		throw new UnsupportedOperationException();
+	public boolean registrar_incidencia_asignada(int idComercial, int idIncidencia) {
+		try {
+			return _bd_incid_admin.registrar_incidencia_asignada(idComercial, idIncidencia);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
+	
 
 	public boolean registrar_comercial(Comercial comercial) {
 		try {
@@ -287,8 +371,9 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return modalidades;
 	}
 
-	public boolean crear_modalidad_movil(Movil aMovil) {
+	public boolean crear_modalidad_movil(Movil movil) {
 		throw new UnsupportedOperationException();
+		
 	}
 
 	public List cargar_modalidades_incluidas_oferta(int idOferta) {
@@ -342,12 +427,27 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	}
 	
 
-	public boolean traspasar_usuarios(int aIdAntiguo, int aIdNuevo, List aUsuarios) {
-		throw new UnsupportedOperationException();
+	public boolean traspasar_usuarios(int idAntiguo, int idNuevo, List usuarios) {
+		try {
+			_bd_ofer.guardar_traspaso(idNuevo, usuarios);
+			_bd_ofer.eliminar_traspaso(idAntiguo);
+			
+			return true;
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 
-	public boolean eliminar_modalidad(int aIdModalidad, int aDias) {
-		throw new UnsupportedOperationException();
+	public boolean eliminar_modalidad(int idModalidad, int dias) {
+		try {
+			return _bd_ofer.eliminar_modalidad(idModalidad, dias);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 
