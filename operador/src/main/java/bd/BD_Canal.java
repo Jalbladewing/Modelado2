@@ -32,48 +32,6 @@ public class BD_Canal {
 		return canales;
 	}
 
-	public List cargar_modalidades_factura(int idFactura)  throws PersistentException 
-	{
-		List<Modalidad> modalidades = null;
-		Factura factura = null;
-		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
-		
-		try
-		{
-			factura = FacturaDAO.getFacturaByORMID(idFactura);
-			modalidades = Arrays.asList(factura.modalidad.toArray());
-			
-			t.commit();
-			
-		}catch(Exception e)
-		{
-			t.rollback();
-		}
-		
-		return modalidades;
-	}
-
-	public List cargar_modalidades_cliente(int idCliente)  throws PersistentException 
-	{
-		List<Modalidad> modalidades = null;
-		Cliente cliente = null;
-		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
-		
-		try
-		{
-			cliente = ClienteDAO.getClienteByORMID(idCliente);
-			modalidades = Arrays.asList(cliente.getModalidads());
-			
-			t.commit();
-			
-		}catch(Exception e)
-		{
-			t.rollback();
-		}
-		
-		return modalidades;
-	}
-
 	public boolean crear_modalidad_canal(Canal canal)  throws PersistentException 
 	{
 		boolean resultado = false;
@@ -82,6 +40,25 @@ public class BD_Canal {
 		try
 		{
 			resultado = CanalDAO.save(canal);
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+		
+		return resultado;
+	}
+	
+	public boolean actualizar_modalidad_canal(Canal canal)  throws PersistentException 
+	{
+		boolean resultado = false;
+		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+		
+		try
+		{
+			resultado = CanalDAO.refresh(canal);
 			
 			t.commit();
 			

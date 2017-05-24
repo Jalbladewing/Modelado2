@@ -32,4 +32,25 @@ public class BD_Factura {
 		
 		return facturas;
 	}
+	
+	public List cargar_modalidades_factura(int idFactura)  throws PersistentException 
+	{
+		List<Modalidad> modalidades = null;
+		Factura factura = null;
+		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+		
+		try
+		{
+			factura = FacturaDAO.getFacturaByORMID(idFactura);
+			modalidades = Arrays.asList(factura.modalidad.toArray());
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+		
+		return modalidades;
+	}
 }

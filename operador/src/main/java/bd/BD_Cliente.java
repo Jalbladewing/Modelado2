@@ -1,6 +1,7 @@
 package bd;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
@@ -162,9 +163,9 @@ public class BD_Cliente {
 			
 			cliente.addModalidad(_contrato, modalidad);
 			
-			t.commit();
+			resultado = ClienteDAO.refresh(cliente);
 			
-			resultado = true;
+			t.commit();
 			
 		}catch(Exception e)
 		{
@@ -178,12 +179,15 @@ public class BD_Cliente {
 	{
 		Cliente cliente = null;
 		boolean resultado = false;
+		Calendar fechaEliminacion = Calendar.getInstance();
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
+			fechaEliminacion.add(Calendar.MONTH, 1);
 			cliente = ClienteDAO.getClienteByORMID(idCliente);
-			resultado = ClienteDAO.delete(cliente);
+			cliente.setFechaEliminacion(fechaEliminacion.getTime());
+			resultado = ClienteDAO.refresh(cliente);
 			
 			t.commit();
 			

@@ -48,19 +48,9 @@ public interface IAdministrador {
 
 	public List cargar_modalidades();
 
-	public boolean crear_modalidad_movil(Movil aMovil);
-
 	public List cargar_modalidades_incluidas_oferta(int aIdOferta);
 
 	public List cargar_canales_incluidos_paquete(int aIdPaquete);
-
-	public boolean crear_modalidad_paquete(Paquete aPaquete);
-
-	public boolean crear_modalidad_canal(Canal aCanal);
-
-	public boolean crear_modalidad_oferta(Oferta aOferta);
-
-	public boolean crear_modalidad_general(Modalidad aModalidad);
 
 	public List cargar_clientes_traspaso(int aIdModalidad);
 
@@ -90,5 +80,11 @@ public interface IAdministrador {
 
 	public List cargar_incidencias_comercial(int aIdComercial);
 
-	public boolean resolver_incidencia(int aIdComercial);
+	public boolean resolver_incidencia(int aIdIncidencia, String aObservaciones);
+	
+	public boolean cancelar_incidencia(int aIdIncidencia, String aObservaciones);
+	
+	public boolean crear_modalidad(Modalidad modalidad);
+	
+	public boolean modificar_modalidad(Modalidad modalidad);
 }

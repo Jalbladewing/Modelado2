@@ -12,6 +12,30 @@ public class BD_Comercial {
 	public BD_Principal _bd_prin_comerc;
 	public Vector<Comercial> _contiene_comerc = new Vector<Comercial>();
 
+	public Usuario verificar_loguin(String email, String password) throws PersistentException 
+	{
+		Usuario user = null;
+		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+		
+		try
+		{
+			ComercialCriteria comercialCriteria = new ComercialCriteria();
+			comercialCriteria.email.eq(email);
+			user = ComercialDAO.loadComercialByCriteria(comercialCriteria);
+			
+			if(!user.getPassword().equals(password)) user = null;
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+		
+		return user;
+ 
+	}
+	
 	public boolean acceder_comercial(int idComercial)  throws PersistentException 
 	{
 		Comercial comercial = null;
@@ -31,6 +55,28 @@ public class BD_Comercial {
 		
 		return resultado;
 	}
+	
+	public Usuario verificar_usuario(String email) throws PersistentException 
+	{
+		Usuario user = null;
+		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+		
+		try
+		{
+			ComercialCriteria comercialCriteria = new ComercialCriteria();
+			comercialCriteria.email.eq(email);
+			user = ComercialDAO.loadComercialByCriteria(comercialCriteria);
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+		
+		return user;
+	}
+
 
 	public String generar_password(int idComercial)  throws PersistentException 
 	{
