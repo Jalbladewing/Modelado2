@@ -23,33 +23,33 @@ public interface IComercial {
 
 	public List cargar_canales();
 
-	public boolean modificar_comercial(Comercial aComercial);
+	public boolean modificar_comercial(Comercial comercial);
 
-	public List cargar_incidencias_comercial(int aIdComercial);
+	public List cargar_incidencias_comercial(int idComercial);
 
-    public boolean resolver_incidencia(int aIdIncidencia, String aObservaciones);
+    public boolean resolver_incidencia(int idIncidencia, String observaciones);
 	
-	public boolean cancelar_incidencia(int aIdIncidencia, String aObservaciones);
+	public boolean cancelar_incidencia(int idIncidencia, String observaciones);
 
 	public List cargar_clientes();
 
-	public boolean registrar_cliente(Cliente aCliente);
+	public boolean registrar_cliente(Cliente cliente);
 
-	public boolean modificar_cliente(Cliente aCliente);
+	public boolean modificar_cliente(Cliente cliente);
 
-	public List cargar_facturas(int aIdCliente);
+	public List cargar_facturas(int idCliente);
 
-	public List cargar_modalidades_factura(int aIdFactura);
+	public List cargar_modalidades_factura(int idFactura);
 
-	public List cargar_modalidades_mis_servicios(int aIdCliente);
+	public List cargar_modalidades_mis_servicios(int idCliente);
 
-	public List cargar_incidencias_cliente(int aIdCliente);
+	public List cargar_incidencias_cliente(int idCliente);
 
-	public boolean registrar_incidencia(Incidencia aIncidencia);
+	public boolean registrar_incidencia(Incidencia incidencia);
 
-	public boolean contratar_modalidad(int aIdCliente, int aIdModalidad);
+	public boolean contratar_modalidad(int aIdCliente, int idModalidad);
 
-	public boolean baja_cliente(int aIdCliente);
+	public boolean baja_cliente(int idCliente);
 
-	public boolean baja_modalidad_cliente(int aIdCliente, int aIdModalidad);
+	public boolean baja_modalidad_cliente(int idCliente, int idModalidad);
 }

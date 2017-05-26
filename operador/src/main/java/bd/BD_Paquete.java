@@ -51,7 +51,7 @@ public class BD_Paquete {
 		return resultado;
 	}
 	
-	public boolean actualizar(Paquete paquete) throws PersistentException 
+	public boolean actualizar_modalidad_paquete(Paquete paquete) throws PersistentException 
 	{
 		boolean resultado = false;
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();

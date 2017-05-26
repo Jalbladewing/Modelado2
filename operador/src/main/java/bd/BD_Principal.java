@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.orm.PersistentException;
 
+import com.teamBurton.operador.Gestor_correo;
+
 import bdgui.IAdministrador;
 
 public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdministrador {
@@ -81,7 +83,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		List modalidades = null;
 		try {
 			modalidades = _bd_paq.cargar_paquetes();
-			
+
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -108,15 +110,69 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 			e.printStackTrace();
 		}
 		return false;
-	
+
 	}
 
-	public boolean iniciar_sesion(String aEmail, String aPassword) {
-		throw new UnsupportedOperationException();
+	public boolean iniciar_sesion(String email, String password) {
+		Usuario u;
+		try {
+			u = _bd_clien.verificar_loguin(email, password);
+			if (!u.equals(null)) {
+				return _bd_clien.acceder_cliente(u.getID());
+			} else {
+				u = _bd_comer.verificar_loguin(email, password);
+				if (!u.equals(null)) {
+					return _bd_comer.acceder_comercial(u.getID());
+				} else {
+					u = _bd_admin.verificar_loguin(email, password);
+					if (!u.equals(null)) {
+						return _bd_admin.acceder_administrador(u.getID());
+					}
+				}
+			}
+
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+
 	}
 
-	public boolean recuperar_password(String aEmail) {
-		throw new UnsupportedOperationException();
+	// FALTA IMPLEMENTAR GESTOR DE CORREOS
+	public boolean recuperar_password(String email) {
+		Usuario u;
+		String pass;
+		try {
+			u = _bd_clien.verificar_usuario(email);
+			if (!u.equals(null)) {
+				pass = _bd_clien.generar_password(u.getID());
+				// Gestor de correos
+				// return gestorC.enviar_correo_recuperacion(u.getEmail(),pass);
+			} else {
+				u = _bd_comer.verificar_usuario(email);
+				if (!u.equals(null)) {
+					pass = _bd_comer.generar_password(u.getID());
+					// Gestor de correos
+					// return gestorC.enviar_correo_recuperacion(u.getEmail(),pass);
+					
+				} else {
+					u = _bd_admin.verificar_usuario(email);
+					if (!u.equals(null)) {
+						pass = _bd_admin.generar_password(u.getID());
+						// Gestor de correos
+						// return gestorC.enviar_correo_recuperacion(u.getEmail(),pass);
+						
+					}
+				}
+			}
+
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+
 	}
 
 	public boolean modificar_cliente(Cliente cliente) {
@@ -128,65 +184,42 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return false;
 	}
-	
 
 	public List cargar_facturas(int idCliente) {
 		List facturas = null;
 		try {
 			facturas = _bd_fact.cargar_facturas(idCliente);
-			
+
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return facturas;
 	}
-	
 
 	public List cargar_modalidades_factura(int idFactura) {
 		List facturas = null;
 		try {
-			facturas.addAll(_bd_movil.cargar_modalidades_factura(idFactura));
-			facturas.addAll(_bd_paq.cargar_modalidades_factura(idFactura));
-			facturas.addAll(_bd_canal.cargar_modalidades_factura(idFactura));
-			facturas.addAll(_bd_ofer.cargar_modalidades_factura(idFactura));
-			
+			facturas.add(_bd_fact.cargar_modalidades_factura(idFactura));
+
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return facturas;
 	}
-	
 
 	public List cargar_modalidades_mis_servicios(int idCliente) {
 		List modalidades = null;
 		try {
-			modalidades.addAll(_bd_movil.cargar_modalidades_cliente(idCliente));
-			modalidades.addAll(_bd_paq.cargar_modalidades_cliente(idCliente));
-			modalidades.addAll(_bd_canal.cargar_modalidades_cliente(idCliente));
-			modalidades.addAll(_bd_ofer.cargar_modalidades_cliente(idCliente));
-			
+			modalidades.add(_bd_ofer.cargar_modalidades_cliente(idCliente));
+
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return modalidades;
 	}
-	
-
-	public List cargar_incidencias_cliente(int idCliente) {
-		List incidencias = null;
-		try {
-			incidencias = _bd_incid_admin.cargar_incidencias_cliente(idCliente);
-			
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return incidencias;
-	}
-	
 
 	public boolean registrar_incidencia(Incidencia incidencia) {
 		try {
@@ -197,7 +230,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return false;
 	}
-	
 
 	public boolean modificar_comercial(Comercial comercial) {
 		try {
@@ -208,44 +240,30 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return false;
 	}
-	
 
 	public List cargar_incidencias_comercial(int idComercial) {
 		List incidencias = null;
 		try {
 			incidencias = _bd_incid_admin.cargar_incidencias_comercial(idComercial);
-			
+
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return incidencias;
 	}
-	
-
-	public boolean resolver_incidencia(int idIncidencia) {
-		try {
-			return _bd_incid_admin.resolver_incidencia(idIncidencia);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
-	}
-	
 
 	public List cargar_clientes() {
 		List clientes = null;
 		try {
 			clientes = _bd_clien.cargar_clientes();
-			
+
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return clientes;
 	}
-	
 
 	public boolean registrar_cliente(Cliente cliente) {
 
@@ -290,8 +308,8 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 
 	public boolean cambiar_visibilidad_modalidad_destacada(int idModalidad) {
 		try {
-			 _bd_ofer.cambiar_visibilidad_modalidad(idModalidad);
-			 return true;
+			_bd_ofer.cambiar_visibilidad_modalidad(idModalidad);
+			return true;
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -301,9 +319,9 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 
 	public boolean cambiar_modalidad_destacada(int idAntigua, int idNueva) {
 		try {
-			 _bd_ofer.eliminar_modalidad_destacada(idAntigua);
-			 _bd_ofer.add_modalidad_destacada(idNueva);
-			 return true;
+			if(_bd_ofer.eliminar_modalidad_destacada(idAntigua))
+			return _bd_ofer.add_modalidad_destacada(idNueva);
+			
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -320,23 +338,29 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return false;
 	}
-	
 
 	public List cargar_incidencias_administrador() {
 		List incidencias = null;
 		try {
 			incidencias = _bd_incid_admin.cargar_incidencias();
-			
+
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return incidencias;
 	}
-	
 
 	public List cargar_comerciales() {
-		throw new UnsupportedOperationException();
+		List comerciales = null;
+		try {
+			comerciales = _bd_comer.cargar_comerciales();
+
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return comerciales;
 	}
 
 	public boolean registrar_incidencia_asignada(int idComercial, int idIncidencia) {
@@ -348,7 +372,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return false;
 	}
-	
 
 	public boolean registrar_comercial(Comercial comercial) {
 		try {
@@ -371,11 +394,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return modalidades;
 	}
 
-	public boolean crear_modalidad_movil(Movil movil) {
-		throw new UnsupportedOperationException();
-		
-	}
-
 	public List cargar_modalidades_incluidas_oferta(int idOferta) {
 		List modalidades = null;
 		try {
@@ -386,7 +404,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return modalidades;
 	}
-	
+
 	public List cargar_canales_incluidos_paquete(int idPaquete) {
 		List canales = null;
 		try {
@@ -398,40 +416,23 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return canales;
 	}
 
-	public boolean crear_modalidad_paquete(Paquete aPaquete) {
-		throw new UnsupportedOperationException();
-	}
-
-	public boolean crear_modalidad_canal(Canal aCanal) {
-		throw new UnsupportedOperationException();
-	}
-
-	public boolean crear_modalidad_oferta(Oferta aOferta) {
-		throw new UnsupportedOperationException();
-	}
-
-	public boolean crear_modalidad_general(Modalidad aModalidad) {
-		throw new UnsupportedOperationException();
-	}
-
 	public List cargar_clientes_traspaso(int idModalidad) {
 		List clientes = null;
 		try {
 			clientes = _bd_clien.cargar_clientes_traspaso(idModalidad);
-			
+
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return clientes;
 	}
-	
 
 	public boolean traspasar_usuarios(int idAntiguo, int idNuevo, List usuarios) {
 		try {
 			_bd_ofer.guardar_traspaso(idNuevo, usuarios);
 			_bd_ofer.eliminar_traspaso(idAntiguo);
-			
+
 			return true;
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
@@ -450,8 +451,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return false;
 	}
 
-
-
 	public boolean baja_comercial(int idComercial) {
 		try {
 			return _bd_comer.baja_comercial(idComercial);
@@ -459,6 +458,99 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return false;
+	}
+
+	@Override
+	public List cargar_incidencias_cliente(int idCliente) {
+		List incidencias = null;
+		try {
+			incidencias = _bd_incid_admin.cargar_incidencias_cliente(idCliente);
+
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return incidencias;
+	}
+
+	@Override
+	public boolean crear_modalidad(Modalidad modalidad) {
+		// TODO Auto-generated method stub
+		try {
+			if (modalidad.getTipo().equals("movil")) {
+				return _bd_movil.crear_modalidad_movil((Movil) modalidad);
+			} else if (modalidad.getTipo().equals("television")) {
+				if (modalidad instanceof Canal) {
+					return _bd_canal.crear_modalidad_canal((Canal) modalidad);
+				} else {
+					return _bd_paq.crear_modalidad_paquete((Paquete) modalidad);
+				}
+			}
+
+			else if (modalidad.getTipo().equals("oferta")) {
+				return _bd_ofer.crear_modalidad(((Oferta) modalidad));
+			} else {
+				return _bd_ofer.crear_modalidad_general(modalidad);
+			}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+
+	@Override
+	public boolean modificar_modalidad(Modalidad modalidad) {
+		// TODO Auto-generated method stub
+		try {
+			if (modalidad.getTipo().equals("movil")) {
+				return _bd_movil.actualizar_modalidad_movil((Movil)modalidad);
+			} else if (modalidad.getTipo().equals("television")) {
+				if (modalidad instanceof Canal) {
+					return _bd_canal.actualizar_modalidad_canal((Canal) modalidad);
+				} else {
+					return _bd_paq.actualizar_modalidad_paquete((Paquete) modalidad);
+				}
+			}
+
+			else if (modalidad.getTipo().equals("oferta")) {
+				return _bd_ofer.actualizar_modalidad(((Oferta) modalidad));
+			} else {
+				return _bd_ofer.actualizar_modalidad_general(modalidad);
+			}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+
+	@Override
+	public boolean resolver_incidencia(int idIncidencia, String observaciones) {
+		
+		try {
+			return _bd_incid_admin.resolver_incidencia(idIncidencia, observaciones);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+	
+
+	@Override
+	public boolean cancelar_incidencia(int idIncidencia, String observaciones) {
+		try {
+			return _bd_incid_admin.cancelar_incidencia(idIncidencia, observaciones);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		return false;
 	}
 }

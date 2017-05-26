@@ -18,9 +18,9 @@ public interface ICibernauta {
 
 	public List cargar_canales();
 
-	public boolean registrar_incidencia_llamada(String aTelefono);
+	public boolean registrar_incidencia_llamada(String telefono);
 
-	public boolean iniciar_sesion(String aEmail, String aPassword);
+	public boolean iniciar_sesion(String email, String password);
 
-	public boolean recuperar_password(String aEmail);
+	public boolean recuperar_password(String email);
 }

@@ -22,15 +22,15 @@ public interface ICliente {
 
 	public List cargar_canales();
 
-	public boolean modificar_cliente(Cliente aCliente);
+	public boolean modificar_cliente(Cliente cliente);
 
-	public List cargar_facturas(int aIdCliente);
+	public List cargar_facturas(int idCliente);
 
-	public List cargar_modalidades_factura(int aIdFactura);
+	public List cargar_modalidades_factura(int idFactura);
 
-	public List cargar_modalidades_mis_servicios(int aIdCliente);
+	public List cargar_modalidades_mis_servicios(int idCliente);
 
-	public List cargar_incidencias_cliente(int aIdCliente);
+	public List cargar_incidencias_cliente(int idCliente);
 
-	public boolean registrar_incidencia(Incidencia aIncidencia);
+	public boolean registrar_incidencia(Incidencia incidencia);
 }
