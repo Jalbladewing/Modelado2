@@ -50,11 +50,13 @@ public class Incidencia implements Serializable {
 	@ManyToOne(targetEntity=bd.Cliente.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns({ @JoinColumn(name="ClienteUsuarioID", referencedColumnName="UsuarioID", nullable=false) })	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private bd.Cliente cliente;
 	
 	@ManyToOne(targetEntity=bd.Comercial.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns({ @JoinColumn(name="ComercialUsuarioID", referencedColumnName="UsuarioID") })	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private bd.Comercial comercial;
 	
 	@Column(name="CorreoCliente", nullable=false, length=255)	

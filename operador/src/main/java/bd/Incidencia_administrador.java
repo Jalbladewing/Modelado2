@@ -44,6 +44,7 @@ public class Incidencia_administrador extends bd.Incidencia implements Serializa
 	@ManyToOne(targetEntity=bd.Administrador.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns({ @JoinColumn(name="AdministradorUsuarioID", referencedColumnName="UsuarioID", nullable=false) })	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private bd.Administrador administrador;
 	
 	public void setCorreoComercial(String value) {

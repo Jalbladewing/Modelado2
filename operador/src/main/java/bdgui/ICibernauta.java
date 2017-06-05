@@ -2,6 +2,8 @@ package bdgui;
 
 import java.util.List;
 
+import bd.Canal;
+
 public interface ICibernauta {
 
 	public List cargar_modalidades_destacadas();
@@ -23,4 +25,6 @@ public interface ICibernauta {
 	public boolean iniciar_sesion(String email, String password);
 
 	public boolean recuperar_password(String email);
+	
+	public Canal cargar_canal(String nombre);
 }

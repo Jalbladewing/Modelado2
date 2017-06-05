@@ -69,4 +69,8 @@ public class BD_Canal {
 		
 		return resultado;
 	}
+	
+public Canal cargar_canal(String nombre)throws PersistentException {
+		
+	}
 }

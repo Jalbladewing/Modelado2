@@ -553,4 +553,16 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 
 		return false;
 	}
+
+	@Override
+	public Canal cargar_canal(String nombre) {
+		Canal canal = null;
+		try {
+			return _bd_canal.cargar_canal(nombre);
+		} catch (PersistentException e) {
+			
+			e.printStackTrace();
+		}
+		return canal;
+	}
 }

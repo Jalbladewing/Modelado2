@@ -243,7 +243,7 @@
   </Setting>
   <Setting type="1048576">
     <Driver>MySQL5 (Connector/J Driver)</Driver>
-    <DriverFiles>C:\Users\abord\Downloads\mysql-connector-java-5.1.33.jar</DriverFiles>
+    <DriverFiles>C:\Users\abord\Downloads\driver\mysql-connector-java-5.1.33.jar</DriverFiles>
     <Dialect>org.hibernate.dialect.MySQL5InnoDBDialect</Dialect>
     <DriverClass>com.mysql.jdbc.Driver</DriverClass>
     <URL>jdbc:mysql://localhost:3306/test</URL>
@@ -288,7 +288,7 @@
   </Setting>
   <Setting type="2">
     <Driver>MySQL5 (Connector/J Driver)</Driver>
-    <DriverFiles>C:\Users\abord\Downloads\mysql-connector-java-5.1.33.jar</DriverFiles>
+    <DriverFiles>C:\Users\abord\Downloads\driver\mysql-connector-java-5.1.33.jar</DriverFiles>
     <Dialect>org.hibernate.dialect.MySQL5InnoDBDialect</Dialect>
     <DriverClass>com.mysql.jdbc.Driver</DriverClass>
     <URL>jdbc:mysql://localhost:3306/test</URL>

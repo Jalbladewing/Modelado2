@@ -2,7 +2,7 @@ package bdgui;
 
 import java.util.List;
 
-
+import bd.Canal;
 import bd.Cliente;
 import bd.Incidencia;
 
@@ -33,4 +33,6 @@ public interface ICliente {
 	public List cargar_incidencias_cliente(int idCliente);
 
 	public boolean registrar_incidencia(Incidencia incidencia);
+	
+	public Canal cargar_canal(String nombre);
 }
