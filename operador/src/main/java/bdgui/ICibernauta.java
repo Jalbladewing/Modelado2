@@ -2,7 +2,6 @@ package bdgui;
 
 import java.util.List;
 
-import bd.Canal;
 
 public interface ICibernauta {
 
