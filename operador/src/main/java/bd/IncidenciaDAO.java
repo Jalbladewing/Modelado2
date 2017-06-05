@@ -322,8 +322,8 @@ public class IncidenciaDAO {
 	}
 	
 	public static boolean deleteAndDissociate(bd.Incidencia incidencia)throws PersistentException {
-		if (incidencia instanceof bd.Incidencia_administrador) {
-			return bd.Incidencia_administradorDAO.deleteAndDissociate((bd.Incidencia_administrador) incidencia);
+		if (incidencia instanceof Incidencia_administrador) {
+			return Incidencia_administradorDAO.deleteAndDissociate((Incidencia_administrador) incidencia);
 		}
 		
 		try {
@@ -344,8 +344,8 @@ public class IncidenciaDAO {
 	}
 	
 	public static boolean deleteAndDissociate(bd.Incidencia incidencia, org.orm.PersistentSession session)throws PersistentException {
-		if (incidencia instanceof bd.Incidencia_administrador) {
-			return bd.Incidencia_administradorDAO.deleteAndDissociate((bd.Incidencia_administrador) incidencia, session);
+		if (incidencia instanceof Incidencia_administrador) {
+			return Incidencia_administradorDAO.deleteAndDissociate((Incidencia_administrador) incidencia, session);
 		}
 		
 		try {

@@ -2,6 +2,8 @@ package bdgui;
 
 import java.util.List;
 
+import bd.Usuario;
+
 public interface ICibernauta {
 
 	public List cargar_modalidades_destacadas();
@@ -20,7 +22,7 @@ public interface ICibernauta {
 
 	public boolean registrar_incidencia_llamada(String telefono);
 
-	public boolean iniciar_sesion(String email, String password);
+	public Usuario iniciar_sesion(String email, String password);
 
 	public boolean recuperar_password(String email);
 }
