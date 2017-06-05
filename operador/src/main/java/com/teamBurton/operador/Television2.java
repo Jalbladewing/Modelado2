@@ -1,6 +1,7 @@
 package com.teamBurton.operador;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
@@ -11,6 +12,13 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.CheckBox;
+
+import bd.BD_Principal;
+import bd.Canal;
+import bd.Modalidad;
+import bd.Paquete;
+import bdgui.ICibernauta;
 
 public class Television2 extends Television2_ventana implements View{
 	/*private Label _seccion;
@@ -23,37 +31,64 @@ public class Television2 extends Television2_ventana implements View{
 	public Contratar_generico _contrata;
 	public Vector<Canal_television> _canal = new Vector<Canal_television>();
 	public static final String VIEW_NAME = "television2";
+	private ICibernauta cibernauta = new BD_Principal();
 	
-	public Television2(){
-		  Paquete2 p = new Paquete2(); 
-		  List<Button> canales = new ArrayList<Button>();
+	public Television2()
+	{
+		cargar_modalidades_television();
 		  
-		  canales.add(new Button("canal 2"));
-		  canales.get(0).addStyleName("link");
-		  p.canalesGrid.addComponent(canales.get(0));
-		  canales.add(new Button("canal 8"));
-		  canales.get(1).addStyleName("link");
-		  p.canalesGrid.addComponent(canales.get(1));
-		  paquetesGrid.addComponent(p);
-		  p = new Paquete2(); 
-		  canales.add(new Button("canal 8"));
-		  canales.get(2).addStyleName("link");
-		  p.canalesGrid.addComponent(canales.get(2));
-		  paquetesGrid.addComponent(p);
-		  
-		  for(int i = 0; i < canales.size(); i++)
-		  {
-			  canales.get(i).addClickListener(new Button.ClickListener() {
+	}
+	
+	
+	public void cargar_modalidades_television()
+	{
+		//Cargar paquetes
+		List<Paquete> paquetes = cibernauta.cargar_paquetes();
+		List<Canal> canales;
+		Paquete paquete;
+		Paquete2 paqueteL;//"layout"
+		Button canal;
+		
+		for(int i = 0; i < paquetes.size(); i++)
+		{
+			paqueteL = new Paquete2();
+			paquete = paquetes.get(i);
+			paqueteL.tituloL.setValue(paquete.getNombre());
+			paqueteL.caracteristicasL.setValue(paquete.getCaracteristicas());
+			paqueteL.precioL.setValue(paquete.getPrecio()+"€");
+			
+			canales = Arrays.asList(paquete.modalidad.toArray());
+			
+			for(int j = 0; j < canales.size(); j++)
+			{
+				canal = new Button(canales.get(j).getNombre());
+				canal.addStyleName("link");
+				paqueteL.canalesGrid.addComponent(canal);
 				
-				@Override
-				public void buttonClick(ClickEvent event) 
+				canal.addClickListener(new Button.ClickListener() 
 				{
-					// TODO Auto-generated method stub
-					doNavigate(Canal2.VIEW_NAME + "/" + event.getButton().getCaption());
 					
-				}
-			});
-		  }
+					@Override
+					public void buttonClick(ClickEvent event) 
+					{
+						doNavigate(Canal2.VIEW_NAME + "/" + event.getButton().getCaption());
+						
+					}
+				});
+			}
+			
+			paquetesGrid.addComponent(paqueteL);
+		}
+		
+		
+		//Cargar canales
+		canales = cibernauta.cargar_canales();
+		
+		for(int i = 0; i < canales.size(); i++)
+		{
+			canalesTabla.addRow(canales.get(i).getNombre(),canales.get(i).getCaracteristicas(),canales.get(i).getPrecio()+"€");
+		}
+		
 	}
 	
 	//Esto debería estar en Cibernauta

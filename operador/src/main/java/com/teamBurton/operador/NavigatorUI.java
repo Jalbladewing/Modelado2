@@ -14,6 +14,9 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.UI;
+
+import bd.Usuario;
+
 import com.vaadin.ui.Button.ClickEvent;
 
 @PreserveOnRefresh
@@ -22,6 +25,7 @@ public class NavigatorUI extends UI {
     Navigator navigator;
     private String mainView;
     private String parentView;
+    private Usuario usuario;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -54,6 +58,16 @@ public class NavigatorUI extends UI {
     public String getParentView()
     {
     	return parentView;
+    }
+    
+    public void setUsuario(Usuario u)
+    {
+    	usuario = u;
+    }
+    
+    public Usuario getUsuario()
+    {
+    	return usuario;
     }
     
 }

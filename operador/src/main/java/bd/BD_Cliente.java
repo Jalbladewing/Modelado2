@@ -33,6 +33,7 @@ public class BD_Cliente {
 		}catch(Exception e)
 		{
 			t.rollback();
+			
 		}
 		
 		return user;
@@ -246,4 +247,4 @@ public class BD_Cliente {
 		
 		return clientes;
 	}
-}
+	}

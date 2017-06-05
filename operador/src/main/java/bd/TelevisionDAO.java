@@ -322,12 +322,12 @@ public class TelevisionDAO {
 	}
 	
 	public static boolean deleteAndDissociate(bd.Television television)throws PersistentException {
-		if (television instanceof bd.Canal) {
-			return bd.CanalDAO.deleteAndDissociate((bd.Canal) television);
+		if (television instanceof Canal) {
+			return CanalDAO.deleteAndDissociate((Canal) television);
 		}
 		
-		if (television instanceof bd.Paquete) {
-			return bd.PaqueteDAO.deleteAndDissociate((bd.Paquete) television);
+		if (television instanceof Paquete) {
+			return PaqueteDAO.deleteAndDissociate((Paquete) television);
 		}
 		
 		try {
@@ -356,12 +356,12 @@ public class TelevisionDAO {
 	}
 	
 	public static boolean deleteAndDissociate(bd.Television television, org.orm.PersistentSession session)throws PersistentException {
-		if (television instanceof bd.Canal) {
-			return bd.CanalDAO.deleteAndDissociate((bd.Canal) television, session);
+		if (television instanceof Canal) {
+			return CanalDAO.deleteAndDissociate((Canal) television, session);
 		}
 		
-		if (television instanceof bd.Paquete) {
-			return bd.PaqueteDAO.deleteAndDissociate((bd.Paquete) television, session);
+		if (television instanceof Paquete) {
+			return PaqueteDAO.deleteAndDissociate((Paquete) television, session);
 		}
 		
 		try {
