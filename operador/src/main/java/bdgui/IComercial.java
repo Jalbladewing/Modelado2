@@ -4,6 +4,7 @@ import bd.Comercial;
 
 import java.util.List;
 
+import bd.Canal;
 import bd.Cliente;
 import bd.Incidencia;
 
@@ -52,4 +53,6 @@ public interface IComercial {
 	public boolean baja_cliente(int idCliente);
 
 	public boolean baja_modalidad_cliente(int idCliente, int idModalidad);
+	
+	public Canal cargar_canal(String nombre);
 }

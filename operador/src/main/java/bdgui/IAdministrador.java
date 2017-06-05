@@ -87,4 +87,6 @@ public interface IAdministrador {
 	public boolean crear_modalidad(Modalidad modalidad);
 	
 	public boolean modificar_modalidad(Modalidad modalidad);
+	
+	public Canal cargar_canal(String nombre);
 }

@@ -2,7 +2,9 @@ package bdgui;
 
 import java.util.List;
 
+import bd.Canal;
 import bd.Usuario;
+
 
 public interface ICibernauta {
 
@@ -25,4 +27,6 @@ public interface ICibernauta {
 	public Usuario iniciar_sesion(String email, String password);
 
 	public boolean recuperar_password(String email);
+	
+	public Canal cargar_canal(String nombre);
 }
