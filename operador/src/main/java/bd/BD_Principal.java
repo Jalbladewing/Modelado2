@@ -4,6 +4,7 @@ import bdgui.ICibernauta;
 import bdgui.ICliente;
 import bdgui.IComercial;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.orm.PersistentException;
@@ -216,7 +217,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	public List cargar_modalidades_mis_servicios(int idCliente) {
 		List modalidades = null;
 		try {
-			modalidades.add(_bd_ofer.cargar_modalidades_cliente(idCliente));
+			modalidades =_bd_ofer.cargar_modalidades_cliente(idCliente);
 
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block

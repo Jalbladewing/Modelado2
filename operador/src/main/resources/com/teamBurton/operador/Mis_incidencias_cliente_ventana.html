@@ -10,26 +10,27 @@
    <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Mis Incidencias 
    </vaadin-label> 
-   <vaadin-table selectable width-full _id="incidenciasTabla"> 
+   <vaadin-grid primary-style-name="v-table" width-full _id="incidenciasGrid"> 
     <table> 
      <colgroup> 
-      <col property-id="Fecha"> 
-      <col property-id="Tipo Incidencia"> 
-      <col property-id="Asunto"> 
-      <col property-id="Nº Incidencia"> 
-      <col property-id="Estado"> 
+      <col property-id="Fecha" sortable> 
+      <col property-id="Tipo Incidencia" sortable> 
+      <col property-id="Asunto" sortable> 
+      <col property-id="Nº Incidencia" sortable> 
+      <col property-id="Estado" sortable> 
      </colgroup> 
-     <tbody> 
-      <tr item-id="1"> 
-       <td>10/04/2017</td> 
-       <td>Contratación</td> 
-       <td>Contratar tarifa móvil</td> 
-       <td>1567</td> 
-       <td>Pendiente</td> 
+     <thead> 
+      <tr default> 
+       <th plain-text>Fecha</th> 
+       <th plain-text>Tipo Incidencia</th> 
+       <th plain-text>Asunto</th> 
+       <th plain-text>Nº Incidencia</th> 
+       <th plain-text>Estado</th> 
       </tr> 
-     </tbody> 
+     </thead> 
+     <tbody></tbody> 
     </table> 
-   </vaadin-table> 
+   </vaadin-grid> 
    <vaadin-button plain-text _id="crearB" :center>
      Crear Incidencia 
    </vaadin-button> 

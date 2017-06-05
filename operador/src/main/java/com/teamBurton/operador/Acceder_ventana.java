@@ -6,6 +6,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.declarative.Design;
@@ -31,7 +32,7 @@ public class Acceder_ventana extends VerticalLayout {
 	protected Label passwordL;
 	protected VerticalLayout vLayoutFields;
 	protected TextField usuarioF;
-	protected TextField passwordF;
+	protected PasswordField passwordF;
 	protected HorizontalLayout hLayoutFin;
 	protected CheckBox checkBx;
 	protected Label recuerdameL;

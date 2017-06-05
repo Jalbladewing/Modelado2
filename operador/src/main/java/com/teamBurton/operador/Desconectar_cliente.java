@@ -19,6 +19,7 @@ public class Desconectar_cliente extends Desconectar_cliente_ventana {
 			public void buttonClick(ClickEvent event) 
 			{
 				// TODO Auto-generated method stub
+				((NavigatorUI) UI.getCurrent()).setUsuario(null);
 				UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
 				UI.getCurrent().getNavigator().destroy();
 				((NavigatorUI) UI.getCurrent()).setMainView("Cibernauta");

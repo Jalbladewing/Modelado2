@@ -11,6 +11,9 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.MenuItem;
 
+import bd.BD_Principal;
+import bdgui.ICliente;
+
 public class Cliente2 extends Cliente2_ventana 
 {
 	public Cabecera_cliente _cabecera;

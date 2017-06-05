@@ -10,40 +10,25 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
+import bd.BD_Principal;
+import bd.Modalidad;
+import bd.Movil;
+import bd.Television;
+import bdgui.ICliente;
+
 public class Mis_servicios extends Mis_servicios_ventana implements View {
 	//private Label _seccion;
 	public Mi_cuenta_cliente _unnamed_Mi_cuenta_cliente_;
 	public Vector<Servicio> _servicio = new Vector<Servicio>();
 	public static final String VIEW_NAME = "mis_servicios";
+	private ICliente cliente = new BD_Principal();
 	
-	public Mis_servicios(){
-		Servicio s = new Servicio();
-		List<Button> ofertas = new ArrayList<Button>();
-		List<Button> modalidades = new ArrayList<Button>();
+	public Mis_servicios()
+	{
+
+		cargar_modalidades_mis_servicios();
 		
-		ofertas.add(new Button("Llamadas baratas + 100MB"));
-		modalidades.add(new Button("Amigos gratis"));
-		
-		ofertas.get(0).addStyleName("link");
-		modalidades.get(0).addStyleName("link");
-		 s.vLayoutModalidadesB.addComponent(ofertas.get(0));
-		 s.vLayoutModalidadesB.addComponent(modalidades.get(0));
-		 s.noServiciosL.setVisible(false);
-		 serviciosGrid.addComponent(s);
-		 
-		 s = new Servicio();
-		 s.tituloL.setValue("Televisión");
-		 serviciosGrid.addComponent(s);
-		 
-		 s = new Servicio();
-		 s.tituloL.setValue("Internet");
-		 serviciosGrid.addComponent(s);
-		
-		 s = new Servicio();
-		 s.tituloL.setValue("Móvil");
-		 serviciosGrid.addComponent(s);
-		
-		for(int i = 0; i < ofertas.size(); i++)
+		/*for(int i = 0; i < ofertas.size(); i++)
 		{
 			ofertas.get(i).addClickListener(new Button.ClickListener() {
 				
@@ -54,21 +39,72 @@ public class Mis_servicios extends Mis_servicios_ventana implements View {
 					
 				}
 			});
-		}
+		}*/
+		
+	}
+	
+	public void cargar_modalidades_mis_servicios()
+	{
+		List<Modalidad> modalidades = cliente.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
+		Servicio television = new Servicio();
+		Servicio internet = new Servicio();
+		Servicio telefono = new Servicio();
+		Servicio movil = new Servicio();
+		Button boton;
+		
+		television.tituloL.setValue("Televisión");
+		internet.tituloL.setValue("Internet");
+		telefono.tituloL.setValue("Teléfono Fijo");
+		movil.tituloL.setValue("Móvil");
 		
 		for(int i = 0; i < modalidades.size(); i++)
 		{
-			modalidades.get(i).addClickListener(new Button.ClickListener() 
+			boton = new Button(modalidades.get(i).getNombre());
+			boton.addStyleName("link");
+			
+			if(modalidades.get(i).getTipo().equals("television"))
 			{
+				television.noServiciosL.setVisible(false);
+				television.vLayoutModalidadesB.addComponent(boton);
 				
-				@Override
-				public void buttonClick(ClickEvent event) 
-				{
-					// TODO Auto-generated method stub
-					doNavigate(Modalidad_individual_cliente.VIEW_NAME + "/" + event.getButton().getCaption());
-				}
-			});
+			}else if(modalidades.get(i).getTipo().equals("internet"))
+			{
+				internet.noServiciosL.setVisible(false);
+				internet.vLayoutModalidadesB.addComponent(boton);
+				
+			}else if(modalidades.get(i).getTipo().equals("telefonoFijo"))
+			{
+				telefono.noServiciosL.setVisible(false);
+				telefono.vLayoutModalidadesB.addComponent(boton);
+				
+			}else if(modalidades.get(i).getTipo().equals("movil"))
+			{
+				movil.noServiciosL.setVisible(false);
+				movil.vLayoutModalidadesB.addComponent(boton);
+				
+			}else
+			{
+				//FALTA LA PARTE DE OFERTAS
+			}
+			
+			if(!modalidades.get(i).getTipo().equals("oferta"))
+			{
+				boton.addClickListener(new Button.ClickListener() {
+				
+					@Override
+					public void buttonClick(ClickEvent event)
+					{
+						doNavigate(Modalidad_individual_cliente.VIEW_NAME + "/" + event.getButton().getCaption());
+					
+					}
+				});
+			}
 		}
+		
+		serviciosGrid.addComponent(television);
+		serviciosGrid.addComponent(internet);
+		serviciosGrid.addComponent(telefono);
+		serviciosGrid.addComponent(movil);
 	}
 	
 	//Esto debería estar en Cliente

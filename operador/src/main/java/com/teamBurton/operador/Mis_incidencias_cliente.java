@@ -1,5 +1,6 @@
 package com.teamBurton.operador;
 
+import java.util.List;
 import java.util.Vector;
 
 import com.vaadin.event.ItemClickEvent;
@@ -10,6 +11,10 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
+import bd.BD_Principal;
+import bd.Incidencia;
+import bdgui.ICliente;
+
 public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana implements View {
 	/*private Label _seccion;
 	private Button _crearIncidencia;
@@ -18,22 +23,24 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 	public Vector<Incidencia_lista_cliente> _incidencia = new Vector<Incidencia_lista_cliente>();
 	public Crear_incidencia _creaIncidencia;
 	public static final String VIEW_NAME = "mis_incidencias_cliente";
+	private ICliente cliente = new BD_Principal();
+	private List<Incidencia> incidencias;
 	
 	public Mis_incidencias_cliente()
 	{
-		incidenciasTabla.setImmediate(true);
+		cargar_incidencias_cliente();
 		
-		incidenciasTabla.addItemClickListener(new ItemClickListener() 
+		incidenciasGrid.setImmediate(true);
+		
+		incidenciasGrid.addItemClickListener(new ItemClickListener() 
 		{
 			
 			@Override
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
-				String numero = (String) incidenciasTabla.getContainerProperty(rowId, "Nº Incidencia").getValue();
-				String asunto = (String) incidenciasTabla.getContainerProperty(rowId, "Asunto").getValue();
 				
-				doNavigate(Incidencia_cliente.VIEW_NAME + "/" + numero + "_" + asunto);
+				doNavigate(Incidencia_cliente.VIEW_NAME + "/" + incidencias.get((int)rowId).getID() );
 				
 			}
 		});
@@ -45,6 +52,16 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 				doNavigate(Crear_incidencia.VIEW_NAME);
 			} 
 		}); 
+	}
+	
+	public void cargar_incidencias_cliente()
+	{
+		incidencias = cliente.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
+		
+		for(int i = 0; i < incidencias.size(); i++)
+		{
+			incidenciasGrid.addRow("", incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getEstado());
+		}
 	}
 	
 	//Esto debería estar en Cliente

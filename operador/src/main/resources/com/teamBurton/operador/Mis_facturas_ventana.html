@@ -10,27 +10,23 @@
    <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Mis Facturas 
    </vaadin-label> 
-   <vaadin-table selectable style-name="borderless no-horizontal-lines no-vertical-lines" width-full _id="facturasTabla"> 
+   <vaadin-grid primary-style-name="v-table" width-full _id="facturasGrid"> 
     <table> 
      <colgroup> 
-      <col property-id="Fecha"> 
-      <col property-id="Concepto"> 
-      <col property-id="Importe"> 
+      <col property-id="Fecha" sortable> 
+      <col property-id="Concepto" sortable> 
+      <col property-id="Importe" sortable> 
      </colgroup> 
-     <tbody> 
-      <tr item-id="1"> 
-       <td>1/11/2016</td> 
-       <td>Facturación Octubre</td> 
-       <td>50€</td> 
+     <thead> 
+      <tr default> 
+       <th plain-text>Fecha</th> 
+       <th plain-text>Concepto</th> 
+       <th plain-text>Importe</th> 
       </tr> 
-      <tr item-id="2"> 
-       <td>1/10/2016</td> 
-       <td>Facturación Septiembre</td> 
-       <td>20€</td> 
-      </tr> 
-     </tbody> 
+     </thead> 
+     <tbody></tbody> 
     </table> 
-   </vaadin-table> 
+   </vaadin-grid> 
   </vaadin-vertical-layout>  
  </body>
 </html>
