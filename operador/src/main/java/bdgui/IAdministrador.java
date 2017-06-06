@@ -89,4 +89,14 @@ public interface IAdministrador {
 	public boolean modificar_modalidad(Modalidad modalidad);
 	
 	public Canal cargar_canal(String nombre);
+	
+	public Movil cargar_modalidad_movil(String nombre);
+	
+	public Modalidad cargar_modalidad_internet(String nombre);
+	
+	public Modalidad cargar_modalidad_telefono_fijo(String nombre);
+	
+	public Paquete cargar_modalidad_paquete(String nombre);
+	
+	public Oferta cargar_modalidad_oferta(String nombre);
 }

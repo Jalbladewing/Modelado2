@@ -396,4 +396,19 @@ public class BD_Oferta {
 		
 		return resultado;
 	}
+/*
+	public Modalidad cargar_modalidad_internet(String nombre)  throws PersistentException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Modalidad cargar_modalidad_telefono_fijo(String nombre)throws PersistentException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Oferta cargar_modalidad_oferta(String nombre) throws PersistentException{
+		// TODO Auto-generated method stub
+		return null;
+	}*/
 }

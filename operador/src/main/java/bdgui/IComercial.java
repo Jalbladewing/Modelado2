@@ -7,6 +7,10 @@ import java.util.List;
 import bd.Canal;
 import bd.Cliente;
 import bd.Incidencia;
+import bd.Modalidad;
+import bd.Movil;
+import bd.Oferta;
+import bd.Paquete;
 
 public interface IComercial {
 
@@ -55,4 +59,14 @@ public interface IComercial {
 	public boolean baja_modalidad_cliente(int idCliente, int idModalidad);
 	
 	public Canal cargar_canal(String nombre);
+	
+	public Movil cargar_modalidad_movil(String nombre);
+	
+	public Modalidad cargar_modalidad_internet(String nombre);
+	
+	public Modalidad cargar_modalidad_telefono_fijo(String nombre);
+	
+	public Paquete cargar_modalidad_paquete(String nombre);
+	
+	public Oferta cargar_modalidad_oferta(String nombre);
 }
