@@ -30,6 +30,7 @@ public class Incidencia_administradorDetachedCriteria extends AbstractORMDetache
 	public final StringExpression observacion;
 	public final StringExpression tipoIncidencia;
 	public final StringExpression estado;
+	public final DateExpression fecha;
 	public final StringExpression correoComercial;
 	public final IntegerExpression administradorId;
 	public final AssociationExpression administrador;
@@ -47,6 +48,7 @@ public class Incidencia_administradorDetachedCriteria extends AbstractORMDetache
 		observacion = new StringExpression("observacion", this.getDetachedCriteria());
 		tipoIncidencia = new StringExpression("tipoIncidencia", this.getDetachedCriteria());
 		estado = new StringExpression("estado", this.getDetachedCriteria());
+		fecha = new DateExpression("fecha", this.getDetachedCriteria());
 		correoComercial = new StringExpression("correoComercial", this.getDetachedCriteria());
 		administradorId = new IntegerExpression("administrador.", this.getDetachedCriteria());
 		administrador = new AssociationExpression("administrador", this.getDetachedCriteria());
@@ -65,6 +67,7 @@ public class Incidencia_administradorDetachedCriteria extends AbstractORMDetache
 		observacion = new StringExpression("observacion", this.getDetachedCriteria());
 		tipoIncidencia = new StringExpression("tipoIncidencia", this.getDetachedCriteria());
 		estado = new StringExpression("estado", this.getDetachedCriteria());
+		fecha = new DateExpression("fecha", this.getDetachedCriteria());
 		correoComercial = new StringExpression("correoComercial", this.getDetachedCriteria());
 		administradorId = new IntegerExpression("administrador.", this.getDetachedCriteria());
 		administrador = new AssociationExpression("administrador", this.getDetachedCriteria());

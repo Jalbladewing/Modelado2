@@ -9,48 +9,48 @@ public class RetrieveAndUpdateIteracionFinalData {
 	public void retrieveAndUpdateTestData() throws PersistentException {
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		try {
-			bd.Factura bDFactura = bd.FacturaDAO.loadFacturaByQuery(null, null);
+			bd.Factura lbdFactura = bd.FacturaDAO.loadFacturaByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.FacturaDAO.save(bDFactura);
-			bd.Modalidad bDModalidad = bd.ModalidadDAO.loadModalidadByQuery(null, null);
+			bd.FacturaDAO.save(lbdFactura);
+			bd.Modalidad lbdModalidad = bd.ModalidadDAO.loadModalidadByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.ModalidadDAO.save(bDModalidad);
-			bd.Television bDTelevision = bd.TelevisionDAO.loadTelevisionByQuery(null, null);
+			bd.ModalidadDAO.save(lbdModalidad);
+			bd.Television lbdTelevision = bd.TelevisionDAO.loadTelevisionByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.TelevisionDAO.save(bDTelevision);
-			bd.Canal bDCanal = bd.CanalDAO.loadCanalByQuery(null, null);
+			bd.TelevisionDAO.save(lbdTelevision);
+			bd.Canal lbdCanal = bd.CanalDAO.loadCanalByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.CanalDAO.save(bDCanal);
-			bd.Incidencia bDIncidencia = bd.IncidenciaDAO.loadIncidenciaByQuery(null, null);
+			bd.CanalDAO.save(lbdCanal);
+			bd.Incidencia lbdIncidencia = bd.IncidenciaDAO.loadIncidenciaByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.IncidenciaDAO.save(bDIncidencia);
-			bd.Usuario bDUsuario = bd.UsuarioDAO.loadUsuarioByQuery(null, null);
+			bd.IncidenciaDAO.save(lbdIncidencia);
+			bd.Usuario lbdUsuario = bd.UsuarioDAO.loadUsuarioByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.UsuarioDAO.save(bDUsuario);
-			bd.Incidencia_administrador bDIncidencia_administrador = bd.Incidencia_administradorDAO.loadIncidencia_administradorByQuery(null, null);
+			bd.UsuarioDAO.save(lbdUsuario);
+			bd.Incidencia_administrador lbdIncidencia_administrador = bd.Incidencia_administradorDAO.loadIncidencia_administradorByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.Incidencia_administradorDAO.save(bDIncidencia_administrador);
-			bd.Cliente bDCliente = bd.ClienteDAO.loadClienteByQuery(null, null);
+			bd.Incidencia_administradorDAO.save(lbdIncidencia_administrador);
+			bd.Cliente lbdCliente = bd.ClienteDAO.loadClienteByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.ClienteDAO.save(bDCliente);
-			bd.Movil bDMovil = bd.MovilDAO.loadMovilByQuery(null, null);
+			bd.ClienteDAO.save(lbdCliente);
+			bd.Movil lbdMovil = bd.MovilDAO.loadMovilByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.MovilDAO.save(bDMovil);
-			bd.Oferta bDOferta = bd.OfertaDAO.loadOfertaByQuery(null, null);
+			bd.MovilDAO.save(lbdMovil);
+			bd.Oferta lbdOferta = bd.OfertaDAO.loadOfertaByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.OfertaDAO.save(bDOferta);
-			bd.contrato bDcontrato = bd.contratoDAO.loadContratoByQuery(null, null);
+			bd.OfertaDAO.save(lbdOferta);
+			bd.contrato lbdcontrato = bd.contratoDAO.loadContratoByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.contratoDAO.save(bDcontrato);
-			bd.Comercial bDComercial = bd.ComercialDAO.loadComercialByQuery(null, null);
+			bd.contratoDAO.save(lbdcontrato);
+			bd.Comercial lbdComercial = bd.ComercialDAO.loadComercialByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.ComercialDAO.save(bDComercial);
-			bd.Administrador bDAdministrador = bd.AdministradorDAO.loadAdministradorByQuery(null, null);
+			bd.ComercialDAO.save(lbdComercial);
+			bd.Administrador lbdAdministrador = bd.AdministradorDAO.loadAdministradorByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.AdministradorDAO.save(bDAdministrador);
-			bd.Paquete bDPaquete = bd.PaqueteDAO.loadPaqueteByQuery(null, null);
+			bd.AdministradorDAO.save(lbdAdministrador);
+			bd.Paquete lbdPaquete = bd.PaqueteDAO.loadPaqueteByQuery(null, null);
 			// Update the properties of the persistent object
-			bd.PaqueteDAO.save(bDPaquete);
+			bd.PaqueteDAO.save(lbdPaquete);
 			t.commit();
 		}
 		catch (Exception e) {
@@ -61,88 +61,88 @@ public class RetrieveAndUpdateIteracionFinalData {
 	
 	public void retrieveByCriteria() throws PersistentException {
 		System.out.println("Retrieving Factura by FacturaCriteria");
-		bd.FacturaCriteria bDFacturaCriteria = new bd.FacturaCriteria();
+		bd.FacturaCriteria lbdFacturaCriteria = new bd.FacturaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDFacturaCriteria.ID.eq();
-		System.out.println(bDFacturaCriteria.uniqueFactura());
+		//lbdFacturaCriteria.ID.eq();
+		System.out.println(lbdFacturaCriteria.uniqueFactura());
 		
 		System.out.println("Retrieving Modalidad by ModalidadCriteria");
-		bd.ModalidadCriteria bDModalidadCriteria = new bd.ModalidadCriteria();
+		bd.ModalidadCriteria lbdModalidadCriteria = new bd.ModalidadCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDModalidadCriteria.ID.eq();
-		System.out.println(bDModalidadCriteria.uniqueModalidad());
+		//lbdModalidadCriteria.ID.eq();
+		System.out.println(lbdModalidadCriteria.uniqueModalidad());
 		
 		System.out.println("Retrieving Television by TelevisionCriteria");
-		bd.TelevisionCriteria bDTelevisionCriteria = new bd.TelevisionCriteria();
+		bd.TelevisionCriteria lbdTelevisionCriteria = new bd.TelevisionCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDTelevisionCriteria.ID.eq();
-		System.out.println(bDTelevisionCriteria.uniqueTelevision());
+		//lbdTelevisionCriteria.ID.eq();
+		System.out.println(lbdTelevisionCriteria.uniqueTelevision());
 		
 		System.out.println("Retrieving Canal by CanalCriteria");
-		bd.CanalCriteria bDCanalCriteria = new bd.CanalCriteria();
+		bd.CanalCriteria lbdCanalCriteria = new bd.CanalCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDCanalCriteria.ID.eq();
-		System.out.println(bDCanalCriteria.uniqueCanal());
+		//lbdCanalCriteria.ID.eq();
+		System.out.println(lbdCanalCriteria.uniqueCanal());
 		
 		System.out.println("Retrieving Incidencia by IncidenciaCriteria");
-		bd.IncidenciaCriteria bDIncidenciaCriteria = new bd.IncidenciaCriteria();
+		bd.IncidenciaCriteria lbdIncidenciaCriteria = new bd.IncidenciaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDIncidenciaCriteria.ID.eq();
-		System.out.println(bDIncidenciaCriteria.uniqueIncidencia());
+		//lbdIncidenciaCriteria.ID.eq();
+		System.out.println(lbdIncidenciaCriteria.uniqueIncidencia());
 		
 		System.out.println("Retrieving Usuario by UsuarioCriteria");
-		bd.UsuarioCriteria bDUsuarioCriteria = new bd.UsuarioCriteria();
+		bd.UsuarioCriteria lbdUsuarioCriteria = new bd.UsuarioCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDUsuarioCriteria.ID.eq();
-		System.out.println(bDUsuarioCriteria.uniqueUsuario());
+		//lbdUsuarioCriteria.ID.eq();
+		System.out.println(lbdUsuarioCriteria.uniqueUsuario());
 		
 		System.out.println("Retrieving Incidencia_administrador by Incidencia_administradorCriteria");
-		bd.Incidencia_administradorCriteria bDIncidencia_administradorCriteria = new bd.Incidencia_administradorCriteria();
+		bd.Incidencia_administradorCriteria lbdIncidencia_administradorCriteria = new bd.Incidencia_administradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDIncidencia_administradorCriteria.ID.eq();
-		System.out.println(bDIncidencia_administradorCriteria.uniqueIncidencia_administrador());
+		//lbdIncidencia_administradorCriteria.ID.eq();
+		System.out.println(lbdIncidencia_administradorCriteria.uniqueIncidencia_administrador());
 		
 		System.out.println("Retrieving Cliente by ClienteCriteria");
-		bd.ClienteCriteria bDClienteCriteria = new bd.ClienteCriteria();
+		bd.ClienteCriteria lbdClienteCriteria = new bd.ClienteCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDClienteCriteria.ID.eq();
-		System.out.println(bDClienteCriteria.uniqueCliente());
+		//lbdClienteCriteria.ID.eq();
+		System.out.println(lbdClienteCriteria.uniqueCliente());
 		
 		System.out.println("Retrieving Movil by MovilCriteria");
-		bd.MovilCriteria bDMovilCriteria = new bd.MovilCriteria();
+		bd.MovilCriteria lbdMovilCriteria = new bd.MovilCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDMovilCriteria.ID.eq();
-		System.out.println(bDMovilCriteria.uniqueMovil());
+		//lbdMovilCriteria.ID.eq();
+		System.out.println(lbdMovilCriteria.uniqueMovil());
 		
 		System.out.println("Retrieving Oferta by OfertaCriteria");
-		bd.OfertaCriteria bDOfertaCriteria = new bd.OfertaCriteria();
+		bd.OfertaCriteria lbdOfertaCriteria = new bd.OfertaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDOfertaCriteria.ID.eq();
-		System.out.println(bDOfertaCriteria.uniqueOferta());
+		//lbdOfertaCriteria.ID.eq();
+		System.out.println(lbdOfertaCriteria.uniqueOferta());
 		
 		System.out.println("Retrieving contrato by contratoCriteria");
-		bd.contratoCriteria bDcontratoCriteria = new bd.contratoCriteria();
+		bd.contratoCriteria lbdcontratoCriteria = new bd.contratoCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDcontratoCriteria.ID.eq();
-		System.out.println(bDcontratoCriteria.uniqueContrato());
+		//lbdcontratoCriteria.ID.eq();
+		System.out.println(lbdcontratoCriteria.uniqueContrato());
 		
 		System.out.println("Retrieving Comercial by ComercialCriteria");
-		bd.ComercialCriteria bDComercialCriteria = new bd.ComercialCriteria();
+		bd.ComercialCriteria lbdComercialCriteria = new bd.ComercialCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDComercialCriteria.ID.eq();
-		System.out.println(bDComercialCriteria.uniqueComercial());
+		//lbdComercialCriteria.ID.eq();
+		System.out.println(lbdComercialCriteria.uniqueComercial());
 		
 		System.out.println("Retrieving Administrador by AdministradorCriteria");
-		bd.AdministradorCriteria bDAdministradorCriteria = new bd.AdministradorCriteria();
+		bd.AdministradorCriteria lbdAdministradorCriteria = new bd.AdministradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDAdministradorCriteria.ID.eq();
-		System.out.println(bDAdministradorCriteria.uniqueAdministrador());
+		//lbdAdministradorCriteria.ID.eq();
+		System.out.println(lbdAdministradorCriteria.uniqueAdministrador());
 		
 		System.out.println("Retrieving Paquete by PaqueteCriteria");
-		bd.PaqueteCriteria bDPaqueteCriteria = new bd.PaqueteCriteria();
+		bd.PaqueteCriteria lbdPaqueteCriteria = new bd.PaqueteCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//bDPaqueteCriteria.ID.eq();
-		System.out.println(bDPaqueteCriteria.uniquePaquete());
+		//lbdPaqueteCriteria.ID.eq();
+		System.out.println(lbdPaqueteCriteria.uniquePaquete());
 		
 	}
 	

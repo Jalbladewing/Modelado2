@@ -58,20 +58,20 @@ public class AdministradorCriteria extends AbstractORMCriteria {
 		this(bd.IteracionFinalPersistentManager.instance().getSession());
 	}
 	
-	public bd.ClienteCriteria createClienteCriteria() {
-		return new bd.ClienteCriteria(createCriteria("ORM_cliente"));
+	public ClienteCriteria createClienteCriteria() {
+		return new ClienteCriteria(createCriteria("ORM_cliente"));
 	}
 	
-	public bd.ModalidadCriteria createModalidadDestacadaCriteria() {
-		return new bd.ModalidadCriteria(createCriteria("ORM_modalidadDestacada"));
+	public ModalidadCriteria createModalidadDestacadaCriteria() {
+		return new ModalidadCriteria(createCriteria("ORM_modalidadDestacada"));
 	}
 	
-	public bd.ComercialCriteria createComercialCriteria() {
-		return new bd.ComercialCriteria(createCriteria("ORM_comercial"));
+	public ComercialCriteria createComercialCriteria() {
+		return new ComercialCriteria(createCriteria("ORM_comercial"));
 	}
 	
-	public bd.Incidencia_administradorCriteria createIncidenciaCriteria() {
-		return new bd.Incidencia_administradorCriteria(createCriteria("ORM_incidencia"));
+	public Incidencia_administradorCriteria createIncidenciaCriteria() {
+		return new Incidencia_administradorCriteria(createCriteria("ORM_incidencia"));
 	}
 	
 	public Administrador uniqueAdministrador() {

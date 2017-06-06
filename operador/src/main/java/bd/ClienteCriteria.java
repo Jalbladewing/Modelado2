@@ -66,20 +66,20 @@ public class ClienteCriteria extends AbstractORMCriteria {
 		return new AdministradorCriteria(createCriteria("administrador"));
 	}
 	
-	public bd.contratoCriteria createContratosCriteria() {
-		return new bd.contratoCriteria(createCriteria("ORM_contratos"));
+	public contratoCriteria createContratosCriteria() {
+		return new contratoCriteria(createCriteria("ORM_contratos"));
 	}
 	
-	public bd.FacturaCriteria createFacturaCriteria() {
-		return new bd.FacturaCriteria(createCriteria("ORM_factura"));
+	public FacturaCriteria createFacturaCriteria() {
+		return new FacturaCriteria(createCriteria("ORM_factura"));
 	}
 	
-	public bd.IncidenciaCriteria createIncidenciaCriteria() {
-		return new bd.IncidenciaCriteria(createCriteria("ORM_incidencia"));
+	public IncidenciaCriteria createIncidenciaCriteria() {
+		return new IncidenciaCriteria(createCriteria("ORM_incidencia"));
 	}
 	
-	public bd.ComercialCriteria createComercialCriteria() {
-		return new bd.ComercialCriteria(createCriteria("ORM_comercial"));
+	public ComercialCriteria createComercialCriteria() {
+		return new ComercialCriteria(createCriteria("ORM_comercial"));
 	}
 	
 	public Cliente uniqueCliente() {

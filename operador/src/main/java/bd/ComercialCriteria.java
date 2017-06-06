@@ -62,12 +62,12 @@ public class ComercialCriteria extends AbstractORMCriteria {
 		return new AdministradorCriteria(createCriteria("administrador"));
 	}
 	
-	public bd.IncidenciaCriteria createIncidenciaCriteria() {
-		return new bd.IncidenciaCriteria(createCriteria("ORM_incidencia"));
+	public IncidenciaCriteria createIncidenciaCriteria() {
+		return new IncidenciaCriteria(createCriteria("ORM_incidencia"));
 	}
 	
-	public bd.ClienteCriteria createClienteCriteria() {
-		return new bd.ClienteCriteria(createCriteria("ORM_cliente"));
+	public ClienteCriteria createClienteCriteria() {
+		return new ClienteCriteria(createCriteria("ORM_cliente"));
 	}
 	
 	public Comercial uniqueComercial() {

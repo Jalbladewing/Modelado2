@@ -30,6 +30,7 @@ public class IncidenciaCriteria extends AbstractORMCriteria {
 	public final StringExpression observacion;
 	public final StringExpression tipoIncidencia;
 	public final StringExpression estado;
+	public final DateExpression fecha;
 	
 	public IncidenciaCriteria(Criteria criteria) {
 		super(criteria);
@@ -44,6 +45,7 @@ public class IncidenciaCriteria extends AbstractORMCriteria {
 		observacion = new StringExpression("observacion", this);
 		tipoIncidencia = new StringExpression("tipoIncidencia", this);
 		estado = new StringExpression("estado", this);
+		fecha = new DateExpression("fecha", this);
 	}
 	
 	public IncidenciaCriteria(PersistentSession session) {

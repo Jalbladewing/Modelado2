@@ -67,20 +67,20 @@ public class AdministradorDetachedCriteria extends AbstractORMDetachedCriteria {
 		incidencia = new CollectionExpression("ORM_incidencia", this.getDetachedCriteria());
 	}
 	
-	public bd.ClienteDetachedCriteria createClienteCriteria() {
-		return new bd.ClienteDetachedCriteria(createCriteria("ORM_cliente"));
+	public ClienteDetachedCriteria createClienteCriteria() {
+		return new ClienteDetachedCriteria(createCriteria("ORM_cliente"));
 	}
 	
-	public bd.ModalidadDetachedCriteria createModalidadDestacadaCriteria() {
-		return new bd.ModalidadDetachedCriteria(createCriteria("ORM_modalidadDestacada"));
+	public ModalidadDetachedCriteria createModalidadDestacadaCriteria() {
+		return new ModalidadDetachedCriteria(createCriteria("ORM_modalidadDestacada"));
 	}
 	
-	public bd.ComercialDetachedCriteria createComercialCriteria() {
-		return new bd.ComercialDetachedCriteria(createCriteria("ORM_comercial"));
+	public ComercialDetachedCriteria createComercialCriteria() {
+		return new ComercialDetachedCriteria(createCriteria("ORM_comercial"));
 	}
 	
-	public bd.Incidencia_administradorDetachedCriteria createIncidenciaCriteria() {
-		return new bd.Incidencia_administradorDetachedCriteria(createCriteria("ORM_incidencia"));
+	public Incidencia_administradorDetachedCriteria createIncidenciaCriteria() {
+		return new Incidencia_administradorDetachedCriteria(createCriteria("ORM_incidencia"));
 	}
 	
 	public Administrador uniqueAdministrador(PersistentSession session) {

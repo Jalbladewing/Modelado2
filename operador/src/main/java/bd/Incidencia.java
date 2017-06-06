@@ -77,6 +77,10 @@ public class Incidencia implements Serializable {
 	@Column(name="Estado", nullable=true, length=255)	
 	private String estado;
 	
+	@Column(name="Fecha", nullable=true)	
+	@Temporal(TemporalType.DATE)	
+	private java.util.Date fecha;
+	
 	private void setID(int value) {
 		this.ID = value;
 	}
@@ -135,6 +139,14 @@ public class Incidencia implements Serializable {
 	
 	public String getEstado() {
 		return estado;
+	}
+	
+	public void setFecha(java.util.Date value) {
+		this.fecha = value;
+	}
+	
+	public java.util.Date getFecha() {
+		return fecha;
 	}
 	
 	public void setCliente(bd.Cliente value) {

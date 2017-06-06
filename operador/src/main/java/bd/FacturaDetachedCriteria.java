@@ -68,8 +68,8 @@ public class FacturaDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new ClienteDetachedCriteria(createCriteria("cliente"));
 	}
 	
-	public bd.ModalidadDetachedCriteria createModalidadCriteria() {
-		return new bd.ModalidadDetachedCriteria(createCriteria("ORM_modalidad"));
+	public ModalidadDetachedCriteria createModalidadCriteria() {
+		return new ModalidadDetachedCriteria(createCriteria("ORM_modalidad"));
 	}
 	
 	public Factura uniqueFactura(PersistentSession session) {

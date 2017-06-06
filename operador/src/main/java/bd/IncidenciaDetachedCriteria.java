@@ -30,6 +30,7 @@ public class IncidenciaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression observacion;
 	public final StringExpression tipoIncidencia;
 	public final StringExpression estado;
+	public final DateExpression fecha;
 	
 	public IncidenciaDetachedCriteria() {
 		super(bd.Incidencia.class, bd.IncidenciaCriteria.class);
@@ -44,6 +45,7 @@ public class IncidenciaDetachedCriteria extends AbstractORMDetachedCriteria {
 		observacion = new StringExpression("observacion", this.getDetachedCriteria());
 		tipoIncidencia = new StringExpression("tipoIncidencia", this.getDetachedCriteria());
 		estado = new StringExpression("estado", this.getDetachedCriteria());
+		fecha = new DateExpression("fecha", this.getDetachedCriteria());
 	}
 	
 	public IncidenciaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -59,6 +61,7 @@ public class IncidenciaDetachedCriteria extends AbstractORMDetachedCriteria {
 		observacion = new StringExpression("observacion", this.getDetachedCriteria());
 		tipoIncidencia = new StringExpression("tipoIncidencia", this.getDetachedCriteria());
 		estado = new StringExpression("estado", this.getDetachedCriteria());
+		fecha = new DateExpression("fecha", this.getDetachedCriteria());
 	}
 	
 	public ClienteDetachedCriteria createClienteCriteria() {

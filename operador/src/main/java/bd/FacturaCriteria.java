@@ -60,8 +60,8 @@ public class FacturaCriteria extends AbstractORMCriteria {
 		return new ClienteCriteria(createCriteria("cliente"));
 	}
 	
-	public bd.ModalidadCriteria createModalidadCriteria() {
-		return new bd.ModalidadCriteria(createCriteria("ORM_modalidad"));
+	public ModalidadCriteria createModalidadCriteria() {
+		return new ModalidadCriteria(createCriteria("ORM_modalidad"));
 	}
 	
 	public Factura uniqueFactura() {

@@ -77,20 +77,20 @@ public class ClienteDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new AdministradorDetachedCriteria(createCriteria("administrador"));
 	}
 	
-	public bd.contratoDetachedCriteria createContratosCriteria() {
-		return new bd.contratoDetachedCriteria(createCriteria("ORM_contratos"));
+	public contratoDetachedCriteria createContratosCriteria() {
+		return new contratoDetachedCriteria(createCriteria("ORM_contratos"));
 	}
 	
-	public bd.FacturaDetachedCriteria createFacturaCriteria() {
-		return new bd.FacturaDetachedCriteria(createCriteria("ORM_factura"));
+	public FacturaDetachedCriteria createFacturaCriteria() {
+		return new FacturaDetachedCriteria(createCriteria("ORM_factura"));
 	}
 	
-	public bd.IncidenciaDetachedCriteria createIncidenciaCriteria() {
-		return new bd.IncidenciaDetachedCriteria(createCriteria("ORM_incidencia"));
+	public IncidenciaDetachedCriteria createIncidenciaCriteria() {
+		return new IncidenciaDetachedCriteria(createCriteria("ORM_incidencia"));
 	}
 	
-	public bd.ComercialDetachedCriteria createComercialCriteria() {
-		return new bd.ComercialDetachedCriteria(createCriteria("ORM_comercial"));
+	public ComercialDetachedCriteria createComercialCriteria() {
+		return new ComercialDetachedCriteria(createCriteria("ORM_comercial"));
 	}
 	
 	public Cliente uniqueCliente(PersistentSession session) {

@@ -71,12 +71,12 @@ public class ComercialDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new AdministradorDetachedCriteria(createCriteria("administrador"));
 	}
 	
-	public bd.IncidenciaDetachedCriteria createIncidenciaCriteria() {
-		return new bd.IncidenciaDetachedCriteria(createCriteria("ORM_incidencia"));
+	public IncidenciaDetachedCriteria createIncidenciaCriteria() {
+		return new IncidenciaDetachedCriteria(createCriteria("ORM_incidencia"));
 	}
 	
-	public bd.ClienteDetachedCriteria createClienteCriteria() {
-		return new bd.ClienteDetachedCriteria(createCriteria("ORM_cliente"));
+	public ClienteDetachedCriteria createClienteCriteria() {
+		return new ClienteDetachedCriteria(createCriteria("ORM_cliente"));
 	}
 	
 	public Comercial uniqueComercial(PersistentSession session) {

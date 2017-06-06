@@ -64,16 +64,16 @@ public class MovilCriteria extends AbstractORMCriteria {
 		return new AdministradorCriteria(createCriteria("administrador"));
 	}
 	
-	public bd.OfertaCriteria createOfertaCriteria() {
-		return new bd.OfertaCriteria(createCriteria("ORM_oferta"));
+	public OfertaCriteria createOfertaCriteria() {
+		return new OfertaCriteria(createCriteria("ORM_oferta"));
 	}
 	
-	public bd.contratoCriteria createContratosCriteria() {
-		return new bd.contratoCriteria(createCriteria("ORM_contratos"));
+	public contratoCriteria createContratosCriteria() {
+		return new contratoCriteria(createCriteria("ORM_contratos"));
 	}
 	
-	public bd.FacturaCriteria createFacturaCriteria() {
-		return new bd.FacturaCriteria(createCriteria("ORM_factura"));
+	public FacturaCriteria createFacturaCriteria() {
+		return new FacturaCriteria(createCriteria("ORM_factura"));
 	}
 	
 	public Movil uniqueMovil() {

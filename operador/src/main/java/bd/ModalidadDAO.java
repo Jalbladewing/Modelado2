@@ -322,16 +322,16 @@ public class ModalidadDAO {
 	}
 	
 	public static boolean deleteAndDissociate(bd.Modalidad modalidad)throws PersistentException {
-		if (modalidad instanceof Television) {
-			return TelevisionDAO.deleteAndDissociate((Television) modalidad);
+		if (modalidad instanceof bd.Television) {
+			return bd.TelevisionDAO.deleteAndDissociate((bd.Television) modalidad);
 		}
 		
-		if (modalidad instanceof Movil) {
-			return MovilDAO.deleteAndDissociate((Movil) modalidad);
+		if (modalidad instanceof bd.Movil) {
+			return bd.MovilDAO.deleteAndDissociate((bd.Movil) modalidad);
 		}
 		
-		if (modalidad instanceof Oferta) {
-			return OfertaDAO.deleteAndDissociate((Oferta) modalidad);
+		if (modalidad instanceof bd.Oferta) {
+			return bd.OfertaDAO.deleteAndDissociate((bd.Oferta) modalidad);
 		}
 		
 		try {
@@ -360,16 +360,16 @@ public class ModalidadDAO {
 	}
 	
 	public static boolean deleteAndDissociate(bd.Modalidad modalidad, org.orm.PersistentSession session)throws PersistentException {
-		if (modalidad instanceof Television) {
-			return TelevisionDAO.deleteAndDissociate((Television) modalidad, session);
+		if (modalidad instanceof bd.Television) {
+			return bd.TelevisionDAO.deleteAndDissociate((bd.Television) modalidad, session);
 		}
 		
-		if (modalidad instanceof Movil) {
-			return MovilDAO.deleteAndDissociate((Movil) modalidad, session);
+		if (modalidad instanceof bd.Movil) {
+			return bd.MovilDAO.deleteAndDissociate((bd.Movil) modalidad, session);
 		}
 		
-		if (modalidad instanceof Oferta) {
-			return OfertaDAO.deleteAndDissociate((Oferta) modalidad, session);
+		if (modalidad instanceof bd.Oferta) {
+			return bd.OfertaDAO.deleteAndDissociate((bd.Oferta) modalidad, session);
 		}
 		
 		try {

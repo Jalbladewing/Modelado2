@@ -16,7 +16,7 @@
     <Column name="ClienteUsuarioID">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Cliente.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>bd.Cliente.UsuarioID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -118,7 +118,7 @@
     <Column name="ModalidadID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Modalidad.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Modalidad.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -143,7 +143,7 @@
     <Column name="ClienteUsuarioID">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Cliente.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>bd.Cliente.UsuarioID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -155,7 +155,7 @@
     <Column name="ComercialUsuarioID">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Comercial.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>bd.Comercial.UsuarioID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>true</Nullable>
@@ -224,6 +224,17 @@
       <ForeignKey>false</ForeignKey>
       <Type>27</Type>
       <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Fecha">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>17</Type>
+      <Length>0</Length>
       <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
@@ -347,7 +358,7 @@
     <Column name="AdministradorUsuarioID">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Administrador.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>bd.Administrador.UsuarioID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>true</Nullable>
@@ -438,7 +449,7 @@
     <Column name="IncidenciaID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Incidencia.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Incidencia.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -450,7 +461,7 @@
     <Column name="AdministradorUsuarioID">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Administrador.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>bd.Administrador.UsuarioID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -464,7 +475,7 @@
     <Column name="UsuarioID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Usuario.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Usuario.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -476,7 +487,7 @@
     <Column name="AdministradorUsuarioID">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Administrador.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>bd.Administrador.UsuarioID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -512,7 +523,7 @@
     <Column name="ModalidadID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Modalidad.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Modalidad.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -526,7 +537,7 @@
     <Column name="ModalidadID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Modalidad.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Modalidad.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -562,7 +573,7 @@
     <Column name="ClienteUsuarioID">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Cliente.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>bd.Cliente.UsuarioID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -574,7 +585,7 @@
     <Column name="ModalidadID">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Modalidad.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Modalidad.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -588,7 +599,7 @@
     <Column name="UsuarioID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Usuario.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Usuario.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -600,7 +611,7 @@
     <Column name="AdministradorUsuarioID">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Administrador.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>bd.Administrador.UsuarioID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -614,7 +625,7 @@
     <Column name="ModalidadID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Modalidad.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Modalidad.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -628,7 +639,7 @@
     <Column name="UsuarioID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Usuario.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Usuario.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -642,7 +653,7 @@
     <Column name="ModalidadID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Modalidad.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Modalidad.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -656,7 +667,7 @@
     <Column name="PaqueteModalidadID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Paquete.ModalidadID</ReferencedColumn>
+      <ReferencedColumn>bd.Paquete.ModalidadID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -668,7 +679,7 @@
     <Column name="CanalModalidadID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Canal.ModalidadID</ReferencedColumn>
+      <ReferencedColumn>bd.Canal.ModalidadID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -682,7 +693,7 @@
     <Column name="ModalidadID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Modalidad.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Modalidad.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -694,7 +705,7 @@
     <Column name="FacturaID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Factura.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Factura.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -708,7 +719,7 @@
     <Column name="OfertaModalidadID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Oferta.ModalidadID</ReferencedColumn>
+      <ReferencedColumn>bd.Oferta.ModalidadID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -720,7 +731,7 @@
     <Column name="ModalidadID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Modalidad.ID</ReferencedColumn>
+      <ReferencedColumn>bd.Modalidad.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -734,7 +745,7 @@
     <Column name="ClienteUsuarioID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Cliente.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>bd.Cliente.UsuarioID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>
@@ -746,7 +757,7 @@
     <Column name="ComercialUsuarioID">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD.Comercial.UsuarioID</ReferencedColumn>
+      <ReferencedColumn>bd.Comercial.UsuarioID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
       <Nullable>false</Nullable>

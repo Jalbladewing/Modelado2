@@ -30,6 +30,7 @@ public class Incidencia_administradorCriteria extends AbstractORMCriteria {
 	public final StringExpression observacion;
 	public final StringExpression tipoIncidencia;
 	public final StringExpression estado;
+	public final DateExpression fecha;
 	public final StringExpression correoComercial;
 	public final IntegerExpression administradorId;
 	public final AssociationExpression administrador;
@@ -47,6 +48,7 @@ public class Incidencia_administradorCriteria extends AbstractORMCriteria {
 		observacion = new StringExpression("observacion", this);
 		tipoIncidencia = new StringExpression("tipoIncidencia", this);
 		estado = new StringExpression("estado", this);
+		fecha = new DateExpression("fecha", this);
 		correoComercial = new StringExpression("correoComercial", this);
 		administradorId = new IntegerExpression("administrador.", this);
 		administrador = new AssociationExpression("administrador", this);

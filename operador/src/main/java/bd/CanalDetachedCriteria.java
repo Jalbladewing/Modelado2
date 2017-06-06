@@ -67,24 +67,24 @@ public class CanalDetachedCriteria extends AbstractORMDetachedCriteria {
 		paquete = new CollectionExpression("ORM_paquete", this.getDetachedCriteria());
 	}
 	
-	public bd.PaqueteDetachedCriteria createPaqueteCriteria() {
-		return new bd.PaqueteDetachedCriteria(createCriteria("ORM_paquete"));
+	public PaqueteDetachedCriteria createPaqueteCriteria() {
+		return new PaqueteDetachedCriteria(createCriteria("ORM_paquete"));
 	}
 	
 	public AdministradorDetachedCriteria createAdministradorCriteria() {
 		return new AdministradorDetachedCriteria(createCriteria("administrador"));
 	}
 	
-	public bd.OfertaDetachedCriteria createOfertaCriteria() {
-		return new bd.OfertaDetachedCriteria(createCriteria("ORM_oferta"));
+	public OfertaDetachedCriteria createOfertaCriteria() {
+		return new OfertaDetachedCriteria(createCriteria("ORM_oferta"));
 	}
 	
-	public bd.contratoDetachedCriteria createContratosCriteria() {
-		return new bd.contratoDetachedCriteria(createCriteria("ORM_contratos"));
+	public contratoDetachedCriteria createContratosCriteria() {
+		return new contratoDetachedCriteria(createCriteria("ORM_contratos"));
 	}
 	
-	public bd.FacturaDetachedCriteria createFacturaCriteria() {
-		return new bd.FacturaDetachedCriteria(createCriteria("ORM_factura"));
+	public FacturaDetachedCriteria createFacturaCriteria() {
+		return new FacturaDetachedCriteria(createCriteria("ORM_factura"));
 	}
 	
 	public Canal uniqueCanal(PersistentSession session) {

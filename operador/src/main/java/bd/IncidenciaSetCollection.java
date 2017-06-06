@@ -77,6 +77,7 @@ public class IncidenciaSetCollection extends org.orm.util.ORMSet {
 	 * <li>observacion</li>
 	 * <li>tipoIncidencia</li>
 	 * <li>estado</li>
+	 * <li>fecha</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -94,6 +95,7 @@ public class IncidenciaSetCollection extends org.orm.util.ORMSet {
 	 * <li>observacion</li>
 	 * <li>tipoIncidencia</li>
 	 * <li>estado</li>
+	 * <li>fecha</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array
