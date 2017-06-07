@@ -1,5 +1,6 @@
 package com.teamBurton.operador;
 
+import java.util.List;
 import java.util.Vector;
 
 import com.vaadin.event.ItemClickEvent;
@@ -10,6 +11,10 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
+import bd.BD_Principal;
+import bd.Cliente;
+import bdgui.IComercial;
+
 public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_ventana implements View {
 	/*private Button _buscarB;
 	private TextField _buscarT;
@@ -19,9 +24,14 @@ public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_venta
 	public Alta_usuario _daAlta;
 	public Vector<Usuario_lista_gestion_comercial> _cliente = new Vector<Usuario_lista_gestion_comercial>();
 	public static final String VIEW_NAME = "gestion_usuarios_comercial";
+	private IComercial comercial = new BD_Principal();
+	private List<Cliente> clientes;
 	
 	public Gestion_usuarios_comercial()
 	{
+		cargar_cliente();
+		
+		//Pulsar el botón de alta cliente
 		altaB.addClickListener(new Button.ClickListener() 
 		{ 
 			public void buttonClick(ClickEvent event) 
@@ -30,12 +40,16 @@ public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_venta
 			} 
 		}); 
 		
+		//Pulsar en un cliente de la tabla
 		usuariosTabla.addItemClickListener(new ItemClickListener() 
 		{
 			
 			@Override
 			public void itemClick(ItemClickEvent event) 
 			{
+				Object rowId = event.getItemId();
+				
+				((NavigatorUI) UI.getCurrent()).setVistaCliente(clientes.get((int)rowId));
 				UI.getCurrent().getNavigator().removeView(Gestion_usuarios_comercial.VIEW_NAME);
 				UI.getCurrent().getNavigator().destroy();
 				((NavigatorUI) UI.getCurrent()).setMainView("Vista_Cliente");
@@ -45,6 +59,17 @@ public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_venta
 		});
 	}
 	
+	public void cargar_cliente()
+	{
+		clientes = comercial.cargar_clientes();
+		int numIncidencias;
+		
+		for(int i = 0; i < clientes.size(); i++)
+		{
+			numIncidencias = clientes.get(i).incidencia.size();
+			usuariosTabla.addRow(clientes.get(i).getNombre(),clientes.get(i).getApellidos(),clientes.get(i).getEmail(),numIncidencias+"");
+		}
+	}
 	//Esto debería estar en Comercial
 	private void doNavigate(String viewName) 
 	{

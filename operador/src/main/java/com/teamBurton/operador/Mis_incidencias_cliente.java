@@ -56,11 +56,18 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 	
 	public void cargar_incidencias_cliente()
 	{
-		incidencias = cliente.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
+		//Según si estamos en vista cliente o en cliente.
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		{
+			incidencias = cliente.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
+		}else
+		{
+			incidencias = cliente.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
+		}
 		
 		for(int i = 0; i < incidencias.size(); i++)
 		{
-			incidenciasGrid.addRow("", incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getEstado());
+			incidenciasGrid.addRow(incidencias.get(i).getFecha(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getEstado());
 		}
 	}
 	

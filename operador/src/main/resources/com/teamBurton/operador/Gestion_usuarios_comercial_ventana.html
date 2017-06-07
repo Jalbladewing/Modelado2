@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;newtheme&quot;}">
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
@@ -17,30 +17,25 @@
      </vaadin-button> 
      <vaadin-text-field _id="buscarF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-table selectable width-full _id="usuariosTabla"> 
+    <vaadin-grid primary-style-name="v-table" width-full _id="usuariosTabla"> 
      <table> 
       <colgroup> 
-       <col property-id="Nombre"> 
-       <col property-id="Apellidos"> 
-       <col property-id="Correo"> 
-       <col property-id="Incidencias Creadas"> 
+       <col property-id="Nombre" sortable> 
+       <col property-id="Apellidos" sortable> 
+       <col property-id="Correo" sortable> 
+       <col property-id="Incidencias Creadas" sortable> 
       </colgroup> 
-      <tbody> 
-       <tr item-id="1"> 
-        <td>Perico</td> 
-        <td>Dominique Contreras</td> 
-        <td>pdc64@gmail.com</td> 
-        <td>1</td> 
+      <thead> 
+       <tr default> 
+        <th plain-text>Nombre</th> 
+        <th plain-text>Apellidos</th> 
+        <th plain-text>Correo</th> 
+        <th plain-text>Incidencias Creadas</th> 
        </tr> 
-       <tr item-id="2"> 
-        <td>Jose</td> 
-        <td>Mota Castillo</td> 
-        <td>motaca87@hotmail.es</td> 
-        <td>3</td> 
-       </tr> 
-      </tbody> 
+      </thead> 
+      <tbody></tbody> 
      </table> 
-    </vaadin-table> 
+    </vaadin-grid> 
     <vaadin-button plain-text _id="altaB" :center>
       Alta Usuario 
     </vaadin-button> 

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;newtheme&quot;}">
   <meta name="vaadin-version" content="7.7.0">
  </head> 
  <body> 
@@ -19,124 +19,104 @@
     </vaadin-horizontal-layout> 
     <vaadin-tab-sheet _id="incidenciasTabla"> 
      <tab caption="Todas" selected> 
-      <vaadin-table selectable width-full _id="todasTab"> 
+      <vaadin-grid primary-style-name="v-table" width-full _id="todasTab"> 
        <table> 
         <colgroup> 
-         <col property-id="Fecha"> 
-         <col property-id="Tipo Incidencia"> 
-         <col property-id="Asunto"> 
-         <col property-id="Nº Incidencia"> 
-         <col property-id="Correo"> 
-         <col property-id="Estado"> 
+         <col property-id="Fecha" sortable> 
+         <col property-id="Tipo Incidencia" sortable> 
+         <col property-id="Asunto" sortable> 
+         <col property-id="Nº Incidencia" sortable> 
+         <col property-id="Correo" sortable> 
+         <col property-id="Estado" sortable> 
         </colgroup> 
-        <tbody> 
-         <tr item-id="1"> 
-          <td>10/11/2017</td> 
-          <td>Llamada</td> 
-          <td>Llamar al 950000000</td> 
-          <td>3047</td> 
-          <td>Sin registrar</td> 
-          <td>Pendiente</td> 
+        <thead> 
+         <tr default> 
+          <th plain-text>Fecha</th> 
+          <th plain-text>Tipo Incidencia</th> 
+          <th plain-text>Asunto</th> 
+          <th plain-text>Nº Incidencia</th> 
+          <th plain-text>Correo</th> 
+          <th plain-text>Estado</th> 
          </tr> 
-         <tr item-id="2"> 
-          <td>07/11/2017</td> 
-          <td>Contratación</td> 
-          <td>Contratar móvil</td> 
-          <td>3046</td> 
-          <td>bryan969@outlook.com</td> 
-          <td>Pendiente</td> 
-         </tr> 
-         <tr item-id="3"> 
-          <td>10/11/2016</td> 
-          <td>Baja modalidad</td> 
-          <td>baja modalidad 03</td> 
-          <td>3044</td> 
-          <td>pep@gmail.com</td> 
-          <td>Resuelta</td> 
-         </tr> 
-        </tbody> 
+        </thead> 
+        <tbody></tbody> 
        </table> 
-      </vaadin-table> 
+      </vaadin-grid> 
      </tab> 
      <tab caption="Llamadas"> 
-      <vaadin-table selectable width-full _id="llamadaTab"> 
+      <vaadin-grid primary-style-name="v-table" width-full _id="llamadaTab"> 
        <table> 
         <colgroup> 
-         <col property-id="Fecha"> 
-         <col property-id="Tipo Incidencia"> 
-         <col property-id="Asunto"> 
-         <col property-id="Nº Incidencia"> 
-         <col property-id="Correo"> 
-         <col property-id="Estado"> 
+         <col property-id="Fecha" sortable> 
+         <col property-id="Tipo Incidencia" sortable> 
+         <col property-id="Asunto" sortable> 
+         <col property-id="Nº Incidencia" sortable> 
+         <col property-id="Correo" sortable> 
+         <col property-id="Estado" sortable> 
         </colgroup> 
-        <tbody> 
-         <tr item-id="1"> 
-          <td>10/11/2017</td> 
-          <td>Llamada</td> 
-          <td>Llamar al 950000000</td> 
-          <td>3047</td> 
-          <td>Sin registrar</td> 
-          <td>Pendiente</td> 
+        <thead> 
+         <tr default> 
+          <th plain-text>Fecha</th> 
+          <th plain-text>Tipo Incidencia</th> 
+          <th plain-text>Asunto</th> 
+          <th plain-text>Nº Incidencia</th> 
+          <th plain-text>Correo</th> 
+          <th plain-text>Estado</th> 
          </tr> 
-        </tbody> 
+        </thead> 
+        <tbody></tbody> 
        </table> 
-      </vaadin-table> 
+      </vaadin-grid> 
      </tab> 
      <tab caption="Pendientes"> 
-      <vaadin-table selectable width-full _id="pendientesTab"> 
+      <vaadin-grid primary-style-name="v-table" width-full _id="pendientesTab"> 
        <table> 
         <colgroup> 
-         <col property-id="Fecha"> 
-         <col property-id="Tipo Incidencia"> 
-         <col property-id="Asunto"> 
-         <col property-id="Nº Incidencia"> 
-         <col property-id="Correo"> 
-         <col property-id="Estado"> 
+         <col property-id="Fecha" sortable> 
+         <col property-id="Tipo Incidencia" sortable> 
+         <col property-id="Asunto" sortable> 
+         <col property-id="Nº Incidencia" sortable> 
+         <col property-id="Correo" sortable> 
+         <col property-id="Estado" sortable> 
         </colgroup> 
-        <tbody> 
-         <tr item-id="1"> 
-          <td>10/11/2017</td> 
-          <td>Llamada</td> 
-          <td>Llamar al 950000000</td> 
-          <td>3047</td> 
-          <td>Sin registrar</td> 
-          <td>Pendiente</td> 
+        <thead> 
+         <tr default> 
+          <th plain-text>Fecha</th> 
+          <th plain-text>Tipo Incidencia</th> 
+          <th plain-text>Asunto</th> 
+          <th plain-text>Nº Incidencia</th> 
+          <th plain-text>Correo</th> 
+          <th plain-text>Estado</th> 
          </tr> 
-         <tr item-id="2"> 
-          <td>07/11/2017</td> 
-          <td>Contratación</td> 
-          <td>Contratar móvil</td> 
-          <td>3046</td> 
-          <td>bryan969@outlook.com</td> 
-          <td>Pendiente</td> 
-         </tr> 
-        </tbody> 
+        </thead> 
+        <tbody></tbody> 
        </table> 
-      </vaadin-table> 
+      </vaadin-grid> 
      </tab> 
      <tab caption="Resueltas"> 
-      <vaadin-table selectable width-full _id="resueltasTab"> 
+      <vaadin-grid primary-style-name="v-table" width-full _id="resueltasTab"> 
        <table> 
         <colgroup> 
-         <col property-id="Fecha"> 
-         <col property-id="Tipo Incidencia"> 
-         <col property-id="Asunto"> 
-         <col property-id="Nº Incidencia"> 
-         <col property-id="Correo"> 
-         <col property-id="Estado"> 
+         <col property-id="Fecha" sortable> 
+         <col property-id="Tipo Incidencia" sortable> 
+         <col property-id="Asunto" sortable> 
+         <col property-id="Nº Incidencia" sortable> 
+         <col property-id="Correo" sortable> 
+         <col property-id="Estado" sortable> 
         </colgroup> 
-        <tbody> 
-         <tr item-id="1"> 
-          <td>10/11/2016</td> 
-          <td>Baja modalidad</td> 
-          <td>baja modalidad 03</td> 
-          <td>3044</td> 
-          <td>pep@gmail.com</td> 
-          <td>Resuelta</td> 
+        <thead> 
+         <tr default> 
+          <th plain-text>Fecha</th> 
+          <th plain-text>Tipo Incidencia</th> 
+          <th plain-text>Asunto</th> 
+          <th plain-text>Nº Incidencia</th> 
+          <th plain-text>Correo</th> 
+          <th plain-text>Estado</th> 
          </tr> 
-        </tbody> 
+        </thead> 
+        <tbody></tbody> 
        </table> 
-      </vaadin-table> 
+      </vaadin-grid> 
      </tab> 
     </vaadin-tab-sheet> 
    </vaadin-vertical-layout> 

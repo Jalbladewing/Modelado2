@@ -46,7 +46,14 @@ public class Mis_facturas extends Mis_facturas_ventana implements View {
 	
 	public void cargar_facturas()
 	{
-		facturas = cliente.cargar_facturas(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
+		//Según si estamos en vista cliente o en cliente.
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		{
+			facturas = cliente.cargar_facturas(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
+		}else
+		{
+			facturas = cliente.cargar_facturas(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
+		}
 		
 		for(int i = 0; i < facturas.size(); i++)
 		{
