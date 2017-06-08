@@ -6,7 +6,10 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
+import bd.Administrador;
 import bd.BD_Principal;
+import bd.Cliente;
+import bd.Comercial;
 import bd.Usuario;
 import bdgui.ICibernauta;
 
@@ -44,30 +47,6 @@ public class Acceder extends Acceder_ventana implements View {
 				
 				iniciarSesion();
 				
-				//PARA PROBAR NAVEGABILIDAD
-				/*if((usuarioF.getValue().toLowerCase()).equals("cliente"))
-				{
-					
-				}
-				
-				if((usuarioF.getValue().toLowerCase()).equals("comercial"))
-				{
-					UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
-					UI.getCurrent().getNavigator().destroy();
-					((NavigatorUI) UI.getCurrent()).setMainView("Comercial");
-					((NavigatorUI) UI.getCurrent()).setParentView("Comercial");
-					NavigatorUI.getCurrent().setContent(new Comercial2());	
-				}
-				
-				if((usuarioF.getValue().toLowerCase()).equals("administrador"))
-				{
-					UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
-					UI.getCurrent().getNavigator().destroy();
-					((NavigatorUI) UI.getCurrent()).setMainView("Administrador");
-					((NavigatorUI) UI.getCurrent()).setParentView("Administrador");
-					NavigatorUI.getCurrent().setContent(new Administrador2());	
-				}*/
-				
 			}
 		});
 	}
@@ -76,13 +55,31 @@ public class Acceder extends Acceder_ventana implements View {
 	{
 		Usuario usuario = cibernauta.iniciar_sesion(usuarioF.getValue().toLowerCase(), passwordF.getValue());
 		
-		if(usuario != null)
+		if(usuario instanceof Cliente)
 		{
 			((NavigatorUI) UI.getCurrent()).setUsuario(usuario);
 			UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
 			UI.getCurrent().getNavigator().destroy();
 			((NavigatorUI) UI.getCurrent()).setMainView("Cliente");
 			NavigatorUI.getCurrent().setContent(new Cliente2());	
+		
+		}else if(usuario instanceof Comercial)
+		{
+			((NavigatorUI) UI.getCurrent()).setUsuario(usuario);
+			UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
+			UI.getCurrent().getNavigator().destroy();
+			((NavigatorUI) UI.getCurrent()).setMainView("Comercial");
+			((NavigatorUI) UI.getCurrent()).setParentView("Comercial");
+			NavigatorUI.getCurrent().setContent(new Comercial2());	
+			
+		}else if(usuario instanceof Administrador)
+		{
+			((NavigatorUI) UI.getCurrent()).setUsuario(usuario);
+			UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
+			UI.getCurrent().getNavigator().destroy();
+			((NavigatorUI) UI.getCurrent()).setMainView("Administrador");
+			((NavigatorUI) UI.getCurrent()).setParentView("Administrador");
+			NavigatorUI.getCurrent().setContent(new Administrador2());	
 		}
 	}
 	

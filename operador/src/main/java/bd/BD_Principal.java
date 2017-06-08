@@ -118,15 +118,15 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		Usuario u;
 		try {
 			u = _bd_clien.verificar_loguin(email, password);
-			if (!u.equals(null)) {
+			if (u != null) {
 				return _bd_clien.acceder_cliente(u.getID());
 			} else {
 				u = _bd_comer.verificar_loguin(email, password);
-				if (!u.equals(null)) {
+				if (u != null) {
 					return _bd_comer.acceder_comercial(u.getID());
 				} else {
 					u = _bd_admin.verificar_loguin(email, password);
-					if (!u.equals(null)) {
+					if (u != null) {
 						return _bd_admin.acceder_administrador(u.getID());
 					}
 				}
@@ -143,7 +143,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 
 	}
 
-	// FALTA IMPLEMENTAR GESTOR DE CORREOS
 	public boolean recuperar_password(String email) {
 		Usuario u;
 		String pass;
