@@ -590,6 +590,19 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	}
 
 	@Override
+	public Incidencia cargar_incidencia(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Factura cargar_factura(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	@Override
 	public Canal cargar_canal(String nombre) {
 		Canal canal = null;
 		try 
@@ -656,5 +669,29 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 			e.printStackTrace();
 		}
 		return oferta;
-	}*/
+	}
+	
+	@Override
+	public Incidencia cargar_incidencia(int id) {
+		Incidencia incidencia= null;
+		try {
+			return _bd_incid_admin.cargar_incidencia(id);
+		} catch (PersistentException e) {
+			
+			e.printStackTrace();
+		}
+		return incidencia;
+	}
+	
+	public Factura cargar_factura(int id) {
+		Factura factura= null;
+		try {
+			return _bd_fact.cargar_factura(id);
+		} catch (PersistentException e) {
+			
+			e.printStackTrace();
+		}
+		return factura;
+	}
+	*/
 }

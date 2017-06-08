@@ -146,7 +146,7 @@
       <ReferencedColumn>bd.Cliente.UsuarioID</ReferencedColumn>
       <Type>9</Type>
       <Length>11</Length>
-      <Nullable>false</Nullable>
+      <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>

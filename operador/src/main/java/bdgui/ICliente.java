@@ -5,6 +5,7 @@ import java.util.List;
 
 import bd.Canal;
 import bd.Cliente;
+import bd.Factura;
 import bd.Incidencia;
 import bd.Modalidad;
 import bd.Movil;
@@ -50,4 +51,8 @@ public interface ICliente {
 	public Paquete cargar_modalidad_paquete(String nombre);
 	
 	public Oferta cargar_modalidad_oferta(String nombre);
+	
+	public Incidencia cargar_incidencia(int id);
+	
+	public Factura cargar_factura(int id);
 }

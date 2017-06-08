@@ -5,6 +5,7 @@ import java.util.List;
 import bd.Administrador;
 import bd.Cliente;
 import bd.Comercial;
+import bd.Factura;
 import bd.Movil;
 import bd.Paquete;
 import bd.Canal;
@@ -99,4 +100,8 @@ public interface IAdministrador {
 	public Paquete cargar_modalidad_paquete(String nombre);
 	
 	public Oferta cargar_modalidad_oferta(String nombre);
+	
+	public Incidencia cargar_incidencia(int id);
+	
+	public Factura cargar_factura(int id);
 }

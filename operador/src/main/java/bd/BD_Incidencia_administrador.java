@@ -199,4 +199,9 @@ public class BD_Incidencia_administrador {
 		
 		return modalidades;
 	}
+
+	/*public Incidencia cargar_incidencia(int id) throws PersistentException  {
+		// TODO Auto-generated method stub
+		return null;
+	}*/
 }

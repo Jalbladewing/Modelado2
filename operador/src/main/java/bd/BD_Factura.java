@@ -53,4 +53,9 @@ public class BD_Factura {
 		
 		return modalidades;
 	}
+
+	/*public Factura cargar_factura(int id)throws PersistentException  {
+		// TODO Auto-generated method stub
+		return null;
+	}*/
 }

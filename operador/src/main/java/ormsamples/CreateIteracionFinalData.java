@@ -22,7 +22,7 @@ public class CreateIteracionFinalData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : paquete
 			bd.CanalDAO.save(lbdCanal);
 			bd.Incidencia lbdIncidencia = bd.IncidenciaDAO.createIncidencia();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : asunto, correoCliente, cliente
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : asunto, correoCliente
 			bd.IncidenciaDAO.save(lbdIncidencia);
 			bd.Usuario lbdUsuario = bd.UsuarioDAO.createUsuario();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : password, nif, email, telefono, direccion, apellidos, nombre
@@ -31,7 +31,7 @@ public class CreateIteracionFinalData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : administrador, correoComercial
 			bd.Incidencia_administradorDAO.save(lbdIncidencia_administrador);
 			bd.Cliente lbdCliente = bd.ClienteDAO.createCliente();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : comercial, incidencia, factura, contratos, administrador
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : comercial, factura, contratos, administrador
 			bd.ClienteDAO.save(lbdCliente);
 			bd.Movil lbdMovil = bd.MovilDAO.createMovil();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : consumoMax, consumoActual

@@ -1,6 +1,7 @@
 package bdgui;
 
 import bd.Comercial;
+import bd.Factura;
 
 import java.util.List;
 
@@ -69,4 +70,8 @@ public interface IComercial {
 	public Paquete cargar_modalidad_paquete(String nombre);
 	
 	public Oferta cargar_modalidad_oferta(String nombre);
+	
+	public Incidencia cargar_incidencia(int id);
+	
+	public Factura cargar_factura(int id);
 }
