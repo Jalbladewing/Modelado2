@@ -93,7 +93,7 @@ public class BD_Cliente {
 		
 		try
 		{
-			resultado = ClienteDAO.refresh(cliente);
+			resultado = ClienteDAO.save(cliente);
 			
 			t.commit();
 			
@@ -164,7 +164,7 @@ public class BD_Cliente {
 			
 			cliente.addModalidad(_contrato, modalidad);
 			
-			resultado = ClienteDAO.refresh(cliente);
+			resultado = ClienteDAO.save(cliente);
 			
 			t.commit();
 			
@@ -188,7 +188,7 @@ public class BD_Cliente {
 			fechaEliminacion.add(Calendar.MONTH, 1);
 			cliente = ClienteDAO.getClienteByORMID(idCliente);
 			cliente.setFechaEliminacion(fechaEliminacion.getTime());
-			resultado = ClienteDAO.refresh(cliente);
+			resultado = ClienteDAO.save(cliente);
 			
 			t.commit();
 			

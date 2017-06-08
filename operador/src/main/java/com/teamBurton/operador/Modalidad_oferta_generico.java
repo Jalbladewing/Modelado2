@@ -34,7 +34,7 @@ public class Modalidad_oferta_generico extends Modalidad_oferta_generico_ventana
 
 					subWindow.setModal(true);
 					subWindow.setResizable(false);
-					subWindow.setContent(new Contratar_cibernauta());
+					subWindow.setContent(new Contratar_cibernauta(tituloL.getValue()));
 					UI.getCurrent().addWindow(subWindow);
 				}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
 				{
@@ -42,9 +42,16 @@ public class Modalidad_oferta_generico extends Modalidad_oferta_generico_ventana
 					subWindow.setResizable(false);
 					subWindow.setContent(new Contratar_vista_usuario());
 					UI.getCurrent().addWindow(subWindow);
+				}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
+				{
+					doNavigate(Crear_incidencia.VIEW_NAME + "/" + "contratacion" +";" +tituloL.getValue());
 				}
 				
 			}
 		});
+	}
+	
+	private void doNavigate(String viewName) {
+	    UI.getCurrent().getNavigator().navigateTo(viewName);
 	}
 }

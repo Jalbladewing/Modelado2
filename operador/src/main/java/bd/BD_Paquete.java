@@ -58,7 +58,7 @@ public class BD_Paquete {
 		
 		try
 		{
-			resultado = PaqueteDAO.refresh(paquete);
+			resultado = PaqueteDAO.save(paquete);
 			
 			t.commit();
 			

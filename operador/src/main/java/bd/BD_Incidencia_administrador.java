@@ -1,6 +1,7 @@
 package bd;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import java.util.Vector;
@@ -24,6 +25,8 @@ public class BD_Incidencia_administrador {
 			incidencia = IncidenciaDAO.createIncidencia();
 			incidencia.setCliente(null);
 			incidencia.setComercial(null);
+			incidencia.setFecha(new Date());
+			incidencia.setAsunto("Llamar al " + telefono);
 			incidencia.setCorreoCliente("Sin registrar");
 			incidencia.setDescripcion("Llamar al numero " + telefono);
 			incidencia.setEstado("pendiente");
@@ -114,7 +117,7 @@ public class BD_Incidencia_administrador {
 			incidencia = IncidenciaDAO.getIncidenciaByORMID(idIncidencia);
 			incidencia.setEstado("resuelta");
 			incidencia.setObservacion(observaciones);
-			resultado = IncidenciaDAO.refresh(incidencia);
+			resultado = IncidenciaDAO.save(incidencia);
 			
 			t.commit();
 			
@@ -137,7 +140,7 @@ public class BD_Incidencia_administrador {
 			incidencia = IncidenciaDAO.getIncidenciaByORMID(idIncidencia);
 			incidencia.setEstado("cancelada");
 			incidencia.setObservacion(observaciones);
-			resultado = IncidenciaDAO.refresh(incidencia);
+			resultado = IncidenciaDAO.save(incidencia);
 			
 			t.commit();
 			
@@ -164,9 +167,9 @@ public class BD_Incidencia_administrador {
 			comercial.incidencia.add(incidencia);
 			incidencia.setComercial(comercial);
 			
-			resultado = IncidenciaDAO.refresh(incidencia);
+			resultado = IncidenciaDAO.save(incidencia);
 			
-			if(resultado) resultado = ComercialDAO.refresh(comercial);
+			if(resultado) resultado = ComercialDAO.save(comercial);
 			
 			t.commit();
 			

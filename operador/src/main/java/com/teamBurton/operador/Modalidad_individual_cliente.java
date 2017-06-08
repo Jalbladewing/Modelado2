@@ -40,7 +40,7 @@ public class Modalidad_individual_cliente extends Modalidad_individual_cliente_v
 						
 					}else
 					{
-						doNavigate(Crear_incidencia.VIEW_NAME);
+						doNavigate(Crear_incidencia.VIEW_NAME + "/" + "bajaModalidad" + ";" + tituloL.getValue());
 					}
 				}
 			});

@@ -14,6 +14,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import bd.BD_Principal;
 import bd.Incidencia;
 import bdgui.ICliente;
+import bdgui.IComercial;
 
 public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana implements View {
 	/*private Label _seccion;
@@ -24,6 +25,7 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 	public Crear_incidencia _creaIncidencia;
 	public static final String VIEW_NAME = "mis_incidencias_cliente";
 	private ICliente cliente = new BD_Principal();
+	private IComercial comercial = new BD_Principal();
 	private List<Incidencia> incidencias;
 	
 	public Mis_incidencias_cliente()
@@ -59,7 +61,7 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 		//Según si estamos en vista cliente o en cliente.
 		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
 		{
-			incidencias = cliente.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
+			incidencias = comercial.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
 		}else
 		{
 			incidencias = cliente.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
@@ -67,7 +69,7 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 		
 		for(int i = 0; i < incidencias.size(); i++)
 		{
-			incidenciasGrid.addRow(incidencias.get(i).getFecha(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getEstado());
+			incidenciasGrid.addRow(incidencias.get(i).getFecha().toString(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getEstado());
 		}
 	}
 	

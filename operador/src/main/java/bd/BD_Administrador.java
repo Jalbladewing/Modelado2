@@ -111,7 +111,7 @@ public class BD_Administrador {
 		
 		try
 		{
-			resultado = AdministradorDAO.refresh(administrador);
+			resultado = AdministradorDAO.save(administrador);
 			
 			t.commit();
 			

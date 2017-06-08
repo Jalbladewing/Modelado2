@@ -4,6 +4,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Window.CloseEvent;
 
 public class Datos_modificables extends Datos_modificables_ventana{
 	/*private Label _titloCampo;
@@ -14,6 +15,7 @@ public class Datos_modificables extends Datos_modificables_ventana{
 	
 	public Datos_modificables()
 	{
+		
 		modificarB.addClickListener(new Button.ClickListener() 
 		{
 			
@@ -26,7 +28,37 @@ public class Datos_modificables extends Datos_modificables_ventana{
 				subWindow.setResizable(false);
 				subWindow.setContent(new Modificar_datos(tituloL.getValue() , valorL.getValue()));
 				UI.getCurrent().addWindow(subWindow);
+				
+				subWindow.addCloseListener(new Window.CloseListener() 
+				{
+					
+					@Override
+					public void windowClose(CloseEvent e) 
+					{
+
+						if(tituloL.getValue().equals("Nombre"))
+						{
+							valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getNombre());
+							
+						}else if(tituloL.getValue().equals("Apellidos"))
+						{
+							valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getApellidos());
+							
+						}else if(tituloL.getValue().equals("Dirección"))
+						{
+							valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getDireccion());
+							
+						}else if(tituloL.getValue().equals("Telefono"))
+						{
+							valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getTelefono());
+						}
+						
+						
+					}
+				});
 			}
 		});
+		
+		
 	}
 }

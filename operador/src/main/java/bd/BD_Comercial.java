@@ -90,7 +90,7 @@ public class BD_Comercial {
 		
 		try
 		{
-			resultado = ComercialDAO.refresh(comercial);
+			resultado = ComercialDAO.save(comercial);
 			
 			t.commit();
 			

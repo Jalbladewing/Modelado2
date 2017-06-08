@@ -58,7 +58,7 @@ public class BD_Movil {
 		
 		try
 		{
-			resultado = MovilDAO.refresh(movil);
+			resultado = MovilDAO.save(movil);
 			
 			t.commit();
 			

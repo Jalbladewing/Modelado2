@@ -15,6 +15,7 @@ import bd.Modalidad;
 import bd.Movil;
 import bd.Television;
 import bdgui.ICliente;
+import bdgui.IComercial;
 
 public class Mis_servicios extends Mis_servicios_ventana implements View {
 	//private Label _seccion;
@@ -22,6 +23,7 @@ public class Mis_servicios extends Mis_servicios_ventana implements View {
 	public Vector<Servicio> _servicio = new Vector<Servicio>();
 	public static final String VIEW_NAME = "mis_servicios";
 	private ICliente cliente = new BD_Principal();
+	private IComercial comercial = new BD_Principal();
 	
 	public Mis_servicios()
 	{
@@ -50,7 +52,7 @@ public class Mis_servicios extends Mis_servicios_ventana implements View {
 		//Según si estamos en vista cliente o en cliente.
 		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
 		{
-			modalidades = cliente.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
+			modalidades = comercial.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
 		}else
 		{
 			modalidades = cliente.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getUsuario().getID());

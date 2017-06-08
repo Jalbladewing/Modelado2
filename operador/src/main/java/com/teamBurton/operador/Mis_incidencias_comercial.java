@@ -92,22 +92,22 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 		for(int i = 0; i < incidencias.size(); i++)
 		{
 			//Tabla con todas las incidencias
-			todasTab.addRow(incidencias.get(i).getFecha(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCliente().getEmail(),incidencias.get(i).getEstado());
+			todasTab.addRow(incidencias.get(i).getFecha().toString(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCorreoCliente(),incidencias.get(i).getEstado());
 			
 			//Si es una incidencia de tipo llamada se añade a su tabla
 			if(incidencias.get(i).getTipoIncidencia().equals("llamada"))
 			{
-				llamadaTab.addRow(incidencias.get(i).getFecha(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCliente().getEmail(),incidencias.get(i).getEstado());
+				llamadaTab.addRow(incidencias.get(i).getFecha().toString(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCorreoCliente(),incidencias.get(i).getEstado());
 			}
 			
 			//Si la incidencia está sin resolver se añade a la tabla correspondiente
 			if(incidencias.get(i).getEstado().equals("pendiente"))
 			{
-				pendientesTab.addRow(incidencias.get(i).getFecha(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCliente().getEmail(),incidencias.get(i).getEstado());
+				pendientesTab.addRow(incidencias.get(i).getFecha().toString(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCliente().getEmail(),incidencias.get(i).getEstado());
 			
 			}else if(incidencias.get(i).getEstado().equals("resuelta"))//Si está resuelta se añade a su tabla
 			{
-				resueltasTab.addRow(incidencias.get(i).getFecha(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCliente().getEmail(),incidencias.get(i).getEstado());
+				resueltasTab.addRow(incidencias.get(i).getFecha().toString(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCliente().getEmail(),incidencias.get(i).getEstado());
 			}
 		}
 	}

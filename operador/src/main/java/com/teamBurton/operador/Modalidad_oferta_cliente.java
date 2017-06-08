@@ -47,7 +47,7 @@ public class Modalidad_oferta_cliente extends Modalidad_oferta_cliente_ventana i
 					
 				}else
 				{
-					doNavigate(Crear_incidencia.VIEW_NAME);
+					doNavigate(Crear_incidencia.VIEW_NAME + "/" + "bajaModalidad" + ";" + tituloL.getValue());
 				}
 				
 			}

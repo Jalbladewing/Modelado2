@@ -58,7 +58,7 @@ public class BD_Canal {
 		
 		try
 		{
-			resultado = CanalDAO.refresh(canal);
+			resultado = CanalDAO.save(canal);
 			
 			t.commit();
 			
@@ -70,7 +70,23 @@ public class BD_Canal {
 		return resultado;
 	}
 	
-/*public Canal cargar_canal(String nombre)throws PersistentException {
-		
-	}*/
+    public Canal cargar_canal(String nombre) throws PersistentException 
+    {
+    	Canal canal = null;
+    	PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+    	try
+		{
+    		CanalCriteria canalCriteria = new CanalCriteria();
+    		canalCriteria.nombre.eq(nombre);
+    		canal = CanalDAO.loadCanalByCriteria(canalCriteria);
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+    	
+    	return canal;
+	}
 }

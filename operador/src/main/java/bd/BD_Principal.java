@@ -560,12 +560,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	}
 
 	@Override
-	public Canal cargar_canal(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Movil cargar_modalidad_movil(String nombre) {
 		// TODO Auto-generated method stub
 		return null;
@@ -595,10 +589,11 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return null;
 	}
 
-	/*@Override
+	@Override
 	public Canal cargar_canal(String nombre) {
 		Canal canal = null;
-		try {
+		try 
+		{
 			return _bd_canal.cargar_canal(nombre);
 		} catch (PersistentException e) {
 			
@@ -606,7 +601,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return canal;
 	}
-	
+	/*
 	public Movil cargar_modalidad_movil(String nombre){
 		Movil movil = null;
 		try {

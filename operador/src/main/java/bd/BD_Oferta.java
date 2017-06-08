@@ -114,7 +114,7 @@ public class BD_Oferta {
 				modalidad.setVisibilidad(true);
 			}
 			
-			resultado = ModalidadDAO.refresh(modalidad);
+			resultado = ModalidadDAO.save(modalidad);
 			
 			t.commit();
 			
@@ -172,7 +172,7 @@ public class BD_Oferta {
 			
 			modalidades.add(ModalidadDAO.getModalidadByORMID(idModalidad));
 			
-			resultado = AdministradorDAO.refresh(administrador.get(0));
+			resultado = AdministradorDAO.save(administrador.get(0));
 			t.commit();
 			
 		}catch(Exception e)
@@ -228,7 +228,7 @@ public class BD_Oferta {
 		
 		try
 		{
-			resultado = OfertaDAO.refresh(oferta);
+			resultado = OfertaDAO.save(oferta);
 			
 			t.commit();
 			
@@ -287,7 +287,7 @@ public class BD_Oferta {
 		
 		try
 		{
-			resultado = ModalidadDAO.refresh(modalidad);
+			resultado = ModalidadDAO.save(modalidad);
 			
 			t.commit();
 			
@@ -323,7 +323,7 @@ public class BD_Oferta {
 				
 				cliente.addModalidad(_contrato, modalidad);
 				
-				resultado = ClienteDAO.refresh(cliente);
+				resultado = ClienteDAO.save(cliente);
 				
 				if(!resultado) break;
 			}
@@ -358,7 +358,7 @@ public class BD_Oferta {
 				
 				modalidad.removeCliente(cliente);
 				
-				resultado = ClienteDAO.refresh(cliente);
+				resultado = ClienteDAO.save(cliente);
 				
 				if(!resultado) break;
 			}
@@ -385,7 +385,7 @@ public class BD_Oferta {
 		try
 		{
 			modalidad = ModalidadDAO.getModalidadByORMID(idModalidad);
-			resultado = ModalidadDAO.refresh(modalidad);
+			resultado = ModalidadDAO.save(modalidad);
 			
 			t.commit();
 			

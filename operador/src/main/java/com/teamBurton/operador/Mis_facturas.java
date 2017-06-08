@@ -14,6 +14,7 @@ import com.vaadin.ui.UI;
 import bd.BD_Principal;
 import bd.Factura;
 import bdgui.ICliente;
+import bdgui.IComercial;
 
 public class Mis_facturas extends Mis_facturas_ventana implements View {
 	/*private Label _seccion;
@@ -22,6 +23,7 @@ public class Mis_facturas extends Mis_facturas_ventana implements View {
 	public Vector<Factura_Lista> _factura = new Vector<Factura_Lista>();
 	public static final String VIEW_NAME = "mis_facturas";
 	private ICliente cliente = new BD_Principal();
+	private IComercial comercial = new BD_Principal();
 	private List<Factura> facturas;
 	
 	public Mis_facturas()
@@ -49,7 +51,7 @@ public class Mis_facturas extends Mis_facturas_ventana implements View {
 		//Según si estamos en vista cliente o en cliente.
 		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
 		{
-			facturas = cliente.cargar_facturas(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
+			facturas = comercial.cargar_facturas(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
 		}else
 		{
 			facturas = cliente.cargar_facturas(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
