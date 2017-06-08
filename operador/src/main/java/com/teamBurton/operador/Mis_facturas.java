@@ -39,8 +39,9 @@ public class Mis_facturas extends Mis_facturas_ventana implements View {
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
+				int id = (int) rowId;
 				
-				doNavigate(Factura2.VIEW_NAME + "/" + facturas.get((int)rowId).getID() );
+				doNavigate(Factura2.VIEW_NAME + "/" + facturas.get(id-1).getID() );
 				
 			}
 		});

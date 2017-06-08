@@ -74,22 +74,22 @@ public class NavigatorUI extends UI {
     
     public void setVistaCliente(Usuario u)
     {
-    	usuario = u;
+    	vistaCliente = u;
     }
     
     public Usuario getVistaCliente()
     {
-    	return usuario;
+    	return vistaCliente;
     }
     
     public void setVistaComercial(Usuario u)
     {
-    	usuario = u;
+    	vistaComercial = u;
     }
     
     public Usuario getVistaComercial()
     {
-    	return usuario;
+    	return vistaComercial;
     }
     
 }

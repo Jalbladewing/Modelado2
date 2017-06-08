@@ -64,36 +64,29 @@
        Direccion Ejemplo 
      </vaadin-label> 
     </vaadin-vertical-layout> 
-    <vaadin-table selectable width-full _id="modalidadesTabla"> 
+    <vaadin-grid primary-style-name="v-table" width-full _id="modalidadesTabla"> 
      <table> 
       <colgroup> 
-       <col property-id="Tipo Servicio"> 
-       <col property-id="Nombre Modalidad"> 
-       <col property-id="Consumo"> 
-       <col property-id="Precio"> 
-       <col property-id="IVA"> 
-       <col property-id="Total"> 
+       <col property-id="Tipo Servicio" sortable> 
+       <col property-id="Nombre Modalidad" sortable> 
+       <col property-id="Consumo" sortable> 
+       <col property-id="Precio" sortable> 
+       <col property-id="IVA" sortable> 
+       <col property-id="Total" sortable> 
       </colgroup> 
-      <tbody> 
-       <tr item-id="1"> 
-        <td>Oferta</td> 
-        <td>Teléfono fijo + Internet</td> 
-        <td>-</td> 
-        <td>45€</td> 
-        <td>4€</td> 
-        <td>49€</td> 
+      <thead> 
+       <tr default> 
+        <th plain-text>Tipo Servicio</th> 
+        <th plain-text>Nombre Modalidad</th> 
+        <th plain-text>Consumo</th> 
+        <th plain-text>Precio</th> 
+        <th plain-text>IVA</th> 
+        <th plain-text>Total</th> 
        </tr> 
-       <tr item-id="2"> 
-        <td>Móvil</td> 
-        <td>Modalidad 04</td> 
-        <td>20/500MB</td> 
-        <td>14€</td> 
-        <td>1€</td> 
-        <td>15€</td> 
-       </tr> 
-      </tbody> 
+      </thead> 
+      <tbody></tbody> 
      </table> 
-    </vaadin-table> 
+    </vaadin-grid> 
     <vaadin-horizontal-layout spacing _id="hLayoutTotal" :right> 
      <vaadin-label size-auto plain-text _id="totalTituloL">
        Total: 

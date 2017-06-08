@@ -15,6 +15,7 @@ import bd.Cliente;
 import bd.Incidencia;
 import bd.IncidenciaDAO;
 import bdgui.ICliente;
+import bdgui.IComercial;
 
 public class Crear_incidencia extends Crear_incidencia_ventana implements View {
 	/*private Label _seccion;
@@ -35,6 +36,7 @@ public class Crear_incidencia extends Crear_incidencia_ventana implements View {
 	public Mis_incidencias_cliente _unnamed_Mis_incidencias_cliente_;
 	public static final String VIEW_NAME = "crear_incidencia";
 	private ICliente cliente = new BD_Principal();
+	private IComercial comercial = new BD_Principal();
 	
 	public Crear_incidencia()
 	{
@@ -73,7 +75,15 @@ public class Crear_incidencia extends Crear_incidencia_ventana implements View {
 	
 	public void registrar_incidencia()
 	{
-		Cliente clienteIncidencia = (Cliente) ((NavigatorUI) UI.getCurrent()).getUsuario();
+		Cliente clienteIncidencia;
+		
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		{
+			clienteIncidencia = (Cliente) ((NavigatorUI) UI.getCurrent()).getVistaCliente();
+		}else
+		{
+			clienteIncidencia = (Cliente) ((NavigatorUI) UI.getCurrent()).getUsuario();
+		}
 		
 		Incidencia incidencia = IncidenciaDAO.createIncidencia();
 		incidencia.setAsunto(asuntoF.getValue());
@@ -86,11 +96,24 @@ public class Crear_incidencia extends Crear_incidencia_ventana implements View {
 		incidencia.setObservacion("");
 		incidencia.setTipoIncidencia((String) tipoComboBx.getValue());
 		
-		cliente.registrar_incidencia(incidencia);
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		{
+			comercial.registrar_incidencia(incidencia);
+			
+			clienteIncidencia.incidencia.add(incidencia);
+			
+			((NavigatorUI) UI.getCurrent()).setVistaCliente(clienteIncidencia);
+			
+		}else
+		{
+			cliente.registrar_incidencia(incidencia);
+			
+			clienteIncidencia.incidencia.add(incidencia);
+			
+			((NavigatorUI) UI.getCurrent()).setUsuario(clienteIncidencia);
+		}
 		
-		clienteIncidencia.incidencia.add(incidencia);
 		
-		((NavigatorUI) UI.getCurrent()).setUsuario(clienteIncidencia);
 	}
 	
 	private void doNavigate(String viewName) {

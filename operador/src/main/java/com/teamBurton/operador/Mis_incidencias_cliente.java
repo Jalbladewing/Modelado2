@@ -41,8 +41,9 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
+				int id = (int) rowId;
 				
-				doNavigate(Incidencia_cliente.VIEW_NAME + "/" + incidencias.get((int)rowId).getID() );
+				doNavigate(Incidencia_cliente.VIEW_NAME + "/" + incidencias.get(id-1).getID() );
 				
 			}
 		});

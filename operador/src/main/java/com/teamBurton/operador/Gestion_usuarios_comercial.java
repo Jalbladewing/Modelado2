@@ -48,8 +48,9 @@ public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_venta
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
+				int id = (int)rowId;
 				
-				((NavigatorUI) UI.getCurrent()).setVistaCliente(clientes.get((int)rowId));
+				((NavigatorUI) UI.getCurrent()).setVistaCliente(clientes.get(id-1));
 				UI.getCurrent().getNavigator().removeView(Gestion_usuarios_comercial.VIEW_NAME);
 				UI.getCurrent().getNavigator().destroy();
 				((NavigatorUI) UI.getCurrent()).setMainView("Vista_Cliente");

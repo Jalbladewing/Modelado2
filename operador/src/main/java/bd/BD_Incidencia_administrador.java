@@ -200,8 +200,23 @@ public class BD_Incidencia_administrador {
 		return modalidades;
 	}
 
-	/*public Incidencia cargar_incidencia(int id) throws PersistentException  {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
+	public Incidencia cargar_incidencia(int id) throws PersistentException  
+	{
+		Incidencia incidencia = null;
+		
+		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+		
+		try
+		{
+			incidencia = IncidenciaDAO.getIncidenciaByORMID(id);
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+		
+		return incidencia;
+	}
 }

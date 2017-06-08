@@ -5,7 +5,10 @@ import com.vaadin.ui.Window;
 
 import bd.BD_Principal;
 import bd.Cliente;
+import bd.Comercial;
+import bd.Usuario;
 import bdgui.ICliente;
+import bdgui.IComercial;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -17,6 +20,7 @@ public class Modificar_datos extends Modificar_datos_ventana {
 	private Button _guardar;*/
 	public Datos_modificables _unnamed_Datos_modificables_;
 	private ICliente cliente = new BD_Principal();
+	private IComercial comercial = new BD_Principal();
 	
 	public Modificar_datos(String titulo, String valor)
 	{
@@ -50,28 +54,51 @@ public class Modificar_datos extends Modificar_datos_ventana {
 	
 	public void modificar_perfil()
 	{
-		Cliente clienteDatos = (Cliente) ((NavigatorUI) UI.getCurrent()).getUsuario();
+		Usuario usuarioDatos;
+		
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		{
+			usuarioDatos = ((NavigatorUI) UI.getCurrent()).getVistaCliente();
+		}else
+		{
+			usuarioDatos = ((NavigatorUI) UI.getCurrent()).getUsuario();
+		}
 		
 		if(campoL.getValue().equals("Nombre"))
 		{
-			clienteDatos.setNombre(campoF.getValue());
+			usuarioDatos.setNombre(campoF.getValue());
 			
 		}else if(campoL.getValue().equals("Apellidos"))
 		{
-			clienteDatos.setApellidos(campoF.getValue());
+			usuarioDatos.setApellidos(campoF.getValue());
 			
 		}else if(campoL.getValue().equals("Dirección"))
 		{
-			clienteDatos.setDireccion(campoF.getValue());
+			usuarioDatos.setDireccion(campoF.getValue());
 			
 		}else if(campoL.getValue().equals("Telefono"))
 		{
-			clienteDatos.setTelefono(campoF.getValue());
+			usuarioDatos.setTelefono(campoF.getValue());
 		}
 		
-		cliente.modificar_cliente(clienteDatos);
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
+		{
+			cliente.modificar_cliente((Cliente) usuarioDatos);
+			((NavigatorUI) UI.getCurrent()).setUsuario(usuarioDatos);
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Comercial"))
+		{
+			comercial.modificar_comercial((Comercial) usuarioDatos);
+			((NavigatorUI) UI.getCurrent()).setUsuario(usuarioDatos);
 		
-		((NavigatorUI) UI.getCurrent()).setUsuario(clienteDatos);
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		{
+			comercial.modificar_cliente((Cliente) usuarioDatos);
+			((NavigatorUI) UI.getCurrent()).setVistaCliente(usuarioDatos);
+		}
+		
+		
+		
 		
 	}
 }

@@ -587,18 +587,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return null;
 	}
 
-	@Override
-	public Incidencia cargar_incidencia(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Factura cargar_factura(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 	
 	@Override
 	public Canal cargar_canal(String nombre) {
@@ -667,7 +655,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 			e.printStackTrace();
 		}
 		return oferta;
-	}
+	}*/
 	
 	@Override
 	public Incidencia cargar_incidencia(int id) {
@@ -691,5 +679,5 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return factura;
 	}
-	*/
+	
 }

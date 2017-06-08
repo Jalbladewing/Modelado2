@@ -11,13 +11,13 @@
      # Incidencia 
    </vaadin-label> 
    <vaadin-vertical-layout style-name="perfiles-fondo" spacing size-auto margin _id="vLayout" :center> 
-    <vaadin-label style-name="bold" size-auto plain-text _id="incidenciaL" :center>
+    <vaadin-label style-name="bold h2" size-auto plain-text _id="incidenciaL" :center>
       Incidencia 
     </vaadin-label> 
     <vaadin-label style-name="bold" size-auto plain-text _id="tipoIncidenciaL">
       Tipo de Incidencia 
     </vaadin-label> 
-    <vaadin-combo-box readonly _id="tipoIncidenciaComboBx"> 
+    <vaadin-combo-box _id="tipoIncidenciaComboBx"> 
      <option>Option 1</option> 
      <option>Option 2</option> 
      <option>Option 3</option> 
@@ -25,21 +25,21 @@
     <vaadin-label style-name="bold" size-auto plain-text _id="correoL">
       Correo 
     </vaadin-label> 
-    <vaadin-text-field readonly value="miCorreo@msn.net" _id="correoF"></vaadin-text-field> 
+    <vaadin-text-field value="miCorreo@msn.net" _id="correoF"></vaadin-text-field> 
     <vaadin-label style-name="bold" size-auto plain-text _id="asuntoL">
       Asunto 
     </vaadin-label> 
-    <vaadin-text-field readonly value="miProblema" _id="asuntoF"></vaadin-text-field> 
+    <vaadin-text-field value="miProblema" _id="asuntoF"></vaadin-text-field> 
     <vaadin-label style-name="bold" size-auto plain-text _id="descripcionL">
       Descripción 
     </vaadin-label> 
-    <vaadin-text-area readonly _id="descripcionArea">
+    <vaadin-text-area _id="descripcionArea">
       Aquí iria una decripción de la incidencia. 
     </vaadin-text-area> 
     <vaadin-label style-name="bold" size-auto plain-text _id="observacionL">
       Observación 
     </vaadin-label> 
-    <vaadin-text-area readonly _id="observacionArea">
+    <vaadin-text-area _id="observacionArea">
       Aquí irían las observaciones del comercial o el administrador. 
     </vaadin-text-area> 
     <vaadin-horizontal-layout _id="hLayoutEstado"> 

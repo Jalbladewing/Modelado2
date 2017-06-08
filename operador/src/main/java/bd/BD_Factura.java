@@ -54,8 +54,23 @@ public class BD_Factura {
 		return modalidades;
 	}
 
-	/*public Factura cargar_factura(int id)throws PersistentException  {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
+	public Factura cargar_factura(int id) throws PersistentException  
+	{
+		Factura factura = null;
+		
+		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+		
+		try
+		{
+			factura = FacturaDAO.getFacturaByORMID(id);
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+		
+		return factura;
+	}
 }

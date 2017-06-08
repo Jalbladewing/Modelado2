@@ -36,22 +36,44 @@ public class Datos_modificables extends Datos_modificables_ventana{
 					public void windowClose(CloseEvent e) 
 					{
 
-						if(tituloL.getValue().equals("Nombre"))
-						{
-							valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getNombre());
-							
-						}else if(tituloL.getValue().equals("Apellidos"))
-						{
-							valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getApellidos());
-							
-						}else if(tituloL.getValue().equals("Dirección"))
-						{
-							valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getDireccion());
-							
-						}else if(tituloL.getValue().equals("Telefono"))
-						{
-							valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getTelefono());
-						}
+						 if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+						 {
+							 if(tituloL.getValue().equals("Nombre"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaCliente().getNombre());
+									
+								}else if(tituloL.getValue().equals("Apellidos"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaCliente().getApellidos());
+									
+								}else if(tituloL.getValue().equals("Dirección"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaCliente().getDireccion());
+									
+								}else if(tituloL.getValue().equals("Telefono"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaCliente().getTelefono());
+								}
+						 }else
+						 {
+							 if(tituloL.getValue().equals("Nombre"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getNombre());
+									
+								}else if(tituloL.getValue().equals("Apellidos"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getApellidos());
+									
+								}else if(tituloL.getValue().equals("Dirección"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getDireccion());
+									
+								}else if(tituloL.getValue().equals("Telefono"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getTelefono());
+								}
+						 }
+						
 						
 						
 					}

@@ -32,6 +32,8 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 		pendientesTab.setImmediate(true);
 		resueltasTab.setImmediate(true);
 		
+		cargar_incidencias();
+		
 		todasTab.addItemClickListener(new ItemClickListener() 
 		{
 			
@@ -39,8 +41,9 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
+				int id = (int) rowId;
 				
-				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + incidencias.get((int)rowId).getID() );
+				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + incidencias.get(id-1).getID() );
 				
 			}
 		});
@@ -52,8 +55,9 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
+				int id = (int) rowId;
 				
-				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + incidencias.get((int)rowId).getID() );
+				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + incidencias.get(id-1).getID() );
 				
 			}
 		});
@@ -65,8 +69,9 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
+				int id = (int) rowId;
 				
-				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + incidencias.get((int)rowId).getID() );
+				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + incidencias.get(id-1).getID() );
 				
 			}
 		});
@@ -78,8 +83,9 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
+				int id = (int) rowId;
 				
-				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + incidencias.get((int)rowId).getID() );
+				doNavigate(Incidencia_comercial.VIEW_NAME + "/" +  incidencias.get(id-1).getID() );
 				
 			}
 		});
