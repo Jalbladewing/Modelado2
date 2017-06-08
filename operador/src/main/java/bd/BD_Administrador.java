@@ -100,10 +100,7 @@ public class BD_Administrador {
 		return user;
 	}
 
-	public String generar_password(int aIdAdministrador) throws PersistentException  
-	{
-		throw new UnsupportedOperationException();
-	}
+	
 
 	public boolean modificar_perfil_administrador(Administrador administrador) throws PersistentException  
 	{

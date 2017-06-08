@@ -81,11 +81,7 @@ public class BD_Cliente {
 		return user;
 	}
 
-	public String generar_password(int idCliente) throws PersistentException 
-	{
-		throw new UnsupportedOperationException();
-	}
-
+	
 	public boolean modificar_cliente(Cliente cliente) throws PersistentException 
 	{
 		boolean resultado = false;

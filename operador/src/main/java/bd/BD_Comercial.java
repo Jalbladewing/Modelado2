@@ -79,11 +79,7 @@ public class BD_Comercial {
 	}
 
 
-	public String generar_password(int idComercial)  throws PersistentException 
-	{
-		throw new UnsupportedOperationException();
-	}
-
+	
 	public boolean modificar_perfil_comercial(Comercial comercial)  throws PersistentException 
 	{
 		boolean resultado = false;

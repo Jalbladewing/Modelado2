@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.orm.PersistentException;
 
+import com.teamBurton.operador.Gestor_Correos;
 import com.teamBurton.operador.Gestor_correo;
 
 import bdgui.IAdministrador;
@@ -146,25 +147,23 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	public boolean recuperar_password(String email) {
 		Usuario u;
 		String pass;
+		Gestor_Correos gestor = new Gestor_Correos();
 		try {
 			u = _bd_clien.verificar_usuario(email);
-			if (!u.equals(null)) {
-				pass = _bd_clien.generar_password(u.getID());
-				// Gestor de correos
-				// return gestorC.enviar_correo_recuperacion(u.getEmail(),pass);
+			if (u!=null) {
+				pass = u.getPassword();
+				return gestor.enviar_correo_recuperacion(u.getEmail(),pass);
 			} else {
 				u = _bd_comer.verificar_usuario(email);
-				if (!u.equals(null)) {
-					pass = _bd_comer.generar_password(u.getID());
-					// Gestor de correos
-					// return gestorC.enviar_correo_recuperacion(u.getEmail(),pass);
+				if (u!=null) {
+					pass = u.getPassword();
+					 return gestor.enviar_correo_recuperacion(u.getEmail(),pass);
 					
 				} else {
 					u = _bd_admin.verificar_usuario(email);
-					if (!u.equals(null)) {
-						pass = _bd_admin.generar_password(u.getID());
-						// Gestor de correos
-						// return gestorC.enviar_correo_recuperacion(u.getEmail(),pass);
+					if (u!=null) {
+						pass = u.getPassword();
+						 return gestor.enviar_correo_recuperacion(u.getEmail(),pass);
 						
 					}
 				}
@@ -173,6 +172,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 		return false;
 
