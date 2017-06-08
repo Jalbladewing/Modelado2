@@ -45,7 +45,17 @@ public class Mis_servicios extends Mis_servicios_ventana implements View {
 	
 	public void cargar_modalidades_mis_servicios()
 	{
-		List<Modalidad> modalidades = cliente.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
+		List<Modalidad> modalidades;
+		
+		//Según si estamos en vista cliente o en cliente.
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		{
+			modalidades = cliente.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
+		}else
+		{
+			modalidades = cliente.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
+		}
+		
 		Servicio television = new Servicio();
 		Servicio internet = new Servicio();
 		Servicio telefono = new Servicio();

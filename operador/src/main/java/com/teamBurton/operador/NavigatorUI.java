@@ -26,6 +26,8 @@ public class NavigatorUI extends UI {
     private String mainView;
     private String parentView;
     private Usuario usuario;
+    private Usuario vistaCliente;
+    private Usuario vistaComercial;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -66,6 +68,26 @@ public class NavigatorUI extends UI {
     }
     
     public Usuario getUsuario()
+    {
+    	return usuario;
+    }
+    
+    public void setVistaCliente(Usuario u)
+    {
+    	usuario = u;
+    }
+    
+    public Usuario getVistaCliente()
+    {
+    	return usuario;
+    }
+    
+    public void setVistaComercial(Usuario u)
+    {
+    	usuario = u;
+    }
+    
+    public Usuario getVistaComercial()
     {
     	return usuario;
     }
