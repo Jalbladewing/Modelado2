@@ -58,24 +58,25 @@ public class BD_Administrador {
 		return modalidades;
 	}
 
-	public boolean acceder_administrador(int idAdministrador) throws PersistentException  
+	public Administrador acceder_administrador(int idAdministrador) throws PersistentException  
 	{
 		Administrador administrador = null;
-		boolean resultado = false;
+		
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
 			administrador = AdministradorDAO.getAdministradorByORMID(idAdministrador);
-			resultado = true;
+			
 			t.commit();
 			
 		}catch(Exception e)
 		{
 			t.rollback();
+			return null;
 		}
 		
-		return resultado;
+		return administrador;
 	}
 	
 	public Usuario verificar_usuario(String email) throws PersistentException 

@@ -36,24 +36,25 @@ public class BD_Comercial {
  
 	}
 	
-	public boolean acceder_comercial(int idComercial)  throws PersistentException 
+	public Comercial acceder_comercial(int idComercial)  throws PersistentException 
 	{
 		Comercial comercial = null;
-		boolean resultado = false;
+		
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
 			comercial = ComercialDAO.getComercialByORMID(idComercial);
-			resultado = true;
+			
 			t.commit();
 			
 		}catch(Exception e)
 		{
 			t.rollback();
+			return null;
 		}
 		
-		return resultado;
+		return comercial;
 	}
 	
 	public Usuario verificar_usuario(String email) throws PersistentException 

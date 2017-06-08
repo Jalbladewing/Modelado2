@@ -33,23 +33,23 @@ public class BD_Cliente {
 		}catch(Exception e)
 		{
 			t.rollback();
-			
+			return null;
 		}
 		
 		return user;
  
 	}
 
-	public boolean acceder_cliente(int idCliente) throws PersistentException 
+	public Cliente acceder_cliente(int idCliente) throws PersistentException 
 	{
 		Cliente cliente = null;
-		boolean resultado = false;
+		
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
 			cliente = ClienteDAO.getClienteByORMID(idCliente);
-			resultado = true;
+			
 			t.commit();
 			
 		}catch(Exception e)
@@ -57,7 +57,7 @@ public class BD_Cliente {
 			t.rollback();
 		}
 		
-		return resultado;
+		return cliente;
 	}
 
 	public Usuario verificar_usuario(String email) throws PersistentException 

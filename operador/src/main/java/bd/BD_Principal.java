@@ -117,7 +117,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	public Usuario iniciar_sesion(String email, String password) {
 		Usuario u;
 		try {
-			/*u = _bd_clien.verificar_loguin(email, password);
+			u = _bd_clien.verificar_loguin(email, password);
 			if (!u.equals(null)) {
 				return _bd_clien.acceder_cliente(u.getID());
 			} else {
@@ -130,15 +130,14 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 						return _bd_admin.acceder_administrador(u.getID());
 					}
 				}
-			}*/
+			}
 			
-			u = _bd_clien.verificar_loguin(email, password);
 			
-			return u;
 
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
 		return null;
 
