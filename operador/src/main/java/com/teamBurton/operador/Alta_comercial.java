@@ -28,7 +28,7 @@ public class Alta_comercial extends Alta_comercial_ventana implements View {
 			{
 				if(!emailF.getValue().replaceAll("\\s+","").isEmpty())
 				{
-					alta_cliente();
+					alta_comercial();
 					doNavigate(Gestion_comerciales.VIEW_NAME);
 				}
 				
@@ -47,7 +47,7 @@ public class Alta_comercial extends Alta_comercial_ventana implements View {
 		});
 	}
 	
-	public void alta_cliente()
+	public void alta_comercial()
 	{
 		Comercial comercial = ComercialDAO.createComercial();
 		comercial.setNombre(nombreF.getValue());
