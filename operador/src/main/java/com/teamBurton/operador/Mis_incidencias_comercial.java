@@ -10,6 +10,7 @@ import com.vaadin.ui.UI;
 
 import bd.BD_Principal;
 import bd.Incidencia;
+import bdgui.IAdministrador;
 import bdgui.IComercial;
 
 public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana implements View {
@@ -23,6 +24,7 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 	public Incidencias_resueltas_comercial _resueltas;
 	public static final String VIEW_NAME = "mis_incidencias_comercial";
 	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 	private List<Incidencia> incidencias;
 	
 	public Mis_incidencias_comercial()
@@ -93,7 +95,14 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 	
 	public void cargar_incidencias()
 	{
-		incidencias = comercial.cargar_incidencias_comercial(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Comercial"))
+		{
+			incidencias = comercial.cargar_incidencias_comercial(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
+		}else
+		{
+			incidencias = administrador.cargar_incidencias_comercial(((NavigatorUI) UI.getCurrent()).getVistaComercial().getID());
+		}
+		
 		
 		for(int i = 0; i < incidencias.size(); i++)
 		{

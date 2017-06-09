@@ -55,7 +55,7 @@ public class Mis_facturas extends Mis_facturas_ventana implements View {
 		if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
 		{
 			facturas = comercial.cargar_facturas(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
-		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Administrador"))
+		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Administrador") || (((NavigatorUI) UI.getCurrent()).getParentView().equals("Vista_Comercial")))
 		{
 			
 			facturas = administrador.cargar_facturas(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());

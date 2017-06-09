@@ -62,6 +62,7 @@ public class Modificar_datos extends Modificar_datos_ventana {
 		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
 		{
 			usuarioDatos = ((NavigatorUI) UI.getCurrent()).getVistaCliente();
+			
 		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Comercial"))
 		{
 			

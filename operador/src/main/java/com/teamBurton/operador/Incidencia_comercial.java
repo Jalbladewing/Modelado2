@@ -8,6 +8,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import bd.BD_Principal;
 import bd.Incidencia;
+import bdgui.IAdministrador;
 import bdgui.IComercial;
 
 public class Incidencia_comercial extends Incidencia_comercial_ventana implements View {
@@ -30,6 +31,7 @@ public class Incidencia_comercial extends Incidencia_comercial_ventana implement
 	public Incidencia_lista_comercial _unnamed_Incidencia_lista_comercial_;
 	public static final String VIEW_NAME = "incidencia_comercial";
 	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 	private int idIncidencia;
 	private Incidencia incidencia;
 	
@@ -60,13 +62,27 @@ public class Incidencia_comercial extends Incidencia_comercial_ventana implement
 	public void cargar_incidencia()
 	{
 
-		incidencia = comercial.cargar_incidencia(idIncidencia);
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Comercial"))
+		{
+			incidencia = comercial.cargar_incidencia(idIncidencia);
+		}else
+		{
+			incidencia = administrador.cargar_incidencia(idIncidencia);
+		}
+		
 		
 	}
 	
 	public void resolver_incidencia()
 	{
-		comercial.resolver_incidencia(idIncidencia, observacionArea.getValue());
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Comercial"))
+		{
+			comercial.resolver_incidencia(idIncidencia, observacionArea.getValue());
+		}else
+		{
+			administrador.resolver_incidencia(idIncidencia, observacionArea.getValue());
+		}
+		
 	}
 	
 	

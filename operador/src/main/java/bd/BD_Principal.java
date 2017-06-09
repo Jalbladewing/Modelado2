@@ -402,14 +402,8 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return false;
 	}
-	
-	@Override
-	public boolean registrar_comercial(Comercial comercial) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	/*public boolean registrar_comercial(Comercial comercial) {
+	public boolean registrar_comercial(Comercial comercial) {
 		Usuario u;
 		String pass;
 		Gestor_Correos gestor = new Gestor_Correos();
@@ -436,7 +430,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return false;
 
-	}*/
+	}
 
 	public List cargar_modalidades() {
 		List modalidades = null;

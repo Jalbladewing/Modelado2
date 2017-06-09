@@ -66,7 +66,7 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 		{
 			incidencias = comercial.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
 		
-		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Administrador"))
+		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Administrador") || (((NavigatorUI) UI.getCurrent()).getParentView().equals("Vista_Comercial")))
 		{
 			incidencias = administrador.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
 			
@@ -74,6 +74,7 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 		{
 			incidencias = cliente.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
 		}
+		
 		
 		for(int i = 0; i < incidencias.size(); i++)
 		{

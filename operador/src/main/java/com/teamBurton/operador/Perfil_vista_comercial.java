@@ -7,6 +7,8 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 
+import bd.Usuario;
+
 public class Perfil_vista_comercial extends Perfil_vista_comercial_ventana implements View {
 	public Mi_cuenta_vista_comercial _unnamed_Mi_cuenta_vista_comercial_;
 	public Dar_baja_comercial _daBaja;
@@ -14,35 +16,7 @@ public class Perfil_vista_comercial extends Perfil_vista_comercial_ventana imple
 	
 	public Perfil_vista_comercial()
 	{
-		Datos_modificables dm = new Datos_modificables();
-		dm.tituloL.setValue("Nombre");
-		dm.valorL.setValue("Aitor");
-		vLayoutDatosModificables.addComponent(dm);
-		dm = new Datos_modificables();
-		dm.tituloL.setValue("Apellidos");
-		dm.valorL.setValue("Tilla Santos");
-		vLayoutDatosModificables.addComponent(dm);
-		dm = new Datos_modificables();
-		dm.tituloL.setValue("Dirección");
-		dm.valorL.setValue("C/America nº7, 2ºA");
-		vLayoutDatosModificables.addComponent(dm);
-		dm = new Datos_modificables();
-		dm.tituloL.setValue("Telefono");
-		dm.valorL.setValue("950000000");
-		vLayoutDatosModificables.addComponent(dm);
-		
-		Datos_no_modificables dn = new Datos_no_modificables();
-		dn.tituloL.setValue("E-mail");
-		dn.valorL.setValue("tilla96@gmail.com");
-		vLayoutDatosNoModificables.addComponent(dn);
-		dn = new Datos_no_modificables();
-		dn.tituloL.setValue("DNI/NIF/Pasaporte");
-		dn.valorL.setValue("9999999999");
-		vLayoutDatosNoModificables.addComponent(dn);
-		dn = new Datos_no_modificables();
-		dn.tituloL.setValue("Contraseña");
-		dn.valorL.setValue("*******");
-		vLayoutDatosNoModificables.addComponent(dn);
+		colocar_datos();	
 		
 		bajaB.addClickListener(new Button.ClickListener() {
 			
@@ -57,6 +31,57 @@ public class Perfil_vista_comercial extends Perfil_vista_comercial_ventana imple
 				UI.getCurrent().addWindow(subWindow);
 			}
 		});
+		
+	}
+	
+	public void colocar_datos()
+	{
+		Usuario usuario = ((NavigatorUI) UI.getCurrent()).getVistaComercial();
+		Datos_modificables dato_modificable = new Datos_modificables();
+		Datos_no_modificables dato_noModificable = new Datos_no_modificables();
+		
+		//NOMBRE
+		dato_modificable.tituloL.setValue("Nombre");
+		dato_modificable.valorL.setValue(usuario.getNombre());
+		vLayoutDatosModificables.addComponent(dato_modificable);
+				
+		//APELLIDOS
+		dato_modificable = new Datos_modificables();
+		dato_modificable.tituloL.setValue("Apellidos");
+		dato_modificable.valorL.setValue(usuario.getApellidos());
+		vLayoutDatosModificables.addComponent(dato_modificable);
+				
+		//DIRECCION
+		dato_modificable = new Datos_modificables();
+		dato_modificable.tituloL.setValue("Dirección");
+		dato_modificable.valorL.setValue(usuario.getDireccion());
+		vLayoutDatosModificables.addComponent(dato_modificable);
+				
+		//TELEFONO
+		dato_modificable = new Datos_modificables();
+		dato_modificable.tituloL.setValue("Telefono");
+		dato_modificable.valorL.setValue(usuario.getTelefono());
+		vLayoutDatosModificables.addComponent(dato_modificable);
+				
+		//NIF
+		dato_modificable = new Datos_modificables();
+		dato_modificable.tituloL.setValue("DNI/NIF/Pasaporte");
+		dato_modificable.valorL.setValue(usuario.getNif());
+		vLayoutDatosModificables.addComponent(dato_modificable);
+					
+		//CONTRASEÑA
+		dato_modificable = new Datos_modificables();
+		dato_modificable.tituloL.setValue("Contraseña");
+		dato_modificable.valorL.setValue("*******");
+		vLayoutDatosModificables.addComponent(dato_modificable);
+				
+		//DATOS QUE NO PUEDE MODIFICAR
+				
+		//EMAIL
+		dato_noModificable.tituloL.setValue("E-mail");
+		dato_noModificable.valorL.setValue(usuario.getEmail());
+		vLayoutDatosNoModificables.addComponent(dato_noModificable);
+				
 		
 	}
 

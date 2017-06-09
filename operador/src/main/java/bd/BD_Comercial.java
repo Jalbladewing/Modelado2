@@ -1,6 +1,7 @@
 package bd;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -125,6 +126,7 @@ public class BD_Comercial {
 		
 		try
 		{
+			comercial.setAdministrador(AdministradorDAO.getAdministradorByORMID(1));
 			resultado = ComercialDAO.save(comercial);
 			
 			t.commit();
@@ -158,8 +160,65 @@ public class BD_Comercial {
 		return resultado;
 	}
 
-	/*public String generar_password() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
+	 public String generar_password()  
+	   {
+		   String SALTCHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		   String SPECIALCHARS = "?¿¡![]{}()-+<>*,.;^";
+		   String NUMCHARS = "1234567890";
+		   String order = "123";
+	       StringBuilder salt = new StringBuilder();
+	       String password;
+	       boolean number = false;
+	       boolean special = false;
+	       boolean letter = false;
+	       Random rnd = new Random();
+	       while (salt.length() < 10) // length of the random string
+	       { 
+	    	   int index = (int) (rnd.nextFloat() * order.length());
+	    	   
+	    	   if(order.charAt(index) == '1')
+	    	   {
+	    		   
+	    		   index = (int) (rnd.nextFloat() * SALTCHARS.length());
+	               salt.append(SALTCHARS.charAt(index));
+	               letter = true;
+	    		   
+	    	   }else if(order.charAt(index) == '2')
+	    	   {
+	    		   
+	    		   index  = (int) (rnd.nextFloat() * SPECIALCHARS.length());
+	               salt.append(SPECIALCHARS.charAt(index));
+	               special = true;
+	    		   
+	    	   }else
+	    	   {
+	    		   index  = (int) (rnd.nextFloat() * NUMCHARS.length());
+	               salt.append(NUMCHARS.charAt(index));
+	               number = true;
+	    	   } 
+	         
+	       }
+	       
+	       if(!number)
+	       {
+	    	   int index = (int) (rnd.nextFloat() * NUMCHARS.length());
+	           salt.append(NUMCHARS.charAt(index));
+	    	   
+	       }
+	      
+	       if(!letter)
+	       {
+	    	   int index = (int) (rnd.nextFloat() * NUMCHARS.length());
+	           salt.append(NUMCHARS.charAt(index));
+	       }
+	       
+	       if(!special)
+	       {
+	    	   int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+	           salt.append(SALTCHARS.charAt(index));
+	       }
+	       
+	       password = salt.toString();
+	       return password;
+	   }
 }

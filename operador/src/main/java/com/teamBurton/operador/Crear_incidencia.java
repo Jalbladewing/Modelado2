@@ -14,6 +14,7 @@ import bd.BD_Principal;
 import bd.Cliente;
 import bd.Incidencia;
 import bd.IncidenciaDAO;
+import bdgui.IAdministrador;
 import bdgui.ICliente;
 import bdgui.IComercial;
 
@@ -37,6 +38,7 @@ public class Crear_incidencia extends Crear_incidencia_ventana implements View {
 	public static final String VIEW_NAME = "crear_incidencia";
 	private ICliente cliente = new BD_Principal();
 	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 	
 	public Crear_incidencia()
 	{
@@ -77,12 +79,12 @@ public class Crear_incidencia extends Crear_incidencia_ventana implements View {
 	{
 		Cliente clienteIncidencia;
 		
-		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
-		{
-			clienteIncidencia = (Cliente) ((NavigatorUI) UI.getCurrent()).getVistaCliente();
-		}else
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
 		{
 			clienteIncidencia = (Cliente) ((NavigatorUI) UI.getCurrent()).getUsuario();
+		}else
+		{
+			clienteIncidencia = (Cliente) ((NavigatorUI) UI.getCurrent()).getVistaCliente();
 		}
 		
 		Incidencia incidencia = IncidenciaDAO.createIncidencia();
@@ -104,13 +106,20 @@ public class Crear_incidencia extends Crear_incidencia_ventana implements View {
 			
 			((NavigatorUI) UI.getCurrent()).setVistaCliente(clienteIncidencia);
 			
-		}else
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
 		{
 			cliente.registrar_incidencia(incidencia);
 			
 			clienteIncidencia.incidencia.add(incidencia);
 			
 			((NavigatorUI) UI.getCurrent()).setUsuario(clienteIncidencia);
+		}else
+		{
+			administrador.registrar_incidencia(incidencia);
+			
+			clienteIncidencia.incidencia.add(incidencia);
+			
+			((NavigatorUI) UI.getCurrent()).setVistaCliente(clienteIncidencia);
 		}
 		
 		

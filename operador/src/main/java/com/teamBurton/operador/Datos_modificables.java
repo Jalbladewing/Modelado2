@@ -58,6 +58,31 @@ public class Datos_modificables extends Datos_modificables_ventana{
 								{
 									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaCliente().getNif());
 								}
+							 
+						 }else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Comercial"))
+						 {
+							 
+							 if(tituloL.getValue().equals("Nombre"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaComercial().getNombre());
+									
+								}else if(tituloL.getValue().equals("Apellidos"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaComercial().getApellidos());
+									
+								}else if(tituloL.getValue().equals("Dirección"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaComercial().getDireccion());
+									
+								}else if(tituloL.getValue().equals("Telefono"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaComercial().getTelefono());
+									
+								}else if(tituloL.getValue().equals("DNI/NIF/Pasaporte"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaComercial().getNif());
+								}
+							 
 						 }else
 						 {
 							 if(tituloL.getValue().equals("Nombre"))
