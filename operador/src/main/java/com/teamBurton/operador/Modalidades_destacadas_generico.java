@@ -8,6 +8,7 @@ import bdgui.*;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.ui.UI;
 
 
 public class Modalidades_destacadas_generico extends Modalidades_destacadas_generico_Ventana implements View{
@@ -16,6 +17,8 @@ public class Modalidades_destacadas_generico extends Modalidades_destacadas_gene
 	public Vector<Modalidad_oferta_generico> _oferta = new Vector<Modalidad_oferta_generico>();
 	public static final String VIEW_NAME = "modalidadD";
 	private ICibernauta cibernauta = new BD_Principal();
+	private ICliente cliente = new BD_Principal();
+	private IComercial comercial = new BD_Principal();
 	
 	
 	public Modalidades_destacadas_generico()
@@ -27,15 +30,30 @@ public class Modalidades_destacadas_generico extends Modalidades_destacadas_gene
 	
 	public void cargar_modalidades_destacadas()
 	{
-		List<Modalidad> modalidades = cibernauta.cargar_modalidades_destacadas();
+		List<Modalidad> modalidades;
 		List<Modalidad> modalidades_oferta;
 		Oferta oferta_destacada;
 		Modalidad_servicio servicio;
 		Modalidad_oferta_generico oferta;
 	    Modalidad_individual_generico individual;
+	    
+	    if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cibernauta"))
+		{
+			modalidades = cibernauta.cargar_modalidades_destacadas();
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Comercial"))
+		{
+			modalidades = comercial.cargar_modalidades_destacadas();
+		
+		}else
+		{
+			modalidades = cliente.cargar_modalidades_destacadas();
+			
+		}
 		
 		for(int i = 0; i < modalidades.size(); i++)
 		{
+			if(!modalidades.get(i).getVisibilidad()) continue;
 			//Si es una oferta se "destripan" sus modalidades y se muestran
 			if(modalidades.get(i).getTipo().equals("oferta"))
 			{

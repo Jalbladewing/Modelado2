@@ -18,7 +18,10 @@ import bd.BD_Principal;
 import bd.Canal;
 import bd.Modalidad;
 import bd.Paquete;
+import bdgui.IAdministrador;
 import bdgui.ICibernauta;
+import bdgui.ICliente;
+import bdgui.IComercial;
 
 public class Television2 extends Television2_ventana implements View{
 	/*private Label _seccion;
@@ -32,6 +35,9 @@ public class Television2 extends Television2_ventana implements View{
 	public Vector<Canal_television> _canal = new Vector<Canal_television>();
 	public static final String VIEW_NAME = "television2";
 	private ICibernauta cibernauta = new BD_Principal();
+	private ICliente cliente = new BD_Principal();
+	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 	
 	public Television2()
 	{
@@ -43,14 +49,32 @@ public class Television2 extends Television2_ventana implements View{
 	public void cargar_modalidades_television()
 	{
 		//Cargar paquetes
-		List<Paquete> paquetes = cibernauta.cargar_paquetes();
+		List<Paquete> paquetes;
 		List<Canal> canales;
 		Paquete paquete;
 		Paquete2 paqueteL;//"layout"
 		Button canal;
 		
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cibernauta"))
+		{
+			paquetes = cibernauta.cargar_paquetes();
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
+		{
+			paquetes = comercial.cargar_paquetes();
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
+		{
+			paquetes = cliente.cargar_paquetes();
+			
+		}else
+		{
+			paquetes = administrador.cargar_paquetes();
+		}
+		
 		for(int i = 0; i < paquetes.size(); i++)
 		{
+			if(!paquetes.get(i).getVisibilidad()) continue;
 			paqueteL = new Paquete2();
 			paquete = paquetes.get(i);
 			paqueteL.tituloL.setValue(paquete.getNombre());
@@ -82,10 +106,27 @@ public class Television2 extends Television2_ventana implements View{
 		
 		
 		//Cargar canales
-		canales = cibernauta.cargar_canales();
+		
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cibernauta"))
+		{
+			canales = cibernauta.cargar_canales();
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
+		{
+			canales = comercial.cargar_canales();
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
+		{
+			canales = cliente.cargar_canales();
+			
+		}else
+		{
+			canales = administrador.cargar_canales();
+		}
 		
 		for(int i = 0; i < canales.size(); i++)
 		{
+			if(!canales.get(i).getVisibilidad()) continue;
 			canalesTabla.addRow(canales.get(i).getNombre(),canales.get(i).getCaracteristicas(),canales.get(i).getPrecio()+"€");
 		}
 		

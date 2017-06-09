@@ -6,11 +6,15 @@ import java.util.Vector;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.ui.UI;
 
 import bd.BD_Principal;
 import bd.Modalidad;
 import bd.Oferta;
+import bdgui.IAdministrador;
 import bdgui.ICibernauta;
+import bdgui.ICliente;
+import bdgui.IComercial;
 
 public class Oferta2 extends Oferta2_ventana implements View{
 	//private Label _seccion;
@@ -18,6 +22,9 @@ public class Oferta2 extends Oferta2_ventana implements View{
 	public Vector<Modalidad_oferta_generico> _oferta = new Vector<Modalidad_oferta_generico>();
 	public static final String VIEW_NAME = "oferta2";
 	private ICibernauta cibernauta = new BD_Principal();
+	private ICliente cliente = new BD_Principal();
+	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 	
 	public Oferta2()
 	{
@@ -27,14 +34,32 @@ public class Oferta2 extends Oferta2_ventana implements View{
 	
 	public void cargar_modalidades_oferta()
 	{
-		List<Modalidad> modalidades = cibernauta.cargar_modalidades_oferta();
+		List<Modalidad> modalidades;
 		List<Modalidad> modalidades_oferta;
 		Oferta oferta_destacada;
 		Modalidad_oferta_generico oferta;
 	    Modalidad_individual_generico individual;
+	    
+	    if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cibernauta"))
+		{
+			modalidades = cibernauta.cargar_modalidades_oferta();
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
+		{
+			modalidades = comercial.cargar_modalidades_oferta();
+		
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
+		{
+			modalidades = cliente.cargar_modalidades_oferta();
+			
+		}else
+		{
+			modalidades = administrador.cargar_modalidades_oferta();
+		}
 		
 		for(int i = 0; i < modalidades.size(); i++)
 		{		
+			    if(!modalidades.get(i).getVisibilidad()) continue;
 				oferta = new Modalidad_oferta_generico();
 				oferta_destacada = (Oferta) modalidades.get(i);
 				modalidades_oferta = Arrays.asList(oferta_destacada.modalidad.toArray());

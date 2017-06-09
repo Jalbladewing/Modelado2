@@ -29,7 +29,7 @@ public interface IAdministrador {
 
 	public List cargar_canales();
 
-	public boolean cambiar_visibilidad_modalidad_destacada(int idIncidencia);
+	public boolean cambiar_visibilidad_modalidad_destacada(int idModalidad);
 
 	public boolean cambiar_modalidad_destacada(int aIdAntigua, int idNueva);
 

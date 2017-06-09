@@ -9,7 +9,10 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import bd.BD_Principal;
 import bd.Canal;
+import bdgui.IAdministrador;
 import bdgui.ICibernauta;
+import bdgui.ICliente;
+import bdgui.IComercial;
 
 public class Canal2 extends Canal2_ventana implements View
 {
@@ -19,6 +22,9 @@ public class Canal2 extends Canal2_ventana implements View
 	public Contratar_generico _contrata;
 	public static final String VIEW_NAME = "canal2";
 	private ICibernauta cibernauta = new BD_Principal();
+	private ICliente cliente = new BD_Principal();
+	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 
 	
 	public Canal2()
@@ -57,7 +63,24 @@ public class Canal2 extends Canal2_ventana implements View
 	
 	public void cargar_canal()
 	{
-		Canal canal = cibernauta.cargar_canal(canalL.getValue());
+		Canal canal;
+		
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cibernauta"))
+		{
+			canal = cibernauta.cargar_canal(canalL.getValue());
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Comercial"))
+		{
+			canal = comercial.cargar_canal(canalL.getValue());
+		
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
+		{
+			canal = cliente.cargar_canal(canalL.getValue());
+			
+		}else
+		{
+			canal = administrador.cargar_canal(canalL.getValue());
+		}
 		
 		caracteristicasL.setValue(canal.getCaracteristicas());
 		precioL.setValue(canal.getPrecio() +"€");

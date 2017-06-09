@@ -29,7 +29,7 @@ public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_venta
 	
 	public Gestion_usuarios_comercial()
 	{
-		cargar_cliente();
+		cargar_clientes();
 		
 		//Pulsar el botón de alta cliente
 		altaB.addClickListener(new Button.ClickListener() 
@@ -60,7 +60,7 @@ public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_venta
 		});
 	}
 	
-	public void cargar_cliente()
+	public void cargar_clientes()
 	{
 		clientes = comercial.cargar_clientes();
 		int numIncidencias;

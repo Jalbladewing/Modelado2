@@ -142,12 +142,12 @@ public class BD_Oferta {
 			{
 				if(modalidades.get(i).getID() == idModalidad)
 				{
-					modalidades.remove(i);
+					administrador.get(0).modalidadDestacada.remove(modalidades.get(i));
 					break;
 				}
 			}
 			
-			resultado = AdministradorDAO.refresh(administrador.get(0));
+			resultado = AdministradorDAO.save(administrador.get(0));
 			t.commit();
 			
 		}catch(Exception e)
@@ -167,10 +167,8 @@ public class BD_Oferta {
 		
 		try
 		{
-			administrador = AdministradorDAO.queryAdministrador(null, null);
-			modalidades = Arrays.asList(administrador.get(0).modalidadDestacada.toArray());
-			
-			modalidades.add(ModalidadDAO.getModalidadByORMID(idModalidad));
+			administrador = AdministradorDAO.queryAdministrador(null, null);		
+			administrador.get(0).modalidadDestacada.add(ModalidadDAO.getModalidadByORMID(idModalidad));
 			
 			resultado = AdministradorDAO.save(administrador.get(0));
 			t.commit();
