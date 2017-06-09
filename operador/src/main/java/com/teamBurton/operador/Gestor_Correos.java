@@ -68,4 +68,31 @@ public class Gestor_Correos implements Gestor_correo {
         }
         
     }
+
+	public boolean enviar_correo_registro_password(String email, String password) {
+		init();
+		String from = "teamburton96@gmail.com";
+        String subject = "Registro completado";
+        Message msg = new MimeMessage(session);
+        try {
+            msg.setFrom(new InternetAddress(from));
+            msg.setRecipient(Message.RecipientType.TO, 
+                new InternetAddress(email));
+            msg.setSubject(subject);
+            msg.setText(" Hola " + email + ", \n \n Su registro ha sido completado satisfactoriamente, "
+            		   		+ "su contraseña para iniciar sesión es " + password +"\n\n \n Si no ha solicitado"
+            				+ " registrarse en nuestro sistema, " +
+            				" por favor elimine este email. \n\n "
+            				+ "Si necesita cualquier información, puede ponerse en contacto con nuestro soporte técnico"
+            				+ " a través del email teamburton96@gmail.com.");
+            Transport transport = session.getTransport("smtp");
+            transport.connect("smtp.gmail.com" , 465 , "username", "password");
+            transport.send(msg);
+            return true;
+        }
+        catch(Exception exc) {
+            System.out.println(exc);
+            return false;
+        }
+	}
 }

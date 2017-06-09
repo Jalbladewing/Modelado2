@@ -129,7 +129,7 @@ public class BD_Incidencia_administrador {
 		return resultado;
 	}
 	
-	public boolean cancelar_incidencia(int idIncidencia, String observaciones) throws PersistentException 
+	public boolean cancelar_incidencia(int idIncidencia) throws PersistentException 
 	{
 		boolean resultado = false;
 		Incidencia incidencia = null;
@@ -139,7 +139,6 @@ public class BD_Incidencia_administrador {
 		{
 			incidencia = IncidenciaDAO.getIncidenciaByORMID(idIncidencia);
 			incidencia.setEstado("cancelada");
-			incidencia.setObservacion(observaciones);
 			resultado = IncidenciaDAO.save(incidencia);
 			
 			t.commit();

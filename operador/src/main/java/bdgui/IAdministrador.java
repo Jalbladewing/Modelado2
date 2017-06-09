@@ -83,7 +83,7 @@ public interface IAdministrador {
 
 	public boolean resolver_incidencia(int idIncidencia, String observaciones);
 	
-	public boolean cancelar_incidencia(int idIncidencia, String observaciones);
+	public boolean cancelar_incidencia(int idIncidencia);
 	
 	public boolean crear_modalidad(Modalidad modalidad);
 	

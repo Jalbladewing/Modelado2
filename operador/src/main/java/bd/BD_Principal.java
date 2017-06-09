@@ -132,8 +132,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 					}
 				}
 			}
-			
-			
 
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
@@ -150,21 +148,21 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		Gestor_Correos gestor = new Gestor_Correos();
 		try {
 			u = _bd_clien.verificar_usuario(email);
-			if (u!=null) {
+			if (u != null) {
 				pass = u.getPassword();
-				return gestor.enviar_correo_recuperacion(u.getEmail(),pass);
+				return gestor.enviar_correo_recuperacion(u.getEmail(), pass);
 			} else {
 				u = _bd_comer.verificar_usuario(email);
-				if (u!=null) {
+				if (u != null) {
 					pass = u.getPassword();
-					 return gestor.enviar_correo_recuperacion(u.getEmail(),pass);
-					
+					return gestor.enviar_correo_recuperacion(u.getEmail(), pass);
+
 				} else {
 					u = _bd_admin.verificar_usuario(email);
-					if (u!=null) {
+					if (u != null) {
 						pass = u.getPassword();
-						 return gestor.enviar_correo_recuperacion(u.getEmail(),pass);
-						
+						return gestor.enviar_correo_recuperacion(u.getEmail(), pass);
+
 					}
 				}
 			}
@@ -215,7 +213,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	public List cargar_modalidades_mis_servicios(int idCliente) {
 		List modalidades = null;
 		try {
-			modalidades =_bd_ofer.cargar_modalidades_cliente(idCliente);
+			modalidades = _bd_ofer.cargar_modalidades_cliente(idCliente);
 
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
@@ -268,17 +266,30 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return clientes;
 	}
 
+	@Override
 	public boolean registrar_cliente(Cliente cliente) {
-
-		try {
-			return _bd_clien.registrar_cliente(cliente);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		// TODO Auto-generated method stub
 		return false;
 	}
 
+	/*
+	 * public boolean registrar_cliente(Cliente cliente) { Usuario u; String
+	 * pass; Gestor_Correos gestor = new Gestor_Correos(); try { u =
+	 * _bd_clien.verificar_usuario(cliente.getEmail()); if (u == null) { u =
+	 * _bd_comer.verificar_usuario(cliente.getEmail()); if (u == null) { u =
+	 * _bd_admin.verificar_usuario(cliente.getEmail()); } if (u == null) { pass
+	 * = _bd_clien.generar_password(); cliente.setPassword(pass);
+	 * if(_bd_clien.registrar_cliente(cliente)) return
+	 * gestor.enviar_correo_registro_password(cliente.getEmail(),cliente.
+	 * getPassword());
+	 * 
+	 * } }
+	 * 
+	 * } catch (PersistentException e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); return false; } return false;
+	 * 
+	 * }
+	 */
 	public boolean contratar_modalidad(int idCliente, int idModalidad) {
 		try {
 			return _bd_clien.registrar_modalidad_contratada(idCliente, idModalidad);
@@ -322,9 +333,9 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 
 	public boolean cambiar_modalidad_destacada(int idAntigua, int idNueva) {
 		try {
-			if(_bd_ofer.eliminar_modalidad_destacada(idAntigua))
-			return _bd_ofer.add_modalidad_destacada(idNueva);
-			
+			if (_bd_ofer.eliminar_modalidad_destacada(idAntigua))
+				return _bd_ofer.add_modalidad_destacada(idNueva);
+
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -375,16 +386,41 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return false;
 	}
-
+	
+	@Override
 	public boolean registrar_comercial(Comercial comercial) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/*public boolean registrar_comercial(Comercial comercial) {
+		Usuario u;
+		String pass;
+		Gestor_Correos gestor = new Gestor_Correos();
 		try {
-			return _bd_comer.registrar_comercial(comercial);
+			u = _bd_clien.verificar_usuario(comercial.getEmail());
+			if (u == null) {
+				u = _bd_comer.verificar_usuario(comercial.getEmail());
+				if (u == null) {
+					u = _bd_admin.verificar_usuario(comercial.getEmail());
+				}
+				if (u == null) {
+					pass = _bd_comer.generar_password();
+					comercial.setPassword(pass);
+					if (_bd_comer.registrar_comercial(comercial))
+						return gestor.enviar_correo_registro_password(comercial.getEmail(), comercial.getPassword());
+
+				}
+			}
+
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 		return false;
-	}
+
+	}*/
 
 	public List cargar_modalidades() {
 		List modalidades = null;
@@ -509,7 +545,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		// TODO Auto-generated method stub
 		try {
 			if (modalidad.getTipo().equals("movil")) {
-				return _bd_movil.actualizar_modalidad_movil((Movil)modalidad);
+				return _bd_movil.actualizar_modalidad_movil((Movil) modalidad);
 			} else if (modalidad.getTipo().equals("television")) {
 				if (modalidad instanceof Canal) {
 					return _bd_canal.actualizar_modalidad_canal((Canal) modalidad);
@@ -533,7 +569,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 
 	@Override
 	public boolean resolver_incidencia(int idIncidencia, String observaciones) {
-		
+
 		try {
 			return _bd_incid_admin.resolver_incidencia(idIncidencia, observaciones);
 		} catch (PersistentException e) {
@@ -543,12 +579,11 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 
 		return false;
 	}
-	
 
 	@Override
-	public boolean cancelar_incidencia(int idIncidencia, String observaciones) {
+	public boolean cancelar_incidencia(int idIncidencia) {
 		try {
-			return _bd_incid_admin.cancelar_incidencia(idIncidencia, observaciones);
+			return _bd_incid_admin.cancelar_incidencia(idIncidencia);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -587,97 +622,75 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return null;
 	}
 
-	
 	@Override
 	public Canal cargar_canal(String nombre) {
 		Canal canal = null;
-		try 
-		{
+		try {
 			return _bd_canal.cargar_canal(nombre);
 		} catch (PersistentException e) {
-			
+
 			e.printStackTrace();
 		}
 		return canal;
 	}
 	/*
-	public Movil cargar_modalidad_movil(String nombre){
-		Movil movil = null;
-		try {
-			return _bd_movil.cargar_modalidad_movil(nombre);
-		} catch (PersistentException e) {
-			
-			e.printStackTrace();
-		}
-		return movil;
-	}
-	
-	public Modalidad cargar_modalidad_internet(String nombre){
-		Modalidad internet = null;
-		try {
-			return _bd_ofer.cargar_modalidad_internet(nombre);
-		} catch (PersistentException e) {
-			
-			e.printStackTrace();
-		}
-		return internet;
-		
-	}
-	
-	public Modalidad cargar_modalidad_telefono_fijo(String nombre){
-		Modalidad telefono = null;
-		try {
-			return _bd_ofer.cargar_modalidad_telefono_fijo(nombre);
-		} catch (PersistentException e) {
-			
-			e.printStackTrace();
-		}
-		return telefono;
-	}
-	
-	public Paquete cargar_modalidad_paquete(String nombre){
-		Paquete paquete = null;
-		try {
-			return _bd_paq.cargar_modalidad_paquete(nombre);
-		} catch (PersistentException e) {
-			
-			e.printStackTrace();
-		}
-		return paquete;
-	}
-	
-	public Oferta cargar_modalidad_oferta(String nombre){
-		Oferta oferta = null;
-		try {
-			return _bd_ofer.cargar_modalidad_oferta(nombre);
-		} catch (PersistentException e) {
-			
-			e.printStackTrace();
-		}
-		return oferta;
-	}*/
-	
+	 * public Movil cargar_modalidad_movil(String nombre){ Movil movil = null;
+	 * try { return _bd_movil.cargar_modalidad_movil(nombre); } catch
+	 * (PersistentException e) {
+	 * 
+	 * e.printStackTrace(); } return movil; }
+	 * 
+	 * public Modalidad cargar_modalidad_internet(String nombre){ Modalidad
+	 * internet = null; try { return _bd_ofer.cargar_modalidad_internet(nombre);
+	 * } catch (PersistentException e) {
+	 * 
+	 * e.printStackTrace(); } return internet;
+	 * 
+	 * }
+	 * 
+	 * public Modalidad cargar_modalidad_telefono_fijo(String nombre){ Modalidad
+	 * telefono = null; try { return
+	 * _bd_ofer.cargar_modalidad_telefono_fijo(nombre); } catch
+	 * (PersistentException e) {
+	 * 
+	 * e.printStackTrace(); } return telefono; }
+	 * 
+	 * public Paquete cargar_modalidad_paquete(String nombre){ Paquete paquete =
+	 * null; try { return _bd_paq.cargar_modalidad_paquete(nombre); } catch
+	 * (PersistentException e) {
+	 * 
+	 * e.printStackTrace(); } return paquete; }
+	 * 
+	 * public Oferta cargar_modalidad_oferta(String nombre){ Oferta oferta =
+	 * null; try { return _bd_ofer.cargar_modalidad_oferta(nombre); } catch
+	 * (PersistentException e) {
+	 * 
+	 * e.printStackTrace(); } return oferta; }
+	 */
+
 	@Override
 	public Incidencia cargar_incidencia(int id) {
-		Incidencia incidencia= null;
+		Incidencia incidencia = null;
 		try {
 			return _bd_incid_admin.cargar_incidencia(id);
 		} catch (PersistentException e) {
-			
+
 			e.printStackTrace();
 		}
 		return incidencia;
 	}
-	
+
 	public Factura cargar_factura(int id) {
-		Factura factura= null;
+		Factura factura = null;
 		try {
 			return _bd_fact.cargar_factura(id);
 		} catch (PersistentException e) {
-			
+
 			e.printStackTrace();
 		}
 		return factura;
 	}
-	
+
+
+
 }

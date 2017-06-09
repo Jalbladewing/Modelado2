@@ -243,4 +243,9 @@ public class BD_Cliente {
 		
 		return clientes;
 	}
+
+/*	public String generar_password()  {
+		// TODO Auto-generated method stub
+		return null;
+	}*/
 	}

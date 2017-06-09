@@ -157,4 +157,9 @@ public class BD_Comercial {
 		
 		return resultado;
 	}
+
+	/*public String generar_password() {
+		// TODO Auto-generated method stub
+		return null;
+	}*/
 }
