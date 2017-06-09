@@ -14,6 +14,7 @@ import bd.BD_Principal;
 import bd.Modalidad;
 import bd.Movil;
 import bd.Television;
+import bdgui.IAdministrador;
 import bdgui.ICliente;
 import bdgui.IComercial;
 
@@ -24,6 +25,7 @@ public class Mis_servicios extends Mis_servicios_ventana implements View {
 	public static final String VIEW_NAME = "mis_servicios";
 	private ICliente cliente = new BD_Principal();
 	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 	
 	public Mis_servicios()
 	{
@@ -50,9 +52,13 @@ public class Mis_servicios extends Mis_servicios_ventana implements View {
 		List<Modalidad> modalidades;
 		
 		//Según si estamos en vista cliente o en cliente.
-		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
 		{
 			modalidades = comercial.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
+		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Administrador"))
+		{
+			
+			modalidades = administrador.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
 		}else
 		{
 			modalidades = cliente.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getUsuario().getID());

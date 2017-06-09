@@ -64,16 +64,16 @@ public class Perfil_vista_usuario extends Perfil_vista_usuario_ventana implement
 		vLayoutDatosModificables.addComponent(dato_modificable);
 				
 		//NIF
-		dato_noModificable = new Datos_no_modificables();
-		dato_noModificable.tituloL.setValue("DNI/NIF/Pasaporte");
-		dato_noModificable.valorL.setValue(usuario.getNif());
-		vLayoutDatosNoModificables.addComponent(dato_noModificable);
+		dato_modificable = new Datos_modificables();
+		dato_modificable.tituloL.setValue("DNI/NIF/Pasaporte");
+		dato_modificable.valorL.setValue(usuario.getNif());
+		vLayoutDatosModificables.addComponent(dato_modificable);
 					
 		//CONTRASEÑA
-		dato_noModificable = new Datos_no_modificables();
-		dato_noModificable.tituloL.setValue("Contraseña");
-		dato_noModificable.valorL.setValue("*******");
-		vLayoutDatosNoModificables.addComponent(dato_noModificable);
+		dato_modificable = new Datos_modificables();
+		dato_modificable.tituloL.setValue("Contraseña");
+		dato_modificable.valorL.setValue("*******");
+		vLayoutDatosModificables.addComponent(dato_modificable);
 				
 		//DATOS QUE NO PUEDE MODIFICAR
 				

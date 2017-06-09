@@ -9,6 +9,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import bd.BD_Principal;
 import bd.Factura;
 import bd.Incidencia;
+import bdgui.IAdministrador;
 import bdgui.ICliente;
 import bdgui.IComercial;
 
@@ -32,6 +33,7 @@ public class Incidencia_cliente extends Incidencia_cliente_ventana implements Vi
 	public static final String VIEW_NAME = "incidencia_cliente";
 	private ICliente cliente = new BD_Principal();
 	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 	private int idIncidencia;
 	private Incidencia incidencia;
 
@@ -42,7 +44,8 @@ public class Incidencia_cliente extends Incidencia_cliente_ventana implements Vi
 			@Override
 			public void buttonClick(ClickEvent event) 
 			{
-				//sin implementar
+				cancelar_incidencia();
+				doNavigate(Mis_incidencias_cliente.VIEW_NAME);
 				
 			}
 		});
@@ -51,13 +54,38 @@ public class Incidencia_cliente extends Incidencia_cliente_ventana implements Vi
 	
 	public void cargar_incidencia()
 	{
-		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
 		{
 			incidencia = comercial.cargar_incidencia(idIncidencia);
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Administrador"))
+		{
+			incidencia = administrador.cargar_incidencia(idIncidencia);
+			
 		}else
 		{
 			incidencia = cliente.cargar_incidencia(idIncidencia);
 		}	
+	}
+	
+	public void cancelar_incidencia()
+	{
+		if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
+		{
+			comercial.cancelar_incidencia(idIncidencia);
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Administrador"))
+		{
+			administrador.cancelar_incidencia(idIncidencia);
+			
+		}else
+		{
+			cliente.cancelar_incidencia(idIncidencia);
+		}	
+	}
+	
+	private void doNavigate(String viewName) {
+	    UI.getCurrent().getNavigator().navigateTo(viewName);
 	}
 	
 	@Override

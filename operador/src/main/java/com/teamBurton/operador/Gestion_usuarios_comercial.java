@@ -13,6 +13,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import bd.BD_Principal;
 import bd.Cliente;
+import bdgui.IAdministrador;
 import bdgui.IComercial;
 
 public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_ventana implements View {
@@ -25,6 +26,7 @@ public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_venta
 	public Vector<Usuario_lista_gestion_comercial> _cliente = new Vector<Usuario_lista_gestion_comercial>();
 	public static final String VIEW_NAME = "gestion_usuarios_comercial";
 	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 	private List<Cliente> clientes;
 	
 	public Gestion_usuarios_comercial()
@@ -62,7 +64,14 @@ public class Gestion_usuarios_comercial extends Gestion_usuarios_comercial_venta
 	
 	public void cargar_clientes()
 	{
-		clientes = comercial.cargar_clientes();
+		if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
+		{
+			clientes = comercial.cargar_clientes();
+		}else
+		{
+			clientes = administrador.cargar_clientes();
+		}
+		
 		int numIncidencias;
 		
 		for(int i = 0; i < clientes.size(); i++)

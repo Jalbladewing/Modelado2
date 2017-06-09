@@ -9,6 +9,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import bd.BD_Principal;
 import bd.Cliente;
 import bd.ClienteDAO;
+import bdgui.IAdministrador;
 import bdgui.IComercial;
 
 public class Alta_usuario extends Alta_usuario_ventana implements View {
@@ -31,6 +32,7 @@ public class Alta_usuario extends Alta_usuario_ventana implements View {
 	public Gestion_usuarios_comercial _unnamed_Gestion_usuarios_comercial_;
 	public static final String VIEW_NAME = "alta_usuario";
 	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 
 	public Alta_usuario()
 	{
@@ -72,8 +74,13 @@ public class Alta_usuario extends Alta_usuario_ventana implements View {
 		cliente.setTelefono(telefonoF.getValue());
 		cliente.setNif(dniF.getValue());
 		
-		comercial.registrar_cliente(cliente);
-		//POR TERMINAR
+		if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
+		{
+			comercial.registrar_cliente(cliente);
+		}else
+		{
+			administrador.registrar_cliente(cliente);
+		}
 	}
 	
 	private void doNavigate(String viewName) {

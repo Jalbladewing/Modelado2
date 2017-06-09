@@ -53,6 +53,10 @@ public class Datos_modificables extends Datos_modificables_ventana{
 								}else if(tituloL.getValue().equals("Telefono"))
 								{
 									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaCliente().getTelefono());
+									
+								}else if(tituloL.getValue().equals("DNI/NIF/Pasaporte"))
+								{
+									valorL.setValue(((NavigatorUI) UI.getCurrent()).getVistaCliente().getNif());
 								}
 						 }else
 						 {

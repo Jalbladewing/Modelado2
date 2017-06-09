@@ -12,6 +12,7 @@ import bd.BD_Principal;
 import bd.Factura;
 import bd.Modalidad;
 import bd.Movil;
+import bdgui.IAdministrador;
 import bdgui.ICliente;
 import bdgui.IComercial;
 
@@ -39,6 +40,7 @@ public class Factura2 extends Factura2_ventana implements View {
 	public static final String VIEW_NAME = "factura2";
 	private ICliente cliente = new BD_Principal();
 	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 	private int idFactura;
 	private Factura factura;
 	
@@ -49,9 +51,14 @@ public class Factura2 extends Factura2_ventana implements View {
 	
 	public void cargar_factura()
 	{
-		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
 		{
 			factura = comercial.cargar_factura(idFactura);
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Administrador"))
+		{
+			factura = administrador.cargar_factura(idFactura);
+					
 		}else
 		{
 			factura = cliente.cargar_factura(idFactura);

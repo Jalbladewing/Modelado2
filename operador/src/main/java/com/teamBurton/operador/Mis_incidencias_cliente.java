@@ -13,6 +13,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import bd.BD_Principal;
 import bd.Incidencia;
+import bdgui.IAdministrador;
 import bdgui.ICliente;
 import bdgui.IComercial;
 
@@ -26,6 +27,7 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 	public static final String VIEW_NAME = "mis_incidencias_cliente";
 	private ICliente cliente = new BD_Principal();
 	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 	private List<Incidencia> incidencias;
 	
 	public Mis_incidencias_cliente()
@@ -60,9 +62,14 @@ public class Mis_incidencias_cliente extends Mis_incidencias_cliente_ventana imp
 	public void cargar_incidencias_cliente()
 	{
 		//Según si estamos en vista cliente o en cliente.
-		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
 		{
 			incidencias = comercial.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
+		
+		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Administrador"))
+		{
+			incidencias = administrador.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
+			
 		}else
 		{
 			incidencias = cliente.cargar_incidencias_cliente(((NavigatorUI) UI.getCurrent()).getUsuario().getID());

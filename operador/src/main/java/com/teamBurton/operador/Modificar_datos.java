@@ -3,10 +3,12 @@ package com.teamBurton.operador;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 
+import bd.Administrador;
 import bd.BD_Principal;
 import bd.Cliente;
 import bd.Comercial;
 import bd.Usuario;
+import bdgui.IAdministrador;
 import bdgui.ICliente;
 import bdgui.IComercial;
 
@@ -21,6 +23,7 @@ public class Modificar_datos extends Modificar_datos_ventana {
 	public Datos_modificables _unnamed_Datos_modificables_;
 	private ICliente cliente = new BD_Principal();
 	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 	
 	public Modificar_datos(String titulo, String valor)
 	{
@@ -59,6 +62,10 @@ public class Modificar_datos extends Modificar_datos_ventana {
 		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
 		{
 			usuarioDatos = ((NavigatorUI) UI.getCurrent()).getVistaCliente();
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Comercial"))
+		{
+			
+			usuarioDatos = ((NavigatorUI) UI.getCurrent()).getVistaComercial();
 		}else
 		{
 			usuarioDatos = ((NavigatorUI) UI.getCurrent()).getUsuario();
@@ -79,6 +86,14 @@ public class Modificar_datos extends Modificar_datos_ventana {
 		}else if(campoL.getValue().equals("Telefono"))
 		{
 			usuarioDatos.setTelefono(campoF.getValue());
+			
+		}else if(campoL.getValue().equals("DNI/NIF/Pasaporte"))
+		{
+			usuarioDatos.setNif(campoF.getValue());
+			
+		}else if(campoL.getValue().equals("Contraseña"))
+		{
+			usuarioDatos.setPassword(campoF.getValue());
 		}
 		
 		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
@@ -91,7 +106,21 @@ public class Modificar_datos extends Modificar_datos_ventana {
 			comercial.modificar_comercial((Comercial) usuarioDatos);
 			((NavigatorUI) UI.getCurrent()).setUsuario(usuarioDatos);
 		
-		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Administrador"))
+		{
+			administrador.modificar_administrador((Administrador) usuarioDatos);
+			((NavigatorUI) UI.getCurrent()).setUsuario(usuarioDatos);
+		
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Comercial"))
+		{
+			administrador.modificar_comercial((Comercial) usuarioDatos);
+			((NavigatorUI) UI.getCurrent()).setVistaComercial(usuarioDatos);
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Administrador") && ((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		{
+			administrador.modificar_cliente((Cliente) usuarioDatos);
+			((NavigatorUI) UI.getCurrent()).setVistaCliente(usuarioDatos);
+		}else
 		{
 			comercial.modificar_cliente((Cliente) usuarioDatos);
 			((NavigatorUI) UI.getCurrent()).setVistaCliente(usuarioDatos);
