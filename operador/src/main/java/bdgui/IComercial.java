@@ -35,7 +35,7 @@ public interface IComercial {
 
     public boolean resolver_incidencia(int idIncidencia, String observaciones);
 	
-	public boolean cancelar_incidencia(int idIncidencia, String observaciones);
+	public boolean cancelar_incidencia(int idIncidencia);
 
 	public List cargar_clientes();
 

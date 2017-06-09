@@ -55,4 +55,6 @@ public interface ICliente {
 	public Incidencia cargar_incidencia(int id);
 	
 	public Factura cargar_factura(int id);
+	
+	public boolean cancelar_incidencia(int idIncidencia);
 }
