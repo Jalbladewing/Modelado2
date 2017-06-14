@@ -1,5 +1,6 @@
 package com.teamBurton.operador;
 
+import java.util.List;
 import java.util.Vector;
 
 import com.vaadin.event.ItemClickEvent;
@@ -9,6 +10,10 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
+
+import bd.BD_Principal;
+import bd.Modalidad;
+import bdgui.IAdministrador;
 
 public class Gestion_modalidades extends Gestion_modalidades_ventana implements View {
 	/*private Button _buscarB;
@@ -20,13 +25,17 @@ public class Gestion_modalidades extends Gestion_modalidades_ventana implements 
 	public Crear_modalidad_administrador _creaModalidad;
 	public Vector<Modalidad_lista_gestion_administrador> _modalidad = new Vector<Modalidad_lista_gestion_administrador>();
 	public static final String VIEW_NAME = "gestion_modalidades";
+	private IAdministrador administrador = new BD_Principal();
+	private List<Modalidad> modalidades;
 	
 	public Gestion_modalidades()
 	{
 		
 		modalidadesTabla.setImmediate(true);
 		
-		modalidadesTabla.addItemClickListener(new ItemClickListener() 
+		cargar_modalidades_gestion_modalidades();
+		
+		/*modalidadesTabla.addItemClickListener(new ItemClickListener() 
 		{
 			
 			@Override
@@ -38,7 +47,7 @@ public class Gestion_modalidades extends Gestion_modalidades_ventana implements 
 				doNavigate(Modalidad_gestion_administrador.VIEW_NAME + "/" + nombre);
 				
 			}
-		});
+		});*/
 		
 		crearB.addClickListener(new Button.ClickListener() 
 		{ 
@@ -47,6 +56,26 @@ public class Gestion_modalidades extends Gestion_modalidades_ventana implements 
 				doNavigate(Crear_modalidad_administrador.VIEW_NAME);
 			} 
 		}); 
+	}
+	
+	public void cargar_modalidades_gestion_modalidades()
+	{
+		String visible = "No";
+		modalidades = administrador.cargar_modalidades();
+		
+		for(int i = 0; i < modalidades.size(); i++)
+		{
+			
+			if(modalidades.get(i).getVisibilidad())
+			{
+				visible = "Si";
+			}else
+			{
+				visible = "No";
+			}
+			
+			modalidadesTabla.addRow(modalidades.get(i).getID()+"", modalidades.get(i).getTipo(), modalidades.get(i).getNombre(), visible, modalidades.get(i).getPrecio() +"€");
+		}
 	}
 	
 	@Override

@@ -17,82 +17,27 @@
      </vaadin-button> 
      <vaadin-text-field _id="buscarF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-table selectable width-full _id="modalidadesTabla"> 
+    <vaadin-grid width-full _id="modalidadesTabla"> 
      <table> 
       <colgroup> 
-       <col property-id="ID"> 
-       <col property-id="Tipo Servicio"> 
-       <col property-id="Nombre"> 
-       <col property-id="Visible"> 
-       <col property-id="Precio"> 
+       <col property-id="ID" sortable> 
+       <col property-id="Tipo Servicio" sortable> 
+       <col property-id="Nombre" sortable> 
+       <col property-id="Visible" sortable> 
+       <col property-id="Precio Totales" sortable> 
       </colgroup> 
-      <tbody> 
-       <tr item-id="1"> 
-        <td>1</td> 
-        <td>Teléfono Fijo</td> 
-        <td>Modalidad 03</td> 
-        <td>Sí</td> 
-        <td>14€</td> 
+      <thead> 
+       <tr default> 
+        <th plain-text>ID</th> 
+        <th plain-text>Tipo Servicio</th> 
+        <th plain-text>Nombre</th> 
+        <th plain-text>Visible</th> 
+        <th plain-text>Precio</th> 
        </tr> 
-       <tr item-id="2"> 
-        <td>2</td> 
-        <td>Ofertas</td> 
-        <td>Teléfono Fijo + Internet</td> 
-        <td>Sí</td> 
-        <td>30€</td> 
-       </tr> 
-       <tr item-id="3"> 
-        <td>3</td> 
-        <td>Teléfono Fijo</td> 
-        <td>Modalidad 05</td> 
-        <td>No</td> 
-        <td>22€</td> 
-       </tr> 
-       <tr item-id="4"> 
-        <td>4</td> 
-        <td>Internet</td> 
-        <td>Modalidad 01</td> 
-        <td>Sí</td> 
-        <td>35€</td> 
-       </tr> 
-       <tr item-id="5"> 
-        <td>5</td> 
-        <td>Televisión</td> 
-        <td>Canal 022</td> 
-        <td>Sí</td> 
-        <td>05€</td> 
-       </tr> 
-       <tr item-id="6"> 
-        <td>6</td> 
-        <td>Móvil</td> 
-        <td>Modalidad 08</td> 
-        <td>Sí</td> 
-        <td>16€</td> 
-       </tr> 
-       <tr item-id="7"> 
-        <td>7</td> 
-        <td>Ofertas</td> 
-        <td>Móvil + Teléfono Fijo</td> 
-        <td>No</td> 
-        <td>24€</td> 
-       </tr> 
-       <tr item-id="8"> 
-        <td>8</td> 
-        <td>Móvil</td> 
-        <td>Modalidad 03</td> 
-        <td>No</td> 
-        <td>06€</td> 
-       </tr> 
-       <tr item-id="9"> 
-        <td>9</td> 
-        <td>Internet</td> 
-        <td>Modalidad 09</td> 
-        <td>Sí</td> 
-        <td>45€</td> 
-       </tr> 
-      </tbody> 
+      </thead> 
+      <tbody></tbody> 
      </table> 
-    </vaadin-table> 
+    </vaadin-grid> 
     <vaadin-button plain-text _id="crearB" :center>
       Crear Modalidad 
     </vaadin-button> 

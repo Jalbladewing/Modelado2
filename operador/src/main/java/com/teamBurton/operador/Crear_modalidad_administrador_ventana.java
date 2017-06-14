@@ -40,6 +40,9 @@ public class Crear_modalidad_administrador_ventana extends VerticalLayout {
 	protected HorizontalLayout hLayoutVisibilidad;
 	protected CheckBox checkBx;
 	protected Label visibleL;
+	protected VerticalLayout vLayoutDatos;
+	protected Label consumoMaxL;
+	protected TextField consumoMaxF;
 	protected HorizontalLayout hLayoutBotones;
 	protected Button cancelarB;
 	protected Button confirmarB;
