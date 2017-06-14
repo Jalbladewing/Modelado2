@@ -12961,6 +12961,10 @@ div.v-layout.v-horizontal.v-widget {
 	overflow: hidden;
 }
 
+.newtheme .v-grid .v-grid-header th.v-grid-cell {
+	background-color: #0099CC;
+}
+
 .newtheme .backColorGrey {
 	background-color: #ACACAC;
 }

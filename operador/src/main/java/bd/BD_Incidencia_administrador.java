@@ -17,14 +17,16 @@ public class BD_Incidencia_administrador {
 	public boolean registrar_incidencia_llamada(String telefono) throws PersistentException 
 	{
 		boolean resultado = false;
-		Incidencia incidencia = null;
+		Incidencia_administrador incidencia = null;
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
-			incidencia = IncidenciaDAO.createIncidencia();
+			incidencia = Incidencia_administradorDAO.createIncidencia_administrador();
 			incidencia.setCliente(null);
 			incidencia.setComercial(null);
+			incidencia.setAdministrador((Administrador) AdministradorDAO.queryAdministrador(null, null).get(0));
+			incidencia.setCorreoComercial("Sin asignar");
 			incidencia.setFecha(new Date());
 			incidencia.setAsunto("Llamar al " + telefono);
 			incidencia.setCorreoCliente("Sin registrar");
@@ -66,14 +68,14 @@ public class BD_Incidencia_administrador {
 		return incidencias;
 	}
 
-	public boolean registrar_incidencia(Incidencia incidencia) throws PersistentException 
+	public boolean registrar_incidencia(Incidencia_administrador incidencia) throws PersistentException 
 	{
 		boolean resultado = false;
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
-			resultado = IncidenciaDAO.save(incidencia);
+			resultado = Incidencia_administradorDAO.save(incidencia);
 			
 			t.commit();
 			
@@ -154,19 +156,20 @@ public class BD_Incidencia_administrador {
 	public boolean registrar_incidencia_asignada(int idComercial, int idIncidencia) throws PersistentException 
 	{
 		Comercial comercial = null;
-		Incidencia incidencia = null;
+		Incidencia_administrador incidencia = null;
 		boolean resultado = false;
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
 			comercial = ComercialDAO.getComercialByORMID(idComercial);
-			incidencia = IncidenciaDAO.getIncidenciaByORMID(idIncidencia);
+			incidencia = Incidencia_administradorDAO.getIncidencia_administradorByORMID(idIncidencia);
 			
 			comercial.incidencia.add(incidencia);
 			incidencia.setComercial(comercial);
+			incidencia.setCorreoComercial(comercial.getEmail());
 			
-			resultado = IncidenciaDAO.save(incidencia);
+			resultado = Incidencia_administradorDAO.save(incidencia);
 			
 			if(resultado) resultado = ComercialDAO.save(comercial);
 			
@@ -182,12 +185,12 @@ public class BD_Incidencia_administrador {
 
 	public List cargar_incidencias() throws PersistentException 
 	{
-		List<Modalidad> modalidades = null;
+		List<Incidencia_administrador> incidencias = null;
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
-			modalidades = ModalidadDAO.queryModalidad(null, null);
+			incidencias = Incidencia_administradorDAO.queryIncidencia_administrador(null, null);
 			
 			t.commit();
 			
@@ -196,7 +199,7 @@ public class BD_Incidencia_administrador {
 			t.rollback();
 		}
 		
-		return modalidades;
+		return incidencias;
 	}
 
 	public Incidencia cargar_incidencia(int id) throws PersistentException  

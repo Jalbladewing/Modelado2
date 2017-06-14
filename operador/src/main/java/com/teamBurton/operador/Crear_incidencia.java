@@ -14,6 +14,8 @@ import bd.BD_Principal;
 import bd.Cliente;
 import bd.Incidencia;
 import bd.IncidenciaDAO;
+import bd.Incidencia_administrador;
+import bd.Incidencia_administradorDAO;
 import bdgui.IAdministrador;
 import bdgui.ICliente;
 import bdgui.IComercial;
@@ -87,9 +89,11 @@ public class Crear_incidencia extends Crear_incidencia_ventana implements View {
 			clienteIncidencia = (Cliente) ((NavigatorUI) UI.getCurrent()).getVistaCliente();
 		}
 		
-		Incidencia incidencia = IncidenciaDAO.createIncidencia();
+		Incidencia_administrador incidencia = Incidencia_administradorDAO.createIncidencia_administrador();
 		incidencia.setAsunto(asuntoF.getValue());
 		incidencia.setCliente(clienteIncidencia);
+		incidencia.setAdministrador(clienteIncidencia.getAdministrador());
+		incidencia.setCorreoComercial("Sin Asignar");
 		incidencia.setComercial(null);
 		incidencia.setFecha(new Date());
 		incidencia.setCorreoCliente(clienteIncidencia.getEmail());

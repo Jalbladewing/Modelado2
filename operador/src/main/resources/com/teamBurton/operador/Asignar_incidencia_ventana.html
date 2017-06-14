@@ -17,33 +17,27 @@
      </vaadin-button> 
      <vaadin-text-field _id="buscarF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-table selectable style-name="borderless no-horizontal-lines no-vertical-lines" width-full _id="comercialesTabla"> 
+    <vaadin-grid width-full _id="comercialesTabla"> 
      <table> 
       <colgroup> 
-       <col property-id="Nombre"> 
-       <col property-id="Apellidos"> 
-       <col property-id="Correo"> 
-       <col property-id="Incidencias Activas"> 
-       <col property-id="Incidencias Totales"> 
+       <col property-id="Nombre" sortable> 
+       <col property-id="Apellidos" sortable> 
+       <col property-id="Correo" sortable> 
+       <col property-id="Incidencias Activas" sortable> 
+       <col property-id="Incidencias Totales" sortable> 
       </colgroup> 
-      <tbody> 
-       <tr item-id="1"> 
-        <td>Jaume</td> 
-        <td>Sierra Castillo</td> 
-        <td>jsc342@msn.net</td> 
-        <td>1</td> 
-        <td>19</td> 
+      <thead> 
+       <tr default> 
+        <th plain-text>Nombre</th> 
+        <th plain-text>Apellidos</th> 
+        <th plain-text>Correo</th> 
+        <th plain-text>Incidencias Activas</th> 
+        <th plain-text>Incidencias Totales</th> 
        </tr> 
-       <tr item-id="2"> 
-        <td>Francisco</td> 
-        <td>Marques Piqueras</td> 
-        <td>fmp679@msn.net</td> 
-        <td>3</td> 
-        <td>45</td> 
-       </tr> 
-      </tbody> 
+      </thead> 
+      <tbody></tbody> 
      </table> 
-    </vaadin-table> 
+    </vaadin-grid> 
    </vaadin-vertical-layout> 
   </vaadin-vertical-layout>  
  </body>

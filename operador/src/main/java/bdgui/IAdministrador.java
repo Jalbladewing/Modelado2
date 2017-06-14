@@ -12,6 +12,7 @@ import bd.Canal;
 import bd.Oferta;
 import bd.Modalidad;
 import bd.Incidencia;
+import bd.Incidencia_administrador;
 
 public interface IAdministrador {
 
@@ -69,7 +70,7 @@ public interface IAdministrador {
 
 	public List cargar_incidencias_cliente(int idCliente);
 
-	public boolean registrar_incidencia(Incidencia incidencia);
+	public boolean registrar_incidencia(Incidencia_administrador incidencia);
 
 	public boolean contratar_modalidad(int idCliente, int idModalidad);
 

@@ -222,7 +222,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return modalidades;
 	}
 
-	public boolean registrar_incidencia(Incidencia incidencia) {
+	public boolean registrar_incidencia(Incidencia_administrador incidencia) {
 		try {
 			return _bd_incid_admin.registrar_incidencia(incidencia);
 		} catch (PersistentException e) {

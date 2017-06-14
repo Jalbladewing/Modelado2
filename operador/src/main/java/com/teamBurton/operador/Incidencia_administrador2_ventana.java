@@ -35,10 +35,10 @@ public class Incidencia_administrador2_ventana extends VerticalLayout {
 	protected Label descripcionL;
 	protected TextArea descripcionArea;
 	protected Label observacionL;
-	protected TextArea observacionA;
+	protected TextArea observacionArea;
 	protected HorizontalLayout hLayoutEstado;
 	protected Label estadoTituloL;
-	protected Label estadovalorL;
+	protected Label estadoValorL;
 	protected HorizontalLayout hLayoutBotones;
 	protected Button atrasB;
 	protected Button resolverB;

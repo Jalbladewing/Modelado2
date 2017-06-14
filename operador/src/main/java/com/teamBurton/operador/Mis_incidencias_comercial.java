@@ -43,9 +43,9 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
-				int id = (int) rowId;
+				int id =  Integer.parseInt(todasTab.getContainerDataSource().getItem(rowId).getItemProperty("Nº Incidencia").getValue().toString());
 				
-				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + incidencias.get(id-1).getID() );
+				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + id );
 				
 			}
 		});
@@ -57,9 +57,9 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
-				int id = (int) rowId;
+				int id =  Integer.parseInt(llamadaTab.getContainerDataSource().getItem(rowId).getItemProperty("Nº Incidencia").getValue().toString());
 				
-				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + incidencias.get(id-1).getID() );
+				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + id );
 				
 			}
 		});
@@ -71,9 +71,9 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
-				int id = (int) rowId;
+				int id =  Integer.parseInt(pendientesTab.getContainerDataSource().getItem(rowId).getItemProperty("Nº Incidencia").getValue().toString());
 				
-				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + incidencias.get(id-1).getID() );
+				doNavigate(Incidencia_comercial.VIEW_NAME + "/" + id );
 				
 			}
 		});
@@ -85,9 +85,9 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
-				int id = (int) rowId;
+				int id =  Integer.parseInt(resueltasTab.getContainerDataSource().getItem(rowId).getItemProperty("Nº Incidencia").getValue().toString());
 				
-				doNavigate(Incidencia_comercial.VIEW_NAME + "/" +  incidencias.get(id-1).getID() );
+				doNavigate(Incidencia_comercial.VIEW_NAME + "/" +  id );
 				
 			}
 		});

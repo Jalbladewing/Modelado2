@@ -43,6 +43,7 @@ public class Administrador2 extends Administrador2_ventana {
 		navigator.addView(Gestion_modalidades.VIEW_NAME, Gestion_modalidades.class);
 		navigator.addView(Modalidad_gestion_administrador.VIEW_NAME, Modalidad_gestion_administrador.class);
 		navigator.addView(Asignar_incidencia.VIEW_NAME, Asignar_incidencia.class);
+		navigator.addView(Incidencia_administrador2.VIEW_NAME, Incidencia_administrador2.class);
 		navigator.addView(Alta_comercial.VIEW_NAME, Alta_comercial.class);
 		navigator.addView(Crear_modalidad_administrador.VIEW_NAME, Crear_modalidad_administrador.class);
 		navigator.addView(Add_modalidad.VIEW_NAME, Add_modalidad.class);

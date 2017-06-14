@@ -8,6 +8,7 @@ import java.util.List;
 import bd.Canal;
 import bd.Cliente;
 import bd.Incidencia;
+import bd.Incidencia_administrador;
 import bd.Modalidad;
 import bd.Movil;
 import bd.Oferta;
@@ -51,7 +52,7 @@ public interface IComercial {
 
 	public List cargar_incidencias_cliente(int idCliente);
 
-	public boolean registrar_incidencia(Incidencia incidencia);
+	public boolean registrar_incidencia(Incidencia_administrador incidencia);
 
 	public boolean contratar_modalidad(int aIdCliente, int idModalidad);
 
