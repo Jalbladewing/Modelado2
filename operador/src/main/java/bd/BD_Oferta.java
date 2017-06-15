@@ -409,4 +409,11 @@ public class BD_Oferta {
 		// TODO Auto-generated method stub
 		return null;
 	}*/
+
+	/*
+	public Modalidad cargar_modalidad(int idModalidad)throws PersistentException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	*/
 }

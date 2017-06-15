@@ -266,46 +266,39 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return clientes;
 	}
 
-	
-	 public boolean registrar_cliente(Cliente cliente) 
-	 { 
-		 Usuario u; String pass;
-		 Gestor_Correos gestor = new Gestor_Correos(); 
-		 try 
-		 { 
-			 u = _bd_clien.verificar_usuario(cliente.getEmail()); 
-			 if (u == null)
-			 { 
-				 u = _bd_comer.verificar_usuario(cliente.getEmail()); 
-				 
-				 if (u == null) 
-				 { 
-					 u = _bd_admin.verificar_usuario(cliente.getEmail());
-				 } 
-				 
-				 if (u == null) 
-				 { 
-					 pass = _bd_clien.generar_password(); 
-					 cliente.setPassword(pass);
-	 
-					 if(_bd_clien.registrar_cliente(cliente)) 
-					 {
-						 return gestor.enviar_correo_registro_password(cliente.getEmail(),cliente.getPassword());
-					 }
-				 } 
+	public boolean registrar_cliente(Cliente cliente) {
+		Usuario u;
+		String pass;
+		Gestor_Correos gestor = new Gestor_Correos();
+		try {
+			u = _bd_clien.verificar_usuario(cliente.getEmail());
+			if (u == null) {
+				u = _bd_comer.verificar_usuario(cliente.getEmail());
+
+				if (u == null) {
+					u = _bd_admin.verificar_usuario(cliente.getEmail());
+				}
+
+				if (u == null) {
+					pass = _bd_clien.generar_password();
+					cliente.setPassword(pass);
+
+					if (_bd_clien.registrar_cliente(cliente)) {
+						return gestor.enviar_correo_registro_password(cliente.getEmail(), cliente.getPassword());
+					}
+				}
 			}
-	 
-		 } catch (PersistentException e) 
-		 { 
-			 // TODO Auto-generated catch block
-			 e.printStackTrace();
-			 return false; 
-		 } 
-		
-		 return false;
-	 
-	 }
-	 
+
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+
+		return false;
+
+	}
+
 	public boolean contratar_modalidad(int idCliente, int idModalidad) {
 		try {
 			return _bd_clien.registrar_modalidad_contratada(idCliente, idModalidad);
@@ -700,7 +693,28 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return factura;
 	}
+	
 
 
+	@Override
+	public Modalidad cargar_modalidad(int idModalidad) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+/*
+	@Override
+	public Modalidad cargar_modalidad(int idModalidad) {
+
+		Modalidad modalidad = null;
+		try {
+			return _bd_ofer.cargar_modalidad(idModalidad);
+		} catch (PersistentException e) {
+
+			e.printStackTrace();
+		}
+		return modalidad;
+
+	}*/
 
 }

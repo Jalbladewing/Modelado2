@@ -105,4 +105,6 @@ public interface IAdministrador {
 	public Incidencia cargar_incidencia(int id);
 	
 	public Factura cargar_factura(int id);
+	
+	public Modalidad cargar_modalidad(int idModalidad);
 }
