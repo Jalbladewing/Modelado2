@@ -1,6 +1,7 @@
 package bd;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
@@ -312,7 +313,7 @@ public class BD_Oferta {
 			
 			for(int i = 0; i < usuarios.size(); i++)
 			{
-				cliente = ClienteDAO.getClienteByORMID(((Cliente)usuarios.get(i)).getORMID());
+				cliente = ClienteDAO.getClienteByORMID(((Cliente)usuarios.get(i)).getID());
 				
 				_contrato = contratoDAO.createContrato();
 				_contrato.setCliente(cliente);
@@ -342,26 +343,41 @@ public class BD_Oferta {
 		boolean resultado = false;
 		Modalidad modalidad = null;
 		Cliente cliente = null;
+		List<contrato> _contrato = null;
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
 			modalidad = ModalidadDAO.getModalidadByORMID(idAntiguo);
+			_contrato = contratoDAO.queryContrato(null, null);
+			
 			
 			for(int i = 0; i < modalidad.getClientes().length; i++)
 			{
-				cliente = ClienteDAO.getClienteByORMID(modalidad.getClientes()[i].getORMID());
+				cliente = ClienteDAO.getClienteByORMID(modalidad.getClientes()[i].getID());
 				
 				cliente.contratos.remove(cliente.getContratoByModalidad(modalidad));
 				
-				modalidad.removeCliente(cliente);
 				
 				resultado = ClienteDAO.save(cliente);
 				
 				if(!resultado) break;
 			}
 			
-			if(resultado) resultado = ModalidadDAO.refresh(modalidad);
+			modalidad.contratos.clear();
+			
+			if(resultado) resultado = ModalidadDAO.save(modalidad);
+			
+			for(int i = 0; i < _contrato.size(); i++)
+			{
+				if(_contrato.get(i).getModalidad().getID() == idAntiguo)
+				{
+					resultado = contratoDAO.delete(_contrato.get(i));
+					
+					if(!resultado) break;
+				}		
+				
+			}
 			
 						
 			t.commit();
@@ -378,11 +394,14 @@ public class BD_Oferta {
 	{
 		Modalidad modalidad = null;
 		boolean resultado = false;
+		Calendar fecha = Calendar.getInstance();
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
 			modalidad = ModalidadDAO.getModalidadByORMID(idModalidad);
+			fecha.add(Calendar.DATE, dias);
+			modalidad.setFechaEliminacion(fecha.getTime());
 			resultado = ModalidadDAO.save(modalidad);
 			
 			t.commit();
@@ -410,10 +429,24 @@ public class BD_Oferta {
 		return null;
 	}*/
 
-	/*
-	public Modalidad cargar_modalidad(int idModalidad)throws PersistentException {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public Modalidad cargar_modalidad(int idModalidad)throws PersistentException 
+	{
+		Modalidad modalidad = null;
+		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+		
+		try
+		{
+			modalidad = ModalidadDAO.getModalidadByORMID(idModalidad);
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+		
+		return modalidad;
 	}
-	*/
+	
 }

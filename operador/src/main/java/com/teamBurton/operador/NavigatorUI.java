@@ -15,6 +15,8 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.UI;
 
+import bd.Modalidad;
+import bd.ModalidadDAO;
 import bd.Usuario;
 
 import com.vaadin.ui.Button.ClickEvent;
@@ -28,6 +30,7 @@ public class NavigatorUI extends UI {
     private Usuario usuario;
     private Usuario vistaCliente;
     private Usuario vistaComercial;
+    private Modalidad gestionModalidad;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -90,6 +93,16 @@ public class NavigatorUI extends UI {
     public Usuario getVistaComercial()
     {
     	return vistaComercial;
+    }
+    
+    public void setGestionModalidad(Modalidad modalidad)
+    {
+    	gestionModalidad = modalidad;
+    }
+    
+    public Modalidad getGestionModalidad()
+    {
+    	return gestionModalidad;
     }
     
 }

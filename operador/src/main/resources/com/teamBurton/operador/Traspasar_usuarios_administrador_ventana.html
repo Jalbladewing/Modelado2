@@ -11,27 +11,23 @@
      Traspasar Usuarios 
    </vaadin-label> 
    <vaadin-vertical-layout spacing margin _id="vLayout" :center> 
-    <vaadin-table selectable style-name="borderless no-horizontal-lines no-vertical-lines" width-full _id="usuariosTabla"> 
+    <vaadin-grid width-full _id="usuariosTabla"> 
      <table> 
       <colgroup> 
-       <col property-id="Nombre"> 
-       <col property-id="Apellidos"> 
-       <col property-id="Correo"> 
+       <col property-id="Nombre" sortable> 
+       <col property-id="Apellidos" sortable> 
+       <col property-id="Correo" sortable> 
       </colgroup> 
-      <tbody> 
-       <tr item-id="1"> 
-        <td>Perico</td> 
-        <td>Dominique Contreras</td> 
-        <td>pdc64@gmail.com</td> 
+      <thead> 
+       <tr default> 
+        <th plain-text>Nombre</th> 
+        <th plain-text>Apellidos</th> 
+        <th plain-text>Correo</th> 
        </tr> 
-       <tr item-id="2"> 
-        <td>Jose</td> 
-        <td>Mota Castillo</td> 
-        <td>motaca87@hotmail.es</td> 
-       </tr> 
-      </tbody> 
+      </thead> 
+      <tbody></tbody> 
      </table> 
-    </vaadin-table> 
+    </vaadin-grid> 
     <vaadin-horizontal-layout spacing width="25%" _id="hLayoutBotones" :center> 
      <vaadin-button plain-text _id="cancelarB">
        Cancelar 

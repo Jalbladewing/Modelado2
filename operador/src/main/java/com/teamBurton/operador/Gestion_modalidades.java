@@ -13,6 +13,8 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import bd.BD_Principal;
 import bd.Modalidad;
+import bd.ModalidadDAO;
+import bd.Oferta;
 import bdgui.IAdministrador;
 
 public class Gestion_modalidades extends Gestion_modalidades_ventana implements View {
@@ -35,19 +37,21 @@ public class Gestion_modalidades extends Gestion_modalidades_ventana implements 
 		
 		cargar_modalidades_gestion_modalidades();
 		
-		/*modalidadesTabla.addItemClickListener(new ItemClickListener() 
+		modalidadesTabla.addItemClickListener(new ItemClickListener() 
 		{
 			
 			@Override
 			public void itemClick(ItemClickEvent event) 
 			{
 				Object rowId = event.getItemId();
-				String nombre = (String) modalidadesTabla.getContainerProperty(rowId, "Nombre").getValue();
+				int id = (int) rowId;
+
+				((NavigatorUI) UI.getCurrent()).setGestionModalidad(modalidades.get(id-1));
 				
-				doNavigate(Modalidad_gestion_administrador.VIEW_NAME + "/" + nombre);
+				doNavigate(Modalidad_gestion_administrador.VIEW_NAME);
 				
 			}
-		});*/
+		});
 		
 		crearB.addClickListener(new Button.ClickListener() 
 		{ 

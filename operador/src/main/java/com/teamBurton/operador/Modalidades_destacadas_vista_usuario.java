@@ -10,12 +10,14 @@ import com.vaadin.ui.UI;
 import bd.BD_Principal;
 import bd.Modalidad;
 import bd.Oferta;
+import bdgui.IAdministrador;
 import bdgui.IComercial;
 
 public class Modalidades_destacadas_vista_usuario extends Modalidades_destacadas_vista_usuario_ventana implements View {
 	public Usuario_gestion_comercial _unnamed_Usuario_gestion_comercial_;
 	public static final String VIEW_NAME = "modalidades_destacadas_vista_usuario";
 	private IComercial comercial = new BD_Principal();
+	private IAdministrador administrador = new BD_Principal();
 
 	public Modalidades_destacadas_vista_usuario()
 	{
@@ -24,12 +26,20 @@ public class Modalidades_destacadas_vista_usuario extends Modalidades_destacadas
 	
 	public void cargar_modalidades_destacadas()
 	{
-		List<Modalidad> modalidades = comercial.cargar_modalidades_destacadas();
+		List<Modalidad> modalidades; 
 		List<Modalidad> modalidades_oferta;
 		Oferta oferta_destacada;
 		Modalidad_servicio servicio;
 		Modalidad_oferta_generico oferta;
 	    Modalidad_individual_generico individual;
+	    
+	    if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
+	    {
+	    	modalidades = comercial.cargar_modalidades_destacadas();
+	    }else
+	    {
+	    	modalidades = administrador.cargar_modalidades_destacadas();
+	    }
 		
 		for(int i = 0; i < modalidades.size(); i++)
 		{

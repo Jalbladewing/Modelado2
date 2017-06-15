@@ -40,6 +40,9 @@ public class Modalidad_gestion_administrador_ventana extends VerticalLayout {
 	protected HorizontalLayout hLayoutVisible;
 	protected CheckBox visibleCheckBx;
 	protected Label visibleL;
+	protected VerticalLayout vLayoutDatos;
+	protected Label consumoMaxL;
+	protected TextField consumoMaxF;
 	protected HorizontalLayout hLayoutBotones;
 	protected Button cancelarB;
 	protected VerticalLayout vLayoutBotones;

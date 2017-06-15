@@ -698,13 +698,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 
 	@Override
 	public Modalidad cargar_modalidad(int idModalidad) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-/*
-	@Override
-	public Modalidad cargar_modalidad(int idModalidad) {
 
 		Modalidad modalidad = null;
 		try {
@@ -715,6 +708,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return modalidad;
 
-	}*/
+	}
 
 }

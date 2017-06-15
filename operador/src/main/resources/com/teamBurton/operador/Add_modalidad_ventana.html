@@ -17,33 +17,30 @@
      </vaadin-button> 
      <vaadin-text-field _id="buscarF"></vaadin-text-field> 
     </vaadin-horizontal-layout> 
-    <vaadin-table selectable style-name="borderless no-horizontal-lines no-vertical-lines" width-full _id="modalidadesTabla"> 
+    <vaadin-grid width-full _id="modalidadesTabla"> 
      <table> 
       <colgroup> 
-       <col property-id="Id"> 
-       <col property-id="Tipo Servicio"> 
-       <col property-id="Nombre"> 
-       <col property-id="Visible"> 
-       <col property-id="Precio"> 
+       <col property-id="ID" sortable> 
+       <col property-id="Tipo Servicio" sortable> 
+       <col property-id="Nombre" sortable> 
+       <col property-id="Visible" sortable> 
+       <col property-id="Precio Totales" sortable> 
       </colgroup> 
-      <tbody> 
-       <tr item-id="1"> 
-        <td>1</td> 
-        <td>Internet</td> 
-        <td>Fibra (300MB)</td> 
-        <td>Si</td> 
-        <td>1€</td> 
+      <thead> 
+       <tr default> 
+        <th plain-text>ID</th> 
+        <th plain-text>Tipo Servicio</th> 
+        <th plain-text>Nombre</th> 
+        <th plain-text>Visible</th> 
+        <th plain-text>Precio</th> 
        </tr> 
-       <tr item-id="2"> 
-        <td>2</td> 
-        <td>Móvil</td> 
-        <td>Llamadas ilimitadas</td> 
-        <td>Si</td> 
-        <td>20€</td> 
-       </tr> 
-      </tbody> 
+      </thead> 
+      <tbody></tbody> 
      </table> 
-    </vaadin-table> 
+    </vaadin-grid> 
+    <vaadin-button plain-text _id="atrasB" :center>
+      Atrás 
+    </vaadin-button> 
    </vaadin-vertical-layout> 
   </vaadin-vertical-layout>  
  </body>

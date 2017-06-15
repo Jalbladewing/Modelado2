@@ -23,7 +23,7 @@ public class Modalidad_oferta_television_modificar_ventana extends VerticalLayou
 	protected ListSelect modalidadesLista;
 	protected HorizontalLayout hLayout;
 	protected Button removeB;
-	protected Button addButton;
+	protected Button addB;
 
 	public Modalidad_oferta_television_modificar_ventana() {
 		Design.read(this);
