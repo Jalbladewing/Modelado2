@@ -92,13 +92,7 @@ public interface IAdministrador {
 	
 	public Canal cargar_canal(String nombre);
 	
-	public Movil cargar_modalidad_movil(String nombre);
-	
-	public Modalidad cargar_modalidad_internet(String nombre);
-	
-	public Modalidad cargar_modalidad_telefono_fijo(String nombre);
-	
-	public Paquete cargar_modalidad_paquete(String nombre);
+	public Modalidad cargar_modalidad_nombre(String nombre);
 	
 	public Oferta cargar_modalidad_oferta(String nombre);
 	
@@ -107,4 +101,6 @@ public interface IAdministrador {
 	public Factura cargar_factura(int id);
 	
 	public Modalidad cargar_modalidad(int idModalidad);
+	
+	public boolean baja_modalidad_cliente(int idCliente, int idModalidad);
 }

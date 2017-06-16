@@ -55,7 +55,7 @@ public class Telefono_fijo extends Telefono_fijo_ventana implements View{
 		for(int i = 0; i < modalidades.size(); i++)
 		{
 			if(!modalidades.get(i).getVisibilidad()) continue;
-			servicio = new Modalidad_servicio();
+			servicio = new Modalidad_servicio(modalidades.get(i).getID());
 			servicio.tituloL.setValue(modalidades.get(i).getNombre());
 			servicio.caracteristicasL.setValue(modalidades.get(i).getCaracteristicas());
 			servicio.precioL.setValue(modalidades.get(i).getPrecio()+"€");

@@ -413,21 +413,46 @@ public class BD_Oferta {
 		
 		return resultado;
 	}
-/*
-	public Modalidad cargar_modalidad_internet(String nombre)  throws PersistentException {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public Modalidad cargar_modalidad_nombre(String nombre)throws PersistentException 
+	{
+		Modalidad modalidad = null;
+    	PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+    	try
+		{
+    		ModalidadCriteria modalidadCriteria = new ModalidadCriteria();
+    		modalidadCriteria.nombre.eq(nombre);
+    		modalidad = ModalidadDAO.loadModalidadByCriteria(modalidadCriteria);
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+    	
+    	return modalidad;
 	}
 
-	public Modalidad cargar_modalidad_telefono_fijo(String nombre)throws PersistentException {
-		// TODO Auto-generated method stub
-		return null;
+	public Oferta cargar_modalidad_oferta(String nombre) throws PersistentException
+	{
+		Oferta oferta = null;
+    	PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+    	try
+		{
+    		OfertaCriteria ofertaCriteria = new OfertaCriteria();
+    		ofertaCriteria.nombre.eq(nombre);
+    		oferta = OfertaDAO.loadOfertaByCriteria(ofertaCriteria);
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+    	
+    	return oferta;
 	}
-
-	public Oferta cargar_modalidad_oferta(String nombre) throws PersistentException{
-		// TODO Auto-generated method stub
-		return null;
-	}*/
 
 	
 	public Modalidad cargar_modalidad(int idModalidad)throws PersistentException 

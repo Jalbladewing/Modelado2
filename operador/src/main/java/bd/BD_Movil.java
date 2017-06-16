@@ -69,9 +69,4 @@ public class BD_Movil {
 		
 		return resultado;
 	}
-
-	/*public Movil cargar_modalidad_movil(String nombre)throws PersistentException {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
 }

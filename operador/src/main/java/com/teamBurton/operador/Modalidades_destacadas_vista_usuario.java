@@ -47,7 +47,7 @@ public class Modalidades_destacadas_vista_usuario extends Modalidades_destacadas
 			if(modalidades.get(i).getTipo().equals("oferta"))
 			{
 				if(!modalidades.get(i).getVisibilidad()) continue;
-				oferta = new Modalidad_oferta_generico();
+				oferta = new Modalidad_oferta_generico(modalidades.get(i).getID());
 				oferta_destacada = (Oferta) modalidades.get(i);
 				modalidades_oferta = Arrays.asList(oferta_destacada.modalidad.toArray());
 				
@@ -66,7 +66,7 @@ public class Modalidades_destacadas_vista_usuario extends Modalidades_destacadas
 				
 			}else //Si no es una oferta se añade directamente
 			{
-				servicio = new Modalidad_servicio();
+				servicio = new Modalidad_servicio(modalidades.get(i).getID());
 				servicio.tituloL.setValue(modalidades.get(i).getNombre());
 				servicio.caracteristicasL.setValue(modalidades.get(i).getCaracteristicas());
 				servicio.precioL.setValue(modalidades.get(i).getPrecio()+"€");

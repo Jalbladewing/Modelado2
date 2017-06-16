@@ -1,11 +1,16 @@
 package com.teamBurton.operador;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Vector;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
+
+import bd.Cliente;
+import bd.contrato;
 
 public class Paquete2 extends Paquete2_ventana {
 	/*private Label _listaCanalLabel;
@@ -14,11 +19,13 @@ public class Paquete2 extends Paquete2_ventana {
 	public Television2 _unnamed_Television2_;
 	public Vector<Canal2> _canal = new Vector<Canal2>();
 	public Contratar_generico _contrata;
+	private int idModalidad;
+	private boolean contratacion = false;
 	
-	public Paquete2()
+	public Paquete2(int id)
 	{
 		Window subWindow = new Window("Contratar");	
-		
+		idModalidad = id;
 		
 		
 		contratarB.addClickListener(new Button.ClickListener() 
@@ -37,17 +44,60 @@ public class Paquete2 extends Paquete2_ventana {
 					UI.getCurrent().addWindow(subWindow);
 				}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
 				{
+					contratacion = comprobarContratacion();
+					
 					subWindow.setModal(true);
 					subWindow.setResizable(false);
-					subWindow.setContent(new Contratar_vista_usuario());
+					subWindow.setContent(new Contratar_vista_usuario(tituloL.getValue(), contratacion, idModalidad));
 					UI.getCurrent().addWindow(subWindow);
+					
 				}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
 				{
-					doNavigate(Crear_incidencia.VIEW_NAME + "/" + "contratacion" +";" +tituloL.getValue());
+					contratacion = comprobarContratacion();
+					
+					if(contratacion)
+					{
+						subWindow.setModal(true);
+						subWindow.setResizable(false);
+						subWindow.setContent(new Contratar_cliente(tituloL.getValue()));
+						UI.getCurrent().addWindow(subWindow);
+					}else
+					{
+						doNavigate(Crear_incidencia.VIEW_NAME + "/" + "contratacion" +";" +tituloL.getValue());
+					}
+							
 				}
 				
 			}
 		});
+	}
+	
+	public boolean comprobarContratacion()
+	{
+		Cliente cliente;
+		List<contrato> contratos;
+		
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
+		{
+			cliente = (Cliente) ((NavigatorUI) UI.getCurrent()).getUsuario();
+		}else
+		{
+			cliente = (Cliente) ((NavigatorUI) UI.getCurrent()).getVistaCliente();
+		}
+		
+
+		
+		contratos = Arrays.asList(cliente.contratos.toArray());
+		
+		for(int i = 0; i < contratos.size(); i++)
+		{
+			if(contratos.get(i).getModalidad().getID() == idModalidad)
+			{
+				return true;
+			}
+		}
+		
+		return false;
 	}
 	
 	private void doNavigate(String viewName) {

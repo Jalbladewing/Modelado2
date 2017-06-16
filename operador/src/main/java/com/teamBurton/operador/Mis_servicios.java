@@ -1,6 +1,7 @@
 package com.teamBurton.operador;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
@@ -11,8 +12,11 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
 import bd.BD_Principal;
+import bd.Canal;
 import bd.Modalidad;
 import bd.Movil;
+import bd.Oferta;
+import bd.Paquete;
 import bd.Television;
 import bdgui.IAdministrador;
 import bdgui.ICliente;
@@ -24,26 +28,11 @@ public class Mis_servicios extends Mis_servicios_ventana implements View {
 	public Vector<Servicio> _servicio = new Vector<Servicio>();
 	public static final String VIEW_NAME = "mis_servicios";
 	private ICliente cliente = new BD_Principal();
-	private IComercial comercial = new BD_Principal();
-	private IAdministrador administrador = new BD_Principal();
 	
 	public Mis_servicios()
 	{
 
 		cargar_modalidades_mis_servicios();
-		
-		/*for(int i = 0; i < ofertas.size(); i++)
-		{
-			ofertas.get(i).addClickListener(new Button.ClickListener() {
-				
-				@Override
-				public void buttonClick(ClickEvent event) 
-				{
-					doNavigate(Modalidad_oferta_cliente.VIEW_NAME + "/" + event.getButton().getCaption());
-					
-				}
-			});
-		}*/
 		
 	}
 	
@@ -51,24 +40,20 @@ public class Mis_servicios extends Mis_servicios_ventana implements View {
 	{
 		List<Modalidad> modalidades;
 		
-		//Según si estamos en vista cliente o en cliente.
-		if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
-		{
-			modalidades = comercial.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
-		}else if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Administrador"))
-		{
-			
-			modalidades = administrador.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getVistaCliente().getID());
-		}else
-		{
-			modalidades = cliente.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
-		}
+		modalidades = cliente.cargar_modalidades_mis_servicios(((NavigatorUI) UI.getCurrent()).getUsuario().getID());
 		
+		
+		Oferta oferta;
+		List<Modalidad> modalidadesOferta;
 		Servicio television = new Servicio();
 		Servicio internet = new Servicio();
 		Servicio telefono = new Servicio();
 		Servicio movil = new Servicio();
 		Button boton;
+		boolean ofertaTelevision = false;
+		boolean ofertaInternet = false;
+		boolean ofertaTelefono = false;
+		boolean ofertaMovil = false;
 		
 		television.tituloL.setValue("Televisión");
 		internet.tituloL.setValue("Internet");
@@ -102,7 +87,54 @@ public class Mis_servicios extends Mis_servicios_ventana implements View {
 				
 			}else
 			{
-				//FALTA LA PARTE DE OFERTAS
+				oferta = (Oferta) modalidades.get(i);
+				modalidadesOferta = Arrays.asList(oferta.modalidad.toArray());
+				
+				for(int j = 0; j < modalidadesOferta.size(); j++)
+				{
+					boton = new Button(modalidades.get(i).getNombre());
+					boton.addStyleName("link");
+					
+					if(modalidadesOferta.get(j).getTipo().equals("television") && !ofertaTelevision)
+					{
+						television.noServiciosL.setVisible(false);
+						television.vLayoutModalidadesB.addComponent(boton);
+						ofertaTelevision = true;
+						
+					}else if(modalidadesOferta.get(j).getTipo().equals("internet") && !ofertaInternet)
+					{
+						internet.noServiciosL.setVisible(false);
+						internet.vLayoutModalidadesB.addComponent(boton);
+						ofertaInternet = true;
+						
+					}else if(modalidadesOferta.get(j).getTipo().equals("telefonoFijo") && !ofertaTelefono)
+					{
+						telefono.noServiciosL.setVisible(false);
+						telefono.vLayoutModalidadesB.addComponent(boton);
+						ofertaTelefono = true;
+						
+					}else if(modalidadesOferta.get(j).getTipo().equals("movil") && !ofertaMovil)
+					{
+						movil.noServiciosL.setVisible(false);
+						movil.vLayoutModalidadesB.addComponent(boton);
+						ofertaMovil = true;
+					}
+					
+					boton.addClickListener(new Button.ClickListener() {
+						
+						@Override
+						public void buttonClick(ClickEvent event)
+						{
+							doNavigate(Modalidad_oferta_cliente.VIEW_NAME + "/" + event.getButton().getCaption());
+						
+						}
+					});
+				}
+				
+				ofertaTelevision = false;
+				ofertaInternet = false;
+				ofertaTelefono = false;
+				ofertaMovil = false;
 			}
 			
 			if(!modalidades.get(i).getTipo().equals("oferta"))

@@ -202,20 +202,25 @@ public class BD_Cliente {
 	{
 		Cliente cliente = null;
 		Modalidad modalidad = null;
+		contrato _contrato = null;
 		boolean resultado = false;
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
 			cliente = ClienteDAO.getClienteByORMID(idCliente);
-			
 			modalidad = ModalidadDAO.getModalidadByORMID(idModalidad);
 			
-			cliente.removeModalidad(modalidad);
+			_contrato = cliente.getContratoByModalidad(modalidad);
+			
+			cliente.contratos.remove(_contrato);
+			modalidad.contratos.remove(_contrato);
+			
+			resultado = ClienteDAO.save(cliente);
+			if(resultado) resultado = ModalidadDAO.save(modalidad);
+			if(resultado) resultado = contratoDAO.delete(_contrato);
 			
 			t.commit();
-			
-			resultado = true;
 			
 		}catch(Exception e)
 		{

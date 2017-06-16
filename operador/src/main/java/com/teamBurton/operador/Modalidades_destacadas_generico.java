@@ -57,7 +57,7 @@ public class Modalidades_destacadas_generico extends Modalidades_destacadas_gene
 			//Si es una oferta se "destripan" sus modalidades y se muestran
 			if(modalidades.get(i).getTipo().equals("oferta"))
 			{
-				oferta = new Modalidad_oferta_generico();
+				oferta = new Modalidad_oferta_generico(modalidades.get(i).getID());
 				oferta_destacada = (Oferta) modalidades.get(i);
 				modalidades_oferta = Arrays.asList(oferta_destacada.modalidad.toArray());
 				
@@ -76,7 +76,7 @@ public class Modalidades_destacadas_generico extends Modalidades_destacadas_gene
 				
 			}else //Si no es una oferta se añade directamente
 			{
-				servicio = new Modalidad_servicio();
+				servicio = new Modalidad_servicio(modalidades.get(i).getID());
 				servicio.tituloL.setValue(modalidades.get(i).getNombre());
 				servicio.caracteristicasL.setValue(modalidades.get(i).getCaracteristicas());
 				servicio.precioL.setValue(modalidades.get(i).getPrecio()+"€");

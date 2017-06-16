@@ -75,7 +75,7 @@ public class Television2 extends Television2_ventana implements View{
 		for(int i = 0; i < paquetes.size(); i++)
 		{
 			if(!paquetes.get(i).getVisibilidad()) continue;
-			paqueteL = new Paquete2();
+			paqueteL = new Paquete2(paquetes.get(i).getID());
 			paquete = paquetes.get(i);
 			paqueteL.tituloL.setValue(paquete.getNombre());
 			paqueteL.caracteristicasL.setValue(paquete.getCaracteristicas());

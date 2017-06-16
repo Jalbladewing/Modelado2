@@ -36,7 +36,7 @@ public class Usuario_gestion_comercial extends Usuario_gestion_comercial_ventana
 		navigator.addView(Internet.VIEW_NAME, Internet.class);
 		navigator.addView(Oferta2.VIEW_NAME, Oferta2.class);
 		navigator.addView(Perfil_vista_usuario.VIEW_NAME, Perfil_vista_usuario.class);
-		navigator.addView(Mis_servicios.VIEW_NAME, Mis_servicios.class);
+		navigator.addView(Mis_servicios_vista_usuario.VIEW_NAME, Mis_servicios_vista_usuario.class);
 		navigator.addView(Modalidad_individual_cliente.VIEW_NAME, Modalidad_individual_cliente.class);
 		navigator.addView(Modalidad_oferta_cliente.VIEW_NAME, Modalidad_oferta_cliente.class);
 		navigator.addView(Mis_facturas.VIEW_NAME, Mis_facturas.class);
@@ -173,7 +173,7 @@ MenuBar.Command mycommand = new MenuBar.Command() {
 					break;
 					
 				case "Mis Servicios":
-					doNavigate(Mis_servicios.VIEW_NAME);
+					doNavigate(Mis_servicios_vista_usuario.VIEW_NAME);
 					break;
 					
 				case "Mis Facturas":

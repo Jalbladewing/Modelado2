@@ -90,9 +90,4 @@ public class BD_Paquete {
 		
 		return canales;
 	}
-
-	/*public Paquete cargar_modalidad_paquete(String nombre)throws PersistentException  {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
 }

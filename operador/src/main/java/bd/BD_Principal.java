@@ -596,36 +596,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 	}
 
 	@Override
-	public Movil cargar_modalidad_movil(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Modalidad cargar_modalidad_internet(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Modalidad cargar_modalidad_telefono_fijo(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Paquete cargar_modalidad_paquete(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Oferta cargar_modalidad_oferta(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Canal cargar_canal(String nombre) {
 		Canal canal = null;
 		try {
@@ -636,40 +606,45 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		}
 		return canal;
 	}
-	/*
-	 * public Movil cargar_modalidad_movil(String nombre){ Movil movil = null;
-	 * try { return _bd_movil.cargar_modalidad_movil(nombre); } catch
-	 * (PersistentException e) {
-	 * 
-	 * e.printStackTrace(); } return movil; }
-	 * 
-	 * public Modalidad cargar_modalidad_internet(String nombre){ Modalidad
-	 * internet = null; try { return _bd_ofer.cargar_modalidad_internet(nombre);
-	 * } catch (PersistentException e) {
-	 * 
-	 * e.printStackTrace(); } return internet;
-	 * 
-	 * }
-	 * 
-	 * public Modalidad cargar_modalidad_telefono_fijo(String nombre){ Modalidad
-	 * telefono = null; try { return
-	 * _bd_ofer.cargar_modalidad_telefono_fijo(nombre); } catch
-	 * (PersistentException e) {
-	 * 
-	 * e.printStackTrace(); } return telefono; }
-	 * 
-	 * public Paquete cargar_modalidad_paquete(String nombre){ Paquete paquete =
-	 * null; try { return _bd_paq.cargar_modalidad_paquete(nombre); } catch
-	 * (PersistentException e) {
-	 * 
-	 * e.printStackTrace(); } return paquete; }
-	 * 
-	 * public Oferta cargar_modalidad_oferta(String nombre){ Oferta oferta =
-	 * null; try { return _bd_ofer.cargar_modalidad_oferta(nombre); } catch
-	 * (PersistentException e) {
-	 * 
-	 * e.printStackTrace(); } return oferta; }
-	 */
+	  
+	  public Modalidad cargar_modalidad_nombre(String nombre)
+	  { 
+		  Modalidad modalidad =  null; 
+		  
+		  try
+		  { 
+			  return _bd_ofer.cargar_modalidad_nombre(nombre); 
+			  
+		  } catch (PersistentException e) 
+		  {
+	  
+			  e.printStackTrace(); 
+			 
+		  } 
+		  
+		  return modalidad; 
+		  
+	  }
+	  
+	  public Oferta cargar_modalidad_oferta(String nombre)
+	  { 
+		  Oferta oferta =  null; 
+		  
+		  try 
+		  { 
+			  return _bd_ofer.cargar_modalidad_oferta(nombre); 
+			  
+		  } catch (PersistentException e)
+		  {
+	  
+			  e.printStackTrace(); 
+			 
+		  } 
+		  
+		  return oferta;
+		  
+	  }
+	 
 
 	@Override
 	public Incidencia cargar_incidencia(int id) {

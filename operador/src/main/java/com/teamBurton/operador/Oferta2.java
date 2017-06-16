@@ -60,7 +60,7 @@ public class Oferta2 extends Oferta2_ventana implements View{
 		for(int i = 0; i < modalidades.size(); i++)
 		{		
 			    if(!modalidades.get(i).getVisibilidad()) continue;
-				oferta = new Modalidad_oferta_generico();
+				oferta = new Modalidad_oferta_generico(modalidades.get(i).getID());
 				oferta_destacada = (Oferta) modalidades.get(i);
 				modalidades_oferta = Arrays.asList(oferta_destacada.modalidad.toArray());
 				
