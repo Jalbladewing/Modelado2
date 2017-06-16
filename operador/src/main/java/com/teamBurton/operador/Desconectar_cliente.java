@@ -28,5 +28,14 @@ public class Desconectar_cliente extends Desconectar_cliente_ventana {
 				
 			}
 		});
+		
+		cancelarB.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				UI.getCurrent().removeWindow((Window) getParent());
+				
+			}
+		});
 	}
 }

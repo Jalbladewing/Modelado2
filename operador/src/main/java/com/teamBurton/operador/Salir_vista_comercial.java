@@ -29,5 +29,14 @@ public class Salir_vista_comercial extends Salir_vista_comercial_ventana {
 				
 			}
 		});
+		
+		cancelarB.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				UI.getCurrent().removeWindow((Window) getParent());
+				
+			}
+		});
 	}
 }

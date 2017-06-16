@@ -25,5 +25,14 @@ public class Desconectar_comercial extends Desconectar_comercial_ventana {
 				
 			}
 		});
+		
+		cancelarB.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				UI.getCurrent().removeWindow((Window) getParent());
+				
+			}
+		});
 	}
 }

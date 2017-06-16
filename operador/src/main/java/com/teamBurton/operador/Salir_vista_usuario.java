@@ -49,5 +49,14 @@ public class Salir_vista_usuario extends Salir_vista_usuario_ventana {
 				
 			}
 		});
+		
+		cancelarB.addClickListener(new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				UI.getCurrent().removeWindow((Window) getParent());
+				
+			}
+		});
 	}
 }

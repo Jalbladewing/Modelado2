@@ -10,14 +10,17 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 
+import bd.BD_Principal;
 import bd.Cliente;
 import bd.Comercial;
 import bd.Usuario;
+import bdgui.IAdministrador;
 
 public class Perfil_vista_comercial extends Perfil_vista_comercial_ventana implements View {
 	public Mi_cuenta_vista_comercial _unnamed_Mi_cuenta_vista_comercial_;
 	public Dar_baja_comercial _daBaja;
 	public static final String VIEW_NAME = "perfil_vista_comercial";
+	private IAdministrador administrador = new BD_Principal();
 	private Comercial comercial;
 	
 	public Perfil_vista_comercial()
@@ -38,7 +41,8 @@ public class Perfil_vista_comercial extends Perfil_vista_comercial_ventana imple
 					UI.getCurrent().addWindow(subWindow);
 				}else
 				{
-					
+					cancelar_baja_comercial();
+					bajaB.setCaption("Dar de baja");
 				}
 			}
 		});
@@ -94,6 +98,13 @@ public class Perfil_vista_comercial extends Perfil_vista_comercial_ventana imple
 		vLayoutDatosNoModificables.addComponent(dato_noModificable);
 				
 		
+	}
+	
+	public void cancelar_baja_comercial()
+	{
+
+		administrador.cancelar_baja_comercial(comercial.getID());
+	
 	}
 
 	

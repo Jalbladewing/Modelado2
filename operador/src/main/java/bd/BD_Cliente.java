@@ -313,8 +313,25 @@ public class BD_Cliente {
        return password;
    }
 
-/*public boolean cancelar_baja_cliente(int idCliente)throws PersistentException {
-	// TODO Auto-generated method stub
-	return false;
-}*/
-	}
+  public boolean cancelar_baja_cliente(int idCliente)throws PersistentException 
+  {
+	  Cliente cliente = null;
+	  boolean resultado = false;
+	  PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+	  
+	  try
+	  {
+		    cliente = ClienteDAO.getClienteByORMID(idCliente);
+			cliente.setFechaEliminacion(null);
+			resultado = ClienteDAO.save(cliente);
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+	  
+	  return resultado;
+  }
+}

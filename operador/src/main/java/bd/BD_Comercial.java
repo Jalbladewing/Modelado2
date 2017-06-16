@@ -226,8 +226,25 @@ public class BD_Comercial {
 	       return password;
 	   }
 
-	/*public boolean cancelar_baja_comercial(int idComercial) throws PersistentException{
-		// TODO Auto-generated method stub
-		return false;
-	}*/
+	 public boolean cancelar_baja_comercial(int idComercial) throws PersistentException
+	 {
+		  Comercial comercial = null;
+		  boolean resultado = false;
+		  PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+		  
+		  try
+		  {
+			    comercial = ComercialDAO.getComercialByORMID(idComercial);
+			    comercial.setFechaEliminacion(null);
+				resultado = ComercialDAO.save(comercial);
+				
+				t.commit();
+				
+			}catch(Exception e)
+			{
+				t.rollback();
+			}
+		  
+		  return resultado;
+	}
 }

@@ -684,7 +684,7 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return modalidad;
 
 	}
-/*
+
 	@Override
 	public boolean cancelar_baja_comercial(int idComercial) {
 		try {
@@ -696,8 +696,8 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 
 		return false;
 	}
-	*/
-/*
+	
+
 	@Override
 	public boolean cancelar_eliminacion_modalidad(int idModalidad) {
 		try {
@@ -709,8 +709,8 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 
 		return false;
 	}
-	*/
-/*
+	
+
 	@Override
 	public boolean cancelar_baja_cliente(int idCliente) {
 		try {
@@ -720,24 +720,6 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 			e.printStackTrace();
 		}
 
-		return false;
-	}*/
-
-	@Override
-	public boolean cancelar_baja_comercial(int idComercial) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean cancelar_eliminacion_modalidad(int idModalidad) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean cancelar_baja_cliente(int idCliente) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

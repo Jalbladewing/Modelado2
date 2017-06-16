@@ -189,7 +189,8 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 					
 				}else
 				{
-					
+					cancelar_eliminacion_modalidad();
+					eliminarB.setCaption("Eliminar");
 				}
 				
 				
@@ -259,6 +260,11 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 	public void cargar_modalidad_gestion_administrador()
 	{
 		modalidades.add(administrador.cargar_modalidad(idModalidad));
+	}
+	
+	public void cancelar_eliminacion_modalidad()
+	{
+		administrador.cancelar_eliminacion_modalidad(modalidad.getID());
 	}
 
 	private void doNavigate(String viewName) {

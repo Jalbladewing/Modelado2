@@ -474,9 +474,26 @@ public class BD_Oferta {
 		return modalidad;
 	}
 
-	public boolean cancelar_eliminacion_modalidad(int idModalidad) throws PersistentException {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean cancelar_eliminacion_modalidad(int idModalidad) throws PersistentException 
+	{
+		Modalidad modalidad = null;
+		boolean resultado = false;
+		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
+		
+		try
+		{
+			modalidad = ModalidadDAO.getModalidadByORMID(idModalidad);
+			modalidad.setFechaEliminacion(null);
+			resultado = ModalidadDAO.save(modalidad);
+			
+			t.commit();
+			
+		}catch(Exception e)
+		{
+			t.rollback();
+		}
+		
+		return resultado;
 	}
 	
 }
