@@ -684,5 +684,61 @@ public class BD_Principal implements ICibernauta, ICliente, IComercial, IAdminis
 		return modalidad;
 
 	}
+/*
+	@Override
+	public boolean cancelar_baja_comercial(int idComercial) {
+		try {
+			return _bd_comer.cancelar_baja_comercial(idComercial);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+	*/
+/*
+	@Override
+	public boolean cancelar_eliminacion_modalidad(int idModalidad) {
+		try {
+			return _bd_ofer.cancelar_eliminacion_modalidad(idModalidad);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+	*/
+/*
+	@Override
+	public boolean cancelar_baja_cliente(int idCliente) {
+		try {
+			return _bd_clien.cancelar_baja_cliente(idCliente);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return false;
+	}*/
+
+	@Override
+	public boolean cancelar_baja_comercial(int idComercial) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean cancelar_eliminacion_modalidad(int idModalidad) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean cancelar_baja_cliente(int idCliente) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

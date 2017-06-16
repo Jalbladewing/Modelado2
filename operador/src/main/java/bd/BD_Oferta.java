@@ -473,5 +473,10 @@ public class BD_Oferta {
 		
 		return modalidad;
 	}
+
+	public boolean cancelar_eliminacion_modalidad(int idModalidad) throws PersistentException {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }

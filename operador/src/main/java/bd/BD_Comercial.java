@@ -225,4 +225,9 @@ public class BD_Comercial {
 	       password = salt.toString();
 	       return password;
 	   }
+
+	/*public boolean cancelar_baja_comercial(int idComercial) throws PersistentException{
+		// TODO Auto-generated method stub
+		return false;
+	}*/
 }

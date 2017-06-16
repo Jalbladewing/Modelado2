@@ -312,4 +312,9 @@ public class BD_Cliente {
        password = salt.toString();
        return password;
    }
+
+/*public boolean cancelar_baja_cliente(int idCliente)throws PersistentException {
+	// TODO Auto-generated method stub
+	return false;
+}*/
 	}

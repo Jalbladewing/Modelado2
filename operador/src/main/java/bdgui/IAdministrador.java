@@ -103,4 +103,10 @@ public interface IAdministrador {
 	public Modalidad cargar_modalidad(int idModalidad);
 	
 	public boolean baja_modalidad_cliente(int idCliente, int idModalidad);
+	
+	public boolean cancelar_baja_cliente(int idCliente);
+	
+	public boolean cancelar_baja_comercial(int idComercial);
+	
+	public boolean cancelar_eliminacion_modalidad(int idModalidad);
 }

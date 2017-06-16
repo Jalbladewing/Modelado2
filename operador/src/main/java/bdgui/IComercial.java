@@ -31,6 +31,8 @@ public interface IComercial {
 	public List cargar_canales();
 
 	public boolean modificar_comercial(Comercial comercial);
+	
+	public boolean cancelar_baja_cliente(int idCliente);
 
 	public List cargar_incidencias_comercial(int idComercial);
 
