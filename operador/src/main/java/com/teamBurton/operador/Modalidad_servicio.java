@@ -7,6 +7,7 @@ import com.vaadin.ui.Window;
 import bd.Cliente;
 import bd.contrato;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,13 +21,14 @@ public class Modalidad_servicio extends Modalidad_servicio_Ventana {
 	public Internet _unnamed_Internet_;
 	public Modalidades_destacadas_generico _unnamed_Modalidades_destacadas_generico_;
 	public Contratar_generico _contrata;
-	private int idModalidad;
+	private List<Integer> idModalidad;
 	private boolean contratacion = false;
 	
 	public Modalidad_servicio(int id)
 	{
 		Window subWindow = new Window("Contratar");	
-		idModalidad = id;
+		idModalidad = new ArrayList<Integer>();
+		idModalidad.add(id);
 		
 		
 		contratarB.addClickListener(new Button.ClickListener() 
@@ -57,7 +59,7 @@ public class Modalidad_servicio extends Modalidad_servicio_Ventana {
 				{
 					contratacion = comprobarContratacion();
 					
-					if(contratacion)
+					if(contratacion || idModalidad.isEmpty())
 					{
 						subWindow.setModal(true);
 						subWindow.setResizable(false);
@@ -94,7 +96,7 @@ public class Modalidad_servicio extends Modalidad_servicio_Ventana {
 		
 		for(int i = 0; i < contratos.size(); i++)
 		{
-			if(contratos.get(i).getModalidad().getID() == idModalidad)
+			if(contratos.get(i).getModalidad().getID() == idModalidad.get(0))
 			{
 				return true;
 			}

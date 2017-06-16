@@ -1,5 +1,8 @@
 package com.teamBurton.operador;
 
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
@@ -7,12 +10,15 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 
+import bd.Cliente;
+import bd.Comercial;
 import bd.Usuario;
 
 public class Perfil_vista_comercial extends Perfil_vista_comercial_ventana implements View {
 	public Mi_cuenta_vista_comercial _unnamed_Mi_cuenta_vista_comercial_;
 	public Dar_baja_comercial _daBaja;
 	public static final String VIEW_NAME = "perfil_vista_comercial";
+	private Comercial comercial;
 	
 	public Perfil_vista_comercial()
 	{
@@ -23,12 +29,17 @@ public class Perfil_vista_comercial extends Perfil_vista_comercial_ventana imple
 			@Override
 			public void buttonClick(ClickEvent event) 
 			{
-				// TODO Auto-generated method stub
-				Window subWindow = new Window("Dar de baja");	
-				subWindow.setModal(true);
-				subWindow.setResizable(false);
-				subWindow.setContent(new Dar_baja_comercial());
-				UI.getCurrent().addWindow(subWindow);
+				if(comercial.getFechaEliminacion() == null)
+				{
+					Window subWindow = new Window("Dar de baja");	
+					subWindow.setModal(true);
+					subWindow.setResizable(false);
+					subWindow.setContent(new Dar_baja_comercial());
+					UI.getCurrent().addWindow(subWindow);
+				}else
+				{
+					
+				}
 			}
 		});
 		
@@ -87,8 +98,20 @@ public class Perfil_vista_comercial extends Perfil_vista_comercial_ventana imple
 
 	
 	@Override
-	public void enter(ViewChangeEvent event) {
-		// TODO Auto-generated method stub
+	public void enter(ViewChangeEvent event) 
+	{
+		comercial = (Comercial) ((NavigatorUI) UI.getCurrent()).getVistaComercial();
 		
+		if(comercial.getFechaEliminacion() != null)
+		{
+			bajaB.setCaption("Cancelar baja (" +getDifferenceDays(new Date(),comercial.getFechaEliminacion())+")");
+		}
+		
+	}
+	
+	public long getDifferenceDays(Date d1, Date d2)
+	{
+		long diff = d2.getTime() - d1.getTime();
+		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 	}
 }

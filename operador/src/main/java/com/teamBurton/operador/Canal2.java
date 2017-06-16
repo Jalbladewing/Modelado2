@@ -1,5 +1,6 @@
 package com.teamBurton.operador;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,14 +31,15 @@ public class Canal2 extends Canal2_ventana implements View
 	private ICliente cliente = new BD_Principal();
 	private IComercial comercial = new BD_Principal();
 	private IAdministrador administrador = new BD_Principal();
-	private int idModalidad;
+	private List<Integer> idModalidad;
 	private boolean contratacion = false;
 
 	
 	public Canal2(int id)
 	{
 		Window subWindow = new Window("Contratar");	
-		idModalidad = id;
+		idModalidad = new ArrayList<Integer>();
+		idModalidad.add(id);
 		
 		contratarB.addClickListener(new Button.ClickListener() 
 		{
@@ -67,7 +69,7 @@ public class Canal2 extends Canal2_ventana implements View
 				{
 					contratacion = comprobarContratacion();
 					
-					if(contratacion)
+					if(contratacion || idModalidad.isEmpty())
 					{
 						subWindow.setModal(true);
 						subWindow.setResizable(false);
@@ -128,7 +130,7 @@ public class Canal2 extends Canal2_ventana implements View
 		
 		for(int i = 0; i < contratos.size(); i++)
 		{
-			if(contratos.get(i).getModalidad().getID() == idModalidad)
+			if(contratos.get(i).getModalidad().getID() == idModalidad.get(0))
 			{
 				return true;
 			}

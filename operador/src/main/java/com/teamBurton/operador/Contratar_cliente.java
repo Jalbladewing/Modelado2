@@ -12,7 +12,14 @@ public class Contratar_cliente extends Contratar_cliente_ventana {
 	public Contratar_cliente(String nombre)
 	{
 		
-		mensajeL.setValue("Usted ya posee la modalidad " +nombre);
+		if(nombre.isEmpty())
+		{
+			mensajeL.setValue("No se ha seleccionado ninguna modalidad para contratar");
+		}else
+		{
+			mensajeL.setValue("Usted ya posee la modalidad " +nombre);
+		}
+		
 			
 		confirmarB.addClickListener(new Button.ClickListener() 
 		{

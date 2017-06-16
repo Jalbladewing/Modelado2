@@ -1,5 +1,6 @@
 package com.teamBurton.operador;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
@@ -19,13 +20,14 @@ public class Paquete2 extends Paquete2_ventana {
 	public Television2 _unnamed_Television2_;
 	public Vector<Canal2> _canal = new Vector<Canal2>();
 	public Contratar_generico _contrata;
-	private int idModalidad;
+	private List<Integer> idModalidad;
 	private boolean contratacion = false;
 	
 	public Paquete2(int id)
 	{
 		Window subWindow = new Window("Contratar");	
-		idModalidad = id;
+		idModalidad = new ArrayList<Integer>();
+		idModalidad.add(id);
 		
 		
 		contratarB.addClickListener(new Button.ClickListener() 
@@ -55,7 +57,7 @@ public class Paquete2 extends Paquete2_ventana {
 				{
 					contratacion = comprobarContratacion();
 					
-					if(contratacion)
+					if(contratacion || idModalidad.isEmpty())
 					{
 						subWindow.setModal(true);
 						subWindow.setResizable(false);
@@ -91,7 +93,7 @@ public class Paquete2 extends Paquete2_ventana {
 		
 		for(int i = 0; i < contratos.size(); i++)
 		{
-			if(contratos.get(i).getModalidad().getID() == idModalidad)
+			if(contratos.get(i).getModalidad().getID() == idModalidad.get(0))
 			{
 				return true;
 			}

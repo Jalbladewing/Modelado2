@@ -1,5 +1,6 @@
 package com.teamBurton.operador;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
@@ -20,13 +21,14 @@ public class Modalidad_oferta_generico extends Modalidad_oferta_generico_ventana
 	public Modalidades_destacadas_generico _unnamed_Modalidades_destacadas_generico_;
 	public Vector<Modalidad_individual_generico> _modalidad = new Vector<Modalidad_individual_generico>();
 	public Contratar_generico _contrata;
-	private int idModalidad;
+	private List<Integer> idModalidad;
 	private boolean contratacion = false;
 	
 	public Modalidad_oferta_generico(int id)
 	{
 		Window subWindow = new Window("Contratar");	
-		idModalidad = id;
+		idModalidad = new ArrayList<Integer>();
+		idModalidad.add(id);
 		
 		
 		contratarB.addClickListener(new Button.ClickListener() 
@@ -56,7 +58,7 @@ public class Modalidad_oferta_generico extends Modalidad_oferta_generico_ventana
 				{
 					contratacion = comprobarContratacion();
 					
-					if(contratacion)
+					if(contratacion || idModalidad.isEmpty())
 					{
 						subWindow.setModal(true);
 						subWindow.setResizable(false);
@@ -92,7 +94,7 @@ public class Modalidad_oferta_generico extends Modalidad_oferta_generico_ventana
 		
 		for(int i = 0; i < contratos.size(); i++)
 		{
-			if(contratos.get(i).getModalidad().getID() == idModalidad)
+			if(contratos.get(i).getModalidad().getID() == idModalidad.get(0))
 			{
 				return true;
 			}

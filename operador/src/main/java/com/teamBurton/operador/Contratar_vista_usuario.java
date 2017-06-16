@@ -1,5 +1,7 @@
 package com.teamBurton.operador;
 
+import java.util.List;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
@@ -15,16 +17,19 @@ public class Contratar_vista_usuario extends Contratar_vista_usuario_ventana {
 	public Mi_cuenta_vista_usuario _unnamed_Mi_cuenta_vista_usuario_;
 	private IComercial comercial = new BD_Principal();
 	private IAdministrador administrador = new BD_Principal();
-	private int idModalidad;
+	private List<Integer> idModalidad;
 	
-	public Contratar_vista_usuario(String nombre, boolean contratada, int id)
+	public Contratar_vista_usuario(String nombre, boolean contratada, List<Integer>ids)
 	{
-		idModalidad = id;
+		idModalidad = ids;
 		
 		if(contratada)
 		{
 			mensajeL.setValue("Usted ya posee la modalidad " +nombre);
 			
+		}else if(ids.isEmpty())
+		{
+			mensajeL.setValue("No se ha seleccionado ninguna modalidad para contratar");
 		}else
 		{
 			mensajeL.setValue("¿Seguro que desea contratar la modalidad " +nombre +"?");
@@ -36,7 +41,7 @@ public class Contratar_vista_usuario extends Contratar_vista_usuario_ventana {
 			@Override
 			public void buttonClick(ClickEvent event) 
 			{
-				if(contratada)
+				if(contratada || ids.isEmpty())
 				{
 					UI.getCurrent().removeWindow((Window) getParent());
 				}else
@@ -69,11 +74,18 @@ public class Contratar_vista_usuario extends Contratar_vista_usuario_ventana {
 		
 		if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
 		{
-			comercial.contratar_modalidad(cliente.getID(), idModalidad);
+			for(int i = 0; i < idModalidad.size(); i++)
+			{
+				comercial.contratar_modalidad(cliente.getID(), idModalidad.get(i));
+			}
+			
 			
 		}else 
 		{
-			administrador.contratar_modalidad(cliente.getID(), idModalidad);
+			for(int i = 0; i < idModalidad.size(); i++)
+			{
+				administrador.contratar_modalidad(cliente.getID(), idModalidad.get(i));
+			}
 			
 		}
 	}

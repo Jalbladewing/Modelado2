@@ -1,5 +1,6 @@
 package bd;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 import java.util.Vector;
@@ -143,12 +144,15 @@ public class BD_Comercial {
 	{
 		Comercial comercial = null;
 		boolean resultado = false;
+		Calendar fechaEliminacion = Calendar.getInstance();
 		PersistentTransaction t = bd.IteracionFinalPersistentManager.instance().getSession().beginTransaction();
 		
 		try
 		{
+			fechaEliminacion.add(Calendar.MONTH, 1);
 			comercial = ComercialDAO.getComercialByORMID(idComercial);
-			resultado = ComercialDAO.delete(comercial);
+			comercial.setFechaEliminacion(fechaEliminacion.getTime());
+			resultado = ComercialDAO.save(comercial);
 			
 			t.commit();
 			

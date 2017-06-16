@@ -11,13 +11,16 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.CheckBox;
 
 import bd.BD_Principal;
 import bd.Canal;
+import bd.Cliente;
 import bd.Modalidad;
 import bd.Paquete;
+import bd.contrato;
 import bdgui.IAdministrador;
 import bdgui.ICibernauta;
 import bdgui.ICliente;
@@ -38,10 +41,61 @@ public class Television2 extends Television2_ventana implements View{
 	private ICliente cliente = new BD_Principal();
 	private IComercial comercial = new BD_Principal();
 	private IAdministrador administrador = new BD_Principal();
+	private List<Canal> listaCanales;
+	private List<Integer> canalesId;
+	private List canalesSeleccionados;
+	private String canalesNombreCadena;
+	private boolean contratado = false;
 	
 	public Television2()
 	{
+		Window subWindow = new Window("Contratar");	
+		
 		cargar_modalidades_television();
+		
+		contratarB.addClickListener(new Button.ClickListener() 
+		{
+			
+			@Override
+			public void buttonClick(ClickEvent event) 
+			{
+				canalesSeleccionados = Arrays.asList(canalesTabla.getSelectedRows().toArray());
+				obtenerCanales();
+				
+				if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cibernauta"))
+				{
+
+					subWindow.setModal(true);
+					subWindow.setResizable(false);
+					subWindow.setContent(new Contratar_cibernauta(canalesNombreCadena));
+					UI.getCurrent().addWindow(subWindow);
+					
+				}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+				{
+					
+					subWindow.setModal(true);
+					subWindow.setResizable(false);
+					subWindow.setContent(new Contratar_vista_usuario(canalesNombreCadena, contratado, canalesId));
+					UI.getCurrent().addWindow(subWindow);
+					
+				}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
+				{
+					
+					if(contratado || canalesId.isEmpty())
+					{
+						subWindow.setModal(true);
+						subWindow.setResizable(false);
+						subWindow.setContent(new Contratar_cliente(canalesNombreCadena));
+						UI.getCurrent().addWindow(subWindow);
+					}else
+					{
+						doNavigate(Crear_incidencia.VIEW_NAME + "/" + "contratacion" +";" +canalesNombreCadena);
+					}
+							
+				}
+				
+			}
+		});
 		  
 	}
 	
@@ -51,9 +105,12 @@ public class Television2 extends Television2_ventana implements View{
 		//Cargar paquetes
 		List<Paquete> paquetes;
 		List<Canal> canales;
+		listaCanales = new ArrayList<Canal>();
 		Paquete paquete;
 		Paquete2 paqueteL;//"layout"
 		Button canal;
+		
+		
 		
 		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cibernauta"))
 		{
@@ -127,11 +184,60 @@ public class Television2 extends Television2_ventana implements View{
 		for(int i = 0; i < canales.size(); i++)
 		{
 			if(!canales.get(i).getVisibilidad()) continue;
+			listaCanales.add(canales.get(i));
 			canalesTabla.addRow(canales.get(i).getNombre(),canales.get(i).getCaracteristicas(),canales.get(i).getPrecio()+"€");
 		}
 		
 	}
 	
+	public void obtenerCanales()
+	{
+		Cliente cliente;
+		List<contrato> contratos = null;
+		Object rowId;
+		int id;
+		contratado = false;
+		canalesNombreCadena = "";
+		canalesId = new ArrayList<Integer>();
+		
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
+		{
+			cliente = (Cliente) ((NavigatorUI) UI.getCurrent()).getUsuario();
+			contratos = Arrays.asList(cliente.contratos.toArray());
+			
+		}else if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+		{
+			cliente = (Cliente) ((NavigatorUI) UI.getCurrent()).getVistaCliente();
+			contratos = Arrays.asList(cliente.contratos.toArray());
+		}
+		
+	
+		
+		for(int i = 0; i < canalesSeleccionados.size(); i++)
+		{
+			rowId = canalesSeleccionados.get(i);
+			id = (Integer) rowId;
+			canalesNombreCadena +=  canalesTabla.getContainerDataSource().getItem(rowId).getItemProperty("Nombre").getValue().toString();
+			canalesId.add(listaCanales.get(id-1).getID());
+			
+			 if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente") || ((NavigatorUI) UI.getCurrent()).getMainView().equals("Vista_Cliente"))
+			 {
+				 for(int j = 0; j < contratos.size(); j++)
+				 {
+					 if(contratos.get(j).getModalidad().getID() == listaCanales.get(id-1).getID())
+					 {
+							contratado = true;
+							canalesNombreCadena = canalesTabla.getContainerDataSource().getItem(rowId).getItemProperty("Nombre").getValue().toString();
+							break;
+					 }
+				 }
+			 }
+			 
+			 if(contratado) break;
+			
+			if(i < canalesSeleccionados.size()-1) canalesNombreCadena += ", ";
+		}
+	}
 	//Esto debería estar en Cibernauta
 		private void doNavigate(String viewName) {
 		    UI.getCurrent().getNavigator().navigateTo(viewName);

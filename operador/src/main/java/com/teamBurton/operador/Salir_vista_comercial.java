@@ -20,6 +20,7 @@ public class Salir_vista_comercial extends Salir_vista_comercial_ventana {
 				((NavigatorUI) UI.getCurrent()).setVistaComercial(null);
 				UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
 				UI.getCurrent().getNavigator().destroy();
+				((NavigatorUI) UI.getCurrent()).setParentView("Administrador");
 				((NavigatorUI) UI.getCurrent()).setMainView("Administrador");
 				NavigatorUI.getCurrent().setContent(new Administrador2());	
 				UI.getCurrent().removeWindow((Window) getParent());
