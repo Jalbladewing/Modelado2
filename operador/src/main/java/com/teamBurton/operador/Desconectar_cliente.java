@@ -23,6 +23,7 @@ public class Desconectar_cliente extends Desconectar_cliente_ventana {
 				UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
 				UI.getCurrent().getNavigator().destroy();
 				((NavigatorUI) UI.getCurrent()).setMainView("Cibernauta");
+				((NavigatorUI) UI.getCurrent()).setUsuario(null);
 				NavigatorUI.getCurrent().setContent(new Cibernauta());	
 				UI.getCurrent().removeWindow((Window) getParent());
 				

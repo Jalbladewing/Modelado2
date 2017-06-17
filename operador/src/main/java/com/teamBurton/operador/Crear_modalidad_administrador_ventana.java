@@ -37,6 +37,10 @@ public class Crear_modalidad_administrador_ventana extends VerticalLayout {
 	protected VerticalLayout vLayoutPrecio;
 	protected Label precioL;
 	protected TextField precioF;
+	protected VerticalLayout vLayoutVisibilidadDestacada;
+	protected HorizontalLayout hLayoutDestacada;
+	protected CheckBox checkBxDestacada;
+	protected Label destacadaL;
 	protected HorizontalLayout hLayoutVisibilidad;
 	protected CheckBox checkBx;
 	protected Label visibleL;

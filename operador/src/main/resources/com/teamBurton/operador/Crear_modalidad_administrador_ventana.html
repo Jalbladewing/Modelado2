@@ -34,12 +34,20 @@
       </vaadin-label> 
       <vaadin-text-field width="40%" _id="precioF"></vaadin-text-field> 
      </vaadin-vertical-layout> 
-     <vaadin-horizontal-layout _id="hLayoutVisibilidad" :bottom> 
-      <vaadin-check-box style-name="v-checkbox-green" _id="checkBx"></vaadin-check-box> 
-      <vaadin-label size-auto plain-text _id="visibleL">
-        Visible 
-      </vaadin-label> 
-     </vaadin-horizontal-layout> 
+     <vaadin-vertical-layout size-auto _id="vLayoutVisibilidadDestacada" :middle :center> 
+      <vaadin-horizontal-layout _id="hLayoutDestacada"> 
+       <vaadin-check-box style-name="v-checkbox-green" _id="checkBxDestacada"></vaadin-check-box> 
+       <vaadin-label size-auto plain-text _id="destacadaL">
+         Destacada 
+       </vaadin-label> 
+      </vaadin-horizontal-layout> 
+      <vaadin-horizontal-layout _id="hLayoutVisibilidad"> 
+       <vaadin-check-box style-name="v-checkbox-green" _id="checkBx"></vaadin-check-box> 
+       <vaadin-label size-auto plain-text _id="visibleL">
+         Visible 
+       </vaadin-label> 
+      </vaadin-horizontal-layout> 
+     </vaadin-vertical-layout> 
     </vaadin-horizontal-layout> 
     <vaadin-vertical-layout visible="false" size-auto _id="vLayoutDatos"> 
      <vaadin-label size-auto plain-text _id="consumoMaxL">

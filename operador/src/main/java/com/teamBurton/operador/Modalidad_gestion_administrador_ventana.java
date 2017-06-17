@@ -37,7 +37,11 @@ public class Modalidad_gestion_administrador_ventana extends VerticalLayout {
 	protected VerticalLayout vLayoutPrecio;
 	protected Label precioL;
 	protected TextField precioF;
-	protected HorizontalLayout hLayoutVisible;
+	protected VerticalLayout vLayoutVisibilidadDestacada;
+	protected HorizontalLayout hLayoutDestacada;
+	protected CheckBox checkBxDestacada;
+	protected Label destacadaL;
+	protected HorizontalLayout hLayoutVisibilidad;
 	protected CheckBox visibleCheckBx;
 	protected Label visibleL;
 	protected VerticalLayout vLayoutDatos;

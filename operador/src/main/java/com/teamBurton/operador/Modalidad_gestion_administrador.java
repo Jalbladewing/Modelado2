@@ -16,6 +16,7 @@ import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Window.CloseEvent;
 
+import bd.Administrador;
 import bd.BD_Principal;
 import bd.Canal;
 import bd.CanalDAO;
@@ -113,6 +114,7 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 						if(!consumoMaxF.getValue().replaceAll("\\s+","").isEmpty())
 						{
 							modificar_modalidad();
+							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
 						}
 						
@@ -122,6 +124,7 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 						if(modalidades.size() >= 2)
 						{
 							modificar_modalidad();
+							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
 						}
 						
@@ -131,6 +134,7 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 						if(modalidades.size() != 1)
 						{
 							modificar_modalidad();
+							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
 						}
 						
@@ -138,6 +142,7 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 					}else
 					{
 						modificar_modalidad();
+						((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 						doNavigate(Gestion_modalidades.VIEW_NAME);
 					}
 					
@@ -152,6 +157,7 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 			@Override
 			public void buttonClick(ClickEvent event) 
 			{
+				((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 				doNavigate(Gestion_modalidades.VIEW_NAME);
 				
 			}
@@ -164,9 +170,22 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 			{
 				modalidad.setNombre(nombreF.getValue());
 				modalidad.setCaracteristicas(caracteristicasArea.getValue());
-				modalidad.setPrecio(Double.parseDouble(precioF.getValue()));
+				
+				if(!precioF.getValue().isEmpty())
+				{
+					modalidad.setPrecio(Double.parseDouble(precioF.getValue()));
+				}
+				
 				modalidad.setVisibilidad(visibleCheckBx.getValue());
 				modalidad.setTipo(tipoModalidadComboBx.getValue().toString());
+				
+				if(checkBxDestacada.getValue())
+				{
+					modalidad.setAdministrador((Administrador) ((NavigatorUI) UI.getCurrent()).getUsuario()); 
+				}else
+				{
+					modalidad.setAdministrador(null);
+				}
 				
 				((NavigatorUI) UI.getCurrent()).setGestionModalidad(modalidad);
 				
@@ -211,6 +230,14 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 				modalidad.setVisibilidad(visibleCheckBx.getValue());
 				modalidad.setTipo(tipoModalidadComboBx.getValue().toString());
 				
+				if(checkBxDestacada.getValue())
+				{
+					modalidad.setAdministrador((Administrador) ((NavigatorUI) UI.getCurrent()).getUsuario()); 
+				}else
+				{
+					modalidad.setAdministrador(null);
+				}
+				
 				((NavigatorUI) UI.getCurrent()).setGestionModalidad(modalidad);
 				
 				doNavigate(Traspasar_usuarios_administrador.VIEW_NAME + "/" +modalidadesIds);
@@ -226,6 +253,14 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 		modalidad.setPrecio(Double.parseDouble(precioF.getValue()));
 		modalidad.setVisibilidad(visibleCheckBx.getValue());
 		modalidad.setTipo(tipoModalidadComboBx.getValue().toString());
+		
+		if(checkBxDestacada.getValue())
+		{
+			modalidad.setAdministrador((Administrador) ((NavigatorUI) UI.getCurrent()).getUsuario()); 
+		}else
+		{
+			modalidad.setAdministrador(null);
+		}
 		
 		if(tipoModalidadComboBx.getValue().equals("television"))
 		{
@@ -320,6 +355,14 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 		precioF.setValue(modalidad.getPrecio()+"");
 		visibleCheckBx.setValue(modalidad.getVisibilidad());
 		tipoModalidadComboBx.setValue(modalidad.getTipo());
+		
+		if(modalidad.getAdministrador() == null)
+		{
+			checkBxDestacada.setValue(false);
+		}else
+		{
+			checkBxDestacada.setValue(true);
+		}
 		
 		if(modalidad.getTipo().equals("oferta"))
 		{

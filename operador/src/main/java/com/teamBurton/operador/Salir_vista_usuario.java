@@ -24,6 +24,7 @@ public class Salir_vista_usuario extends Salir_vista_usuario_ventana {
 					UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
 					UI.getCurrent().getNavigator().destroy();
 					((NavigatorUI) UI.getCurrent()).setMainView("Comercial");
+					((NavigatorUI) UI.getCurrent()).setVistaCliente(null);
 					NavigatorUI.getCurrent().setContent(new Comercial2());	
 					UI.getCurrent().removeWindow((Window) getParent());
 					
@@ -33,6 +34,7 @@ public class Salir_vista_usuario extends Salir_vista_usuario_ventana {
 					UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
 					UI.getCurrent().getNavigator().destroy();
 					((NavigatorUI) UI.getCurrent()).setMainView("Administrador");
+					((NavigatorUI) UI.getCurrent()).setVistaCliente(null);
 					NavigatorUI.getCurrent().setContent(new Administrador2());	
 					UI.getCurrent().removeWindow((Window) getParent());
 					
@@ -42,6 +44,7 @@ public class Salir_vista_usuario extends Salir_vista_usuario_ventana {
 					UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
 					UI.getCurrent().getNavigator().destroy();
 					((NavigatorUI) UI.getCurrent()).setMainView("Vista_Comercial");
+					((NavigatorUI) UI.getCurrent()).setVistaCliente(null);
 					NavigatorUI.getCurrent().setContent(new Comercial_administrador());	
 					UI.getCurrent().removeWindow((Window) getParent());
 				}

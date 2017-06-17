@@ -20,6 +20,7 @@ public class Desconectar_comercial extends Desconectar_comercial_ventana {
 				UI.getCurrent().getNavigator().destroy();
 				((NavigatorUI) UI.getCurrent()).setMainView("Cibernauta");
 				((NavigatorUI) UI.getCurrent()).setParentView("");
+				((NavigatorUI) UI.getCurrent()).setUsuario(null);
 				NavigatorUI.getCurrent().setContent(new Cibernauta());	
 				UI.getCurrent().removeWindow((Window) getParent());
 				

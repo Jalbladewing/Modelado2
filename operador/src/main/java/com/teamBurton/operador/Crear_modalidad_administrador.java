@@ -106,6 +106,7 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 						if(!consumoMaxF.getValue().replaceAll("\\s+","").isEmpty())
 						{
 							crear_modalidad();
+							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
 						}
 						
@@ -115,6 +116,7 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 						if(modalidades.size() >= 2)
 						{
 							crear_modalidad();
+							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
 						}
 						
@@ -124,6 +126,7 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 						if(modalidades.size() != 1)
 						{
 							crear_modalidad();
+							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
 						}
 						
@@ -131,6 +134,7 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 					}else
 					{
 						crear_modalidad();
+						((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 						doNavigate(Gestion_modalidades.VIEW_NAME);
 					}
 					
@@ -145,6 +149,7 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 			@Override
 			public void buttonClick(ClickEvent event) 
 			{
+				((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 				doNavigate(Gestion_modalidades.VIEW_NAME);
 				
 			}
@@ -157,9 +162,21 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 			{
 				modalidad.setNombre(nombreF.getValue());
 				modalidad.setCaracteristicas(caracteristicasArea.getValue());
-				modalidad.setPrecio(Double.parseDouble(precioF.getValue()));
+				
+				if(!precioF.getValue().isEmpty())
+				{
+					modalidad.setPrecio(Double.parseDouble(precioF.getValue()));
+				}
 				modalidad.setVisibilidad(checkBx.getValue());
 				modalidad.setTipo(tipoComboBx.getValue().toString());
+				
+				if(checkBxDestacada.getValue())
+				{
+					modalidad.setAdministrador((Administrador) ((NavigatorUI) UI.getCurrent()).getUsuario()); 
+				}else
+				{
+					modalidad.setAdministrador(null);
+				}
 				
 				((NavigatorUI) UI.getCurrent()).setGestionModalidad(modalidad);
 				
@@ -183,6 +200,14 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 				modalidad.setVisibilidad(checkBx.getValue());
 				modalidad.setTipo(tipoComboBx.getValue().toString());
 				
+				if(checkBxDestacada.getValue())
+				{
+					modalidad.setAdministrador((Administrador) ((NavigatorUI) UI.getCurrent()).getUsuario()); 
+				}else
+				{
+					modalidad.setAdministrador(null);
+				}
+				
 				administrador.crear_modalidad(modalidad);
 				
 			}else
@@ -193,6 +218,14 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 				modalidad.setPrecio(Double.parseDouble(precioF.getValue()));
 				modalidad.setVisibilidad(checkBx.getValue());
 				modalidad.setTipo(tipoComboBx.getValue().toString());
+				
+				if(checkBxDestacada.getValue())
+				{
+					modalidad.setAdministrador((Administrador) ((NavigatorUI) UI.getCurrent()).getUsuario()); 
+				}else
+				{
+					modalidad.setAdministrador(null);
+				}
 				
 				for(int i = 0; i < modalidades.size(); i++)
 				{
@@ -210,6 +243,14 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 			modalidad.setPrecio(Double.parseDouble(precioF.getValue()));
 			modalidad.setVisibilidad(checkBx.getValue());
 			modalidad.setTipo(tipoComboBx.getValue().toString());
+			
+			if(checkBxDestacada.getValue())
+			{
+				modalidad.setAdministrador((Administrador) ((NavigatorUI) UI.getCurrent()).getUsuario()); 
+			}else
+			{
+				modalidad.setAdministrador(null);
+			}
 			
 			for(int i = 0; i < modalidades.size(); i++)
 			{
@@ -230,6 +271,14 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 			modalidad.setConsumoActual(0.0);
 			modalidad.setConsumoMax(Double.parseDouble(consumoMaxF.getValue()));
 			
+			if(checkBxDestacada.getValue())
+			{
+				modalidad.setAdministrador((Administrador) ((NavigatorUI) UI.getCurrent()).getUsuario()); 
+			}else
+			{
+				modalidad.setAdministrador(null);
+			}
+			
 			administrador.crear_modalidad(modalidad);
 			
 		}else
@@ -240,6 +289,14 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 			modalidad.setPrecio(Double.parseDouble(precioF.getValue()));
 			modalidad.setVisibilidad(checkBx.getValue());
 			modalidad.setTipo(tipoComboBx.getValue().toString());
+			
+			if(checkBxDestacada.getValue())
+			{
+				modalidad.setAdministrador((Administrador) ((NavigatorUI) UI.getCurrent()).getUsuario()); 
+			}else
+			{
+				modalidad.setAdministrador(null);
+			}
 			
 			administrador.crear_modalidad(modalidad);
 		}
@@ -297,5 +354,13 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 		precioF.setValue(modalidad.getPrecio()+"");
 		checkBx.setValue(modalidad.getVisibilidad());
 		tipoComboBx.setValue(modalidad.getTipo());
+		
+		if(modalidad.getAdministrador() == null)
+		{
+			checkBxDestacada.setValue(false);
+		}else
+		{
+			checkBxDestacada.setValue(true);
+		}
 	}
 }

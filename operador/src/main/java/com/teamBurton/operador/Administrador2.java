@@ -61,6 +61,7 @@ public class Administrador2 extends Administrador2_ventana {
 		{ 
 			public void buttonClick(ClickEvent event) 
 			{ 
+				((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 				doNavigate(Television2.VIEW_NAME);
 			} 
 		}); 
@@ -70,6 +71,7 @@ public class Administrador2 extends Administrador2_ventana {
 		{ 
 			public void buttonClick(ClickEvent event) 
 			{ 
+				((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 				doNavigate(Telefono_fijo.VIEW_NAME);
 			} 
 		}); 
@@ -79,6 +81,7 @@ public class Administrador2 extends Administrador2_ventana {
 		{ 
 			public void buttonClick(ClickEvent event) 
 			{ 
+				((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 				doNavigate(Movil2.VIEW_NAME);
 			} 
 		}); 
@@ -88,6 +91,7 @@ public class Administrador2 extends Administrador2_ventana {
 		{ 
 			public void buttonClick(ClickEvent event) 
 			{ 
+				((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 				doNavigate(Internet.VIEW_NAME);
 			} 
 		}); 
@@ -97,6 +101,7 @@ public class Administrador2 extends Administrador2_ventana {
 		{ 
 			public void buttonClick(ClickEvent event) 
 			{ 
+				((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 				doNavigate(Oferta2.VIEW_NAME);
 			} 
 		}); 
@@ -105,6 +110,7 @@ public class Administrador2 extends Administrador2_ventana {
 		{ 
 			public void buttonClick(ClickEvent event) 
 			{ 
+				((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 				doNavigate(Modalidades_destacadas_administrador.VIEW_NAME);
 			} 
 		}); 
@@ -177,26 +183,32 @@ MenuBar.Command mycommand = new MenuBar.Command() {
 		    	switch ((String)selectedItem.getText())
 				{
 				case "Perfil":
+					((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 					doNavigate(Perfil_comercial.VIEW_NAME);
 					break;
 					
 				case "Gestión de Incidencias":
+					((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 					doNavigate(Gestion_incidencias_administrador.VIEW_NAME);
 					break;
 					
 				case "Gestión de Usuarios":
+					((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 					doNavigate(Gestion_usuarios_comercial.VIEW_NAME);
 					break;
 					
 				case "Gestión de Comerciales":
+					((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 					doNavigate(Gestion_comerciales.VIEW_NAME);
 					break;
 					
 				case "Gestión de Modalidades":
+					((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 					doNavigate(Gestion_modalidades.VIEW_NAME);
 					break;
 					
 				case "Desconectar":
+					((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 					Window subWindow = new Window("Desconectar");	
 					subWindow.setModal(true);
 					subWindow.setResizable(false);
