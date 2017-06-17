@@ -1,5 +1,6 @@
 package com.teamBurton.operador;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -39,6 +40,11 @@ public class Modalidades_destacadas_vista_usuario extends Modalidades_destacadas
 	    }else
 	    {
 	    	modalidades = administrador.cargar_modalidades_destacadas();
+	    }
+	    
+	    if(modalidades == null)
+	    {
+	    	modalidades = new ArrayList<Modalidad>();
 	    }
 		
 		for(int i = 0; i < modalidades.size(); i++)

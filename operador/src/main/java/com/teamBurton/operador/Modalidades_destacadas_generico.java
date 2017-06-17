@@ -1,5 +1,6 @@
 package com.teamBurton.operador;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
@@ -50,6 +51,11 @@ public class Modalidades_destacadas_generico extends Modalidades_destacadas_gene
 			modalidades = cliente.cargar_modalidades_destacadas();
 			
 		}
+	    
+	    if(modalidades == null)
+	    {
+	    	modalidades = new ArrayList<Modalidad>();
+	    }
 		
 		for(int i = 0; i < modalidades.size(); i++)
 		{

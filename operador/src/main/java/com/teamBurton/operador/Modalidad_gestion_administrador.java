@@ -89,6 +89,7 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 					if(tipoModalidadComboBx.getValue().equals("movil"))
 					{
 						vLayoutDatos.setVisible(true);
+						consumoMaxF.setValue(((Movil) modalidad).getConsumoMax() +"");
 					}else
 					{
 						vLayoutDatos.setVisible(false);

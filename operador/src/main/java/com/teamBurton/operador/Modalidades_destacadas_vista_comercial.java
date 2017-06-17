@@ -1,5 +1,6 @@
 package com.teamBurton.operador;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,6 +30,11 @@ public class Modalidades_destacadas_vista_comercial extends Modalidades_destacad
 		Modalidad_servicio servicio;
 		Modalidad_oferta_generico oferta;
 	    Modalidad_individual_generico individual;
+	    
+	    if(modalidades == null)
+	    {
+	    	modalidades = new ArrayList<Modalidad>();
+	    }
 		
 		for(int i = 0; i < modalidades.size(); i++)
 		{

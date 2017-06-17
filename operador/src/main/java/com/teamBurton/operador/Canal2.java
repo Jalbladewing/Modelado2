@@ -35,11 +35,9 @@ public class Canal2 extends Canal2_ventana implements View
 	private boolean contratacion = false;
 
 	
-	public Canal2(int id)
+	public Canal2()
 	{
 		Window subWindow = new Window("Contratar");	
-		idModalidad = new ArrayList<Integer>();
-		idModalidad.add(id);
 		
 		contratarB.addClickListener(new Button.ClickListener() 
 		{
@@ -109,6 +107,7 @@ public class Canal2 extends Canal2_ventana implements View
 		
 		caracteristicasL.setValue(canal.getCaracteristicas());
 		precioL.setValue(canal.getPrecio() +"€");
+		idModalidad.add(canal.getID());
 	}
 	
 	public boolean comprobarContratacion()
@@ -146,8 +145,9 @@ public class Canal2 extends Canal2_ventana implements View
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
-		if(event.getParameters() != null)
+		if(!event.getParameters().isEmpty())
 		{
+			idModalidad = new ArrayList<Integer>();
 			seccionL.setValue(event.getParameters());
 			canalL.setValue(event.getParameters());
 			

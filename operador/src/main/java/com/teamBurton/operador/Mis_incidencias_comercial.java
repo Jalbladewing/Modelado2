@@ -118,11 +118,11 @@ public class Mis_incidencias_comercial extends Mis_incidencias_comercial_ventana
 			//Si la incidencia está sin resolver se añade a la tabla correspondiente
 			if(incidencias.get(i).getEstado().equals("pendiente"))
 			{
-				pendientesTab.addRow(incidencias.get(i).getFecha().toString(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCliente().getEmail(),incidencias.get(i).getEstado());
+				pendientesTab.addRow(incidencias.get(i).getFecha().toString(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCorreoCliente(),incidencias.get(i).getEstado());
 			
 			}else if(incidencias.get(i).getEstado().equals("resuelta"))//Si está resuelta se añade a su tabla
 			{
-				resueltasTab.addRow(incidencias.get(i).getFecha().toString(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCliente().getEmail(),incidencias.get(i).getEstado());
+				resueltasTab.addRow(incidencias.get(i).getFecha().toString(), incidencias.get(i).getTipoIncidencia(), incidencias.get(i).getAsunto(), incidencias.get(i).getID()+"",incidencias.get(i).getCorreoCliente(),incidencias.get(i).getEstado());
 			}
 		}
 	}

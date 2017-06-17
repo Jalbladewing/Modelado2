@@ -61,6 +61,7 @@ public class Acceder extends Acceder_ventana implements View {
 			UI.getCurrent().getNavigator().removeView(Acceder.VIEW_NAME);
 			UI.getCurrent().getNavigator().destroy();
 			((NavigatorUI) UI.getCurrent()).setMainView("Cliente");
+			((NavigatorUI) UI.getCurrent()).setParentView("");
 			NavigatorUI.getCurrent().setContent(new Cliente2());	
 		
 		}else if(usuario instanceof Comercial)

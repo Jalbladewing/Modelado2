@@ -92,4 +92,10 @@ $v-background-color: #0099CC;
     box-shadow:none;  
 }
 
+.wrapLine 
+{
+	word-wrap: break-word; /*IE*/
+	white-space: -moz-pre-wrap; /*Firefox*/
+}
+
 }

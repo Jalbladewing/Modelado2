@@ -59,7 +59,7 @@ public class Telefono_fijo extends Telefono_fijo_ventana implements View{
 			servicio.tituloL.setValue(modalidades.get(i).getNombre());
 			servicio.caracteristicasL.setValue(modalidades.get(i).getCaracteristicas());
 			servicio.precioL.setValue(modalidades.get(i).getPrecio()+"€");
-			addComponent(servicio);
+			modalidadesGrid.addComponent(servicio);
 		}
 	}
 	

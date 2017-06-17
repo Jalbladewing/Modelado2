@@ -1,5 +1,6 @@
 package com.teamBurton.operador;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
@@ -33,6 +34,11 @@ public class Modalidades_destacadas_administrador extends Modalidades_destacadas
 		Modalidad_individual_administrador servicio;
 		Modalidad_ofertas_administrador oferta;
 	    Modalidad_individual_generico individual;
+	    
+	    if(modalidades == null)
+	    {
+	    	modalidades = new ArrayList<Modalidad>();
+	    }
 		
 		for(int i = 0; i < modalidades.size(); i++)
 		{

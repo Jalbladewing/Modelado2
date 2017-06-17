@@ -13214,3 +13214,8 @@ div.v-layout.v-horizontal.v-widget {
 	border-color: transparent;
 	box-shadow: none;
 }
+
+.newtheme .wrapLine {
+	word-wrap: break-word;
+	white-space: -moz-pre-wrap;
+}
