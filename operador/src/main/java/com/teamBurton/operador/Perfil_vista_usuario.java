@@ -104,13 +104,25 @@ public class Perfil_vista_usuario extends Perfil_vista_usuario_ventana implement
 	
 	public void cancelar_baja_cliente()
 	{
+		boolean resultado;
+		
 		if(((NavigatorUI) UI.getCurrent()).getParentView().equals("Comercial"))
 		{
-			comercial.cancelar_baja_cliente(cliente.getID());
+			resultado = comercial.cancelar_baja_cliente(cliente.getID());
 			
 		}else
 		{
-			administrador.cancelar_baja_cliente(cliente.getID());
+			resultado = administrador.cancelar_baja_cliente(cliente.getID());
+		}
+		
+		if(resultado)
+		{
+			errorL.setVisible(false);
+			okL.setVisible(true);
+		}else
+		{
+			okL.setVisible(false);
+			errorL.setVisible(true);	
 		}
 	}
 	

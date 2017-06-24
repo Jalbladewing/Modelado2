@@ -29,6 +29,8 @@ public class Perfil_vista_usuario_ventana extends VerticalLayout {
 	protected VerticalLayout vLayoutDatosNoModificables;
 	protected HorizontalLayout hLayoutBaja;
 	protected Button bajaB;
+	protected Label okL;
+	protected Label errorL;
 
 	public Perfil_vista_usuario_ventana() {
 		Design.read(this);

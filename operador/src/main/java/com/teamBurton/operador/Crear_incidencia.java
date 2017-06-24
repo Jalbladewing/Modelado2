@@ -46,7 +46,18 @@ public class Crear_incidencia extends Crear_incidencia_ventana implements View {
 	{
 		tipoComboBx.removeAllItems();
 		tipoComboBx.addItems("contratacion", "bajaModalidad", "bajaCuenta", "cancelarBajaCuenta", "modificarDatos", "reclamacion", "otros");
-		correoF.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getEmail());
+		
+		if(((NavigatorUI) UI.getCurrent()).getMainView().equals("Cliente"))
+		{
+			
+			correoF.setValue(((NavigatorUI) UI.getCurrent()).getUsuario().getEmail());
+			
+		}else
+		{
+			correoF.setValue(((NavigatorUI) UI.getCurrent()).getVistaCliente().getEmail());
+		}
+		
+		
 		correoF.setReadOnly(true);
 		
 		confirmarB.addClickListener(new Button.ClickListener() 

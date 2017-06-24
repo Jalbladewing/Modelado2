@@ -102,8 +102,19 @@ public class Perfil_vista_comercial extends Perfil_vista_comercial_ventana imple
 	
 	public void cancelar_baja_comercial()
 	{
-
-		administrador.cancelar_baja_comercial(comercial.getID());
+		boolean resultado;
+		
+		resultado = administrador.cancelar_baja_comercial(comercial.getID());
+		
+		if(resultado)
+		{
+			errorL.setVisible(false);
+			okL.setVisible(true);
+		}else
+		{
+			okL.setVisible(false);
+			errorL.setVisible(true);	
+		}
 	
 	}
 

@@ -10,7 +10,7 @@
    <vaadin-label style-name="huge" size-auto plain-text _id="seccionL">
      Perfil 
    </vaadin-label> 
-   <vaadin-vertical-layout style-name="perfiles-fondo" size-auto _id="vLayout" :center> 
+   <vaadin-vertical-layout style-name="perfiles-fondo" size-auto margin _id="vLayout" :center> 
     <vaadin-label style-name="h2" size-auto plain-text _id="tituloL" :center>
       Perfil 
     </vaadin-label> 
@@ -22,6 +22,12 @@
        Dar de Baja 
      </vaadin-button> 
     </vaadin-horizontal-layout> 
+    <vaadin-label visible="false" style-name="success" size-auto plain-text _id="okL" :center>
+      Cancelación con éxito 
+    </vaadin-label> 
+    <vaadin-label visible="false" style-name="failure" size-auto plain-text _id="errorL" :center>
+      Error al cancelar la baja 
+    </vaadin-label> 
    </vaadin-vertical-layout> 
   </vaadin-vertical-layout>  
  </body>

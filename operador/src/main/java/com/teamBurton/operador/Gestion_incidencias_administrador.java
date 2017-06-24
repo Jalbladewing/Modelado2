@@ -149,6 +149,8 @@ public class Gestion_incidencias_administrador extends Gestion_incidencias_admin
 					if(!estado.equals("pendiente"))
 					{
 						invalida = true;
+						errorL.setValue("No se pueden asignar incidencias resueltas");
+						errorL.setVisible(true);
 						break;
 					}
 				}
@@ -157,8 +159,9 @@ public class Gestion_incidencias_administrador extends Gestion_incidencias_admin
 				{
 					doNavigate(Asignar_incidencia.VIEW_NAME + "/" + ids);
 					
-				}else
+				}else if(!invalida && incidenciasSeleccionadas.isEmpty())
 				{
+					errorL.setValue("No se ha seleccionado ninguna incidencia");
 					errorL.setVisible(true);
 				}
 				
