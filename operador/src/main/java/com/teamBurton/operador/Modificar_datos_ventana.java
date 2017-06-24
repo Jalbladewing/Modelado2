@@ -27,6 +27,7 @@ public class Modificar_datos_ventana extends VerticalLayout {
 	protected HorizontalLayout hLayoutBotones;
 	protected Button cancelarB;
 	protected Button guardarB;
+	protected Label errorL;
 
 	public Modificar_datos_ventana() {
 		Design.read(this);

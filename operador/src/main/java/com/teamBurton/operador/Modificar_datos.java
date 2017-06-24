@@ -36,8 +36,15 @@ public class Modificar_datos extends Modificar_datos_ventana {
 			@Override
 			public void buttonClick(ClickEvent event) 
 			{
-				modificar_perfil();
-				UI.getCurrent().removeWindow((Window) getParent());
+				if(!campoF.isEmpty())
+				{
+					modificar_perfil();
+					UI.getCurrent().removeWindow((Window) getParent());
+				}
+				else{
+					errorL.setVisible(true);
+				}
+				
 				
 			}
 		});
