@@ -27,6 +27,8 @@ public class Recuperar_password_ventana extends VerticalLayout {
 	protected Label usuarioL;
 	protected TextField usuarioF;
 	protected Button enviarCorreoB;
+	protected Label okL;
+	protected Label errorL;
 
 	public Recuperar_password_ventana() {
 		Design.read(this);

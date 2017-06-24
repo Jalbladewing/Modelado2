@@ -82,6 +82,9 @@ public class Acceder extends Acceder_ventana implements View {
 			((NavigatorUI) UI.getCurrent()).setParentView("Administrador");
 			NavigatorUI.getCurrent().setContent(new Administrador2());	
 		}
+		else{
+			errorL.setVisible(true);
+		}
 	}
 	
 	//Esto debería estar en Cibernauta

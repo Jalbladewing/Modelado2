@@ -29,8 +29,10 @@ public class Recuperar_password extends Recuperar_password_ventana implements Vi
 				if(!usuarioF.getValue().replaceAll("\\s+","").isEmpty())
 				{
 					recuperar_password();	
+				}else{
+				errorL.setVisible(true);
+				okL.setVisible(false);
 				}
-				
 			}
 		});
 		
@@ -38,7 +40,14 @@ public class Recuperar_password extends Recuperar_password_ventana implements Vi
 	
 	public void recuperar_password() 
 	{
-		cibernauta.recuperar_password(usuarioF.getValue());
+		if(!cibernauta.recuperar_password(usuarioF.getValue())){
+			errorL.setVisible(true);
+			okL.setVisible(false);
+		}else{
+			errorL.setVisible(false);
+			okL.setVisible(true);
+		}
+		
 	}
 
 	@Override

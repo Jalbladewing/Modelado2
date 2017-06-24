@@ -33,6 +33,7 @@ public class Acceder_ventana extends VerticalLayout {
 	protected VerticalLayout vLayoutFields;
 	protected TextField usuarioF;
 	protected PasswordField passwordF;
+	protected Label errorL;
 	protected HorizontalLayout hLayoutFin;
 	protected CheckBox checkBx;
 	protected Label recuerdameL;

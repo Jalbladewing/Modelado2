@@ -28,6 +28,7 @@ public class Contratar_cibernauta_ventana extends VerticalLayout {
 	protected HorizontalLayout hLayoutBotones;
 	protected Button cancelarB;
 	protected Button confirmarB;
+	protected Label errorL;
 
 	public Contratar_cibernauta_ventana() {
 		Design.read(this);

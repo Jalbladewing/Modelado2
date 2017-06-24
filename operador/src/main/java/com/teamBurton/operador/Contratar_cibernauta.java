@@ -42,11 +42,15 @@ public class Contratar_cibernauta extends Contratar_cibernauta_ventana {
 					if(!telefono.isEmpty())
 					{
 						solicitarLlamada(telefono);
+						UI.getCurrent().removeWindow((Window) getParent());
+					}
+					else{
+						errorL.setVisible(true);
 					}
 					
 				}
 				
-				UI.getCurrent().removeWindow((Window) getParent());
+				
 				
 				
 			}
