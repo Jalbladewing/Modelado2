@@ -50,6 +50,7 @@ public class Crear_modalidad_administrador_ventana extends VerticalLayout {
 	protected HorizontalLayout hLayoutBotones;
 	protected Button cancelarB;
 	protected Button confirmarB;
+	protected Label errorL;
 
 	public Crear_modalidad_administrador_ventana() {
 		Design.read(this);

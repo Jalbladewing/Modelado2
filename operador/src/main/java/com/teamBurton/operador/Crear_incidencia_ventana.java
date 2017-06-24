@@ -37,6 +37,7 @@ public class Crear_incidencia_ventana extends VerticalLayout {
 	protected HorizontalLayout hLayout;
 	protected Button cancelarB;
 	protected Button confirmarB;
+	protected Label errorL;
 
 	public Crear_incidencia_ventana() {
 		Design.read(this);

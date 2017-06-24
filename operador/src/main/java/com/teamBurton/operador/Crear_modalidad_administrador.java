@@ -108,6 +108,10 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 							crear_modalidad();
 							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
+						}else
+						{
+							errorL.setValue("Campos vacios");
+							errorL.setVisible(true);
 						}
 						
 						
@@ -118,6 +122,10 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 							crear_modalidad();
 							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
+						}else
+						{
+							errorL.setValue("Las ofertas deben tener al menos 2 modalidades");
+							errorL.setVisible(true);
 						}
 						
 						
@@ -128,6 +136,10 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 							crear_modalidad();
 							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
+						}else
+						{
+							errorL.setValue("Las modalidades television deben tener 0 modalidades o más de 1");
+							errorL.setVisible(true);
 						}
 						
 						
@@ -138,6 +150,10 @@ public class Crear_modalidad_administrador extends Crear_modalidad_administrador
 						doNavigate(Gestion_modalidades.VIEW_NAME);
 					}
 					
+				}else
+				{
+					errorL.setValue("Campos vacios");
+					errorL.setVisible(true);
 				}
 				
 			}

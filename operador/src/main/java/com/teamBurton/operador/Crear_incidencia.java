@@ -70,6 +70,9 @@ public class Crear_incidencia extends Crear_incidencia_ventana implements View {
 				{
 					registrar_incidencia();
 					doNavigate(Mis_incidencias_cliente.VIEW_NAME);
+				}else
+				{
+					errorL.setVisible(true);
 				}
 				
 			}

@@ -116,6 +116,10 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 							modificar_modalidad();
 							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
+						}else
+						{
+							errorL.setValue("Campos vacios");
+							errorL.setVisible(true);
 						}
 						
 						
@@ -126,6 +130,10 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 							modificar_modalidad();
 							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
+						}else
+						{
+							errorL.setValue("Las ofertas deben tener al menos 2 modalidades");
+							errorL.setVisible(true);
 						}
 						
 						
@@ -136,6 +144,10 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 							modificar_modalidad();
 							((NavigatorUI) UI.getCurrent()).setGestionModalidad(null);
 							doNavigate(Gestion_modalidades.VIEW_NAME);
+						}else
+						{
+							errorL.setValue("Las modalidades television deben tener 0 modalidades o más de 1");
+							errorL.setVisible(true);
 						}
 						
 						
@@ -146,6 +158,10 @@ public class Modalidad_gestion_administrador extends Modalidad_gestion_administr
 						doNavigate(Gestion_modalidades.VIEW_NAME);
 					}
 					
+				}else
+				{
+					errorL.setValue("Campos vacios");
+					errorL.setVisible(true);
 				}
 				
 			}

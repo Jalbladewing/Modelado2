@@ -53,6 +53,7 @@ public class Modalidad_gestion_administrador_ventana extends VerticalLayout {
 	protected Button traspasarB;
 	protected Button eliminarB;
 	protected Button confirmarB;
+	protected Label errorL;
 
 	public Modalidad_gestion_administrador_ventana() {
 		Design.read(this);

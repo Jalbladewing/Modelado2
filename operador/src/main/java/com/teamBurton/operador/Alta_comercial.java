@@ -26,10 +26,19 @@ public class Alta_comercial extends Alta_comercial_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) 
 			{
-				if(!emailF.getValue().replaceAll("\\s+","").isEmpty())
+				if(!emailF.getValue().replaceAll("\\s+","").isEmpty() &&
+						!nombreF.getValue().replaceAll("\\s+","").isEmpty() &&
+						!apellidosF.getValue().replaceAll("\\s+","").isEmpty() &&
+						!direccionF.getValue().replaceAll("\\s+","").isEmpty() &&
+						!telefonoF.getValue().replaceAll("\\s+","").isEmpty() &&
+						!dniF.getValue().replaceAll("\\s+","").isEmpty())
 				{
 					alta_comercial();
 					doNavigate(Gestion_comerciales.VIEW_NAME);
+				}else
+				{
+					errorL.setValue("Campos vacios");
+					errorL.setVisible(true);
 				}
 				
 			}
@@ -54,7 +63,6 @@ public class Alta_comercial extends Alta_comercial_ventana implements View {
 		comercial.setApellidos(apellidosF.getValue());
 		comercial.setDireccion(direccionF.getValue());
 		comercial.setEmail(emailF.getValue());
-		comercial.setNombre(nombreF.getValue());
 		comercial.setTelefono(telefonoF.getValue());
 		comercial.setNif(dniF.getValue());
 		

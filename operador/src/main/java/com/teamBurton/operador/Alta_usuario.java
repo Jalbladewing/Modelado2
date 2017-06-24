@@ -42,10 +42,19 @@ public class Alta_usuario extends Alta_usuario_ventana implements View {
 			@Override
 			public void buttonClick(ClickEvent event) 
 			{
-				if(!emailF.getValue().replaceAll("\\s+","").isEmpty())
+				if(!emailF.getValue().replaceAll("\\s+","").isEmpty() &&
+						!nombreF.getValue().replaceAll("\\s+","").isEmpty() &&
+						!apellidosF.getValue().replaceAll("\\s+","").isEmpty() &&
+						!direccionF.getValue().replaceAll("\\s+","").isEmpty() &&
+						!telefonoF.getValue().replaceAll("\\s+","").isEmpty() &&
+						!dniF.getValue().replaceAll("\\s+","").isEmpty())
 				{
 					alta_cliente();
 					doNavigate(Gestion_usuarios_comercial.VIEW_NAME);
+				}else
+				{
+					errorL.setValue("Campos vacios");
+					errorL.setVisible(true);
 				}
 				
 			}
@@ -70,7 +79,6 @@ public class Alta_usuario extends Alta_usuario_ventana implements View {
 		cliente.setApellidos(apellidosF.getValue());
 		cliente.setDireccion(direccionF.getValue());
 		cliente.setEmail(emailF.getValue());
-		cliente.setNombre(nombreF.getValue());
 		cliente.setTelefono(telefonoF.getValue());
 		cliente.setNif(dniF.getValue());
 		

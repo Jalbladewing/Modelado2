@@ -48,6 +48,7 @@ public class Alta_comercial_ventana extends VerticalLayout {
 	protected HorizontalLayout hLayoutCampos7;
 	protected Button cancelarB;
 	protected Button confirmarB;
+	protected Label errorL;
 
 	public Alta_comercial_ventana() {
 		Design.read(this);
